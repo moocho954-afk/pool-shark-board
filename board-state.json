@@ -1,12 +1,12 @@
 {
-  "data_as_of": "2026-11-03T09:33:28-05:00",
+  "data_as_of": "2026-11-03T10:05:50-05:00",
   "donor_marketplace": {
     "example_launch_tester": "Founding Shark badge + 400 coins in the last verified BOGO/launch run",
     "note": "Donor badges follow the person, not the ticket. Marketplace coins are looks only, never points or cash."
   },
   "jackpot_growth_per_paid_ticket": 1.15,
   "jackpot_total": 108.05,
-  "last_sync_at": "2026-11-03T09:34:31-05:00",
+  "last_sync_at": "2026-11-03T10:06:31-05:00",
   "live_games": "Example slate from the last verified build: BUF/PHI/BAL/SF/GB (NFL) + BOS/GSW/NYK/DEN/MIL (NBA). Live scores in the artifact tick during play; this snapshot does not stream them.",
   "podium": [
     {
@@ -73,7 +73,7 @@
   "sync_note": "This JSON is published in the pool-shark-board repo from the same Pool Shark bundle on every sync. It does NOT auto-update when the live artifact changes between syncs. The page timestamp below is the sync time; data_as_of is the last verified data time.",
   "sync_source": "Pool Shark bundle \u2014 published snapshot, NOT a live fetch from the Pool Shark artifact",
   "test_mode": true,
-  "updated_at": "2026-11-03T09:34:31-05:00",
+  "updated_at": "2026-11-03T10:06:31-05:00",
   "vault": {
     "note": "Host $0.05 + Seed $0.30 + Perfect Jackpot $1.15 + Winners $4.50 = $6.00 per paid ticket; BOGO free ticket covered by a posted $6.00 host launch subsidy.",
     "status": "BALANCED"

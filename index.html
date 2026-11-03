@@ -6784,6 +6784,32 @@ body.gh-board.gh-offline #screen-board .jackpot-hero, body.gh-board.gh-offline #
 /* In immersive (the tap-landing view) keep the exit bar slim exactly like in-app: sync chip and immersive toggle only show in the tools view. */
 body.gh-board.board-immersive #ghSync{display:none!important}
 body.gh-board.board-immersive #ghImmersiveBtn{display:none!important}
+
+/* ---------- GH LANDSCAPE — phone turned sideways (844x390 class) ----------
+   No colours, fonts, podium, rows, jackpot, vault math, mini games,
+   spreads, or sync behaviour change here: layout only. A phone in
+   landscape is short (<=520px tall) but wide, so: rows use the wide
+   grid, the board matrix is allowed to fit the width (no 760px floor
+   forcing sideways scroll), the tools view gets the same single
+   scroller as immersive (no 200px inner slit), and the jackpot hero,
+   board header and podium compact — still visible, never hidden —
+   so the board itself is reachable without a huge first scroll.
+   Portrait, and any landscape taller than 520px, are untouched. */
+@media (orientation:landscape) and (max-height:520px){
+  body.gh-board #screen-board .wrap{max-width:none;padding:0 12px 16px}
+  body.gh-board .brow, body.gh-board .board-head{grid-template-columns:36px minmax(0,1.6fr) repeat(10,minmax(0,1fr)) 42px;column-gap:4px}
+  body.gh-board #screen-board .board-head{min-height:56px}
+  body.gh-board #screen-board .board-matrix{min-width:0;width:100%}
+  body.gh-board #screen-board .board-frame{max-width:none}
+  body.gh-board #screen-board .jackpot-hero{margin-top:10px;padding:12px 16px 10px}
+  body.gh-board #screen-board .board-screen-head{padding:12px 14px}
+  body.gh-board #screen-board .podium{grid-template-columns:repeat(3,1fr);gap:10px}
+  body.gh-board:not(.board-immersive) #screen-board{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+  body.gh-board:not(.board-immersive) #screen-board .board-viewport{max-height:none;height:auto;overflow:visible}
+  body.gh-board:not(.board-immersive) #screen-board .board-frame{overflow:visible}
+  body.gh-board.board-immersive #screen-board{display:block;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+  body.gh-board.board-immersive #screen-board .board-viewport{overflow:visible;max-height:none;height:auto}
+}
 </style>
 <script>
 (function(){
