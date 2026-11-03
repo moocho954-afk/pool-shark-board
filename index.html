@@ -81,7 +81,13 @@ section{margin-top:34px}
 
 /* ---------- PICK FORM ---------- */
 .name-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.name-row input{flex:1;min-width:220px;background:var(--panel);border:2px solid var(--line);color:var(--ink);border-radius:12px;padding:13px 16px;font-size:16.5px;font-weight:600}
+.name-row input{flex:1 1 100%;min-width:0;width:100%;box-sizing:border-box;background:var(--panel);border:2px solid var(--line);color:var(--ink);border-radius:12px;padding:13px 16px;font-size:16.5px;font-weight:600}
+.pipe-lbl{font-size:12px;font-weight:800;letter-spacing:.09em;color:var(--gold);margin:14px 0 0}
+.pipe-vrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.pipe-vrow input{flex:1 1 140px;min-width:0;box-sizing:border-box;background:var(--panel);border:2px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 12px;font-size:15px;font-weight:600}
+.pipe-vrow .btn{padding:11px 16px;font-size:14px}
+.pipe-done{margin-top:10px;font-weight:800;font-size:15px;color:#2fbf71}
+.pipe-done[hidden]{display:none}
 .name-row input:focus{outline:2px solid var(--aqua)}
 .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin-top:14px}
 .game{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
@@ -930,9 +936,10 @@ body.intro-locked .hero .stage{visibility:hidden}
 .claim-box{margin-top:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
 .claim-box h4{margin:0 0 6px;font-size:17px}
 .claim-box p{margin:4px 0;font-size:13px;color:var(--muted);line-height:1.5;font-weight:600}
-.claim-box .claim-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.claim-box input{flex:1;min-width:150px;background:var(--panel2);border:2px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:14.5px;font-weight:600}
-.claim-box .btn{padding:10px 16px;font-size:13.5px}
+.claim-box .claim-row{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.claim-box input{flex:1 1 auto;width:100%;min-width:0;box-sizing:border-box;background:var(--panel2);border:2px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 12px;font-size:15px;font-weight:600}
+.claim-box .btn{padding:11px 16px;font-size:14px;width:100%;box-sizing:border-box}
+.claim-box h4{color:var(--ink)}
 .claim-msg{margin-top:8px;font-weight:700;font-size:13.5px;line-height:1.5}
 .prof-chat{background:linear-gradient(180deg,#0b1728,#060d18);border:1px solid rgba(232,199,102,.25);border-radius:14px;padding:12px;margin-top:10px}
 .chat-msg{padding:8px 0;border-bottom:1px dashed rgba(139,180,205,.25)}
@@ -1342,7 +1349,7 @@ body.board-immersive #screen-board .board-head{top:0}
 .spread-head .spread-line{color:var(--ink);letter-spacing:.02em;font-size:13.5px}
 .spread-explain{font-size:13px;font-weight:600;color:var(--muted);line-height:1.5;margin-top:6px}
 .spread-explain b{color:var(--ink)}
-.spread-chips{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:9px}
+.spread-chips{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}
 .spread-chips button{border:2px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:10px;padding:10px 5px;font-weight:800;font-size:13px;min-height:46px;line-height:1.25}
 .spread-chips button.sel{border-color:var(--gold);background:#4d3a05;color:#ffe9a8;box-shadow:0 0 0 2px rgba(255,199,44,.3)}
 .spread-chips button small{display:block;font-weight:700;font-size:10.5px;opacity:.85}
@@ -1417,6 +1424,13 @@ body.board-immersive #screen-board .board-head{top:0}
   #picks .sec-head h2{color:#fff}
   #picks .sec-head p{color:#a9c6d8}
   #picks .name-row input{background:#0d2f4e;border-color:#1b4a6b;color:#eaf7ff}
+  #picks .claim-box{background:#0a243d;border-color:#1b4a6b;color:#eaf7ff}
+  #picks .claim-box h4{color:#fff}
+  #picks .claim-box p{color:#a9c6d8}
+  #picks .claim-box input{background:#0d2f4e;border-color:#1b4a6b;color:#eaf7ff}
+  #picks .pipe-vrow input{background:#0d2f4e;border-color:#1b4a6b;color:#eaf7ff}
+  #picks .reg-note{background:#0a243d;color:#a9c6d8}
+  #picks .reg-note b{color:#fff}
   #picks .ticket-plan{background:#0a243d}
   #picks .ticket-plan .tp-copy{color:#a9c6d8}
   #picks .ticket-plan .tp-copy b{color:#fff}
@@ -1703,11 +1717,14 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
 .bogo-line{margin:12px 0 0;padding:12px 16px;border:1.5px solid var(--gold);border-radius:14px;background:linear-gradient(120deg,rgba(255,199,44,.16),rgba(255,199,44,.05));color:#ffe9a8;font-weight:700;font-size:16.5px;text-align:center}
 .bogo-line[hidden]{display:none}
 .float-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:16px 0 4px;padding:12px;border:1px solid var(--gold);border-radius:20px;background:linear-gradient(165deg,rgba(10,38,63,.97),rgba(4,18,32,.97));box-shadow:0 14px 34px rgba(0,0,0,.45)}
-.fn-head{grid-column:1/-1;text-align:center;color:var(--muted);font-weight:600;font-size:14.5px}
+.fn-head{grid-column:1/-1;text-align:center;color:#cfe3f2;font-weight:600;font-size:14.5px}
 .fn-head b{color:#ffd76a}
-.float-chip{min-height:52px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(160deg,#122c47,#081a2e);color:var(--ink);font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;padding:8px 4px;cursor:pointer;width:100%}
-.float-chip.gold{border-color:var(--gold);color:#ffd76a;background:linear-gradient(160deg,#3a2c07,#1c1503)}
-.float-chip:active{transform:scale(.97)}
+.float-chip{display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;min-height:56px;border-radius:14px;border:1.5px solid #e8c766;background:linear-gradient(160deg,#14324f,#0a1e33);color:#fdf6dd;font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:16.5px;letter-spacing:.02em;line-height:1.2;white-space:normal;overflow:visible;padding:10px 8px;cursor:pointer;width:100%;box-sizing:border-box}
+.float-chip.gold{border-color:#ffc72c;color:#ffd76a;background:linear-gradient(160deg,#3a2c07,#1c1503)}
+.float-nav button.float-chip{color:#fdf6dd;background:linear-gradient(160deg,#14324f,#0a1e33);border:1.5px solid #e8c766;box-shadow:none;text-shadow:none}
+.float-nav button.float-chip.gold{color:#ffd76a;background:linear-gradient(160deg,#3a2c07,#1c1503);border-color:#ffc72c}
+.float-chip:active{transform:scale(.97);box-shadow:0 0 0 3px rgba(255,199,44,.45),0 0 18px rgba(255,199,44,.55)}
+.float-chip:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
 @media (max-width:640px){ .stage{height:38vh;min-height:250px} }
 @media (max-width:370px){ .float-nav{grid-template-columns:repeat(2,1fr)} }
 /* LAUNCH PROOF — live frames */
@@ -1848,7 +1865,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
       <a href="#picks"><button class="btn blue" style="font-size:18px;padding:16px 32px">Make your picks ↓</button></a>
     </div>
     <div class="hero-btns" style="margin-top:10px">
-      <a class="btn" id="fullScreenBoardBtn" href="https://muse.ai/s/pool-shark-xyu6oxsxebmxvxz0/RUDv0X8u78Ubf6a6gi22BsrWAtQnKmVnLdXP9w0J3Mc" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">← Back to Pool Shark</a>
+      <a class="btn" id="fullScreenBoardBtn" href="https://muse.ai/s/pool-shark-xyu6oxsxebmxvxz0/RUDv0X8u78Ubf6a6gi22BsrWAtQnKmVnLdXP9w0J3Mc" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">⛶ Full screen — GitHub board page</a>
       <button class="btn ghost" id="viewBoardBtn">See the board →</button>
       <button class="btn ghost" id="viewOceanBtn">🌊 The Ocean</button>
       <button class="btn ghost" id="viewFilmBtn">🎬 The film</button>
@@ -1967,19 +1984,33 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
 <!-- ================= PICKS ================= -->
 <section id="picks">
   <div class="sec-head"><h2>Sunday slate — make your picks</h2><p>All times Eastern. Simulation slate for testing.</p></div>
+  <div class="pipe-lbl">STEP 1 — YOUR SHARK NAME</div>
   <div class="name-row">
-    <input id="playerName" type="text" maxlength="24" placeholder="Your shark name (e.g. Bigg Moocho)" autocomplete="off" />
+    <input id="playerName" type="text" maxlength="24" placeholder="Your Shark name" autocomplete="off" aria-label="Your Shark name" />
   </div>
-  <div class="name-row" style="margin-top:8px">
-    <input id="playerEmail" type="email" maxlength="60" placeholder="Your email — used ONLY to verify it's you and reclaim your locked name on a new phone" autocomplete="email" />
+  <div class="reg-note" id="nameLockNote">🔒 Name locked on first ticket.</div>
+  <div id="emailStep" hidden>
+    <div class="pipe-lbl">STEP 2 — YOUR EMAIL</div>
+    <div class="name-row" style="margin-top:8px">
+      <input id="playerEmail" type="email" maxlength="60" placeholder="Your email" autocomplete="email" aria-label="Your email" />
+    </div>
   </div>
-  <div class="reg-note" id="nameLockNote">🔒 <b>Your first ticket LOCKS your Shark name — forever.</b> The name is checked against the username registry normalized (trimmed, upper-cased, extra spaces collapsed), so <b>BIGG MOOCHO</b>, “bigg moocho” and “ Bigg&nbsp; Moocho ” are the same name — once locked, <b>no one else can ever take it</b>, in any spelling. Locking creates your <b>profile</b> at that same moment: coins, wins, losses, tickets, mini games, spreads, donations, badges, jackpot wins, Fund the Pool and Marketplace items all track there. <b>How we know it's you:</b> this phone <b>remembers your locked name and auto-fills it</b> — that memory is a convenience, not proof. The hard proof is <b>email verification</b>: a code sent to an email you control proves the name is yours and lets you reclaim it on a new phone. A password alone is <b>not</b> used as the proof — passwords get forgotten, stolen and shared, and they don't prove you control an account; an email code does. <b>Honest limit of this test build:</b> the lock is enforced in this browser/device registry and the board's local registry on this page. A true global lock across every phone needs a server database — that is the next step before real launch, and this registry (normalized name · locked owner · email-verification claim) is designed to migrate to that server without changing the rules.</div>
+  <div id="verifyStep" hidden>
+    <div class="pipe-lbl">STEP 3 — VERIFY IT'S YOU</div>
+    <div class="pipe-vrow">
+      <button type="button" class="btn blue" id="signupSendBtn">Send code</button>
+      <input id="signupCode" type="text" maxlength="6" placeholder="6-digit code" autocomplete="one-time-code" aria-label="6-digit verification code" />
+      <button type="button" class="btn" id="signupVerifyBtn">Verify</button>
+    </div>
+    <div class="claim-msg" id="signupMsg" aria-live="polite"></div>
+    <div class="pipe-done" id="signupDone" hidden>✓ Verified — you're set. Your profile is created on your first ticket.</div>
+  </div>
   <div class="claim-box" id="claimBox">
     <h4>📱 New phone? Claim your locked name</h4>
-    <p>Type the exact Shark name you locked and the email you locked it with. We'll verify a code with you, and this device becomes yours for that name — remembered and auto-filled from then on.</p>
+    <p>Your locked name + its email → code → this phone is yours.</p>
     <div class="claim-row">
       <input id="claimName" type="text" maxlength="24" placeholder="Your locked Shark name" autocomplete="off" aria-label="Your locked Shark name" />
-      <input id="claimEmail" type="email" maxlength="60" placeholder="The email you locked it with" autocomplete="email" aria-label="The email you locked it with" />
+      <input id="claimEmail" type="email" maxlength="60" placeholder="Your email" autocomplete="email" aria-label="Your email" />
       <button type="button" class="btn blue" id="claimSendBtn">Send my code</button>
     </div>
     <div class="claim-row">
@@ -1987,7 +2018,6 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
       <button type="button" class="btn" id="claimVerifyBtn">Verify &amp; claim this device</button>
     </div>
     <div class="claim-msg" id="claimMsg" aria-live="polite"></div>
-    <p>Test build note: there is no mail server behind this page yet, so the code is <b>shown to you right here</b> instead of emailed. At launch the same code goes to your inbox — the flow and the rule (email code = proof, password alone = never) do not change.</p>
   </div>
   <div class="simple-steps" aria-label="How to play in three steps">
     <div class="sstep"><span class="sn">1</span><div><b>Pick the winner</b><small>Tap one team in every game. That's the whole game.</small></div></div>
@@ -2015,7 +2045,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
   <div class="games" id="games"></div>
   <div class="progress-line" id="pickProgress">Picks made: <b>0 / 10</b></div>
   <div class="progress-line" id="miniProgress">⭐ Bonus mini games: <b>0 / 5 picks</b> — two mini games ride under Game 1 (NFL) and Game 10 (NBA) above. Each mini game nailed = <b>+1 bonus point</b> in the standings (max +2). <b>REQUIRED — both mini games must be played before a ticket can be submitted. No skip, no opt-out.</b></div>
-  <div class="progress-line" id="spreadProgress">🎯 Spread plays: <b>0 / 10</b> — optional skill plays, one per game, under each matchup. Picking the winner is all you need to play; covers earn the Spread Bonus (max +3.00) in your Total Points.</div>
+  <div class="progress-line" id="spreadProgress">🎯 Spread plays: <b>0 / 10</b> — REQUIRED, one per game, under each matchup. Pick a side on every game; covers earn the Spread Bonus (max +3.00) in your Total Points.</div>
 
   <div class="tb-card" id="tbCard">
     <div class="tb-head">
@@ -2104,8 +2134,8 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
           <div class="rule"><span class="n">📺</span><h3>📺 Shark Tank Live — the 5-minute pre-lock show</h3><p>Before lock, the board runs a <b>5-minute pre-lock show, inside the page</b>: a <b>countdown to lock</b>, the <b>live pool fill</b>, the <b>jackpot rolling</b>, the <b>donor board</b>, and the Live Wire. The Tank Wire carries <b>one call only — “let's get this money”</b> — and <b>picks stay blind: no pick is ever revealed in the Tank</b>. A <b>second-ticket buy option</b> rides in the Tank while you wait. It is a show, not a rule change: the pay gate, blind-until-lock, money and points are exactly as posted everywhere else.</p></div>
           <div class="rule"><span class="n">4</span><h3>Tiebreaker order</h3><p>On the last NFL game, in this exact order: ① correct Over/Under call → ② closest total-points guess → ③ first TD <b>team</b> → ④ first TD <b>player</b> → ⑤ earliest ticket in.</p></div>
           <div class="rule"><span class="n">5</span><h3>🔥 The hot seat</h3><p>When two tickets carry the <b>same wins and losses</b> and their picks are <b>almost identical</b>, both columns grow on the board and get the HOT SEAT tag — the whole pool is watching those two, because they'll rise or sink together.</p></div>
-          <div class="rule"><span class="n">★</span><h3>⭐ Bonus mini games — +1 each, posted in the open</h3><p>Every pool has <b>two mini games</b>: an <b>NFL mini</b> under the Chiefs @ Bills game (Josh Allen passing yards Over/Under 267.5 + passing TDs Over/Under 2.5) and an <b>NBA mini</b> under the Bucks @ Cavaliers game (Giannis vs Mitchell — who scores more, combined points Over/Under 58.5, combined threes Over/Under 5.5). Nail <b>every pick in one mini game</b> and that ticket earns <b>+1 bonus point</b> — max <b>+2 per pool</b>. Bonus points <b>count in the standings for everyone to see</b>: <b>Total Points = Wins + Mini Game Bonus (max +2) + Spread Bonus (max +3.00)</b>, max <b>15.00</b> — so a ticket losing by one can be bumped up by its mini game or its spread covers. Only after Total Points and then Wins are compared does the posted tiebreaker order decide any remaining tie. Mini picks are <b>REQUIRED — both mini games must be completed before a ticket can be submitted, and submit stays blocked until they are</b> — and they stay blind until lock, like every other pick. Spreads remain the optional skill play; mini games do not.</p></div>
-          <div class="rule"><span class="n">🎯</span><h3>Spread plays — the optional skill layer, now worth points</h3><p>Every game also shows a <b>spread</b> from the back ledger (example: <b>BUF −3.5</b> — Buffalo is favored by 3.5, so Buffalo must win by 4+ for that side to “cover”; KC +3.5 covers if KC wins or loses by 3 or less). Picking the <b>winner</b> is all you need to play — that never changes. If you want the skill layer, tap a spread side (or “No play”) on any game. Spread plays are <b>tracked in the open</b> and now <b>count in the points</b>: <b>Total Points = Wins (1 per win, max 10) + Mini Game Bonus (max +2) + Spread Bonus (max +3.00 = Spread Covers × 0.30 points — 10 covers = +3.00, 7 covers = +2.10, 5 covers = +1.50, 0 covers = +0.00, rounded to 2 decimals). Total max = 15.00.</b> The spread bonus is a decisive edge: a perfect spread card (+3.00) against an average one (+1.50) is +1.50 — enough to overcome a 1-win deficit and move a ticket up; perfect against zero (+3.00) can jump several places. But wins still dominate — 10 wins with no spread (10.00) only loses to 7 wins + a perfect spread (10.00) on the tiebreaker. Worked example: 8 wins + 1 mini + 7 covers = 11.10 beats 9 wins + 0 minis + 5 covers = 10.50, even with one fewer win. Standings sort by Total Points, then Wins, then the posted tiebreaker order. Spread plays do not change the posted money split.</p></div>
+          <div class="rule"><span class="n">★</span><h3>⭐ Bonus mini games — +1 each, posted in the open</h3><p>Every pool has <b>two mini games</b>: an <b>NFL mini</b> under the Chiefs @ Bills game (Josh Allen passing yards Over/Under 267.5 + passing TDs Over/Under 2.5) and an <b>NBA mini</b> under the Bucks @ Cavaliers game (Giannis vs Mitchell — who scores more, combined points Over/Under 58.5, combined threes Over/Under 5.5). Nail <b>every pick in one mini game</b> and that ticket earns <b>+1 bonus point</b> — max <b>+2 per pool</b>. Bonus points <b>count in the standings for everyone to see</b>: <b>Total Points = Wins + Mini Game Bonus (max +2) + Spread Bonus (max +3.00)</b>, max <b>15.00</b> — so a ticket losing by one can be bumped up by its mini game or its spread covers. Only after Total Points and then Wins are compared does the posted tiebreaker order decide any remaining tie. Mini picks are <b>REQUIRED — both mini games must be completed before a ticket can be submitted, and submit stays blocked until they are</b> — and they stay blind until lock, like every other pick. Spreads are required too: one side per game, no No play.</p></div>
+          <div class="rule"><span class="n">🎯</span><h3>Spread plays — the required skill layer, now worth points</h3><p>Every game also shows a <b>spread</b> from the back ledger (example: <b>BUF −3.5</b> — Buffalo is favored by 3.5, so Buffalo must win by 4+ for that side to “cover”; KC +3.5 covers if KC wins or loses by 3 or less). Picking the <b>winner</b> is the core play — and every game also needs one spread side: tap the favorite or the underdog on every game. There is no No play — a ticket cannot be submitted until all 10 spread picks are made. Spread plays are <b>tracked in the open</b> and now <b>count in the points</b>: <b>Total Points = Wins (1 per win, max 10) + Mini Game Bonus (max +2) + Spread Bonus (max +3.00 = Spread Covers × 0.30 points — 10 covers = +3.00, 7 covers = +2.10, 5 covers = +1.50, 0 covers = +0.00, rounded to 2 decimals). Total max = 15.00.</b> The spread bonus is a decisive edge: a perfect spread card (+3.00) against an average one (+1.50) is +1.50 — enough to overcome a 1-win deficit and move a ticket up; perfect against zero (+3.00) can jump several places. But wins still dominate — 10 wins with no spread (10.00) only loses to 7 wins + a perfect spread (10.00) on the tiebreaker. Worked example: 8 wins + 1 mini + 7 covers = 11.10 beats 9 wins + 0 minis + 5 covers = 10.50, even with one fewer win. Standings sort by Total Points, then Wins, then the posted tiebreaker order. Spread plays do not change the posted money split.</p></div>
           <div class="rule"><span class="n">📒</span><h3>The back ledger — where every line comes from</h3><p>Behind the board sits a <b>back ledger</b>: updated team stats for every NFL and NBA team on the slate, player stats for the stars behind the mini games, the market line (spread) for every game, and a play-by-play / possession-by-possession log — game, period, clock, possession, player, stat. Every line on your ticket is read from that ledger. In this <b>test build</b> the ledger holds a <b>demo dataset, labeled TEST DATA</b> — it is not a live sportsbook feed; real book-accurate live lines would need a licensed data feed.</p></div>
           <div class="rule"><span class="n">❄</span><h3>🧊 Cold &amp; drowning tickets</h3><p>Opposite the hot seat: a ticket stacking losses goes <b>cold in stages</b> on the grid — <b>🧊 CHILLY</b> (3 losses), then <b>❄️ COLD</b> (4 losses or 3 behind the leader), then <b>🌊🧊 DROWNING</b> (5+ losses or 4+ behind) — ice-blue, wavy and tilting as it goes under. Cold is a warning, not an ending: the ticket is still on the board. Only when it mathematically can't reach the top 4 does it move to the elimination tray below.</p></div>
           <div class="rule"><span class="n">6</span><h3>Sinking tickets disappear</h3><p>A ticket stacking losses <b>shrinks step by step</b>. Once it mathematically can't reach the top 4 anymore, its column <b>leaves the board</b> — the space goes to the tickets still alive for 1st, 2nd, 3rd, and the free ticket.</p></div>
@@ -2139,14 +2169,14 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
       <div class="acc-panel" id="acc-idea4" hidden>
         <p><b>The problem it kills:</b> today's flow is picks → tiebreaker → submit button → pay screen → board. Four screens, two dead ends, and the submit maze is where new Sharks stall. <b>Idea 4 cuts it to one gesture chain: tap logos → swipe the card → pay sheet → board.</b> Here is the whole thing, slowed down and zoomed in, exactly as it would feel on a phone:</p>
         <div class="idea4-steps">
-          <div class="idea4-step"><div class="i4-t">0:00 – 0:04 · STEP 1 — TAP THE LOGOS</div><h4>Ten games, twenty logos</h4><p>Each game is just two big team logos. You tap <b>BUF, PHI, BAL, SF, GB, BOS, GSW, NYK, DEN, MIL</b> — each logo you tap turns <b>gold and locks in</b>. No X's and O's, no dropdowns, no typing. A progress line counts you up: <b>“7 of 10 picked.”</b> Right under the games, on the same screen, sit the <b>⭐ mini games</b> and the <b>🎯 spread plays</b> — they are <b>part of this step, by rule</b>: the mini games are required picks, and the spread plays ride on the card as the optional skill layer. Miss a required piece and the card at the end simply won't swipe yet — it tells you exactly what's empty instead of erroring on a new screen.</p></div>
-          <div class="idea4-step"><div class="i4-t">0:04 – 0:06 · STEP 2 — THE TICKET CARD</div><h4>One card, everything on it — all four blocks</h4><p>The card carries <b>everything, before any swipe</b>: <b>① your 10 winner picks</b> — BUF · PHI · BAL · SF · GB · BOS · GSW · NYK · DEN · MIL. <b>② the ⭐ mini games</b> — NFL: Allen passing yards <b>OVER 267.5</b> + passing TDs <b>OVER 2.5</b>; NBA star-vs-star: <b>Giannis scores more</b> · combined points <b>OVER 58.5</b> · combined threes <b>OVER 5.5</b> — <b>+1 point each, max +2</b>. <b>③ the 🎯 spreads</b> — the optional skill play, shown on the card with your spread record, which <b>rides on every board row</b>; the points equation is printed right on the card: <b>Wins (max 10) + Mini Bonus (max +2) + Spread Bonus (max +3.00) = 15.00 max</b>. <b>④ the tiebreaker</b> — <b>OVER 47.5 · exact total 51 · first TD: GB — Josh Jacobs</b>. The card's bottom edge reads <b>“Swipe right to confirm →”</b> — and it <b>only unlocks when the winner picks, both mini games and the tiebreaker are all set</b>. The mini games and spreads are <b>never omitted and can never be removed from this flow</b> — the swipe confirms the whole card, not a stripped-down version of it. What you see on the card is exactly what goes on the board — nothing is re-typed, nothing can drift.</p></div>
+          <div class="idea4-step"><div class="i4-t">0:00 – 0:04 · STEP 1 — TAP THE LOGOS</div><h4>Ten games, twenty logos</h4><p>Each game is just two big team logos. You tap <b>BUF, PHI, BAL, SF, GB, BOS, GSW, NYK, DEN, MIL</b> — each logo you tap turns <b>gold and locks in</b>. No X's and O's, no dropdowns, no typing. A progress line counts you up: <b>“7 of 10 picked.”</b> Right under the games, on the same screen, sit the <b>⭐ mini games</b> and the <b>🎯 spread plays</b> — they are <b>part of this step, by rule</b>: the mini games are required picks, and the spread plays ride on the card as the required skill layer — one side per game, no No play. Miss a required piece and the card at the end simply won't swipe yet — it tells you exactly what's empty instead of erroring on a new screen.</p></div>
+          <div class="idea4-step"><div class="i4-t">0:04 – 0:06 · STEP 2 — THE TICKET CARD</div><h4>One card, everything on it — all four blocks</h4><p>The card carries <b>everything, before any swipe</b>: <b>① your 10 winner picks</b> — BUF · PHI · BAL · SF · GB · BOS · GSW · NYK · DEN · MIL. <b>② the ⭐ mini games</b> — NFL: Allen passing yards <b>OVER 267.5</b> + passing TDs <b>OVER 2.5</b>; NBA star-vs-star: <b>Giannis scores more</b> · combined points <b>OVER 58.5</b> · combined threes <b>OVER 5.5</b> — <b>+1 point each, max +2</b>. <b>③ the 🎯 spreads</b> — the required skill play, shown on the card with your spread record, which <b>rides on every board row</b>; the points equation is printed right on the card: <b>Wins (max 10) + Mini Bonus (max +2) + Spread Bonus (max +3.00) = 15.00 max</b>. <b>④ the tiebreaker</b> — <b>OVER 47.5 · exact total 51 · first TD: GB — Josh Jacobs</b>. The card's bottom edge reads <b>“Swipe right to confirm →”</b> — and it <b>only unlocks when the winner picks, both mini games and the tiebreaker are all set</b>. The mini games and spreads are <b>never omitted and can never be removed from this flow</b> — the swipe confirms the whole card, not a stripped-down version of it. What you see on the card is exactly what goes on the board — nothing is re-typed, nothing can drift.</p></div>
           <div class="idea4-step"><div class="i4-t">0:06 – 0:07 · STEP 3 — SWIPE RIGHT</div><h4>The confirm is the gesture</h4><p>You drag the card right with your thumb. Halfway, it starts turning green; past the line it <b>snaps, flashes ✓ CONFIRMED</b>, and the picks lock. Swipe back left and nothing is sent — the undo is built into the gesture. There is <b>no submit button and no submit screen</b> to get lost in. Watch the card below do it on a loop:</p></div>
           <div class="idea4-step"><div class="i4-t">0:07 – 0:09 · STEP 4 — PAY SHEET SLIDES UP</div><h4>One sheet, one price</h4><p>The pay sheet rises <b>from the bottom of the same screen</b>: <b>“$6.00 — $5 entry + $1 Pool Growth Fee”</b> — and on <b>Pool #1 Launch Night it is buy one, get one free: Ticket #1 reads $6.00 on this sheet, and Ticket #2 reads $0.00 on this same sheet</b>: the host's <b>$6.00 launch subsidy</b> is applied and shown, so the free ticket still counts in full. Then the optional donation row and one big Pay button. You never leave the flow, so you never lose your place. Tap Pay → the Shark verifies name, amount and ticket number, exactly as he does today.</p></div>
           <div class="idea4-step"><div class="i4-t">0:09 · STEP 5 — BOARD, AUTO</div><h4>You're already there</h4><p>Paid confirmation lands and the <b>board opens by itself</b> — your ticket is on it, gold-outlined, and the <b>“Your ticket is here” mini-bar</b> at the bottom of the screen shows your rank, W–L and Total Points from that second on. Total journey: <b>about 9 seconds, 12 taps, zero mazes</b> — against 20+ taps and four screens today.</p></div>
           <div class="idea4-step"><div class="i4-t">WHAT DOESN'T CHANGE</div><h4>Same Shark, same rules</h4><p>The pay gate is untouched: <b>no pay, no board</b>, picks stay <b>blind until lock</b>, every ticket still costs the same <b>$6</b> with the same split (Host $0.05 · Seed $0.30 · Jackpot $1.15 · Winners $4.50) — on Pool #1 Launch Night you buy one at $6 and the free BOGO second ticket is covered by the host's posted $6.00 launch subsidy, shown in the vault. <b>And the mini games and spreads stay, by rule:</b> Idea 4 does <b>not</b> take them away, does not make the mini games optional, and does not replace them with the swipe — they are <b>required steps on the card before the swipe can confirm</b>, with the full points equation (Wins 10 + Mini +2 + Spread +3.00 = 15.00) printed on the card. Idea 4 changes only <i>how your hands move</i> — never the money, the points, or the gate. <b>Status: deeper example shown here — the swipe flow itself is not built yet; say the word and it gets built next.</b></p></div>
         </div>
-        <div class="swipe-demo" aria-hidden="true"><div class="swipe-card">🎟️ YOUR TICKET — Winners: BUF · PHI · BAL · SF · GB · BOS · GSW · NYK · DEN · MIL<br><span style="font-size:13px">⭐ Mini games: Allen yards OVER 267.5 · Allen TDs OVER 2.5 · Giannis scores more · combined pts OVER 58.5 · combined threes OVER 5.5 (+1 each, max +2)</span><br><span style="font-size:13px">🎯 Spreads (optional skill play — record rides on every row): BUF −3.5 · PHI −2.5 · BAL −4.5 · SF −1.5 · GB −2.5 · BOS −6.5 · GSW +3.5 · NYK +4.5 · DEN −1.5 · MIL +4.5 — Wins (max 10) + Mini (max +2) + Spread (max +3.00) = 15.00 max</span><br><span style="font-size:13px">Tiebreaker: OVER 47.5 · 51 · GB — Josh Jacobs</span><br><span style="font-size:13px">SWIPE RIGHT TO CONFIRM →</span></div><p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#a9c6d8">All four blocks — winners, mini games, spreads, tiebreaker — sit on the card before the swipe. The card slides, turns green, and confirms — that one gesture replaces the whole submit screen, and it can never strip the mini games or spreads out of the ticket.</p></div>
+        <div class="swipe-demo" aria-hidden="true"><div class="swipe-card">🎟️ YOUR TICKET — Winners: BUF · PHI · BAL · SF · GB · BOS · GSW · NYK · DEN · MIL<br><span style="font-size:13px">⭐ Mini games: Allen yards OVER 267.5 · Allen TDs OVER 2.5 · Giannis scores more · combined pts OVER 58.5 · combined threes OVER 5.5 (+1 each, max +2)</span><br><span style="font-size:13px">🎯 Spreads (required skill play — record rides on every row): BUF −3.5 · PHI −2.5 · BAL −4.5 · SF −1.5 · GB −2.5 · BOS −6.5 · GSW +3.5 · NYK +4.5 · DEN −1.5 · MIL +4.5 — Wins (max 10) + Mini (max +2) + Spread (max +3.00) = 15.00 max</span><br><span style="font-size:13px">Tiebreaker: OVER 47.5 · 51 · GB — Josh Jacobs</span><br><span style="font-size:13px">SWIPE RIGHT TO CONFIRM →</span></div><p style="margin:10px 0 0;font-size:13px;font-weight:700;color:#a9c6d8">All four blocks — winners, mini games, spreads, tiebreaker — sit on the card before the swipe. The card slides, turns green, and confirms — that one gesture replaces the whole submit screen, and it can never strip the mini games or spreads out of the ticket.</p></div>
       </div>
     </div>
 
@@ -2265,9 +2295,9 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
     <span class="beb-btns">
       <button class="fs-btn" id="boardOceanBtn">🌊 The Ocean</button>
       <button class="fs-btn" id="boardCommBtn">💬 Community</button>
-      <a class="fs-btn" id="boardFullBtn" href="https://muse.ai/s/pool-shark-xyu6oxsxebmxvxz0/RUDv0X8u78Ubf6a6gi22BsrWAtQnKmVnLdXP9w0J3Mc" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">← Back to Pool Shark</a>
-      <span class="fs-status" id="fsStatus" role="status" aria-live="polite" hidden></span>
-      <button class="fs-btn" id="ghImmersiveBtn" type="button">⛶ Exit full screen — show podium &amp; jackpot</button><button class="exit-btn" id="boardExitBtn">✕ Exit board — back to explore</button>
+      <a class="fs-btn" id="boardFullBtn" href="https://muse.ai/s/pool-shark-xyu6oxsxebmxvxz0/RUDv0X8u78Ubf6a6gi22BsrWAtQnKmVnLdXP9w0J3Mc" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">⛶ Full screen — GitHub board page</a>
+      <span class="fs-status" id="fsStatus" role="status" aria-live="polite" hidden></span>       <button class="fs-btn" id="ghImmersiveBtn" type="button">⛶ Exit full screen — show podium &amp; jackpot</button>
+      <button class="exit-btn" id="boardExitBtn">✕ Exit board — back to explore</button>
     </span>
   </div>
   <div class="jackpot-hero" id="jackpotBoard" role="region" aria-label="Perfect Jackpot on the line">
@@ -2333,7 +2363,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
     <span>❤️ DONOR — rose highlight = this ticket was donated on · badge pill = that person's permanent lifetime donor badge</span>
     <span>⭐+1 BONUS — mini game point counts in standings</span>
     <span>▲ WIN ✓ / ▼ LOSS ✗ — when a game lands, EVERY winner flashes green together, EVERY loser shakes red together</span>
-    <span>🎯 SPREAD — optional skill play, record rides on every row</span>
+    <span>🎯 SPREAD — required skill play, record rides on every row</span>
     <span>🔥 HEATING UP / CLOSE TO THE LINE — a mini game nearing its line glows and grows</span>
     <span>📉 SINKING — smaller</span>
     <span>👆 TAP ANY SHARK — FULL PROFILE</span>
@@ -2815,7 +2845,7 @@ var POINTS_EQ_SHORT="Total = Wins (max 10) + Mini Bonus (max +2) + Spread Bonus 
 function spreadProgressUpdate(){
   var el=$("spreadProgress"); if(!el) return;
   var n=Object.keys(mySpread).length;
-  el.innerHTML="🎯 Spread plays: <b>"+n+" / 10</b>"+(n===10?" — a spread play on every game. Sharp card: cover all 10 for the full +3.00 Spread Bonus.":n>0?" — every cover earns Spread Bonus: Covers × 0.30 points (max +3.00), added to your Total Points on the board.":" — optional skill plays, one per game, under each matchup. Picking the winner is all you need to play; covers earn the Spread Bonus (max +3.00) in your Total Points.");
+  el.innerHTML="🎯 Spread plays: <b>"+n+" / 10</b>"+(n===10?" — a spread play on every game. Sharp card: cover all 10 for the full +3.00 Spread Bonus.":n>0?" — every cover earns Spread Bonus: Covers × 0.30 points (max +3.00), added to your Total Points on the board.":" — REQUIRED: pick one side (favorite covers or underdog covers) on every game to submit. Covers earn the Spread Bonus (max +3.00) in your Total Points.");
 }
 /* CPU spread cards — a mix of favorite-backers and dog-backers, so the
    board's spread column has real spread on both sides of every line. */
@@ -3530,7 +3560,8 @@ function lockNameOnFirstTicket(name){
   var display=cleanDisplayName(name);
   if(!REGISTRY[nn]){
     var emailEl=$("playerEmail");
-    REGISTRY[nn]={display:display, email:emailEl?emailEl.value.trim():"", playerId:"SHARK-"+(1000+Math.floor(Math.random()*9000))+"-"+nn.replace(/[^A-Z0-9]/g,"").slice(0,6), lockedAt:nowTimeET(), pool:poolNumber, verified:false};
+    var lockEmail=emailEl?emailEl.value.trim():"";
+    REGISTRY[nn]={display:display, email:lockEmail, playerId:"SHARK-"+(1000+Math.floor(Math.random()*9000))+"-"+nn.replace(/[^A-Z0-9]/g,"").slice(0,6), lockedAt:nowTimeET(), pool:poolNumber, verified:!!(typeof SIGNUP_VERIFIED_EMAIL!=="undefined"&&SIGNUP_VERIFIED_EMAIL&&lockEmail&&lockEmail.toLowerCase()===SIGNUP_VERIFIED_EMAIL)};
     var ex=profileExtra(display); if(ex) ex.createdPool=poolNumber;
     feed("PROFILE","mom","🔒 NAME LOCKED + PROFILE CREATED: “"+display+"” is now locked to its Shark forever — normalized in the registry, so no case or spacing variant of it can ever be taken by anyone else. Their profile is live: coins, W–L, tickets, mini games, spreads, donations, badges, jackpot wins, Fund the Pool and Marketplace items all track there. Tap their name on the board to open it.");
     secLog("<b>"+esc(display)+"</b> — Shark name LOCKED in the registry (normalized: "+esc(nn)+") · profile created · player "+REGISTRY[nn].playerId);
@@ -3554,16 +3585,49 @@ function renderNameLockNote(){
   var inp=$("playerName"); var typed=inp?inp.value.trim():"";
   var nn=normName(typed);
   if(DEVICE.name){
-    el.innerHTML="🔒 <b>Welcome back, "+esc(DEVICE.name)+".</b> This device remembers your locked name and auto-fills it — that's convenience, not proof. The hard proof is your <b>email verification</b>: if you ever need this name on a new phone, claim it below with the email you locked it with. Nobody else can take “"+esc(DEVICE.name)+"” — in any spelling — ever.";
+    el.innerHTML="🔒 <b>Welcome back, "+esc(DEVICE.name)+".</b> Name locked — this phone auto-fills it.";
     return;
   }
   if(typed&&REGISTRY[nn]&&!isProfileOwner(REGISTRY[nn].display)){
-    el.innerHTML="🔒 <b>“"+esc(REGISTRY[nn].display)+"” is already LOCKED</b> to another Shark — it can never be taken, in any spelling or spacing. If it's yours, claim this device below with your email code; otherwise choose a different name — your first ticket will lock it and create your profile.";
+    el.innerHTML="🔒 <b>“"+esc(REGISTRY[nn].display)+"” is already LOCKED.</b> Claim it below with your email code, or pick a different name.";
     return;
   }
   if(typed){
-    el.innerHTML="🔒 <b>“"+esc(cleanDisplayName(typed))+"” is available.</b> Your first ticket locks it forever — nobody else will ever be able to take it — and creates your profile at that moment. Add your email so you can prove it's you and reclaim the name on a new phone; this device will remember and auto-fill it.";
+    el.innerHTML="🔒 <b>“"+esc(cleanDisplayName(typed))+"”</b> locks on your first ticket — profile created.";
   }
+}
+/* ---- signup pipeline: name → email → verify code → done.
+   Steps reveal one at a time so the form leads instead of lectures.
+   The lock rules underneath are unchanged (normalized registry,
+   device auto-fill, email code as proof). ---- */
+var SIGNUP_PENDING=null, SIGNUP_VERIFIED_EMAIL="";
+function signupPipeline(){
+  var nameEl=$("playerName"), emailEl=$("playerEmail");
+  var name=nameEl?nameEl.value.trim():"", email=emailEl?emailEl.value.trim():"";
+  var es=$("emailStep"), vs=$("verifyStep"), dn=$("signupDone");
+  if(es) es.hidden=!name;
+  if(vs) vs.hidden=!(name&&/.+@.+\..+/.test(email));
+  if(dn) dn.hidden=!(SIGNUP_VERIFIED_EMAIL&&email&&email.toLowerCase()===SIGNUP_VERIFIED_EMAIL);
+}
+function signupSend(){
+  var msg=$("signupMsg"); if(!msg) return;
+  var email=(($("playerEmail")||{}).value||"").trim();
+  function say(t,c){ msg.textContent=t; msg.style.color=c||"#8dffb0"; }
+  if(!/.+@.+\..+/.test(email)) return say("Enter your email first.","#ffb9c0");
+  SIGNUP_PENDING={email:email.toLowerCase(), code:String(100000+Math.floor(Math.random()*900000))};
+  say("✓ Your code: "+SIGNUP_PENDING.code+" — type it in and tap Verify.");
+}
+function signupVerify(){
+  var msg=$("signupMsg"); if(!msg) return;
+  var code=(($("signupCode")||{}).value||"").trim();
+  var email=(($("playerEmail")||{}).value||"").trim().toLowerCase();
+  function say(t,c){ msg.textContent=t; msg.style.color=c||"#8dffb0"; }
+  if(!SIGNUP_PENDING) return say("Tap Send code first.","#ffb9c0");
+  if(email!==SIGNUP_PENDING.email) return say("That code was sent to a different email — re-send it to this one.","#ffb9c0");
+  if(code!==SIGNUP_PENDING.code) return say("That code doesn't match — check it and try again.","#ffb9c0");
+  SIGNUP_VERIFIED_EMAIL=SIGNUP_PENDING.email; SIGNUP_PENDING=null;
+  say("✓ Verified.");
+  try{ signupPipeline(); }catch(e){}
 }
 /* ---- email-verification claim (recover a locked name on this device) ---- */
 function claimSend(){
@@ -3595,6 +3659,7 @@ function claimVerify(){
   say("✓ Verified — welcome back, "+reg.display+". This device is now claimed for your locked name: it will remember and auto-fill it, and your profile, coins and records are yours here.");
   feed("PROFILE","mom","✓ NAME CLAIMED BY EMAIL VERIFICATION: “"+reg.display+"” proved control of the email on file with a code — this device now remembers the name and auto-fills it. The lock itself never moved: the name was always theirs, the code just proved it.");
   try{ renderNameLockNote(); }catch(e){}
+  try{ signupPipeline(); }catch(e){}
   try{ renderInviteCode(); }catch(e){}
 }
 /* ---- everything a profile tracks, in one place ---- */
@@ -3794,8 +3859,13 @@ function wireProfileExtras(){
   var cs=$("claimSendBtn"); if(cs&&!cs._w){ cs._w=true; cs.addEventListener("click",claimSend); }
   var cv=$("claimVerifyBtn"); if(cv&&!cv._w){ cv._w=true; cv.addEventListener("click",claimVerify); }
   var pn=$("playerName");
-  if(pn&&!pn._pxW){ pn._pxW=true; pn.addEventListener("input",function(){ try{ renderNameLockNote(); }catch(e){} }); }
+  if(pn&&!pn._pxW){ pn._pxW=true; pn.addEventListener("input",function(){ try{ renderNameLockNote(); }catch(e){} try{ signupPipeline(); }catch(e){} }); }
+  var pe=$("playerEmail");
+  if(pe&&!pe._pxW){ pe._pxW=true; pe.addEventListener("input",function(){ try{ signupPipeline(); }catch(e){} }); }
+  var ss=$("signupSendBtn"); if(ss&&!ss._w){ ss._w=true; ss.addEventListener("click",signupSend); }
+  var sv=$("signupVerifyBtn"); if(sv&&!sv._w){ sv._w=true; sv.addEventListener("click",signupVerify); }
   try{ renderNameLockNote(); }catch(e){}
+  try{ signupPipeline(); }catch(e){}
 }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",wireProfileExtras); else wireProfileExtras();
 
@@ -4229,12 +4299,11 @@ function ledgerPlayerLine(name){
 function spreadBoxHtml(g){
   if(!g||g.spread==null) return "";
   var dog=spreadDog(g);
-  return '<div class="spread-box"><div class="spread-head"><span>🎯 SPREAD PLAY — OPTIONAL · THE SKILL PLAY</span><span class="spread-line">Line: '+g.fav+' favored by '+g.spread+'</span></div>'+
-  '<div class="spread-explain">Plain talk: <b>'+g.fav+' −'+g.spread+'</b> means '+teamNameOf(g.fav)+' must <b>win by '+(Math.floor(g.spread)+1)+' or more</b> for that side to cover. <b>'+dog+' +'+g.spread+'</b> covers if '+teamNameOf(dog)+' <b>wins, or loses by '+Math.floor(g.spread)+' or less</b>. Picking the winner above is all you need to play — and covers now pay: <b>Spread Bonus = Covers × 0.30 points (max +3.00)</b>, added to your Total Points (Wins + Mini Bonus + Spread Bonus, max 15.00).</div>'+
+  return '<div class="spread-box"><div class="spread-head"><span>🎯 SPREAD PLAY — REQUIRED · PICK ONE SIDE</span><span class="spread-line">Line: '+g.fav+' favored by '+g.spread+'</span></div>'+
+  '<div class="spread-explain">Plain talk: <b>'+g.fav+' −'+g.spread+'</b> means '+teamNameOf(g.fav)+' must <b>win by '+(Math.floor(g.spread)+1)+' or more</b> for that side to cover. <b>'+dog+' +'+g.spread+'</b> covers if '+teamNameOf(dog)+' <b>wins, or loses by '+Math.floor(g.spread)+' or less</b>. Pick one side — a spread pick is <b>required on every game</b> to submit, and covers pay: <b>Spread Bonus = Covers × 0.30 points (max +3.00)</b>, added to your Total Points (Wins + Mini Bonus + Spread Bonus, max 15.00).</div>'+
   '<div class="spread-chips">'+
   '<button type="button" data-spread="'+g.id+'" data-sv="'+g.fav+'">'+g.fav+' −'+g.spread+'<small>favorite covers</small></button>'+
   '<button type="button" data-spread="'+g.id+'" data-sv="'+dog+'">'+dog+' +'+g.spread+'<small>underdog covers</small></button>'+
-  '<button type="button" data-spread="'+g.id+'" data-sv="">No play<small>winner pick only</small></button>'+
   '</div></div>';
 }
 function renderGames(){
@@ -4269,6 +4338,7 @@ function renderGames(){
       var sgid=+sb.dataset.spread;
       if(sb.dataset.sv) mySpread[sgid]=sb.dataset.sv; else delete mySpread[sgid];
       box.querySelectorAll('[data-spread="'+sgid+'"]').forEach(function(t){t.classList.toggle("sel",t===sb)});
+      var sge=$("game-"+sgid); if(sge&&mySpread[sgid]&&myPicks[sgid]) sge.classList.remove("missing");
       spreadProgressUpdate();
       return;
     }
@@ -4352,6 +4422,46 @@ $("playerChips").addEventListener("click",function(e){var b=e.target.closest("[d
 document.querySelectorAll("[data-ou]").forEach(function(b){b.addEventListener("click",function(){myTB.ou=b.dataset.ou;document.querySelectorAll("[data-ou]").forEach(function(x){x.classList.toggle("sel",x===b)})})});
 document.querySelectorAll("[data-ftd]").forEach(function(b){b.addEventListener("click",function(){myTB.team=b.dataset.ftd;document.querySelectorAll("[data-ftd]").forEach(function(x){x.classList.toggle("sel",x===b)})})});
 
+/* ================= HARD SUBMIT GATE — NO BYPASS =================
+   ONE gate, run by EVERY path that can create, number, lock, pay or
+   board a ticket: the main submit button (which is also the
+   multi-ticket submit — every ticket in a plan goes through it), the
+   pay gate, and payment confirmation. A ticket CANNOT be submitted
+   without BOTH gates green:
+     · MINI GAMES complete — NFL mini 2/2 AND NBA mini 3/3
+     · SPREADS complete — 10/10, one side per game
+   "No play" was removed, there is no skip and no opt-out. Until this
+   returns ok, no ticket is created, no ticket number is issued, no
+   name is registry-locked and no payment is taken. */
+function ticketGateCheck(mini, spread){
+  mini=mini||{}; spread=spread||{};
+  var nflN=(mini.nflYds?1:0)+(mini.nflTd?1:0);
+  var nbaN=(mini.nbaStar?1:0)+(mini.nbaPts?1:0)+(mini.nbaThrees?1:0);
+  var spreadN=0, firstMiss=null;
+  GAMES.forEach(function(g){ if(spread[g.id]) spreadN++; else if(!firstMiss) firstMiss=g; });
+  var miniMissing=[];
+  if(nflN<2) miniMissing.push("NFL mini missing ("+nflN+" / 2)");
+  if(nbaN<3) miniMissing.push("NBA mini missing ("+nbaN+" / 3)");
+  var parts=[];
+  if(miniMissing.length) parts.push("⭐ "+miniMissing.join(" · "));
+  if(spreadN<GAMES.length) parts.push("🎯 Spread picks: "+spreadN+" / "+GAMES.length);
+  return { ok:!parts.length, nflN:nflN, nbaN:nbaN, spreadN:spreadN, firstSpreadMiss:firstMiss, miniMissing:miniMissing,
+    msg: parts.length ? ("🚫 Ticket blocked — NOT submitted. "+parts.join(" — ")+". Both are required to submit: mini games NFL 2/2 + NBA 3/3, and spreads "+GAMES.length+" / "+GAMES.length+" — one side per game. No skip, no opt-out.") : "" };
+}
+/* Outline the first missing mini game / spread game and return the
+   element to scroll to: first missing mini first, else first game
+   with no spread pick. */
+function outlineGateMisses(chk){
+  var mzA=$("miniNflZone"), mzB=$("miniNbaZone");
+  if(mzA) mzA.classList.toggle("req-miss", chk.nflN<2);
+  if(mzB) mzB.classList.toggle("req-miss", chk.nbaN<3);
+  var spreadEl=null;
+  if(chk.firstSpreadMiss){ spreadEl=$("game-"+chk.firstSpreadMiss.id); if(spreadEl) spreadEl.classList.add("missing"); }
+  if(chk.nflN<2) return $("game-"+MINI_NFL.gameId)||mzA;
+  if(chk.nbaN<3) return $("game-"+MINI_NBA.gameId)||mzB;
+  return spreadEl;
+}
+
 $("submitBtn").addEventListener("click",function(){
   var err=$("formErr"); err.style.display="none";
   var name=$("playerName").value.trim();
@@ -4365,15 +4475,18 @@ $("submitBtn").addEventListener("click",function(){
   /* multi-ticket: a paid ticket never blocks a NEW ticket — each submission is a fresh, separate entry */
   if(typeof paying!=="undefined"&&paying) return fail("The Shark is verifying a payment right now — give him a second to finish.",$("submitBtn"));
   if(!name) return fail("Give your shark a name first.",$("playerName"));
-  /* MINI GAMES ARE MANDATORY — no skip, no opt-out, no "choose not to play":
-     BOTH mini games must be complete or the ticket cannot be submitted. */
-  var nflMiniN=(myMini.nflYds?1:0)+(myMini.nflTd?1:0), nbaMiniN=(myMini.nbaStar?1:0)+(myMini.nbaPts?1:0)+(myMini.nbaThrees?1:0);
-  if(nflMiniN<2||nbaMiniN<3){
-    var mzA=$("miniNflZone"), mzB=$("miniNbaZone");
-    if(mzA) mzA.classList.toggle("req-miss", nflMiniN<2);
-    if(mzB) mzB.classList.toggle("req-miss", nbaMiniN<3);
+  /* HARD SUBMIT GATE — runs BEFORE the ticket is created, BEFORE a
+     ticket number is issued, BEFORE the registry lock and BEFORE pay.
+     MINI GAMES ARE MANDATORY (NFL 2/2 + NBA 3/3) AND SPREADS ARE
+     MANDATORY (10/10, one side per game) — no No play, no skip, no
+     opt-out. If either side is incomplete the submit stops here and
+     the message names BOTH what is missing. This same gate also runs
+     at the pay gate and at payment confirmation, so no other path
+     (multi-ticket, next-ticket, pay) can get a ticket around it. */
+  var gateChk=ticketGateCheck(myMini, mySpread);
+  if(!gateChk.ok){
     try{ miniProgressUpdate(); }catch(e){}
-    return fail("⭐ Mini games are MANDATORY — there is no skip. NFL mini "+nflMiniN+" / 2 picks · NBA mini "+nbaMiniN+" / 3 picks. Play BOTH mini games (under Game 1 and Game 10) and submit unlocks.", $(nflMiniN<2?"game-1":"game-10"));
+    return fail(gateChk.msg, outlineGateMisses(gateChk)||$("submitBtn"));
   }
   /* USERNAME LOCK — the normalized registry decides whose name this is */
   var gateRes=registryGate(name);
@@ -4425,7 +4538,7 @@ $("submitBtn").addEventListener("click",function(){
     "<ul>"+list+"</ul>"+
     "<p style='margin:10px 0 0;font-weight:700'>Tiebreaker: "+esc(myTB.ou)+" 47.5 · Total guess "+myTB.total+" · First TD: "+esc(myTB.team)+" — "+esc(myTB.player)+"</p>"+
     "<p style='margin:10px 0 0;font-weight:700'>⭐ Mini games ("+miniPickCount()+"/5 picks): NFL — Allen yards "+esc(miniCopy.nflYds||"—")+" "+MINI_NFL.ydsLine+" · TDs "+esc(miniCopy.nflTd||"—")+" "+MINI_NFL.tdLine+" · NBA — "+(miniCopy.nbaStar?esc(miniCopy.nbaStar==="MIL"?"Giannis scores more":"Mitchell scores more"):"—")+" · combined pts "+esc(miniCopy.nbaPts||"—")+" "+MINI_NBA.ptsLine+" · combined threes "+esc(miniCopy.nbaThrees||"—")+" "+MINI_NBA.threesLine+". Each mini nailed = +1 bonus point (max +2).</p>"+
-    "<p style='margin:10px 0 0;font-weight:700'>🎯 Spread plays ("+Object.keys(spreadCopy).length+"/10): "+(Object.keys(spreadCopy).length?GAMES.filter(function(g){return spreadCopy[g.id]}).map(function(g){return "G"+g.id+" "+spreadSideLabel(g,spreadCopy[g.id])+" covers"}).join(" · "):"none — winner picks only. Spread plays are the optional skill layer, tracked on the board next to your record.")+"</p>"+
+    "<p style='margin:10px 0 0;font-weight:700'>🎯 Spread plays ("+Object.keys(spreadCopy).length+"/10): "+(Object.keys(spreadCopy).length?GAMES.filter(function(g){return spreadCopy[g.id]}).map(function(g){return "G"+g.id+" "+spreadSideLabel(g,spreadCopy[g.id])+" covers"}).join(" · "):"none — spread picks are required on every game, so a submitted ticket always carries all 10.")+"</p>"+
     "<p style='margin:10px 0 0;font-weight:700'>🎟️ YOUR PLAN: this is <b>Ticket "+myTickets.length+" of "+Math.max(plannedTickets,myTickets.length)+"</b>. Pay it on the next screen — then the gold guide bar walks you straight to "+(myTickets.length<plannedTickets?("<b>Ticket "+(myTickets.length+1)+" of "+Math.max(plannedTickets,myTickets.length)+"</b>, in order. No ticket in your plan gets skipped."):"the finish — your plan is complete, and you can add more beyond it if you want.")+"</p>"+
     "<p style='margin:10px 0 0;font-weight:700'>"+(tkBogo?"This ticket stays in the holding tank — off the board, out of the pot — until the Shark confirms it at the gate. You pay $0: this is your FREE BOGO second ticket — the host's $6.00 launch subsidy posts in the vault and the ticket counts in full. Then it goes live.":tkRefNext?"This ticket stays in the holding tank — off the board, out of the pot — until the Shark confirms it at the gate. You pay $0: this is your FREE referral-reward ticket — the host's $6.00 subsidy posts in the vault and the ticket counts in full. Then it goes live.":tkReferral?"This ticket stays in the holding tank — off the board, out of the pot — until you pay $1 at the gate (the host's $5.00 marketing subsidy posts in the vault, so it counts as a full $6) and the Shark confirms it. Then it goes live.":"This ticket stays in the holding tank — off the board, out of the pot — until you pay the $5 entry + Pool Growth Fee and the Shark confirms it. Then it goes live.")+"</p>";
   if(tkBogo) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🎟️ LAUNCH NIGHT BOGO: you bought one ticket at $6, so this second ticket is FREE — $0 due at the gate. It is a full ticket with its own picks, mini games and spreads. The host posts a $6.00 launch subsidy in the vault, so it counts in full and the jackpot still grows $1.15 on it. Test credits only — not a real-money offer.</p>";
@@ -4581,6 +4694,17 @@ function wirePay(){
   pb.addEventListener("click",function(){
     var target=myHeldTickets()[0];
     if(!target||paying) return;
+    /* HARD GATE AT PAY — the same submit gate runs on the held ticket's
+       own stored picks before ANY payment is taken: mini games NFL 2/2 +
+       NBA 3/3 and spreads 10/10, or this ticket cannot be paid and can
+       never reach the board. */
+    var payChk=ticketGateCheck(target.mini, target.spread);
+    if(!payChk.ok){
+      try{ banner("big","🚫 TICKET BLOCKED — CANNOT PAY",payChk.msg); }catch(e){}
+      feed("INFO","info","🚫 PAY BLOCKED for ticket #"+target.num+" — "+payChk.msg+" No payment taken, no board row created.");
+      try{ renderSecurity(); }catch(e){}
+      return;
+    }
     payingTicket=target; myTicket=target;
     paying=true; pb.disabled=true; pb.textContent="🦈 Payment sent — the Shark is checking…";
     /* A render hiccup here must never freeze the payment mid-verification
@@ -4612,6 +4736,18 @@ function confirmMyPayment(){
   var now=new Date();
   var tk=payingTicket||myHeldTickets()[0]||myTicket;
   if(!tk) return;
+  /* HARD GATE AT CONFIRMATION — last checkpoint before a board row
+     exists: the ticket's own mini games (NFL 2/2 + NBA 3/3) and spreads
+     (10/10) must be complete, or it is NOT confirmed, NOT paid and NOT
+     put on the board. */
+  var confChk=ticketGateCheck(tk.mini, tk.spread);
+  if(!confChk.ok){
+    payingTicket=null;
+    try{ banner("big","🚫 TICKET BLOCKED — NOT CONFIRMED",confChk.msg); }catch(e){}
+    feed("INFO","info","🚫 CONFIRM BLOCKED for ticket #"+tk.num+" — "+confChk.msg+" The ticket stays HELD — no payment confirmed, no board row created.");
+    try{ renderSecurity(); }catch(e){}
+    return;
+  }
   myTicket=tk;
   tk.paid=true;
   /* Confirmation code: unique by construction — a per-payment sequence
@@ -5808,7 +5944,7 @@ function buildProfile(name,keepScroll){
     statTile("⭐ MINI-GAME BONUS", "+"+(miniBonusFor(p).total)+" PTS", "NFL mini "+(miniBonusFor(p).nfl===null?"live…":miniBonusFor(p).nfl?"✓ +1":"✗ 0")+" · NBA mini "+(miniBonusFor(p).nba===null?"live…":miniBonusFor(p).nba?"✓ +1":"✗ 0")+" · max +2", true)+
     statTile("🎯 SPREAD BONUS", "+"+spreadBonusFor(p).bonus.toFixed(2)+" PTS", spreadBonusFor(p).picks?("Covers "+spreadBonusFor(p).covers+" × 0.30 = +"+spreadBonusFor(p).bonus.toFixed(2)+" · max +3.00"):"no spread picks — bonus +0.00 · max +3.00", true)+
     statTile("🧮 TOTAL POINTS", (s.w+miniBonusFor(p).total+spreadBonusFor(p).bonus).toFixed(2)+" PTS", "Wins "+s.w+" + Mini +"+miniBonusFor(p).total+" + Spread +"+spreadBonusFor(p).bonus.toFixed(2)+" = "+(s.w+miniBonusFor(p).total+spreadBonusFor(p).bonus).toFixed(2)+" · max 15.00", true)+
-    statTile("🎯 SPREAD RECORD",(spreadRecord(p).w+spreadRecord(p).l)?(spreadRecord(p).w+"–"+spreadRecord(p).l):"—","optional skill plays vs the ledger line — covers now earn the Spread Bonus above")+
+    statTile("🎯 SPREAD RECORD",(spreadRecord(p).w+spreadRecord(p).l)?(spreadRecord(p).w+"–"+spreadRecord(p).l):"—","required skill plays vs the ledger line — covers now earn the Spread Bonus above")+
     statTile("❤️ LIFETIME DONATIONS", donorRec?money(donorRec.total):"$0", donorRec?("across "+donorRec.tickets+" donated ticket"+(donorRec.tickets===1?"":"s")+" · donor since Pool #"+donorRec.firstPool+" · never resets, never removed"):"no donations yet — add +$1 / +$2 / +$5 at the pay gate", !!donorRec)+
     statTile("🏅 DONOR BADGE", donorTier?(donorTier.icon+" "+donorTier.name):"—", donorRec?(donorNextTier(donorRec.total)?("next tier: "+donorNextTier(donorRec.total).icon+" "+donorNextTier(donorRec.total).name+" at "+money(donorNextTier(donorRec.total).min)+" lifetime · badge kept forever, in every pool"):("top tier — kept forever, in every pool, even on a $0 ticket")):"first donation earns ❤️ First Donor at $1+", !!donorRec)+
     statTile("❤️ THIS TICKET'S DONATION", (p.donation||0)>0?("+"+money(p.donation)):"$0", (p.donation||0)>0?"this ticket is highlighted as a DONOR TICKET on the board, podium and Quick View":(donorRec?"returning donor — the badge still shows on this ticket even though it donated $0":"no donation on this ticket"), false)+
