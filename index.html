@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pool Shark — Board | TEST MODE</title>
+<style>
+*{box-sizing:border-box} body{margin:0;background:#050505;color:#f2ede1;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:520px;margin:0 auto;padding:14px 12px 40px}
+.chip{display:inline-block;background:#d4af37;color:#111;padding:4px 10px;border-radius:999px;font-weight:800;font-size:12px}
+h1{margin:10px 0 2px;font-size:30px} h1 span{color:#d4af37}
+.sub{color:#9a958a;font-size:14px;line-height:1.5}
+#sync{border-radius:12px;padding:12px;margin:14px 0;font-weight:800;text-align:center}
+#sync.live{background:#12351f;color:#7ddc9a;border:1px solid #2e8b57}
+#sync.off{background:#3a1515;color:#ff9a9a;border:1px solid #c0392b}
+.jackpot{border:1px solid #d4af37;border-radius:14px;padding:14px;margin:16px 0;background:#171511;text-align:center}
+.jackpot b{font-size:34px;color:#d4af37}
+.podium{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:8px;align-items:end;margin:16px 0}
+.pod{border:1px solid #3a352a;border-radius:12px;padding:12px 8px;text-align:center;background:#171511}
+.pod.first{border-color:#d4af37;min-height:132px}.pod b{font-size:26px;color:#d4af37}
+.sticky{position:sticky;top:0;background:#050505;padding:10px 0;border-bottom:1px solid #d4af37;z-index:5}
+.sticky b{color:#d4af37}
+.row{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;border:1px solid #3a352a;border-radius:12px;padding:12px;margin:8px 0;background:#171511}
+.rank{font-size:22px;font-weight:900;color:#d4af37}
+.wl{font-size:20px;font-weight:800}.pts{color:#d4af37;font-weight:900}
+.mini{font-size:12px;color:#9a958a}
+.eq{border:1px solid #3a352a;border-radius:12px;padding:12px;font-size:13px;line-height:1.6;color:#9a958a}
+.eq b{color:#f2ede1}
+a.back{display:block;text-align:center;margin:22px 0;padding:14px;border:1px solid #d4af37;border-radius:12px;color:#d4af37;text-decoration:none;font-weight:800}
+button{width:100%;padding:16px;border:0;border-radius:12px;background:#d4af37;color:#111;font-weight:900;font-size:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="chip">TEST MODE — NO REAL MONEY</span>
+<h1>POOL <span>SHARK</span> — BOARD</h1>
+<p class="sub">Pick the winners. Beat the other sharks. Most wins takes the pot.</p>
+<div id="sync">Loading board state…</div>
+<div id="board" style="display:none">
+<div class="jackpot">PERFECT JACKPOT<br><b id="jackpot">—</b><br><span class="mini" id="jacknote"></span></div>
+<div class="podium" id="podium"></div>
+<div class="sticky">🏈 NFL · 🏀 NBA — sticky game header · <b>BUF PHI BAL SF GB · BOS GSW NYK DEN MIL</b></div>
+<div id="rows"></div>
+<div class="eq"><b>Points equation — this is the law, it stays:</b><br>
+<span id="eq"></span><br>Mini games and spreads are in every ticket, paid and free.</div>
+<p class="sub" id="vault"></p>
+<p class="sub" id="livegames"></p>
+</div>
+<div id="offline" style="display:none"><h2>SYNC OFFLINE</h2><p class="sub">The board-state payload is unavailable. No numbers are shown, because stale numbers must never be shown as live. Check back after a new build publishes board-state.json.</p></div>
+<p class="sub">Sync method: <b>published snapshot, not a live artifact fetch.</b> This page fetches board-state.json from this same repo, refreshed every 30 seconds from that file, but the file itself only changes when a new Pool Shark bundle build publishes it. That is the refresh limit: between builds, the numbers do not auto-update when the live artifact changes.</p>
+<button onclick="loadBoard()">↻ Refresh board state</button>
+<a class="back" href="https://muse.ai/s/pool-shark-xyu6oxsxebmxvxz0/RUDv0X8u78Ubf6a6gi22BsrWAtQnKmVnLdXP9w0J3Mc">← Back to Pool Shark</a>
+<p class="sub">TEST MODE only. No real money, no real betting, no payout. This is not the live Pool Shark artifact.</p>
+</div>
+<script>
+async function loadBoard(){
+  const sync=document.getElementById('sync'), board=document.getElementById('board'), off=document.getElementById('offline');
+  try{
+    const r=await fetch('board-state.json',{cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const d=await r.json();
+    sync.className=''; sync.id='sync'; sync.classList.add('live');
+    sync.textContent='SYNC: PUBLISHED SNAPSHOT — updated '+d.updated_at+' · '+d.sync_note;
+    document.getElementById('jackpot').textContent='$'+Number(d.jackpot_total).toFixed(2);
+    document.getElementById('jacknote').textContent='+ $'+d.jackpot_growth_per_paid_ticket.toFixed(2)+' per paid ticket in the live game';
+    document.getElementById('eq').textContent=d.points_equation;
+    document.getElementById('vault').textContent='Vault: '+d.vault.status+' — '+d.vault.note;
+    document.getElementById('livegames').textContent=d.live_games;
+    document.getElementById('podium').innerHTML=d.podium.map(p=>'<div class="pod'+(p.place===1?' first':'')+'"><div>'+(p.place===1?'🏆 1st':p.place===2?'🥈 2nd':'🥉 3rd')+'</div><b>'+p.wl+'</b><div>'+p.total.toFixed(2)+' PTS</div><div>'+p.name+'</div></div>').join('');
+    document.getElementById('rows').innerHTML=d.rows.map(x=>'<div class="row"><div class="rank">'+x.rank+'</div><div><div class="wl">'+x.name+' · '+x.wl+'</div><div class="mini">Mini +'+x.mini+' · Spread +'+x.spread_bonus.toFixed(2)+' · '+x.covers+' covers</div></div><div class="pts">'+x.total.toFixed(2)+'</div></div>').join('');
+    board.style.display='block'; off.style.display='none';
+  }catch(e){
+    sync.className=''; sync.id='sync'; sync.classList.add('off');
+    sync.textContent='SYNC OFFLINE — board-state payload unavailable. No live numbers shown.';
+    board.style.display='none'; off.style.display='block';
+  }
+}
+loadBoard(); setInterval(loadBoard,30000);
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+  "data_as_of": "2026-11-03T09:33:28-05:00",
+  "donor_marketplace": {
+    "example_launch_tester": "Founding Shark badge + 400 coins in the last verified BOGO/launch run",
+    "note": "Donor badges follow the person, not the ticket. Marketplace coins are looks only, never points or cash."
+  },
+  "jackpot_growth_per_paid_ticket": 1.15,
+  "jackpot_total": 108.05,
+  "last_sync_at": "2026-11-03T09:34:31-05:00",
+  "live_games": "Example slate from the last verified build: BUF/PHI/BAL/SF/GB (NFL) + BOS/GSW/NYK/DEN/MIL (NBA). Live scores in the artifact tick during play; this snapshot does not stream them.",
+  "podium": [
+    {
+      "name": "Your Ticket",
+      "place": 1,
+      "total": 15.0,
+      "wl": "10-0"
+    },
+    {
+      "name": "Shark 2",
+      "place": 2,
+      "total": 11.8,
+      "wl": "9-1"
+    },
+    {
+      "name": "Shark 3",
+      "place": 3,
+      "total": 11.1,
+      "wl": "8-2"
+    }
+  ],
+  "points_equation": "Total = Wins (max 10) + Mini Bonus (max +2) + Spread Bonus (max +3.00) = 15.00 max; Spread Bonus = Covers x 0.30",
+  "real_money": false,
+  "rows": [
+    {
+      "covers": "10/10",
+      "mini": 2,
+      "name": "Your Ticket",
+      "rank": 1,
+      "spread_bonus": 3.0,
+      "total": 15.0,
+      "wl": "10-0"
+    },
+    {
+      "covers": "6/10",
+      "mini": 1,
+      "name": "Shark 2",
+      "rank": 2,
+      "spread_bonus": 1.8,
+      "total": 11.8,
+      "wl": "9-1"
+    },
+    {
+      "covers": "7/10",
+      "mini": 1,
+      "name": "Shark 3",
+      "rank": 3,
+      "spread_bonus": 2.1,
+      "total": 11.1,
+      "wl": "8-2"
+    },
+    {
+      "covers": "5/10",
+      "mini": 0,
+      "name": "Shark 4",
+      "rank": 4,
+      "spread_bonus": 1.5,
+      "total": 9.5,
+      "wl": "8-2"
+    }
+  ],
+  "source": "Pool Shark bundle \u2014 published snapshot, NOT a live fetch from the Pool Shark artifact",
+  "sync_method": "published_snapshot",
+  "sync_note": "This JSON is published in the pool-shark-board repo from the same Pool Shark bundle on every sync. It does NOT auto-update when the live artifact changes between syncs. The page timestamp below is the sync time; data_as_of is the last verified data time.",
+  "sync_source": "Pool Shark bundle \u2014 published snapshot, NOT a live fetch from the Pool Shark artifact",
+  "test_mode": true,
+  "updated_at": "2026-11-03T09:34:31-05:00",
+  "vault": {
+    "note": "Host $0.05 + Seed $0.30 + Perfect Jackpot $1.15 + Winners $4.50 = $6.00 per paid ticket; BOGO free ticket covered by a posted $6.00 host launch subsidy.",
+    "status": "BALANCED"
+  }
+}
