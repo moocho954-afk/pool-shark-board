@@ -440,6 +440,27 @@ section{margin-top:34px}
 #eventBanner.champ{background:#0a243d;border:3px solid var(--gold);color:#fff}
 @keyframes bannerPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}20%{transform:translate(-50%,-50%) scale(1)}82%{opacity:1}100%{opacity:0;transform:translate(-50%,-56%) scale(1)}}
 .burst{position:fixed;width:12px;height:12px;border-radius:50%;z-index:59;pointer-events:none}
+/* ---------- BACK A SHARK — SIDE BET ---------- */
+.back-panel{margin-top:14px;background:linear-gradient(160deg,#12395c,#081f38);border:2px solid var(--aqua);border-radius:var(--radius);padding:16px}
+.back-panel h3{margin:0;font-size:26px}
+.back-eq{font-size:14.5px;line-height:1.55;font-weight:600;margin-top:8px}
+.back-eq b{color:var(--gold)}
+.back-count-line{margin-top:10px;background:rgba(0,0,0,.3);border:1px dashed var(--aqua);border-radius:12px;padding:10px 13px;font-weight:800;font-size:15px}
+.back-timer{font-family:"Barlow Condensed";font-weight:800;font-size:clamp(30px,7vw,44px);color:var(--gold);letter-spacing:.04em}
+.back-timer.flash{animation:backFlash 1s ease-in-out infinite}
+@keyframes backFlash{0%,100%{opacity:1}50%{opacity:.45}}
+.back-most{margin-top:10px;background:#4d3a05;border:2px solid var(--gold);color:#ffe9a8;border-radius:12px;padding:10px 14px;font-weight:800;font-size:15.5px}
+.back-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
+.back-table th,.back-table td{border:1px solid var(--line);padding:7px 8px;text-align:right}
+.back-table th:first-child,.back-table td:first-child{text-align:left}
+.back-box{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.back-box .bc{font-weight:800;font-size:12.5px;color:var(--foam);width:100%}
+.back-box input{width:74px;background:var(--panel2);border:2px solid var(--line);color:var(--ink);border-radius:9px;padding:7px;font-weight:800;font-size:14px}
+.back-btn{border:0;border-radius:999px;padding:8px 14px;font-weight:800;font-size:13.5px;background:var(--gold);color:var(--dark-ink)}
+.back-btn:disabled{opacity:.45;cursor:not-allowed}
+.back-slip{border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-top:8px;background:var(--panel2);font-size:13.5px;line-height:1.55}
+.back-slip b{color:var(--gold)}
+.backer-badge{display:inline-block;background:#4d3a05;color:#ffe9a8;border:1px solid var(--gold);font-weight:800;font-size:11px;letter-spacing:.06em;padding:4px 10px;border-radius:999px}
 footer{margin-top:40px;color:var(--muted);font-size:14px;line-height:1.6;border-top:1px solid var(--line);padding-top:18px}
 .shake{animation:shk .4s}@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 @media (prefers-reduced-motion: reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
@@ -2403,6 +2424,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
 
   <div class="potbar" id="potBar"></div>
   <div id="donorBoardPanel"></div>
+  <div id="backPanel"></div>
   <div class="points-eq" id="pointsEqBoard"><span class="pe-t">🧮 HOW POINTS ADD UP — CHECK IT YOURSELF</span><b>Total Points = Wins</b> (1 point per win, max <b>10</b>) <b>+ Mini Game Bonus</b> (max <b>+2</b> — +1 per mini game nailed) <b>+ Spread Bonus</b> (max <b>+3.00</b> — earned as <b>Spread Covers × 0.30 points</b>: 10 covers = <b>+3.00</b>, 7 covers = <b>+2.10</b>, 5 covers = <b>+1.50</b>, 0 covers = <b>+0.00</b>, rounded to 2 decimals). <b>Total max = 15.00.</b> Why this weight: a perfect spread card (+3.00) against an average one (+1.50) is a +1.50 edge — enough to overcome a 1-win deficit and move up at the end of every pool; perfect against zero is +3.00, enough to jump several places. But wins still dominate: 10 wins with no spread (10.00) only loses to 7 wins + a perfect spread (10.00) on the tiebreaker — picking winners still rules. Worked example: <b>8 wins + 1 mini + 7 covers = 8 + 1 + 2.10 = 11.10</b> beats <b>9 wins + 0 minis + 5 covers = 9 + 0 + 1.50 = 10.50</b> — one fewer win, still ahead: that is the spread edge moving a ticket up. Standings sort by <b>Total Points</b> first, then <b>Wins</b>, then the posted tiebreaker order. Every row, podium card and profile shows <b>Wins · Mini Bonus · Spread Bonus · Total</b> so anyone can add it up.</div>
   <div id="vaultPanel"></div>
   <div class="hotbar" id="hotBar"></div>
@@ -2570,6 +2592,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
     <input id="commSearch" type="text" maxlength="24" placeholder="🔎 Search by Shark name…" aria-label="Search posts by Shark name" />
   </div>
   <p style="font-weight:700;color:var(--muted);font-size:13.5px;margin:10px 2px 0">Sharks you <b style="color:var(--gold)">Follow</b> float to the top of your feed first. Latest = newest first · Top = most liked &amp; replied.</p>
+  <div id="backingBoardComm"></div>
   <div id="commFeed"></div>
   <p class="comm-rules">📌 <b>Community rules, posted plainly:</b> posts are <b>test-only</b> — <b>no real-money claims</b>, no guaranteed-win talk. <b>Blind until lock still rules:</b> before lock a post can say “locked in” but can <b>never reveal picks</b> — the page blocks pick lists before lock, and a ticket attach shows picks to <b>nobody</b> until the slate locks (after lock, the board is public anyway). Your own posts carry a <b>Hide</b> button — hide one and it leaves the feed. Likes, replies and reposts are about the pool: tickets, W–L, rank, results, the jackpot.</p>
 </div>
@@ -3344,7 +3367,7 @@ function renderDonorBoard(){
 var COINS={}, OWNED={}, EQUIPPED={};
 function coinRecord(person){ if(!person) return {bal:0,fromDonations:0,fromSpreads:0}; if(!COINS[person]) COINS[person]={bal:0,fromDonations:0,fromSpreads:0}; return COINS[person]; }
 function coinBalance(person){ return (person&&COINS[person])?COINS[person].bal:0; }
-function creditCoins(person,n,src){ if(!person||!(n>0)) return; var r=coinRecord(person); r.bal+=n; if(src==="donation") r.fromDonations+=n; else if(src==="spread") r.fromSpreads+=n; }
+function creditCoins(person,n,src){ if(!person||!(n>0)) return; var r=coinRecord(person); r.bal+=n; if(src==="donation") r.fromDonations+=n; else if(src==="spread") r.fromSpreads+=n; else if(src==="back"){ r.fromBacks=(r.fromBacks||0)+n; } }
 /* COVER DIFFICULTY — "the points your pick had to cover by": picking the
    favorite, you must win by MORE than the spread (bigger spread = harder
    cover). Picking the underdog, you cover by winning or losing by LESS
@@ -3580,7 +3603,7 @@ function projectedNextJackpot(){
      into next — including its 25% Fund shares — and the 75% Fund money
      already waiting for next joins it. Funded money is counted ONCE:
      the 25% rides inside the current jackpot, the 75% rides alongside. */
-  if(settlement&&settlement.perfectRecords&&settlement.perfectRecords.length) return Math.round(FUND_NEXT_JACKPOT*100)/100;
+  if(settlement&&settlement.perfectRecords&&settlement.perfectRecords.length) return Math.round((FUND_NEXT_JACKPOT+(settlement.backExcess||0))*100)/100; /* a perfect hit pays the jackpot out — what rolls to next is the Fund 75% waiting track plus any Back a Shark cap excess */
   return Math.round((jackpotOnLine()+FUND_NEXT_JACKPOT)*100)/100;
 }
 function jackpotProjectionHtml(compact){
@@ -4070,7 +4093,7 @@ function perfectTotalNow(){
      pool's Pool Growth Fees — $1.15 of growth per paid ticket — PLUS this
      pool's instant Fund 75/25 share (25% of every Fund contribution split
      across current pools), which lands the moment Fund is pressed */
-  return Math.round((perfectIn+sp.perfect+feeTotalLive()+fundCurrentBoost())*100)/100;
+  return Math.round((perfectIn+sp.perfect+feeTotalLive()+fundCurrentBoost()+((typeof backJackpotBoost==="function")?backJackpotBoost():0))*100)/100; /* + Back a Shark boost: $0.90 per dollar backed lands in this jackpot the moment a back is placed */
 }
 /* COMBINED FIGURES — the whole pool in one place, live or settled:
    entry pot splits 1% host / 6% seed / 3% perfect / 90% net, THEN the
@@ -5179,7 +5202,7 @@ function accountingCheck(){
   var ok=Math.abs(rows.entries-f.entries)<0.005 && Math.abs(rows.fees-f.fees)<0.005 && Math.abs(rows.donations-f.donations)<0.005;
   var alloc=Math.round((cf.organizer+cf.seedNext+cf.perfect+cf.net)*100)/100;
   ok=ok && Math.abs(alloc-cf.gross)<0.005; /* host + seed + perfect + winners net must equal total collected */
-  var bal=Math.round((f.seedIn+f.perfectIn+rows.entries+rows.fees+rows.donations+f.cuts+fundCurrentBoost()-f.payouts)*100)/100;
+  var bal=Math.round((f.seedIn+f.perfectIn+rows.entries+rows.fees+rows.donations+f.cuts+fundCurrentBoost()+((typeof backJackpotBoost==="function")?backJackpotBoost():0)-f.payouts)*100)/100;
   ok=ok && Math.abs(bal-f.balance)<0.005; /* ins − payouts must equal the vault balance */
   return {ok:ok, rows:rows, f:f, cf:cf, balance:bal, alloc:alloc};
 }
@@ -5205,7 +5228,7 @@ function vaultFigures(){
   var cuts=potCut;
   var gross=carrySeedIn+entries+fees+donations+cuts; /* total collected in the vault for this pool */
   var payouts=settlement?settlement.totalOut:0; /* winners net + host + perfect payout (if hit) — seed (6%) & unpaid jackpot are NOT payouts, they stay in the vault */
-  var balance=gross+perfectIn+fundCurrentBoost()-payouts; /* + this pool's instant Fund 75/25 share, which is IN this pool's jackpot (the 75% Next share enters the balance only when it rolls into the next pool's perfectIn) */
+  var balance=gross+perfectIn+fundCurrentBoost()+((typeof backJackpotBoost==="function")?backJackpotBoost():0)-payouts; /* + this pool's instant Fund 75/25 share, which is IN this pool's jackpot (the 75% Next share enters the balance only when it rolls into the next pool's perfectIn) + the Back a Shark jackpot boost ($0.90 per dollar backed; the $0.10-per-dollar other-pools share is distributed to other pools, never held in this vault) */
   return {seedIn:carrySeedIn, perfectIn:perfectIn, entries:entries, fees:fees, donations:donations, cuts:cuts, gross:gross, payouts:payouts, balance:balance};
 }
 function renderVault(r){
@@ -5319,7 +5342,7 @@ function renderVault(r){
       '<div class="vault-check" style="margin-top:12px"><div class="eq">Balance check: seed in <b>'+money(f.seedIn)+'</b> + jackpot in <b>'+money(f.perfectIn)+'</b> + entries <b>'+money(f.entries)+'</b> + growth fees <b>'+money(f.fees)+'</b> + donations <b>'+money(f.donations||0)+'</b> + buyout cuts <b>'+money(f.cuts)+'</b> − payouts <b>'+money(f.payouts)+'</b> = <b>'+money(f.balance)+'</b></div>'+
       '<div class="verdict">'+(checkOK?"✓ BALANCED — the vault holds exactly what the math says. "+(settlement?"Settlement was allowed and completed — balance left is exactly the next seed (6% of the entry pot = "+money(settlement.seedNext)+") plus the Perfect Jackpot carry ("+money(settlement.perfectCarryNext)+").":"Settlement can proceed when the slate ends."):"⚠ MISMATCH — settlement is STOPPED until this balances.")+'</div>'+
       '<p>Test credits only — no real money moves in this build. The split is taken off the <b>entry pot</b> (seed in + $5 entries + buyout cuts): <b>1% host</b> + <b>6% next-pool seed</b> + <b>3% Perfect Jackpot</b> + <b>90% winners</b> = 100%. The <b>Pool Growth Fees</b> ride on top, never skimmed: <b>100% of the fees drop into the Perfect Jackpot</b> — with the 3% entry slice the jackpot grows <b>$1.15 per paid ticket</b>, the seed grows $0.30 per ticket, and the winners get the 90% plus donations at 100%. A cancelled slate refunds entries and fees in full; a seed and jackpot already rolled in stay in the vault for the next pool.</p></div>'+
-      accountingHtml() + perfectBannerHtml + jackpotProjectionHtml(false) + '<div class="acct-eq">🏦 <b>Next Pool Jackpot — funded from profiles: '+money(FUND_NEXT_JACKPOT)+'</b> (75% of every Fund contribution, posted instantly) · Pool #'+poolNumber+'’s jackpot already includes its 25% Fund share of <b>'+money(fundCurrentBoost())+'</b>. Fund allocation and Fund payback queue are separate vault-log tracks — never double-counted.</div>' + splitHtml + growthHtml +
+      accountingHtml() + perfectBannerHtml + jackpotProjectionHtml(false) + backVaultHtml() + '<div class="acct-eq">🏦 <b>Next Pool Jackpot — funded from profiles: '+money(FUND_NEXT_JACKPOT)+'</b> (75% of every Fund contribution, posted instantly) · Pool #'+poolNumber+'’s jackpot already includes its 25% Fund share of <b>'+money(fundCurrentBoost())+'</b>. Fund allocation and Fund payback queue are separate vault-log tracks — never double-counted.</div>' + splitHtml + growthHtml +
       '<div class="vault-cols">'+
         '<div class="vault-col"><h4>🧾 Vault log — every credit in &amp; out</h4><div class="vlog">'+log+'</div></div>'+
         '<div class="vault-col"><h4>'+(settlement?"🏁 Settled — paid out exactly like this":"👁️ If it ended now — payout preview (from the 90% net + jackpot)")+'</h4>'+prevRows+'<p style="font-size:12.5px;opacity:.8;font-weight:600;margin:8px 0 0">'+(settlement?("These are the actual payouts recorded at settlement, from a net payout pool of "+money(settlement.net)+" — the entry pot&rsquo;s 90% plus donations at 100% (the "+money(settlement.fees)+" in growth fees fed the Perfect Jackpot). Host took "+money(settlement.organizer)+" (1% of the entry pot, $0 of the fees); "+money(settlement.seedNext)+" seed rolled forward (6% of the entry pot); Perfect Jackpot was "+money(settlement.perfectTotal)+" — "+(settlement.perfectRecords&&settlement.perfectRecords.length?"paid in full to the perfect ticket(s).":"not hit, so it rolled over in full.")):"Preview follows the live standings and whoever owns each ticket right now — buyouts included. Winner amounts are shares of the net payout pool: the entry pot&rsquo;s 90% plus voluntary donations at 100% — the Pool Growth Fees feed the Perfect Jackpot instead. The Perfect Jackpot is separate and only pays on a perfect ticket at settlement. Nothing is paid until the final game ends.")+'</p></div>'+
@@ -5619,6 +5642,7 @@ function renderBoard(){
     '<div class="pot-stat"><div class="k">4TH PLACE</div><div class="v" style="font-size:19px;padding-top:5px">🎟️ FREE TICKET</div></div>';
   try{ renderDonorBoard(); }catch(e){}
   renderVault(r); renderOcean();
+  try{ renderBackPanel(); }catch(e){}
   var rb=$("resetBtn"); if(rb) rb.textContent = settlement ? ("🌱 Start Pool #"+(poolNumber+1)+" — seed "+money(settlement.seedNext)+" + jackpot "+money(settlement.perfectCarryNext)+" roll in") : "Reset day";
 
   /* hot seat bar + announcements */
@@ -5769,7 +5793,7 @@ function renderBoard(){
     return '<div class="'+cls+'" data-profile="'+esc(p.name)+'" data-rowname="'+esc(p.name)+'" role="button" tabindex="0" title="Tap for '+esc(p.name)+'’s full profile — picks, stats &amp; percentages"><div class="rk">'+rank+'</div>'+
       '<div class="who"><div class="nm">'+esc(p.name)+avatarHtml(p.personName||p.name)+(p.you?'<span class="you-badge">★ YOUR TICKET</span>':"")+donorBadgePillHtml(p.personName||p.name)+'</div>'+
       '<div class="wl"><b>'+s.w+'–'+s.l+'</b> W–L · <b>'+pts+' PTS</b> · '+s.left+' left'+tags+fxBadge+'</div>'+
-      '<div class="pts-break">Wins '+s.w+' · Mini +'+bx.total+' · Spread +'+sbx.bonus.toFixed(2)+(sbx.picks?(" ("+sbx.covers+"/"+sbx.picks+" covers)"):"")+' · <b>Total '+pts.toFixed(2)+' PTS</b></div>'+donorTicketLineHtml(p)+'</div>'+
+      '<div class="pts-break">Wins '+s.w+' · Mini +'+bx.total+' · Spread +'+sbx.bonus.toFixed(2)+(sbx.picks?(" ("+sbx.covers+"/"+sbx.picks+" covers)"):"")+' · <b>Total '+pts.toFixed(2)+' PTS</b></div>'+donorTicketLineHtml(p)+(p.density?"":backRowHtml(p))+'</div>'+
       cells+
       '<div class="act">'+(buyable?'<button type="button" class="buy-mini" data-buy="'+esc(p.name)+'" aria-label="Buy '+esc(p.name)+'’s ticket" title="Buy this ticket">💰</button>':"")+'</div></div>';
   }
@@ -6193,6 +6217,7 @@ function buildProfile(name,keepScroll){
     '<div class="prof-sec">Tiebreaker — Lions @ Packers</div>'+tbHtml+
     '<div class="prof-sec">🏆 Lifetime — Jackpot · Fund · Everything</div>'+(p.density?'<p class="prof-note">Simulated ticket — no lifetime record.</p>':profileLifetimeHtml(p.personName||name))+
     '<div class="prof-sec">💬 Shark to Shark — Chat</div>'+(p.density?'<p class="prof-note">Simulated ticket — no chat thread.</p>':profileChatHtml(p.personName||name))+
+    '<div class="prof-sec">🤝 Back a Shark — My Backs, Slips & Backer Badge</div>'+(p.density?'<p class="prof-note">Simulated ticket — no backing record.</p>':backProfileHtml(person))+
     '<div class="prof-sec">🏦 Fund the Pool</div>'+(p.density?'<p class="prof-note">Simulated ticket — no Fund record.</p>':profileFundHtml(p.personName||name))+
     '<div class="prof-sec">🔒 Name Lock &amp; Verification</div>'+(p.density?'<p class="prof-note">Simulated ticket — density check only.</p>':profileIdentityHtml(p.personName||name))+
     '<p class="prof-note">This profile updates live as games move — scores, record, standings and percentages all follow the board.</p>';
@@ -6322,6 +6347,11 @@ function confirmBuy(){
   renderBoard();
 }
 $("boardCols").addEventListener("click",function(e){
+  var chip=e.target.closest("[data-back-chip]");
+  if(chip){ e.stopPropagation(); var cbox=chip.closest(".back-box"); var cinp=cbox?cbox.querySelector("[data-back-amt]"):null; if(cinp){ cinp.value=chip.getAttribute("data-chip-amt"); if(!BACK.draft) BACK.draft={}; BACK.draft[chip.getAttribute("data-back-chip")]=parseInt(chip.getAttribute("data-chip-amt"),10)||1; } try{ refreshBackCalcs(); }catch(e2){} return; }
+  var bb=e.target.closest("[data-back-btn]");
+  if(bb){ e.stopPropagation(); var brow=bb.closest(".brow"); placeBack(bb.getAttribute("data-back-btn"), brow); return; }
+  if(e.target.closest(".back-box")){ e.stopPropagation(); return; }
   var btn=e.target.closest("[data-buy]");
   if(btn){
     $("buyTarget").value=btn.dataset.buy;
@@ -6338,6 +6368,384 @@ $("boardCols").addEventListener("keydown",function(e){
   var row=e.target.closest("[data-profile]");
   if(row){ e.preventDefault(); openProfile(row.getAttribute("data-profile")); }
 });
+
+/* ================= BACK A SHARK — SIDE BET (test credits only) =================
+   POSTED EQUATION — per DOLLAR backed (backing scales per dollar, not per backer):
+   For every $1 backed on any ticket: $0.90 → Current Perfect Jackpot ·
+   $0.10 → Other pools, split equally across other pools.
+   J0 = Perfect Jackpot when side betting opens · B = total DOLLARS backed
+   in the pool (all tickets) · J = J0 + $0.90 × B · Bw = total DOLLARS backed
+   on the winning perfect ticket.
+   If a backed ticket hits perfect: Backer Pool = 50% of the backer boost
+   = $0.45 × B · payout per dollar = Backer Pool ÷ Bw, capped at $20 per
+   dollar · a backer is paid dollars_backed × that per-dollar rate ·
+   Owner Perfect Payout = J − Backer Payouts Paid · excess rolls to
+   Projected Next Jackpot, never to host, never disappears.
+   Owner always gets at least J0 + $0.45 × B: "You are not sharing your
+   jackpot. You are keeping 100% of your jackpot, plus at least half of
+   the boost backers added."
+   Multiple perfect tickets: Backer Pool splits proportionally by dollars
+   backed on each perfect ticket; same $20-per-dollar cap.
+   No perfect ticket: backers get NO cash that pool, their dollars already
+   built the jackpot, and the whole jackpot (boost included) rolls to
+   Projected Next Jackpot. PARI-MUTUEL, posted plainly: the more Sharks
+   back the same winning ticket, the smaller each share. Same dollar =
+   same share — early backing gets no better share than late backing.
+   Every backer also gets 100 coins PER DOLLAR backed + a Backer badge on
+   their one profile, win or lose. Coins are looks only — not cash, not
+   points, not prizes — and do not break the vault.
+   FLOW: opens ONLY after tickets are revealed live on the board (after
+   blind-until-lock) — never before reveal, never on blind picks. Then a
+   2-minute window, one tap per back, countdown flashing, no pick changes.
+   Then it locks and games start. No backing after lock, none after the
+   first game starts. Paid tickets only, never held/unpaid. Max 5 backed
+   tickets per pool per Shark; the dollar amount per ticket is the
+   backer's choice. Owner backing their OWN ticket for cash is BANNED —
+   an own-ticket tap is coins/badge only, is not a cash back, and creates
+   no cash payout. A back stays with the TICKET, not the original owner,
+   if the ticket is bought out. Payout capped at $20 per dollar and in
+   total at Backer Pool: no borrowing from the vault, no host top-up, no
+   touching place prizes, seed, host fee or the Fund queue. Vault stays
+   BALANCED. TEST CREDITS ONLY — real-money side bets stay OFF until
+   legal review clears them. */
+var BACK={open:false, done:false, J0:null, endsAt:0, timer:null, seq:0, slips:[], settle:null, draft:{}};
+var BACKERS={}; /* person -> true once they hold the Backer badge (never reset) */
+function backRound(n){ return Math.round(n*100)/100; }
+function backCashSlips(){ return BACK.slips.filter(function(s){ return !s.coinsOnly; }); }
+function backTotalB(){ return backRound(backCashSlips().reduce(function(a,s){ return a+s.dollars; },0)); }
+function backJackpotBoost(){ return backRound(0.90*backTotalB()); }
+function backOtherPools(){ return backRound(0.10*backTotalB()); }
+function backOnTicket(ticketName){
+  var dollars=0, sharks={};
+  backCashSlips().forEach(function(s){ if(s.ticket===ticketName){ dollars+=s.dollars; sharks[s.backer]=1; } });
+  return {dollars:backRound(dollars), sharks:Object.keys(sharks).length};
+}
+function backCompute(B, J, perfectList){
+  /* perfectList: [{ticket, Bw}] — dollars backed on each perfect ticket.
+     Pure posted math, used live by the panel, the worked examples and
+     settlement — one function, so the examples can never drift. */
+  B=backRound(B||0); J=backRound(J||0);
+  var backerPool=backRound(0.45*B);
+  if(!perfectList||!perfectList.length||B<=0){
+    return {B:B, J:J, backerPool:backerPool, perTicket:[], totalPaid:0, excess:0, ownerPayout:J, noPerfect:true};
+  }
+  var totBw=perfectList.reduce(function(a,x){ return a+(x.Bw||0); },0);
+  var perTicket=perfectList.map(function(x){
+    var share=totBw>0?backRound(backerPool*(x.Bw||0)/totBw):0;
+    var rate=(x.Bw||0)>0?Math.min(20, share/x.Bw):0;
+    rate=Math.round(rate*10000)/10000;
+    var paid=backRound(Math.min(share, rate*(x.Bw||0)));
+    return {ticket:x.ticket, Bw:backRound(x.Bw||0), share:share, rate:rate, paid:paid};
+  });
+  var totalPaid=backRound(perTicket.reduce(function(a,x){ return a+x.paid; },0));
+  if(totalPaid>backerPool) totalPaid=backerPool;
+  var excess=backRound(backerPool-totalPaid);
+  return {B:B, J:J, backerPool:backerPool, perTicket:perTicket, totalPaid:totalPaid, excess:excess, ownerPayout:backRound(J-totalPaid), noPerfect:false};
+}
+window.__backCompute=backCompute; /* verification hook — same function the page settles with */
+window.__backState=function(){ return {open:BACK.open, done:BACK.done, J0:BACK.J0, B:backTotalB(), slips:BACK.slips.length}; };
+function backExamplesHtml(){
+  var e1=backCompute(1000,170+0.90*1000,[{ticket:"Winning ticket",Bw:20}]);
+  var e2=backCompute(100,170+0.90*100,[{ticket:"Winning ticket",Bw:10}]);
+  var e3=backCompute(1000,170+0.90*1000,[{ticket:"Winning ticket",Bw:500}]);
+  function row(lbl,e){
+    var pt=e.perTicket[0]||{rate:0,paid:0};
+    return "<tr><td>"+lbl+"</td><td>"+money(e.B)+"</td><td>"+money(e.J)+"</td><td>"+money(e.backerPool)+"</td><td>"+money(pt.Bw)+"</td><td>"+money(pt.rate)+" / $1</td><td>"+money(pt.paid)+"</td><td>"+money(e.excess)+"</td><td><b>"+money(e.ownerPayout)+"</b></td></tr>";
+  }
+  return '<table class="back-table"><tr><th>Worked example (posted math, computed live)</th><th>B — $ backed</th><th>J = J0 + 0.90×B</th><th>Backer Pool = 0.45×B</th><th>Bw — $ on winner</th><th>Per $1</th><th>Paid to backers</th><th>Excess → Projected Next</th><th>Owner gets</th></tr>'+
+    row("Ex 1 — J0 $170, winner lightly backed",e1)+
+    row("Ex 2 — J0 $170, small pool",e2)+
+    row("Ex 3 — over-backed winner (pari-mutuel)",e3)+
+    "</table>"+
+    '<p class="back-eq">Per-dollar scaling, same rate for everyone on a ticket: at '+money(e2.perTicket[0].rate)+' per dollar, a $1 backer gets <b>'+money(1*e2.perTicket[0].rate)+'</b>, a $5 backer gets <b>'+money(5*e2.perTicket[0].rate)+'</b>, a $10 backer gets <b>'+money(10*e2.perTicket[0].rate)+'</b>. At the $20-per-dollar cap, a $10 backer gets at most <b>$200</b>, a $1 backer at most <b>$20</b>.</p>';
+}
+function backEquationHtml(){
+  return '<p class="back-eq"><b>THE POSTED EQUATION — read it before any back can be placed.</b> For every <b>$1 backed</b> on any ticket: <b>$0.90 → Current Perfect Jackpot</b> (the jackpot builds higher) · <b>$0.10 → Other pools</b>, split equally across other pools. <b>J0</b> = Perfect Jackpot when side betting opens · <b>B</b> = total dollars backed in the pool, all tickets combined · <b>J = J0 + $0.90 × B</b> · <b>Bw</b> = total dollars backed on the winning perfect ticket, if one hits. If a backed ticket hits perfect: <b>Backer Pool = 50% of the backer boost = $0.45 × B</b> · payout per dollar = <b>Backer Pool ÷ Bw, capped at $20 per dollar</b> · you are paid <b>your dollars × that rate</b> · <b>Owner Perfect Payout = J − Backer Payouts Paid</b> · excess, if any, rolls to <b>Projected Next Jackpot</b> — never to host, never disappears. Multiple perfect tickets: the Backer Pool splits proportionally by dollars backed on each perfect ticket, same cap. <b>You are not sharing your jackpot. You are keeping 100% of your jackpot, plus at least half of the boost backers added.</b> Owner always gets at least J0 + $0.45 × B, because the Backer Pool is only half the boost.</p>'+
+  '<p class="back-eq">⚠️ <b>THE RISK, POSTED BEFORE YOU TAP:</b> if <b>no ticket hits perfect</b>, backers get <b>no cash</b> that pool — your dollars already built the jackpot, and the whole jackpot, boost included, rolls to Projected Next Jackpot. <b>Pari-mutuel:</b> the more Sharks back the same winning ticket, the smaller each share. Same dollar = same share — early backing does <b>not</b> get a better share than late backing. Every backer also gets <b>100 coins per dollar backed + a Backer badge</b> on their one profile, win or lose — coins are looks only, not cash, not points, not prizes. <b>Paid tickets only</b> (never held/unpaid) · max <b>5 backed tickets</b> per pool per Shark · dollar amount per ticket is your choice · <b>owner backing their own ticket for cash is BANNED</b> (own-ticket taps are coins/badge only, never a cash back, never a cash payout) · a back stays with the <b>TICKET</b>, not the original owner, if the ticket is bought out · payout capped at $20 per dollar and in total at the Backer Pool — <b>no borrowing from the vault, no host top-up</b>, place prizes, seed, host fee and the Fund queue are never touched. <b>Test credits only — real-money side bets stay OFF until legal review clears them.</b></p>';
+}
+function backGamesStarted(){ return !!liveGame||Object.keys(finished).length>0; }
+function backWindowOpen(){ return BACK.open&&!BACK.done&&locked&&!settlement&&!backGamesStarted()&&Date.now()<BACK.endsAt; }
+function backOpenWindow(){
+  if(BACK.done||BACK.open) return;
+  BACK.J0=backRound(perfectTotalNow());
+  BACK.open=true; BACK.endsAt=Date.now()+120000;
+  feed("BACK","mom","🤝 BACK A SHARK IS OPEN — tickets are revealed live on the board, so side betting opens NOW for 2 minutes. J0 (jackpot at open): "+money(BACK.J0)+". Per dollar backed: $0.90 builds the Current Perfect Jackpot, $0.10 goes to other pools. One tap per back, no pick changes, then it locks and games start. Test credits only — legal-review gate: real-money side bets stay OFF.");
+  try{ banner("mom","🤝 BACK A SHARK — 2 MINUTES","Tickets are revealed. Back a ticket per dollar — $0.90 of every $1 builds the jackpot."); }catch(e){}
+  if(BACK.timer) clearInterval(BACK.timer);
+  BACK.timer=setInterval(backTick,250);
+  try{ renderBoard(); }catch(e){}
+  try{ renderCommunity(); }catch(e){}
+}
+function backTick(){
+  var left=Math.max(0, BACK.endsAt-Date.now());
+  document.querySelectorAll("[data-back-countdown]").forEach(function(el){
+    var s=Math.ceil(left/1000);
+    el.textContent="⏱ "+Math.floor(s/60)+":"+("0"+(s%60)).slice(-2)+" LEFT TO BACK";
+  });
+  try{ refreshBackCalcs(); }catch(e){} /* the calculator rides the same tick — rates move live as backers come in */
+  if(left<=0) backCloseWindow("time");
+}
+function backCloseWindow(why){
+  if(!BACK.open) return;
+  BACK.open=false; BACK.done=true;
+  if(BACK.timer){ clearInterval(BACK.timer); BACK.timer=null; }
+  feed("BACK","info","🔒 BACK A SHARK IS LOCKED — the 2-minute window closed"+(why==="games"?" because games are starting":"")+". No backing after lock, no backing after the first game starts. Total backed this pool: "+money(backTotalB())+" across "+backCashSlips().length+" cash back(s) — jackpot boost +"+money(backJackpotBoost())+", other pools +"+money(backOtherPools())+".");
+  try{ renderBoard(); }catch(e){}
+  try{ renderCommunity(); }catch(e){}
+  if(locked&&!settlement&&!backGamesStarted()){ try{ startLivePlay(); }catch(e){} }
+}
+function backMostBacked(){
+  var best=null;
+  players().forEach(function(p){
+    var info=backOnTicket(p.name);
+    if(info.dollars>0&&(!best||info.dollars>best.dollars)) best={ticket:p.name, dollars:info.dollars, sharks:info.sharks};
+  });
+  return best;
+}
+function renderBackPanel(){
+  var el=$("backPanel"); if(!el) return;
+  var B=backTotalB(), J=BACK.J0!==null?backRound(BACK.J0+0.90*B):null;
+  var live=backWindowOpen();
+  var most=backMostBacked();
+  var head='<h3>🤝 Back a Shark — side bet</h3><div class="track-note" style="margin-top:2px">TEST CREDITS ONLY · LEGAL-REVIEW GATE: real-money side bets stay OFF until legal review clears them.</div>';
+  var statusHtml="";
+  if(!locked){
+    statusHtml='<div class="back-count-line">🔒 Side betting is CLOSED — it opens only AFTER tickets are revealed live on the board, after blind-until-lock. Never before reveal, never on blind picks.</div>';
+  } else if(live){
+    statusHtml='<div class="back-timer flash" data-back-countdown>⏱ 2:00 LEFT TO BACK</div><div class="back-count-line">🟢 WINDOW OPEN — one tap per back, per dollar. No pick changes during this window. When the timer ends it locks and games start.</div>';
+  } else if(BACK.done){
+    statusHtml='<div class="back-count-line">🔒 Side betting LOCKED — no backing after lock, no backing after the first game starts.</div>';
+  } else if(backGamesStarted()){
+    statusHtml='<div class="back-count-line">🔒 Side betting is CLOSED — games have started.</div>';
+  }
+  var totals="";
+  if(BACK.J0!==null){
+    var proj=backCompute(B, J, []);
+    totals='<div class="back-count-line">J0 '+money(BACK.J0)+' · B '+money(B)+' backed · J = '+money(J)+' · other pools +'+money(backOtherPools())+' · Backer Pool if a backed ticket hits perfect: '+money(proj.backerPool)+' · Owner is guaranteed at least '+money(backRound(BACK.J0+0.45*B))+'.</div>';
+  }
+  var settleHtml="";
+  if(BACK.settle){
+    var st=BACK.settle;
+    settleHtml='<div class="back-count-line">'+(st.noPerfect?("🏁 SETTLED — NO perfect ticket: backers get no cash this pool. The whole jackpot, boost included, rolls to Projected Next Jackpot."):("🏁 SETTLED — Backer Pool "+money(st.backerPool)+" · paid to backers "+money(st.totalPaid)+" · excess "+money(st.excess)+" rolls to Projected Next Jackpot · owner perfect payout "+money(st.ownerPayout)+"."))+'</div>';
+  }
+  el.innerHTML='<div class="back-panel">'+head+statusHtml+
+    (most?'<div class="back-most">🔥 MOST BACKED TICKET — '+esc(most.ticket)+' · Backed by '+most.sharks+' Shark'+(most.sharks===1?"":"s")+' · '+money(most.dollars)+' backed</div>':"")+
+    totals+backEquationHtml()+backExamplesHtml()+settleHtml+'</div>';
+  try{ renderBackingBoard(); }catch(e){}
+}
+function renderBackingBoard(){
+  var el=$("backingBoardComm"); if(!el) return;
+  if(!locked){
+    el.innerHTML='<div class="back-panel"><h3>🤝 Backing Board</h3><p class="back-eq">Side betting opens only <b>after tickets are revealed</b> on the board — nothing about backing reveals anything early. The posted Back a Shark equation is on the board, on every back slip, in the vault, and in every backer&rsquo;s one profile.</p></div>';
+    return;
+  }
+  var rows=players().map(function(p){
+    var info=backOnTicket(p.name);
+    return {ticket:p.name, dollars:info.dollars, sharks:info.sharks};
+  }).filter(function(x){ return x.dollars>0; }).sort(function(a,b){ return b.dollars-a.dollars; });
+  var most=rows[0];
+  el.innerHTML='<div class="back-panel"><h3>🤝 Backing Board</h3>'+
+    (BACK.open&&backWindowOpen()?'<div class="back-timer flash" data-back-countdown>⏱ 2:00 LEFT TO BACK</div>':"")+
+    (most?'<div class="back-most">🔥 MOST BACKED TICKET — '+esc(most.ticket)+' · Backed by '+most.sharks+' Shark'+(most.sharks===1?"":"s")+' · '+money(most.dollars)+' backed</div>':"")+
+    (rows.length?rows.map(function(x){ return '<div class="back-count-line">'+esc(x.ticket)+' — Backed by '+x.sharks+' Shark'+(x.sharks===1?"":"s")+' · '+money(x.dollars)+' backed</div>'; }).join(""):'<p class="back-eq">No backs yet this pool. Backs appear here the moment a Shark taps Back a Shark on a board row.</p>')+
+    '<p class="back-eq">Per dollar backed: <b>$0.90 → Current Perfect Jackpot · $0.10 → Other pools</b>. Pari-mutuel: the more Sharks back the same winning ticket, the smaller each share. Test credits only.</p></div>';
+}
+/* ---- LIVE BACK CALCULATOR — on the board row, before any tap to back ----
+   Computes EVERYTHING at this very moment, from live values, INCLUDING the
+   back being chosen: B' = B + amount · Bw' = dollars on this ticket +
+   amount · J' = J0 + $0.90 × B' · Backer Pool' = $0.45 × B' · rate =
+   min($20, Backer Pool' ÷ Bw') · projected = amount × rate · owner =
+   J' − rate × Bw'. It refreshes on every keystroke, every quick-amount
+   chip, every new back anywhere in the pool, and on a 250ms tick while
+   the window is open — no Calculate button, no reload. It is a snapshot
+   AT THIS MOMENT, never a promise: pari-mutuel shares move as more
+   backers come in, and the final payout is calculated at settlement
+   from the FINAL B and Bw, capped at $20 per dollar. */
+function backCalcFor(ticketName, amt, alreadyIn){
+  amt=Math.max(0, Math.floor(amt||0));
+  var target=players().filter(function(p){ return p.name===ticketName; })[0];
+  var info=backOnTicket(ticketName);
+  var backer=myPersonName();
+  var coinsOnly=!!(target&&backer&&ownerOf(target)===backer);
+  var B=backTotalB(), J0=(BACK.J0!==null?BACK.J0:perfectTotalNow());
+  var Bp=alreadyIn?B:(coinsOnly?B:backRound(B+amt));
+  var Bwp=alreadyIn?info.dollars:(coinsOnly?info.dollars:backRound(info.dollars+amt));
+  var Jp=backRound(J0+0.90*Bp);
+  var pool=backRound(0.45*Bp);
+  var rate=Bwp>0?Math.min(20, pool/Bwp):20;
+  rate=Math.round(rate*10000)/10000;
+  var paidToTicket=backRound(Math.min(pool, rate*Bwp));
+  var proj=coinsOnly?0:backRound(amt*rate);
+  return {amt:amt, coinsOnly:coinsOnly, J0:backRound(J0), B:Bp, Bw:Bwp, J:Jp, pool:pool, rate:rate,
+    paidToTicket:paidToTicket, proj:proj, capMax:backRound(20*amt),
+    ownerPayout:backRound(Jp-paidToTicket),
+    toJackpot:coinsOnly?0:backRound(0.90*amt), toOther:coinsOnly?0:backRound(0.10*amt),
+    projNext:backRound(Jp+FUND_NEXT_JACKPOT), time:nowTimeET()};
+}
+function backCalcText(ticketName, amt, alreadyIn){
+  var c=backCalcFor(ticketName, amt, alreadyIn);
+  if(c.coinsOnly){
+    return '🎖️ <b>YOUR OWN TICKET — coins/badge only.</b> Cash backing your own ticket is BANNED, so this tap is not a cash back and creates <b>no cash payout</b>: B and Bw do not change. You would get <b>+'+(c.amt*100)+' coins + the Backer badge</b>, win or lose — looks only. Pot right now: J = '+money(c.J)+' (J0 '+money(c.J0)+' + $0.90 × B '+money(c.B)+') · Backer Pool '+money(c.pool)+'. <span style="color:#8dffb0">● LIVE — as of '+c.time+'</span>';
+  }
+  return '<span style="color:#8dffb0">● LIVE</span> <b>Back Calculator — as of '+c.time+', at this very moment</b> (including this back):<br>'+
+    'Pot if this ticket hits perfect with backs as they stand now: <b>J = '+money(c.J)+'</b> (J0 '+money(c.J0)+' + $0.90 × B '+money(c.B)+') · B after your back: <b>'+money(c.B)+'</b> · Bw on this ticket: <b>'+money(c.Bw)+'</b> · Backer Pool: <b>'+money(c.pool)+'</b> ($0.45 × B)<br>'+
+    'Per-dollar rate right now: <b>'+money(c.rate)+' per $1</b> (Backer Pool ÷ Bw, capped at $20) · <b>'+money(c.amt)+' backed × '+money(c.rate)+' per dollar = '+money(c.proj)+' projected back right now</b>, capped at '+money(c.capMax)+' max<br>'+
+    'Owner payout after this back: <b>'+money(c.ownerPayout)+'</b> · your '+money(c.amt)+' sends <b>'+money(c.toJackpot)+' to the jackpot</b> and <b>'+money(c.toOther)+' to other pools</b> · Projected Next Jackpot after this back: <b>'+money(c.projNext)+'</b><br>'+
+    '⚠️ <b>This is the payout AT THIS MOMENT.</b> It can change if more backers come in before lock / before the ticket hits perfect, because the share is pari-mutuel — the final payout is calculated at settlement from the final B and Bw, capped at $20 per dollar. This calculator never promises a fixed payout.<br>'+
+    'If this ticket does <b>not</b> hit perfect: <b>$0 cash back</b> — coins + badge only, and the jackpot rolls to Projected Next Jackpot.';
+}
+function refreshBackCalcs(){
+  document.querySelectorAll("[data-back-calc]").forEach(function(el){
+    var box=el.closest(".back-box"); if(!box) return;
+    var inp=box.querySelector("[data-back-amt]");
+    var amt=inp?Math.floor(parseFloat(inp.value)||0):1;
+    el.innerHTML=backCalcText(el.getAttribute("data-back-calc"), amt, false);
+  });
+}
+function backRowHtml(p){
+  if(p.density) return "";
+  var info=backOnTicket(p.name);
+  var me=myPersonName();
+  var isOwn=!!(me&&ownerOf(p)===me);
+  var live=backWindowOpen();
+  var dis=live?"":" disabled";
+  var label=isOwn?"🎖️ Back my own ticket — coins/badge only (no cash)":"🤝 Back a Shark";
+  var draft=(BACK.draft&&BACK.draft[p.name])?BACK.draft[p.name]:1;
+  var chips=[1,5,10].map(function(a){ return '<button type="button" class="back-btn" data-back-chip="'+esc(p.name)+'" data-chip-amt="'+a+'"'+dis+'>$'+a+'</button>'; }).join("");
+  return '<div class="back-box"><span class="bc">🤝 Backed by '+info.sharks+' Shark'+(info.sharks===1?"":"s")+' · '+money(info.dollars)+' backed on this ticket</span>'+
+    '<span style="font-weight:700;font-size:12px">Per $1: $0.90 → jackpot · $0.10 → other pools · pays per dollar, cap $20/$1</span>'+
+    chips+
+    '<input type="number" min="1" step="1" value="'+draft+'" data-back-amt="'+esc(p.name)+'" aria-label="Dollars to back '+esc(p.name)+' with"'+dis+' />'+
+    '<button type="button" class="back-btn" data-back-btn="'+esc(p.name)+'"'+dis+'>'+label+'</button>'+
+    (live?"":'<span style="font-weight:700;font-size:12px;color:var(--muted)">'+(locked?"Backing locked":"Opens after reveal — 2-min window")+'</span>')+
+    '<div class="back-slip" style="width:100%" data-back-calc="'+esc(p.name)+'">'+backCalcText(p.name, draft, false)+'</div>'+
+    '</div>';
+}
+function placeBack(ticketName, rowEl){
+  var target=players().filter(function(p){ return p.name===ticketName; })[0];
+  if(!target) return;
+  var backer=myPersonName();
+  if(!backer){ try{ banner("big","🤝 BACK A SHARK","Type your Shark name on the picks screen first — backs, slips, coins and the Backer badge live on your one profile."); }catch(e){} return; }
+  if(!locked){ feed("BACK","info","🤝 BACK BLOCKED — side betting never opens before reveal. Picks are still blind."); return; }
+  if(backGamesStarted()){ feed("BACK","info","🤝 BACK BLOCKED — games have started. No backing after the first game starts."); return; }
+  if(!backWindowOpen()){ feed("BACK","info","🤝 BACK BLOCKED — the 2-minute side-bet window is locked. No backing after lock."); return; }
+  if(target.held||target.paid===false){ feed("BACK","info","🤝 BACK BLOCKED — paid tickets only, never held/unpaid."); return; }
+  var amtEl=rowEl?rowEl.querySelector('[data-back-amt]'):document.querySelector('[data-back-amt="'+ticketName+'"]');
+  var dollars=Math.floor(parseFloat(amtEl?amtEl.value:"1")||0);
+  if(!(dollars>=1)){ try{ banner("big","🤝 BACK A SHARK","Back at least $1 — backing is per whole dollar in this test build."); }catch(e){} return; }
+  var ownerNow=ownerOf(target);
+  var coinsOnly=(ownerNow===backer);
+  if(!coinsOnly){
+    var mineTickets={};
+    backCashSlips().forEach(function(s){ if(s.backer===backer) mineTickets[s.ticket]=1; });
+    if(!mineTickets[ticketName]&&Object.keys(mineTickets).length>=5){
+      feed("BACK","info","🤝 BACK BLOCKED — max 5 backed tickets per pool per Shark. "+backer+" already backs 5 different tickets.");
+      try{ banner("big","🤝 MAX 5 BACKED TICKETS","One Shark can back at most 5 tickets per pool."); }catch(e){}
+      return;
+    }
+  }
+  BACK.seq++;
+  var slip={id:"BACK-"+BACK.seq, backer:backer, ticket:target.name, ticketNum:target.ticketNum||target.confirm||"", ownerAtBack:ownerNow, dollars:dollars, coinsOnly:coinsOnly, time:nowTimeET(), payout:null, status:"OPEN — window live"};
+  BACK.slips.unshift(slip);
+  try{ slip.calc=backCalcFor(target.name, dollars, true); }catch(e){} /* calculator snapshot at the moment of backing — totals already include this back */
+  BACKERS[backer]=true;
+  creditCoins(backer, dollars*100, "back");
+  if(coinsOnly){
+    feed("BACK","info","🎖️ OWN-TICKET BACK (COINS/BADGE ONLY) — "+backer+" tapped their OWN ticket "+target.name+". Cash backing your own ticket is BANNED, so this is NOT a cash back: $0 enters B, it creates NO cash payout — it earns only +"+(dollars*100)+" coins and the Backer badge, looks only.");
+  } else {
+    feed("BACK","mom","🤝 BACKED — "+backer+" put "+money(dollars)+" on "+target.name+" (Ticket "+(slip.ticketNum||"—")+", owner "+ownerNow+"). Per dollar: $0.90 → Current Perfect Jackpot, $0.10 → other pools. Pool totals now: B "+money(backTotalB())+" · jackpot boost +"+money(backJackpotBoost())+" · Backer Pool if it hits perfect "+money(backRound(0.45*backTotalB()))+". +"+(dollars*100)+" coins + Backer badge on "+backer+"'s one profile, win or lose. Slip "+slip.id+" saved in their profile. Pari-mutuel: the more Sharks back the same winning ticket, the smaller each share.");
+  }
+  try{ renderBoard(); }catch(e){}
+  try{ renderCommunity(); }catch(e){}
+  if(currentProfileName) try{ buildProfile(currentProfileName,true); }catch(e){}
+}
+function backSlipHtml(s){
+  var cur=players().filter(function(p){ return p.name===s.ticket; })[0];
+  var curOwner=cur?ownerOf(cur):s.ownerAtBack;
+  var moved=curOwner!==s.ownerAtBack;
+  var status=s.status;
+  if(BACK.settle&&s.payout!==null) status="SETTLED — PAID "+money(s.payout);
+  else if(BACK.settle) status=s.coinsOnly?"SETTLED — coins/badge only, no cash payout (own ticket)":"SETTLED — $0 cash (no cash payout on this back)";
+  else if(BACK.done) status="LOCKED — waiting on the games";
+  return '<div class="back-slip"><b>🤝 BACK SLIP '+esc(s.id)+'</b> · '+esc(s.time)+'<br>'+
+    'Ticket: <b>'+esc(s.ticket)+'</b>'+(s.ticketNum?(' · #'+esc(s.ticketNum)):"")+' · Owner: <b>'+esc(curOwner)+'</b>'+(moved?(' (was '+esc(s.ownerAtBack)+' when backed — <b>the back stays with the TICKET, not the original owner</b>)'):' (the back stays with the TICKET, not the original owner, if this ticket is bought out)')+'<br>'+
+    'Backer: <b>'+esc(s.backer)+'</b> · Dollars backed: <b>'+money(s.dollars)+'</b>'+(s.coinsOnly?' · <b>COINS/BADGE ONLY — own ticket: not a cash back, no cash payout, $0 in B</b>':"")+'<br>'+
+    'Posted payout rule: per dollar backed — $0.90 built the Current Perfect Jackpot, $0.10 went to other pools. If this ticket hits perfect: your payout = <b>your dollars × min($20, Backer Pool ÷ Bw)</b>, Backer Pool = $0.45 × B, capped at $20 per dollar and in total at the Backer Pool. Pari-mutuel: the more Sharks back the same winning ticket, the smaller each share; same dollar = same share, early or late.<br>'+
+    '⚠️ Risk, posted before you tapped: if no ticket hits perfect, this back pays <b>no cash</b> — the dollars already built the jackpot and roll to Projected Next Jackpot.<br>'+
+    'Reward either way: <b>+'+(s.dollars*100)+' coins</b> (100 per dollar backed) + <span class="backer-badge">🎖️ BACKER BADGE</span> — coins are looks only, not cash, not points, not prizes.<br>'+
+    (s.calc?('🧮 <b>Calculator snapshot at the moment you backed</b> ('+esc(s.calc.time)+'): pot J '+money(s.calc.J)+' · B '+money(s.calc.B)+' · Bw on this ticket '+money(s.calc.Bw)+' · Backer Pool '+money(s.calc.pool)+' · rate '+money(s.calc.rate)+' per $1 · <b>your projected payout at that moment: '+money(s.calc.proj)+'</b> (cap '+money(s.calc.capMax)+') · owner would have gotten '+money(s.calc.ownerPayout)+'. That was a snapshot, not a promise.<br>'):"")+
+    ((!BACK.settle&&!s.coinsOnly)?(function(){ var B2=backTotalB(), inf2=backOnTicket(s.ticket); var r2=inf2.dollars>0?Math.min(20, backRound(0.45*B2)/inf2.dollars):20; r2=Math.round(r2*10000)/10000; return '🧮 <span style="color:#8dffb0">● LIVE</span> <b>Calculator right now</b> (as of '+nowTimeET()+'): rate '+money(r2)+' per $1 → your projected payout is now <b>'+money(backRound(s.dollars*r2))+'</b>. It keeps moving as backers come in — the <b>final payout is calculated at settlement from the final B and Bw</b>, capped at $20 per dollar.<br>'; })():"")+
+    'Status: <b>'+esc(status)+'</b></div>';
+}
+function backProfileHtml(person){
+  var slips=BACK.slips.filter(function(s){ return s.backer===person; });
+  var cashDollars=backRound(slips.filter(function(s){ return !s.coinsOnly; }).reduce(function(a,s){ return a+s.dollars; },0));
+  var coinsFromBacks=slips.reduce(function(a,s){ return a+s.dollars*100; },0);
+  var badge=BACKERS[person]?'<span class="backer-badge">🎖️ BACKER BADGE — EARNED</span>':'<span class="backer-badge">🎖️ BACKER BADGE — not yet (back any ticket to earn it)</span>';
+  return '<div class="prof-tb"><div class="tb-row"><span class="k">🎖️ BACKER BADGE</span><span class="v">'+badge+'</span></div>'+
+    '<div class="tb-row"><span class="k">🤝 BACKS — THIS POOL</span><span class="v">'+slips.length+' back slip'+(slips.length===1?"":"s")+' · '+money(cashDollars)+' cash-backed (own-ticket coins-only taps excluded from B)</span></div>'+
+    '<div class="tb-row"><span class="k">🪙 COINS FROM BACKING</span><span class="v">+'+coinsFromBacks+' coins (100 per dollar backed, win or lose) — looks only, not cash, not points, not prizes</span></div></div>'+
+    backEquationHtml()+
+    (slips.length?slips.map(backSlipHtml).join(""):'<p class="prof-note">No backs yet. When tickets are revealed, the 2-minute Back a Shark window opens on the board — one tap per back, per dollar, and every slip lands here in this one profile.</p>');
+}
+function backVaultHtml(){
+  var B=backTotalB();
+  var J=BACK.J0!==null?backRound(BACK.J0+0.90*B):perfectTotalNow();
+  var c=backCompute(B, J, []);
+  var lines=BACK.slips.map(function(s){
+    return '<div class="vl"><span class="amt '+(s.coinsOnly?"zero":"in")+'">'+(s.coinsOnly?"$0 CASH":"IN +"+money(s.dollars))+'</span><span><b>🤝 Back '+esc(s.id)+'</b> — '+esc(s.backer)+' backed <b>'+esc(s.ticket)+'</b> with '+money(s.dollars)+(s.coinsOnly?' — OWN TICKET: coins/badge only, banned from cash, $0 in B, no cash payout.':(' — per dollar: '+money(backRound(0.90*s.dollars))+' → Current Perfect Jackpot · '+money(backRound(0.10*s.dollars))+' → other pools.'))+' Slip saved in '+esc(s.backer)+'&rsquo;s one profile. Back stays with the ticket if bought out.</span></div>';
+  }).join("");
+  return '<div class="acct-block"><h4>🤝 Back a Shark — side bet accounting (test credits only)</h4>'+
+    backEquationHtml()+
+    '<div class="acct-eq">Live totals: J0 <b>'+(BACK.J0!==null?money(BACK.J0):"— (opens at reveal)")+'</b> · B <b>'+money(B)+'</b> backed · $0.90 × B = <b>'+money(backJackpotBoost())+'</b> into the Current Perfect Jackpot → J <b>'+money(J)+'</b> · $0.10 × B = <b>'+money(backOtherPools())+'</b> to other pools, split equally · Backer Pool if a backed ticket hits perfect: <b>'+money(c.backerPool)+'</b> (50% of the boost) · owner guaranteed at least <b>'+(BACK.J0!==null?money(backRound(BACK.J0+0.45*B)):"—")+'</b>. Payout capped at $20 per dollar and in total at the Backer Pool — no borrowing from the vault, no host top-up, place prizes / seed / host fee / Fund queue untouched. <b>Vault stays BALANCED.</b></div>'+
+    (lines||'<div class="acct-note">No backs yet this pool — side betting opens for 2 minutes right after tickets are revealed on the board.</div>')+
+    backExamplesHtml()+'</div>';
+}
+/* lock hook — deferred so the slate-lock handler runs first (it reveals
+   the picks and starts live play); the side-bet window then pauses the
+   games, because games start only when this window locks. */
+$("lockBtn").addEventListener("click",function(){
+  setTimeout(function(){
+    if(!locked||BACK.done||BACK.open) return;
+    try{ stopSim(); }catch(e){}
+    /* the slate-lock handler auto-started the first live game in the same
+       tap — rewind that fresh, unticked game so the side-bet window runs
+       BEFORE any game starts, exactly as posted. It re-starts untouched
+       when the window locks (backCloseWindow → startLivePlay). */
+    if(liveGame&&liveState[liveGame]&&liveState[liveGame].tick===0&&!finished[liveGame]){
+      delete liveState[liveGame]; liveGame=null; if(orderIdx>0) orderIdx--;
+    }
+    backOpenWindow();
+  },0);
+});
+$("resetBtn").addEventListener("click",function(){
+  setTimeout(function(){
+    if(BACK.timer){ clearInterval(BACK.timer); BACK.timer=null; }
+    BACK={open:false, done:false, J0:null, endsAt:0, timer:null, seq:0, slips:[], settle:null, draft:{}};
+    try{ renderBackPanel(); }catch(e){}
+  },0);
+});
+/* calculator inputs update instantly — every keystroke refreshes the
+   readout in that row, no Calculate tap, no reload; the typed amount is
+   kept in BACK.draft so board re-renders never lose it */
+document.addEventListener("input",function(e){
+  var inp=e.target&&e.target.closest?e.target.closest("[data-back-amt]"):null;
+  if(!inp) return;
+  if(!BACK.draft) BACK.draft={};
+  BACK.draft[inp.getAttribute("data-back-amt")]=Math.floor(parseFloat(inp.value)||0);
+  var box=inp.closest(".back-box"); if(!box) return;
+  var out=box.querySelector("[data-back-calc]"); if(!out) return;
+  out.innerHTML=backCalcText(out.getAttribute("data-back-calc"), Math.floor(parseFloat(inp.value)||0), false);
+});
+/* while the window is open, game-start controls wait — the window locks first */
+document.addEventListener("click",function(e){
+  if(!BACK.open) return;
+  var id=e.target&&e.target.id;
+  if(id==="simBtn"||id==="stepBtn"||id==="fxDemoBtn"){
+    e.preventDefault(); e.stopPropagation();
+    feed("BACK","info","🤝 BACK A SHARK — games start when the 2-minute side-bet window locks. Backing is still open.");
+  }
+},true);
 
 /* ---------------- SIMULATION ---------------- */
 $("lockBtn").addEventListener("click",function(){
@@ -6400,16 +6808,31 @@ function champion(){
     }
     var spot=potTotal(), entrySpot=entryGross(), spx=splitPot(entrySpot), feeSpx=feeSplit(feeTotalLive()), donSpot=donationTotalLive(), cfx=combinedFigures(), places=["1ST","2ND","3RD"];
     var holders=perfectHolders(r);
-    var perfectTotal=Math.round((perfectIn+spx.perfect+feeSpx.toJackpot+fundCurrentBoost())*100)/100; /* rolled in + 3% entry slice + 100% of the growth fees ($1.15/ticket) + this pool's instant Fund 75/25 share */
-    var perfectPaidTotal = holders.length ? perfectTotal : 0;
-    var perHolder = holders.length ? Math.round((perfectTotal/holders.length)*100)/100 : 0;
+    var perfectTotal=Math.round((perfectIn+spx.perfect+feeSpx.toJackpot+fundCurrentBoost()+backJackpotBoost())*100)/100; /* rolled in + 3% entry slice + 100% of the growth fees ($1.15/ticket) + this pool's instant Fund 75/25 share + Back a Shark boost ($0.90 per dollar backed — so perfectTotal IS J when side betting ran, J0 + $0.90 × B) */
+    /* 🤝 BACK A SHARK SETTLEMENT — Backer Pool = $0.45 × B, split
+       proportionally across perfect tickets by dollars backed on each,
+       paid per dollar backed at min($20, share ÷ Bw); the owner(s) get
+       J − backer payouts paid; cap excess rolls to Projected Next. */
+    var backB=backTotalB();
+    var backPerfectList=holders.map(function(x){ return {ticket:x.p.name, Bw:backOnTicket(x.p.name).dollars}; });
+    var backSettleRes=backCompute(backB, perfectTotal, backPerfectList);
+    BACK.settle=backSettleRes;
+    backSettleRes.perTicket.forEach(function(pt){
+      BACK.slips.forEach(function(s){
+        if(!s.coinsOnly&&s.ticket===pt.ticket) s.payout=backRound(s.dollars*pt.rate);
+      });
+    });
+    BACK.slips.forEach(function(s){ if(s.payout===null) s.payout=0; });
+    var ownerPerfectTotal=backSettleRes.ownerPayout; /* J − Backer Payouts Paid (equals perfectTotal when nobody backed or no perfect) */
+    var perfectPaidTotal = holders.length ? backRound(ownerPerfectTotal+backSettleRes.totalPaid) : 0;
+    var perHolder = holders.length ? Math.round((ownerPerfectTotal/holders.length)*100)/100 : 0;
     /* cent-exact split if multiple perfect: last holder takes remainder */
     var perfectRecords=holders.map(function(x,i){
-      var amt = (i===holders.length-1) ? Math.round((perfectTotal - perHolder*(holders.length-1))*100)/100 : perHolder;
+      var amt = (i===holders.length-1) ? Math.round((ownerPerfectTotal - perHolder*(holders.length-1))*100)/100 : perHolder;
       return {ticket:x.p.name, owner:ownerOf(x.p), amount:amt};
     });
-    var perfectCarryNext = holders.length ? 0 : perfectTotal;
-    settlement={ gross:spot, entryGross:entrySpot, fees:feeSpx.total, donations:donSpot, feeTopUp:feeSpx.topUp, feeToNet:feeSpx.toNet, organizer:spx.organizer, carry:spx.carry, seed:spx.seed, seedNext:cfx.seedNext, perfectContribution:Math.round((spx.perfect+feeSpx.toJackpot)*100)/100, perfectEntrySlice:spx.perfect, feeToJackpot:feeSpx.toJackpot, perfectInAtSettle:perfectIn, perfectTotal:perfectTotal, perfectPaidTotal:perfectPaidTotal, perfectRecords:perfectRecords, perfectCarryNext:perfectCarryNext, net:cfx.net, fourth:fourth?fourth.p.name:null,
+    var perfectCarryNext = holders.length ? backSettleRes.excess : perfectTotal; /* cap excess rolls to Projected Next Jackpot — never to host, never disappears */
+    settlement={ gross:spot, entryGross:entrySpot, fees:feeSpx.total, donations:donSpot, feeTopUp:feeSpx.topUp, feeToNet:feeSpx.toNet, organizer:spx.organizer, carry:spx.carry, seed:spx.seed, seedNext:cfx.seedNext, perfectContribution:Math.round((spx.perfect+feeSpx.toJackpot)*100)/100, perfectEntrySlice:spx.perfect, feeToJackpot:feeSpx.toJackpot, perfectInAtSettle:perfectIn, perfectTotal:perfectTotal, perfectPaidTotal:perfectPaidTotal, perfectRecords:perfectRecords, perfectCarryNext:perfectCarryNext, backB:backB, backerPool:backSettleRes.backerPool, backerPaid:backSettleRes.totalPaid, backExcess:backSettleRes.excess, net:cfx.net, fourth:fourth?fourth.p.name:null,
       records:r.slice(0,3).map(function(x,i){ return {place:places[i], ticket:x.p.name, owner:ownerOf(x.p), amount:cfx.w[i]}; }) };
     settlement.totalOut=settlement.net+settlement.organizer+settlement.perfectPaidTotal;
     try{ var celItem=equippedItem(topOwner,"effect"); if(celItem) setTimeout(function(){ showCelebrationFx(topOwner,celItem); },900); }catch(e){} /* 🛒 the pool winner's owned Marketplace celebration plays for their win */ /* winners net + host + perfect (if hit) leave; seed (6%) & unpaid jackpot do NOT */
@@ -7282,6 +7705,7 @@ function commAvatarHtml(name){
 }
 function renderCommunity(){
   commSeed();
+  try{ renderBackingBoard(); }catch(e){}
   var feedEl=$("commFeed"); if(!feedEl) return;
   var me=communityName();
   var list=COMMUNITY_POSTS.filter(function(p){ return !p.hidden; });
