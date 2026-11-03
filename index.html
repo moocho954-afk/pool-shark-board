@@ -922,6 +922,51 @@ body.intro-locked .hero .stage{visibility:hidden}
 .prof-tb .tb-row .v .hit{color:#7bf0a4}.prof-tb .tb-row .v .miss{color:#ff9aa4}
 .prof-note{color:#c9d4e0;font-weight:600;font-size:14px;line-height:1.55;margin-top:12px}
 
+/* ---------- PROFILES · NAME LOCK · CHAT · FUND THE POOL · BOARD LOOKS ---------- */
+.mini-zone.req-miss{box-shadow:0 0 0 2px var(--loss);border-radius:12px}
+.mini-gate{font-weight:800}
+.reg-note{margin-top:10px;background:var(--panel);border:1px dashed var(--gold);border-radius:12px;padding:12px 14px;font-size:13.5px;line-height:1.55;color:var(--muted);font-weight:600}
+.reg-note b{color:var(--ink)}
+.claim-box{margin-top:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.claim-box h4{margin:0 0 6px;font-size:17px}
+.claim-box p{margin:4px 0;font-size:13px;color:var(--muted);line-height:1.5;font-weight:600}
+.claim-box .claim-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.claim-box input{flex:1;min-width:150px;background:var(--panel2);border:2px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:14.5px;font-weight:600}
+.claim-box .btn{padding:10px 16px;font-size:13.5px}
+.claim-msg{margin-top:8px;font-weight:700;font-size:13.5px;line-height:1.5}
+.prof-chat{background:linear-gradient(180deg,#0b1728,#060d18);border:1px solid rgba(232,199,102,.25);border-radius:14px;padding:12px;margin-top:10px}
+.chat-msg{padding:8px 0;border-bottom:1px dashed rgba(139,180,205,.25)}
+.chat-msg:last-of-type{border-bottom:0}
+.chat-msg .cm-from{font-weight:800;font-size:13.5px;color:#e8c766}
+.chat-msg .cm-from .cm-owner{background:#e8c766;color:#1d1400;border-radius:999px;padding:2px 8px;font-size:10.5px;letter-spacing:.06em;margin-left:6px}
+.chat-msg .cm-time{font-weight:700;font-size:11.5px;color:#8fa3b8;margin-left:8px}
+.chat-msg .cm-text{font-size:14.5px;line-height:1.5;margin-top:2px;overflow-wrap:break-word}
+.chat-empty{font-size:13.5px;color:#c9d4e0;font-weight:600;line-height:1.5}
+.chat-rules{font-size:12px;color:#8fa3b8;line-height:1.5;font-weight:600;margin-top:10px}
+.chat-form{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chat-form textarea{flex:1;min-width:180px;background:#0a1626;border:2px solid rgba(232,199,102,.35);color:#fff;border-radius:10px;padding:10px 12px;font-size:14.5px;font-family:inherit;min-height:44px}
+.chat-form .btn{flex:none}
+.fund-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.fund-tier{background:linear-gradient(180deg,#171106,#050b16);border:2px solid rgba(232,199,102,.45);border-radius:14px;padding:13px}
+.fund-tier .ft-amt{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:30px;color:#e8c766;line-height:1}
+.fund-tier .ft-desc{font-size:13px;line-height:1.5;color:#c9d4e0;font-weight:600;margin-top:5px}
+.fund-tier .btn{margin-top:9px;width:100%}
+.fund-note{font-size:12.5px;color:#8fa3b8;line-height:1.55;font-weight:600;margin-top:10px}
+/* BOARD LOOKS — Quick View & Mini Scoreboard restyle the SAME board rows
+   inside #boardCols; they never add a panel above the board. */
+#boardLookLabel{border:1.5px solid #e8c766;border-radius:999px;padding:3px 10px;color:#e8c766}
+#screen-board .brow.qrow{grid-template-columns:20px minmax(0,1fr) auto;align-items:center}
+#screen-board .brow.qrow .qtot{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:26px;color:#e8c766;text-align:right;line-height:1;padding-right:4px}
+#screen-board .brow.qrow .qtot small{display:block;font-size:9px;letter-spacing:.14em;color:#c9d4e0;font-family:"Barlow",sans-serif}
+#screen-board .board-head.qhead{grid-template-columns:20px minmax(0,1fr) auto}
+#screen-board .brow.mrow{grid-template-columns:20px minmax(0,1.15fr) repeat(5,minmax(0,.5fr));align-items:center}
+#screen-board .brow.mrow .mcell{text-align:center;font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:19px;color:#fff;line-height:1.1}
+#screen-board .brow.mrow .mcell.tot{color:#e8c766;font-size:22px}
+#screen-board .board-head.mhead{grid-template-columns:20px minmax(0,1.15fr) repeat(5,minmax(0,.5fr))}
+#screen-board .board-head.mhead .bh-lbl,#screen-board .board-head.qhead .bh-lbl{display:flex;align-items:center;justify-content:center}
+#screen-board .board-head.mhead .bh-lbl:first-child,#screen-board .board-head.qhead .bh-lbl:first-child{justify-content:flex-start}
+@media (max-width:640px){#screen-board .brow.mrow .mcell{font-size:15px}#screen-board .brow.mrow .mcell.tot{font-size:17px}#screen-board .brow.qrow .qtot{font-size:22px}}
+
 /* ---------- LIVE MOVEMENT — the board ticks with the games ----------
    The sticky header carries a running score per game; the live game's cells
    pulse and shade toward whoever is winning RIGHT NOW (soft green = the pick
@@ -1595,15 +1640,35 @@ body.board-immersive #screen-board .board-head{top:0}
 }
 
 /* ================= v35 — MINI-BAR · 3 SPEEDS · REFER-A-SHARK · MILESTONES · LAUNCH NIGHT · SHARK TANK LIVE · IDEA 4 DEEP DIVE ================= */
-/* IDEA 2 — YOUR TICKET IS HERE: compact floating pill, always visible at the bottom */
-.you-minibar{position:fixed;left:50%;right:auto;transform:translateX(-50%);bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:96;display:flex;gap:7px;align-items:center;justify-content:center;width:max-content;max-width:calc(100vw - 20px);min-height:42px;box-sizing:border-box;background:linear-gradient(90deg,#241a04,#050505 55%,#241a04);border:1.5px solid #e8c766;border-radius:999px;color:#fff;padding:4px 5px 4px 11px;box-shadow:0 3px 12px rgba(0,0,0,.32);cursor:pointer;font-size:12.5px}
+/* IDEA 2 — YOUR TICKET IS HERE: compact floating pill — SMART + TRANSPARENT.
+   It exists ONLY on the front (picks) screen while the picks section is
+   near the viewport: it fades/slides in there, hides smoothly when the
+   reader scrolls away from the picks section, and never appears on the
+   board or any other screen / overlay, so it never blocks anything.
+   Translucent + backdrop blur so content shows through; the action chip
+   stays solid gold so it stays readable and tappable. */
+.you-minibar{position:fixed;left:50%;right:auto;transform:translate(-50%,14px);bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:96;display:flex;gap:7px;align-items:center;justify-content:center;width:max-content;max-width:calc(100vw - 20px);min-height:42px;box-sizing:border-box;background:linear-gradient(90deg,rgba(36,26,4,.78),rgba(5,5,5,.70) 55%,rgba(36,26,4,.78));-webkit-backdrop-filter:blur(10px) saturate(1.25);backdrop-filter:blur(10px) saturate(1.25);border:1.5px solid rgba(232,199,102,.92);border-radius:999px;color:#fff;padding:4px 5px 4px 11px;box-shadow:0 3px 12px rgba(0,0,0,.25);font-size:12.5px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,transform .28s ease,visibility 0s linear .28s}
+.you-minibar.ymb-visible{opacity:1;visibility:visible;transform:translate(-50%,0);pointer-events:auto;transition:opacity .28s ease,transform .28s ease,visibility 0s}
 .you-minibar[hidden]{display:none}
-.you-minibar .ymb-main{font-weight:600;line-height:1.15;min-width:0;max-width:min(48vw,360px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.you-minibar .ymb-main{appearance:none;-webkit-appearance:none;background:none;border:0;color:inherit;font:inherit;font-weight:600;line-height:1.15;min-width:0;max-width:min(48vw,360px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:2px 0;margin:0;cursor:pointer;text-align:left;-webkit-tap-highlight-color:transparent}
 .you-minibar .ymb-main b{color:#e8c766}
 .you-minibar .ymb-rank{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:15px;color:#e8c766;white-space:nowrap}
-.you-minibar .ymb-go{flex:none;background:#e8c766;color:#1d1400;border-radius:999px;padding:5px 10px;font-weight:800;font-size:12px;white-space:nowrap}
+.you-minibar .ymb-go{appearance:none;-webkit-appearance:none;flex:none;background:#e8c766;color:#1d1400;border:0;border-radius:999px;padding:5px 10px;font:inherit;font-weight:800;font-size:12px;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent}
 body.has-minibar{padding-bottom:56px}
 body.board-mode.has-minibar{padding-bottom:0}
+/* Description pop-up — tapping the pill's description text opens the WHOLE
+   description, fully readable, above the pill; tapping the text again (or
+   the pop-up) closes it. Separate from the Make picks action chip. */
+.ymb-pop{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(62px + env(safe-area-inset-bottom,0px));z-index:97;width:min(92vw,460px);box-sizing:border-box;background:linear-gradient(160deg,rgba(22,17,4,.88),rgba(5,5,5,.86));-webkit-backdrop-filter:blur(12px) saturate(1.25);backdrop-filter:blur(12px) saturate(1.25);border:1.5px solid rgba(232,199,102,.92);border-radius:16px;color:#fff;padding:14px 16px 12px;box-shadow:0 10px 30px rgba(0,0,0,.35);cursor:pointer}
+.ymb-pop[hidden]{display:none}
+.ymb-pop.open{animation:ymbPopIn .22s ease}
+@keyframes ymbPopIn{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+.ymb-pop-text{margin:0;font-size:14.5px;line-height:1.55;font-weight:600}
+.ymb-pop-hint{margin:8px 0 0;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.68)}
+@media (prefers-reduced-motion: reduce){
+  .you-minibar{transition:none}
+  .ymb-pop.open{animation:none}
+}
 /* IDEA 3 — CALM SPEED: same board, no animations, just numbers */
 body.board-calm #screen-board *,body.board-calm #screen-board *::before,body.board-calm #screen-board *::after{animation:none!important;transition:none!important}
 body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eventBanner{display:none!important}
@@ -1837,7 +1902,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
     <div class="kp"><span class="kp-ic">❤️</span><p><b>Donate = permanent honor</b> — add +$1 / +$2 / +$5 on top at the pay gate and you're on the <b>Donor Board forever</b>: badge, lifetime total, donated-ticket count. The badge follows you into every pool, even on a $0 ticket. Honor only — never points.</p></div>
     <div class="kp"><span class="kp-ic">🛒</span><p><b>Marketplace — spend 🪙 coins on looks:</b> $1 donated = <b>100 coins</b>; spread covers pay <b>1–10 coins</b> by difficulty. Shark avatars, frames, board highlights &amp; win celebrations from <b>400 coins</b> — owned forever. Coins are not cash and never buy points or prizes.</p></div>
     <div class="kp"><span class="kp-ic">🎟️</span><p><b>Play as many tickets as you want</b> — no cap. Each ticket is separate and costs $6.</p></div>
-    <div class="kp"><span class="kp-ic">⭐</span><p><b>2 bonus mini games per pool</b> — NFL QB yards/TDs + NBA star-vs-star. Nail one mini game = <b>+1 bonus point</b> (max +2). Bonus counts in the standings, in the open.</p></div>
+    <div class="kp"><span class="kp-ic">⭐</span><p><b>2 bonus mini games per pool</b> — NFL QB yards/TDs + NBA star-vs-star. Nail one mini game = <b>+1 bonus point</b> (max +2). <b>REQUIRED — both mini games must be played before a ticket can be submitted; there is no skip and no opt-out.</b> Bonus counts in the standings, in the open.</p></div>
     <div class="kp"><span class="kp-ic">📺</span><p><b>Board goes live</b> only after your payment is Shark-confirmed.</p></div>
   </div>
   <p class="kp-note">That's everything you need to play. All the fine print lives in the tabs under the picks — open it only if you want it.</p>
@@ -1905,6 +1970,25 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
   <div class="name-row">
     <input id="playerName" type="text" maxlength="24" placeholder="Your shark name (e.g. Bigg Moocho)" autocomplete="off" />
   </div>
+  <div class="name-row" style="margin-top:8px">
+    <input id="playerEmail" type="email" maxlength="60" placeholder="Your email — used ONLY to verify it's you and reclaim your locked name on a new phone" autocomplete="email" />
+  </div>
+  <div class="reg-note" id="nameLockNote">🔒 <b>Your first ticket LOCKS your Shark name — forever.</b> The name is checked against the username registry normalized (trimmed, upper-cased, extra spaces collapsed), so <b>BIGG MOOCHO</b>, “bigg moocho” and “ Bigg&nbsp; Moocho ” are the same name — once locked, <b>no one else can ever take it</b>, in any spelling. Locking creates your <b>profile</b> at that same moment: coins, wins, losses, tickets, mini games, spreads, donations, badges, jackpot wins, Fund the Pool and Marketplace items all track there. <b>How we know it's you:</b> this phone <b>remembers your locked name and auto-fills it</b> — that memory is a convenience, not proof. The hard proof is <b>email verification</b>: a code sent to an email you control proves the name is yours and lets you reclaim it on a new phone. A password alone is <b>not</b> used as the proof — passwords get forgotten, stolen and shared, and they don't prove you control an account; an email code does. <b>Honest limit of this test build:</b> the lock is enforced in this browser/device registry and the board's local registry on this page. A true global lock across every phone needs a server database — that is the next step before real launch, and this registry (normalized name · locked owner · email-verification claim) is designed to migrate to that server without changing the rules.</div>
+  <div class="claim-box" id="claimBox">
+    <h4>📱 New phone? Claim your locked name</h4>
+    <p>Type the exact Shark name you locked and the email you locked it with. We'll verify a code with you, and this device becomes yours for that name — remembered and auto-filled from then on.</p>
+    <div class="claim-row">
+      <input id="claimName" type="text" maxlength="24" placeholder="Your locked Shark name" autocomplete="off" aria-label="Your locked Shark name" />
+      <input id="claimEmail" type="email" maxlength="60" placeholder="The email you locked it with" autocomplete="email" aria-label="The email you locked it with" />
+      <button type="button" class="btn blue" id="claimSendBtn">Send my code</button>
+    </div>
+    <div class="claim-row">
+      <input id="claimCode" type="text" maxlength="6" placeholder="6-digit code" autocomplete="one-time-code" aria-label="6-digit verification code" />
+      <button type="button" class="btn" id="claimVerifyBtn">Verify &amp; claim this device</button>
+    </div>
+    <div class="claim-msg" id="claimMsg" aria-live="polite"></div>
+    <p>Test build note: there is no mail server behind this page yet, so the code is <b>shown to you right here</b> instead of emailed. At launch the same code goes to your inbox — the flow and the rule (email code = proof, password alone = never) do not change.</p>
+  </div>
   <div class="simple-steps" aria-label="How to play in three steps">
     <div class="sstep"><span class="sn">1</span><div><b>Pick the winner</b><small>Tap one team in every game. That's the whole game.</small></div></div>
     <div class="sstep"><span class="sn">2</span><div><b id="payStepTitle">Pay $6</b><small id="payStepSub">The Shark confirms your payment — then your ticket is live.</small></div></div>
@@ -1930,7 +2014,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
   </button>
   <div class="games" id="games"></div>
   <div class="progress-line" id="pickProgress">Picks made: <b>0 / 10</b></div>
-  <div class="progress-line" id="miniProgress">⭐ Bonus mini games: <b>0 / 5 picks</b> — two mini games ride under Game 1 (NFL) and Game 10 (NBA) above. Each mini game nailed = <b>+1 bonus point</b> in the standings (max +2). Optional — a ticket still counts without them, it just can't earn bonus.</div>
+  <div class="progress-line" id="miniProgress">⭐ Bonus mini games: <b>0 / 5 picks</b> — two mini games ride under Game 1 (NFL) and Game 10 (NBA) above. Each mini game nailed = <b>+1 bonus point</b> in the standings (max +2). <b>REQUIRED — both mini games must be played before a ticket can be submitted. No skip, no opt-out.</b></div>
   <div class="progress-line" id="spreadProgress">🎯 Spread plays: <b>0 / 10</b> — optional skill plays, one per game, under each matchup. Picking the winner is all you need to play; covers earn the Spread Bonus (max +3.00) in your Total Points.</div>
 
   <div class="tb-card" id="tbCard">
@@ -1955,6 +2039,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
     <button class="btn" id="submitBtn">Submit Ticket #1 🎟️</button>
     <span class="err" id="formErr"></span>
   </div>
+  <div class="progress-line mini-gate" id="miniGateLine">⭐ Mini games — REQUIRED to submit: NFL mini <b>0 / 2</b> · NBA mini <b>0 / 3</b> — submit stays blocked until BOTH mini games are played. There is no skip.</div>
   <div class="ticket" id="ticketBox"></div>
 
   <div class="to-board-strip">
@@ -2019,7 +2104,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
           <div class="rule"><span class="n">📺</span><h3>📺 Shark Tank Live — the 5-minute pre-lock show</h3><p>Before lock, the board runs a <b>5-minute pre-lock show, inside the page</b>: a <b>countdown to lock</b>, the <b>live pool fill</b>, the <b>jackpot rolling</b>, the <b>donor board</b>, and the Live Wire. The Tank Wire carries <b>one call only — “let's get this money”</b> — and <b>picks stay blind: no pick is ever revealed in the Tank</b>. A <b>second-ticket buy option</b> rides in the Tank while you wait. It is a show, not a rule change: the pay gate, blind-until-lock, money and points are exactly as posted everywhere else.</p></div>
           <div class="rule"><span class="n">4</span><h3>Tiebreaker order</h3><p>On the last NFL game, in this exact order: ① correct Over/Under call → ② closest total-points guess → ③ first TD <b>team</b> → ④ first TD <b>player</b> → ⑤ earliest ticket in.</p></div>
           <div class="rule"><span class="n">5</span><h3>🔥 The hot seat</h3><p>When two tickets carry the <b>same wins and losses</b> and their picks are <b>almost identical</b>, both columns grow on the board and get the HOT SEAT tag — the whole pool is watching those two, because they'll rise or sink together.</p></div>
-          <div class="rule"><span class="n">★</span><h3>⭐ Bonus mini games — +1 each, posted in the open</h3><p>Every pool has <b>two mini games</b>: an <b>NFL mini</b> under the Chiefs @ Bills game (Josh Allen passing yards Over/Under 267.5 + passing TDs Over/Under 2.5) and an <b>NBA mini</b> under the Bucks @ Cavaliers game (Giannis vs Mitchell — who scores more, combined points Over/Under 58.5, combined threes Over/Under 5.5). Nail <b>every pick in one mini game</b> and that ticket earns <b>+1 bonus point</b> — max <b>+2 per pool</b>. Bonus points <b>count in the standings for everyone to see</b>: <b>Total Points = Wins + Mini Game Bonus (max +2) + Spread Bonus (max +3.00)</b>, max <b>15.00</b> — so a ticket losing by one can be bumped up by its mini game or its spread covers. Only after Total Points and then Wins are compared does the posted tiebreaker order decide any remaining tie. Mini picks are optional and blind until lock, like every other pick.</p></div>
+          <div class="rule"><span class="n">★</span><h3>⭐ Bonus mini games — +1 each, posted in the open</h3><p>Every pool has <b>two mini games</b>: an <b>NFL mini</b> under the Chiefs @ Bills game (Josh Allen passing yards Over/Under 267.5 + passing TDs Over/Under 2.5) and an <b>NBA mini</b> under the Bucks @ Cavaliers game (Giannis vs Mitchell — who scores more, combined points Over/Under 58.5, combined threes Over/Under 5.5). Nail <b>every pick in one mini game</b> and that ticket earns <b>+1 bonus point</b> — max <b>+2 per pool</b>. Bonus points <b>count in the standings for everyone to see</b>: <b>Total Points = Wins + Mini Game Bonus (max +2) + Spread Bonus (max +3.00)</b>, max <b>15.00</b> — so a ticket losing by one can be bumped up by its mini game or its spread covers. Only after Total Points and then Wins are compared does the posted tiebreaker order decide any remaining tie. Mini picks are <b>REQUIRED — both mini games must be completed before a ticket can be submitted, and submit stays blocked until they are</b> — and they stay blind until lock, like every other pick. Spreads remain the optional skill play; mini games do not.</p></div>
           <div class="rule"><span class="n">🎯</span><h3>Spread plays — the optional skill layer, now worth points</h3><p>Every game also shows a <b>spread</b> from the back ledger (example: <b>BUF −3.5</b> — Buffalo is favored by 3.5, so Buffalo must win by 4+ for that side to “cover”; KC +3.5 covers if KC wins or loses by 3 or less). Picking the <b>winner</b> is all you need to play — that never changes. If you want the skill layer, tap a spread side (or “No play”) on any game. Spread plays are <b>tracked in the open</b> and now <b>count in the points</b>: <b>Total Points = Wins (1 per win, max 10) + Mini Game Bonus (max +2) + Spread Bonus (max +3.00 = Spread Covers × 0.30 points — 10 covers = +3.00, 7 covers = +2.10, 5 covers = +1.50, 0 covers = +0.00, rounded to 2 decimals). Total max = 15.00.</b> The spread bonus is a decisive edge: a perfect spread card (+3.00) against an average one (+1.50) is +1.50 — enough to overcome a 1-win deficit and move a ticket up; perfect against zero (+3.00) can jump several places. But wins still dominate — 10 wins with no spread (10.00) only loses to 7 wins + a perfect spread (10.00) on the tiebreaker. Worked example: 8 wins + 1 mini + 7 covers = 11.10 beats 9 wins + 0 minis + 5 covers = 10.50, even with one fewer win. Standings sort by Total Points, then Wins, then the posted tiebreaker order. Spread plays do not change the posted money split.</p></div>
           <div class="rule"><span class="n">📒</span><h3>The back ledger — where every line comes from</h3><p>Behind the board sits a <b>back ledger</b>: updated team stats for every NFL and NBA team on the slate, player stats for the stars behind the mini games, the market line (spread) for every game, and a play-by-play / possession-by-possession log — game, period, clock, possession, player, stat. Every line on your ticket is read from that ledger. In this <b>test build</b> the ledger holds a <b>demo dataset, labeled TEST DATA</b> — it is not a live sportsbook feed; real book-accurate live lines would need a licensed data feed.</p></div>
           <div class="rule"><span class="n">❄</span><h3>🧊 Cold &amp; drowning tickets</h3><p>Opposite the hot seat: a ticket stacking losses goes <b>cold in stages</b> on the grid — <b>🧊 CHILLY</b> (3 losses), then <b>❄️ COLD</b> (4 losses or 3 behind the leader), then <b>🌊🧊 DROWNING</b> (5+ losses or 4+ behind) — ice-blue, wavy and tilting as it goes under. Cold is a warning, not an ending: the ticket is still on the board. Only when it mathematically can't reach the top 4 does it move to the elimination tray below.</p></div>
@@ -2176,7 +2261,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
 <!-- ================= SCREEN 2 : THE BOARD ================= -->
 <div class="screen" id="screen-board">
   <div class="board-exit-bar">
-    <span class="beb-t">🦈 THE MAIN BOARD PAGE — FULL SCREEN · TEST MODE — NO REAL MONEY</span><span id="ghSync" style="display:inline-block;margin-left:8px;padding:4px 10px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-weight:800;font-size:12px">Loading board state…</span>
+    <span class="beb-t">🦈 THE MAIN BOARD PAGE — FULL SCREEN</span><span id="ghSync" style="display:inline-block;margin-left:8px;padding:4px 10px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-weight:800;font-size:12px">Loading board state…</span>
     <span class="beb-btns">
       <button class="fs-btn" id="boardOceanBtn">🌊 The Ocean</button>
       <button class="fs-btn" id="boardCommBtn">💬 Community</button>
@@ -2269,7 +2354,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
   <div class="podium" id="podium"></div>
 
   <div class="board-frame">
-    <div class="board-frame-top board-top-tap" id="boardFrameTop" role="button" tabindex="0" aria-label="Tap the top of the board for full screen" title="Tap the top of the board for full screen"><span class="bt">🦈 Official Board — Sunday Slate</span><span class="tap-hint">TAP TOP = FULL SCREEN ⛶</span><span class="live-badge" id="liveBadge">○ LIVE BOARD — LOCKS AT SLATE LOCK</span><span class="bs">One row per shark · games across the top · tap a shark for their profile</span></div>
+    <div class="board-frame-top board-top-tap" id="boardFrameTop" role="button" tabindex="0" aria-label="Tap the top of the board for full screen" title="Tap the top of the board for full screen"><span class="bt">🦈 Official Board — Sunday Slate</span><span class="tap-hint">TAP TOP = FULL SCREEN ⛶</span><span class="live-badge" id="liveBadge">○ LIVE BOARD — LOCKS AT SLATE LOCK</span><span class="bs">One row per shark · games across the top · tap a shark for their profile</span><span class="bs" id="boardLookLabel">LOOK: FULL BOARD</span></div>
     <div class="fx-strip" id="fxStrip" aria-live="polite"></div>
     <div class="board-filters" role="group" aria-label="Board view">
       <span class="bf-lbl">BOARD</span>
@@ -2519,12 +2604,16 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
 
 <footer style="max-width:1180px;margin:0 auto;padding:18px 16px 40px">
   <b>Pool Shark — test build.</b> Simulation only: no real games, no real scores, no real money — the pot and buyout dollars shown are test credits proving the math. The full rules, money splits, and the postponed-game rule are posted in the tabs above — nothing is hidden.
+  <br><b>Fund the Pool — TEST CREDITS ONLY:</b> every Fund amount, payback and free ticket on this page is a test credit. Real-money Fund payouts are <b>not promised and stay OFF</b> until legal review, a payment rail, and identity/payout handling are done. Fund paybacks release only at pool settlement, only from the posted FIFO queue, capped per settlement and floor-checked, in staggered installments — never all at once, never forced, never borrowed from the vault.
+  <br><b>Shark names &amp; profiles:</b> in this static build a locked name is enforced in this browser/device registry and the board's local registry on this page; device memory here is this browser's memory. A true global lock across all phones requires a server database — the next step before real launch — and the registry design on this page (normalized name, locked owner, email-verification claim) migrates to that server without changing the rules.
 </footer>
 
 <div id="eventBanner"><div class="big"></div><div class="sub"></div></div>
 
-<!-- IDEA 2 — YOUR TICKET IS HERE: persistent mini-bar, always visible -->
-<div class="you-minibar" id="youMinibar" role="button" tabindex="0" aria-label="Your ticket — tap to jump to your row on the board" hidden></div>
+<!-- IDEA 2 — YOUR TICKET IS HERE: smart mini-bar — front page only, only near the picks section -->
+<div class="you-minibar" id="youMinibar" aria-label="Your ticket" hidden></div>
+<!-- Description pop-up for the mini-bar: the whole description, opened by tapping the description text in the pill -->
+<div class="ymb-pop" id="ymbDescPop" role="dialog" aria-label="Your ticket — full description" hidden><p class="ymb-pop-text" id="ymbDescPopText"></p><p class="ymb-pop-hint">Tap here or tap the description again to close</p></div>
 <!-- IDEA 7 — in-page alert to every Shark when a milestone crosses -->
 <div class="alert-banner" id="alertBanner" role="alert" hidden></div>
 <div id="fireworksOverlay" aria-hidden="true"></div>
@@ -2885,6 +2974,10 @@ function goToScreen(which){
     var vp=document.getElementById("boardViewport"); if(vp){ try{ vp.scrollTop=0; }catch(e){} }
   }
   try{ window.scrollTo({top:0,behavior:"instant"}); }catch(e){ try{ window.scrollTo(0,0); }catch(e2){} }
+  /* SMART MINI-BAR: any screen switch re-decides it — it lives only on the
+     front (picks) screen near the picks section, never on the board or any
+     other screen, and leaving the front screen closes its description pop-up */
+  try{ if(which!=="picks") closeYmbDesc(); applyYmbVisibility(); }catch(e){}
   /* NO fullscreen request in here — and none anywhere else either, any
      more: the native Fullscreen API was removed from this page entirely
      (see the FULLSCREEN block below) because calling it in the phone
@@ -3375,6 +3468,337 @@ function wireMarketplace(){
 }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",wireMarketplace); else wireMarketplace();
 
+/* ================= USERNAME REGISTRY · PROFILES · CHAT · FUND THE POOL =================
+   THE LOCK: a Shark name is normalized (trim · collapse spaces · UPPER) and
+   that normalized key is what the registry holds — "BIGG MOOCHO",
+   "bigg moocho" and " Bigg  Moocho " are ONE name. The first ticket written
+   under a name LOCKS it to that Shark and creates their profile at that
+   moment; from then on the name can never be taken by anyone else.
+   DEVICE MEMORY is convenience only: this device remembers the locked name
+   and auto-fills it. The HARD PROOF is EMAIL VERIFICATION — a code sent to
+   an email the Shark controls (never a password alone: passwords are
+   forgotten, stolen and shared, and prove nothing about account control).
+   HONEST LIMIT, posted on the picks screen and in the footer: this static
+   build enforces the lock in this browser/device registry and the board's
+   local registry. A global lock across all phones needs a server database —
+   the next step before real launch; this registry's shape (normalized name,
+   locked owner, email-verification claim) migrates to it unchanged.
+   All state here is in-page memory for this session, like everything else
+   in this test build — nothing is written to any server or store. */
+var REGISTRY={}; /* NORMKEY -> {display, email, playerId, lockedAt, pool, verified} */
+var DEVICE={name:null, norm:null}; /* this device's remembered Shark (session memory) */
+var PROFILES_X={}; /* person -> {jackpotWins, perfectWins, chat[], fundContributed, fundPromisedCash, fundPromisedTickets, fundPaidBack, fundFreeGranted, createdPool} */
+var FUND_QUEUE=[], FUND_LOG=[], FUND_SEQ=0, CHAT_DRAFT={}, CHAT_NOTICE="", CLAIM_PENDING=null;
+var FUND_CAP_PCT=5;    /* POSTED: total Fund cash paid per settlement ≤ 5% of that pool's winners payout pool */
+var FUND_FLOOR=25;     /* POSTED: no Fund release at all unless the winners payout pool is at least $25 test credits */
+var FUND_TIERS=[
+ {amt:1, coins:100, back:0, tickets:0, installments:null, desc:"<b>100 🪙 coins</b> to shop the Marketplace (same rate as donations: $1 = 100 coins). Looks only — coins are not cash. <b>No cash back on this tier.</b>"},
+ {amt:5, coins:500, back:6, tickets:0, installments:[{cash:2,tickets:0},{cash:2,tickets:0},{cash:2,tickets:0}], desc:"<b>$6 back in test credits + 500 🪙 coins</b> — the $6 pays ONLY in <b>3 staggered installments of $2</b>, one per settling pool, after the threshold clears. Never all at once."},
+ {amt:10, coins:1000, back:5, tickets:3, installments:[{cash:1,tickets:1},{cash:2,tickets:1},{cash:2,tickets:1}], desc:"<b>$5 back in test credits + 1,000 🪙 coins + 3 FREE tickets</b> — the $5 pays as <b>$1 + $2 + $2</b> over 3 pools and the free tickets land <b>1 per pool</b>, never 3 in one pool."}
+];
+function normName(s){ return String(s==null?"":s).trim().replace(/\s+/g," ").toUpperCase(); }
+function cleanDisplayName(s){ return String(s==null?"":s).trim().replace(/\s+/g," "); }
+function nowTimeET(){ return new Date().toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"})+" ET"; }
+function profileExtra(person){
+  if(!person) return null;
+  if(!PROFILES_X[person]) PROFILES_X[person]={jackpotWins:0,perfectWins:0,chat:[],fundContributed:0,fundPromisedCash:0,fundPromisedTickets:0,fundPaidBack:0,fundFreeGranted:0,createdPool:null};
+  return PROFILES_X[person];
+}
+/* the board's demo Sharks already hold tickets, so their names are locked
+   and their profiles exist — same rule as everyone: first ticket = lock */
+CPU.forEach(function(p){
+  var nn=normName(p.name);
+  if(!REGISTRY[nn]) REGISTRY[nn]={display:p.name, email:"", playerId:"SHARK-"+(4100+Math.abs(nn.split("").reduce(function(a,c){return a+c.charCodeAt(0)*7;},0))%900), lockedAt:p.t||"", pool:1, verified:true, demo:true};
+  var ex=profileExtra(p.name); if(ex&&ex.createdPool===null) ex.createdPool=1;
+});
+function isProfileOwner(person){
+  if(!person) return false;
+  var nn=normName(person);
+  if(DEVICE.norm&&DEVICE.norm===nn) return true;
+  return myTickets.some(function(tk){ return normName(personNameOf(tk))===nn; });
+}
+function registryGate(name){
+  var nn=normName(name);
+  if(!nn) return {ok:false, msg:"Give your shark a name first."};
+  var reg=REGISTRY[nn];
+  if(!reg) return {ok:true, fresh:true};
+  if(isProfileOwner(reg.display)) return {ok:true};
+  return {ok:false, msg:"🔒 “"+reg.display+"” is already LOCKED — that Shark name was taken on a first ticket and can never be taken by anyone else, in any spelling or spacing. If that is YOUR name and this is a new phone, claim it below with your email code. Otherwise pick a different Shark name."};
+}
+function lockNameOnFirstTicket(name){
+  var nn=normName(name); if(!nn) return;
+  var display=cleanDisplayName(name);
+  if(!REGISTRY[nn]){
+    var emailEl=$("playerEmail");
+    REGISTRY[nn]={display:display, email:emailEl?emailEl.value.trim():"", playerId:"SHARK-"+(1000+Math.floor(Math.random()*9000))+"-"+nn.replace(/[^A-Z0-9]/g,"").slice(0,6), lockedAt:nowTimeET(), pool:poolNumber, verified:false};
+    var ex=profileExtra(display); if(ex) ex.createdPool=poolNumber;
+    feed("PROFILE","mom","🔒 NAME LOCKED + PROFILE CREATED: “"+display+"” is now locked to its Shark forever — normalized in the registry, so no case or spacing variant of it can ever be taken by anyone else. Their profile is live: coins, W–L, tickets, mini games, spreads, donations, badges, jackpot wins, Fund the Pool and Marketplace items all track there. Tap their name on the board to open it.");
+    secLog("<b>"+esc(display)+"</b> — Shark name LOCKED in the registry (normalized: "+esc(nn)+") · profile created · player "+REGISTRY[nn].playerId);
+  }
+  DEVICE.name=REGISTRY[nn].display; DEVICE.norm=nn;
+  try{ renderNameLockNote(); }catch(e){}
+}
+function refNextPeekSource(person){
+  if(!person) return null;
+  for(var i=0;i<REFNEXT_CREDITS.length;i++){ var c=REFNEXT_CREDITS[i]; if(c.person===person&&!c.used&&c.pool<poolNumber) return c.src||"referral"; }
+  return null;
+}
+function myPersonName(){
+  if(DEVICE.name) return DEVICE.name;
+  var mp=marketPerson(); if(mp) return mp;
+  var inp=$("playerName"); var v=inp?inp.value.trim():"";
+  return v||null;
+}
+function renderNameLockNote(){
+  var el=$("nameLockNote"); if(!el) return;
+  var inp=$("playerName"); var typed=inp?inp.value.trim():"";
+  var nn=normName(typed);
+  if(DEVICE.name){
+    el.innerHTML="🔒 <b>Welcome back, "+esc(DEVICE.name)+".</b> This device remembers your locked name and auto-fills it — that's convenience, not proof. The hard proof is your <b>email verification</b>: if you ever need this name on a new phone, claim it below with the email you locked it with. Nobody else can take “"+esc(DEVICE.name)+"” — in any spelling — ever.";
+    return;
+  }
+  if(typed&&REGISTRY[nn]&&!isProfileOwner(REGISTRY[nn].display)){
+    el.innerHTML="🔒 <b>“"+esc(REGISTRY[nn].display)+"” is already LOCKED</b> to another Shark — it can never be taken, in any spelling or spacing. If it's yours, claim this device below with your email code; otherwise choose a different name — your first ticket will lock it and create your profile.";
+    return;
+  }
+  if(typed){
+    el.innerHTML="🔒 <b>“"+esc(cleanDisplayName(typed))+"” is available.</b> Your first ticket locks it forever — nobody else will ever be able to take it — and creates your profile at that moment. Add your email so you can prove it's you and reclaim the name on a new phone; this device will remember and auto-fill it.";
+  }
+}
+/* ---- email-verification claim (recover a locked name on this device) ---- */
+function claimSend(){
+  var msg=$("claimMsg"); if(!msg) return;
+  var name=cleanDisplayName(($("claimName")||{}).value||"");
+  var email=(($("claimEmail")||{}).value||"").trim();
+  function say(t,c){ msg.textContent=t; msg.style.color=c||"#8dffb0"; }
+  var nn=normName(name);
+  if(!nn) return say("Type your locked Shark name first.","#ffb9c0");
+  var reg=REGISTRY[nn];
+  if(!reg) return say("That name isn't locked in this device's registry — check the spelling. (In this test build the registry lives in this browser; the global registry arrives with the server step before launch.)","#ffb9c0");
+  if(!reg.email) return say("“"+reg.display+"” was locked without an email on file, so it can't be reclaimed by email code in this build — on the device that locked it, it still auto-fills. At launch, names locked without an email are claimed through the host.","#ffb9c0");
+  if(!email||email.toLowerCase()!==reg.email.toLowerCase()) return say("That email doesn't match the email “"+reg.display+"” was locked with. The code only goes to the address on file — that's what makes it proof.","#ffb9c0");
+  CLAIM_PENDING={norm:nn, code:String(100000+Math.floor(Math.random()*900000))};
+  say("✓ Code for “"+reg.display+"” — TEST BUILD: no mail server yet, so here is your code instead of an email: "+CLAIM_PENDING.code+" — type it below and tap Verify. At launch this exact code is emailed to "+reg.email+".");
+  feed("PROFILE","info","📧 EMAIL VERIFICATION started for “"+reg.display+"” — a 6-digit code was issued to the email on file (shown in-page in this test build; emailed at launch). Email code = proof it's them; a password alone never is.");
+}
+function claimVerify(){
+  var msg=$("claimMsg"); if(!msg) return;
+  var code=(($("claimCode")||{}).value||"").trim();
+  function say(t,c){ msg.textContent=t; msg.style.color=c||"#8dffb0"; }
+  if(!CLAIM_PENDING) return say("Send your code first — the button above issues it to the email on file.","#ffb9c0");
+  if(code!==CLAIM_PENDING.code) return say("That code doesn't match the one issued. Codes are single-use and tied to this claim — send a fresh one if you need to.","#ffb9c0");
+  var reg=REGISTRY[CLAIM_PENDING.norm];
+  reg.verified=true;
+  DEVICE.name=reg.display; DEVICE.norm=CLAIM_PENDING.norm;
+  var inp=$("playerName"); if(inp) inp.value=reg.display;
+  CLAIM_PENDING=null;
+  say("✓ Verified — welcome back, "+reg.display+". This device is now claimed for your locked name: it will remember and auto-fill it, and your profile, coins and records are yours here.");
+  feed("PROFILE","mom","✓ NAME CLAIMED BY EMAIL VERIFICATION: “"+reg.display+"” proved control of the email on file with a code — this device now remembers the name and auto-fills it. The lock itself never moved: the name was always theirs, the code just proved it.");
+  try{ renderNameLockNote(); }catch(e){}
+  try{ renderInviteCode(); }catch(e){}
+}
+/* ---- everything a profile tracks, in one place ---- */
+function profileFullStats(person){
+  var tkts=players().filter(function(p){ return (p.personName||p.name)===person; });
+  var career=(typeof LEDGER!=="undefined"&&LEDGER[person])?LEDGER[person]:{pools:0,w:0,l:0,ticketWins:0,top4:0};
+  var minisPlayed=0, minisWon=0, miniBonusPts=0, covers=0, spreadPicks=0;
+  tkts.forEach(function(p){
+    if(p.mini){
+      if(p.mini.nflYds&&p.mini.nflTd) minisPlayed++;
+      if(p.mini.nbaStar&&p.mini.nbaPts&&p.mini.nbaThrees) minisPlayed++;
+    }
+    var b=miniBonusFor(p);
+    if(b.nfl===1){ minisWon++; } if(b.nba===1){ minisWon++; }
+    miniBonusPts+=b.total;
+    var sb=spreadBonusFor(p); covers+=sb.covers; spreadPicks+=sb.picks;
+  });
+  var bestRank=null;
+  ranked().forEach(function(x,i){ if((x.p.personName||x.p.name)===person&&(bestRank===null||(i+1)<bestRank)) bestRank=i+1; });
+  var ex=profileExtra(person);
+  var don=donorRecordFor(person);
+  return {tickets:tkts.length, career:career, minisPlayed:minisPlayed, minisWon:minisWon, miniBonus:miniBonusPts,
+    covers:covers, spreadPicks:spreadPicks, bestRank:bestRank,
+    coins:coinBalance(person), donations:don?don.total:0, donorTickets:don?don.tickets:0,
+    jackpotWins:ex?ex.jackpotWins:0, perfectWins:ex?ex.perfectWins:0};
+}
+/* ---- FUND THE POOL — staggered by design, enforced in the logic ----
+   Every payback enters ONE FIFO queue, ordered by funding time. At each
+   pool settlement, processFundQueue() releases installments ONLY if the
+   winners payout pool clears the posted $25 safety floor, and total cash
+   released that settlement is capped at 5% of that pool's winners payout
+   pool. Each contribution pays at most ONE installment per settlement, so
+   with many funders the payouts stagger across pools and across people —
+   they can never hit the pool at once. If the cap or floor isn't met, the
+   installment WAITS — it is never forced and never borrowed from the
+   vault. Fund cash is test credits tracked in this queue and the vault
+   log; it is not deducted from the posted vault split in this test build.
+   Real-money Fund payouts stay gated on legal review, a payment rail and
+   identity/payout handling, and are not promised anywhere on this page. */
+function fundStatusFor(person){
+  var ex=profileExtra(person);
+  var queued=FUND_QUEUE.filter(function(q){ return q.person===person; });
+  var queuedCash=queued.reduce(function(a,q){ return Math.round((a+q.cash)*100)/100; },0);
+  var queuedTickets=queued.reduce(function(a,q){ return a+q.tickets; },0);
+  return {contributed:ex?ex.fundContributed:0, paidBack:ex?ex.fundPaidBack:0, freeGranted:ex?ex.fundFreeGranted:0,
+    promisedCash:ex?ex.fundPromisedCash:0, promisedTickets:ex?ex.fundPromisedTickets:0,
+    queued:queued, queuedCash:queuedCash, queuedTickets:queuedTickets,
+    remainingCash:Math.round(((ex?ex.fundPromisedCash:0)-(ex?ex.fundPaidBack:0))*100)/100,
+    position:queued.length?(FUND_QUEUE.indexOf(queued[0])+1):null};
+}
+function fundThePool(person, amt){
+  var tier=null;
+  FUND_TIERS.forEach(function(t){ if(t.amt===amt) tier=t; });
+  if(!tier||!person) return;
+  if(!isProfileOwner(person)){ CHAT_NOTICE=""; try{ banner("big","🏦 FUND THE POOL","Only the Shark who owns a profile can fund the pool from it."); }catch(e){} return; }
+  var ex=profileExtra(person);
+  FUND_SEQ++;
+  var cid="FUND-"+FUND_SEQ;
+  ex.fundContributed=Math.round((ex.fundContributed+amt)*100)/100;
+  ex.fundPromisedCash=Math.round((ex.fundPromisedCash+tier.back)*100)/100;
+  ex.fundPromisedTickets+=tier.tickets;
+  creditCoins(person, tier.coins, "fund");
+  var rec=coinRecord(person); rec.fromFund=(rec.fromFund||0)+tier.coins;
+  if(tier.installments){
+    tier.installments.forEach(function(inst,i){
+      FUND_QUEUE.push({person:person, cid:cid, cash:inst.cash, tickets:inst.tickets, time:nowTimeET(),
+        label:"$"+amt+" Fund · installment "+(i+1)+" of "+tier.installments.length+" — "+(inst.cash>0?money(inst.cash)+" back":"")+(inst.tickets?((inst.cash>0?" + ":"")+inst.tickets+" free ticket"+(inst.tickets===1?"":"s")):"")});
+    });
+  }
+  FUND_LOG.push({amt:amt, label:"IN +"+money(amt), html:"<b>🏦 Fund the Pool</b> — "+esc(person)+" locked "+money(amt)+" in test credits to fund the pool · <b>+"+tier.coins+" 🪙 coins credited now</b> (same $1 = 100 coins rate as donations · looks only, never cash)"+(tier.installments?(" · payback enters the FIFO queue as <b>"+tier.installments.length+" staggered installments</b> — one per settling pool at most, settlement-capped, floor-checked, never all at once"):" · coins-only tier — no cash back, nothing queued")+". TEST CREDITS ONLY."});
+  feed("FUND","mom","🏦 FUND THE POOL: "+person+" locked "+money(amt)+" (test credits) · +"+tier.coins+" 🪙 coins now (balance "+coinBalance(person)+")."+(tier.installments?(" Payback queued FIFO: "+tier.installments.map(function(z){return money(z.cash)+(z.tickets?(" + "+z.tickets+" 🎟️"):"")}).join(" → ")+" — one installment per settling pool at most, capped at "+FUND_CAP_PCT+"% of each pool's winners payout pool and only above the "+money(FUND_FLOOR)+" safety floor. Staggered by design — never a hit on the pool."):" Coins-only tier — no cash back."));
+  try{ buildProfile(currentProfileName||person, true); }catch(e){}
+  try{ renderBoard(); }catch(e){}
+}
+function processFundQueue(){
+  if(!settlement) return;
+  var net=settlement.net||0;
+  if(!FUND_QUEUE.length) return;
+  if(net<FUND_FLOOR){
+    FUND_LOG.push({amt:0, label:"HELD", html:"<b>🏦 Fund queue HELD at Pool #"+poolNumber+" settlement</b> — the winners payout pool was "+money(net)+", under the posted "+money(FUND_FLOOR)+" safety floor (place prizes, jackpot, seed and host are covered first). <b>No Fund installment released.</b> The whole queue waits for the next pool — never forced, never borrowed from the vault."});
+    feed("FUND","info","🏦 FUND QUEUE HELD — Pool #"+poolNumber+"'s winners payout pool ("+money(net)+") is under the "+money(FUND_FLOOR)+" safety floor, so no Fund installments released. "+FUND_QUEUE.length+" installment(s) wait in FIFO order for the next pool.");
+    return;
+  }
+  var cap=Math.floor(net*FUND_CAP_PCT)/100;
+  var paidCash=0, paidList=[];
+  while(FUND_QUEUE.length){
+    var q=FUND_QUEUE[0];
+    if(q.cash>0 && Math.round((paidCash+q.cash)*100)/100>cap+1e-9) break; /* cap reached — the rest wait, in order */
+    FUND_QUEUE.shift();
+    paidCash=Math.round((paidCash+q.cash)*100)/100;
+    var ex=profileExtra(q.person);
+    if(ex){ ex.fundPaidBack=Math.round((ex.fundPaidBack+q.cash)*100)/100; ex.fundFreeGranted+=q.tickets; }
+    for(var t=0;t<q.tickets;t++) REFNEXT_CREDITS.push({person:q.person, pool:poolNumber, used:false, src:"fund"});
+    paidList.push(q);
+    FUND_LOG.push({amt:-q.cash, label:q.cash>0?("OUT −"+money(q.cash)):"🎟️ QUEUE", html:"<b>🏦 Fund installment PAID</b> — "+esc(q.person)+": "+esc(q.label)+" · paid at Pool #"+poolNumber+" settlement in FIFO order. Fund cash paid this settlement so far: "+money(paidCash)+" of the "+money(cap)+" cap ("+FUND_CAP_PCT+"% of the "+money(net)+" winners payout pool)."+(q.tickets?(" The free ticket is credited for a FUTURE pool — it never counts in the pool that paid it."):"")+" TEST CREDITS ONLY."});
+  }
+  if(paidList.length){
+    feed("FUND","mom","🏦 FUND THE POOL — SETTLEMENT RELEASE: "+paidList.length+" installment(s) paid, "+money(paidCash)+" total test credits (cap "+money(cap)+" = "+FUND_CAP_PCT+"% of the "+money(net)+" winners pool · floor "+money(FUND_FLOOR)+" cleared). Paid in FIFO order: "+paidList.map(function(q){ return esc(q.person)+" — "+esc(q.label); }).join(" · ")+". "+(FUND_QUEUE.length?(FUND_QUEUE.length+" installment(s) still queued for later pools — staggered, never a hit on the pool."):"Queue clear."));
+  } else {
+    FUND_LOG.push({amt:0, label:"HELD", html:"<b>🏦 Fund queue WAITING at Pool #"+poolNumber+" settlement</b> — the settlement cap ("+money(cap)+" = "+FUND_CAP_PCT+"% of "+money(net)+") cannot cover the next FIFO installment, so nothing was forced. Order is kept; the queue head waits for Pool #"+(poolNumber+1)+"."});
+  }
+}
+/* ---- profile sections: lifetime · chat · fund · identity ---- */
+function profileLifetimeHtml(person){
+  var fs=profileFullStats(person);
+  var ex=profileExtra(person);
+  var fz=fundStatusFor(person);
+  function row(k,v){ return '<div class="tb-row"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>'; }
+  return '<div class="prof-tb">'+
+    row("🎟️ TICKETS — THIS POOL", fs.tickets+" ticket"+(fs.tickets===1?"":"s")+" on the board")+
+    row("🏅 BEST PLACE — THIS POOL", fs.bestRank?("#"+fs.bestRank+(fs.bestRank<=4?" · TOP-4 ✓":"")):"—")+
+    row("🏆 TOP-4 FINISHES — CAREER", fs.career.top4+" · ticket wins (whole pools taken): "+fs.career.ticketWins)+
+    row("⭐ MINI GAMES — PLAYED / WON", fs.minisPlayed+" played · "+fs.minisWon+" won · mini bonus +"+fs.miniBonus+" pts all-time this pool")+
+    row("🎯 SPREADS — COVERS", fs.covers+" covers on "+fs.spreadPicks+" spread picks")+
+    row("❤️ DONATIONS — LIFETIME", money(fs.donations)+" across "+fs.donorTickets+" donated ticket"+(fs.donorTickets===1?"":"s")+" · never resets")+
+    row("🏆 JACKPOT WINS", fs.jackpotWins+" · Perfect Jackpot wins: "+fs.perfectWins)+
+    row("🏦 FUND THE POOL — CONTRIBUTED", money(fz.contributed)+" locked (test credits) · "+money(fz.paidBack)+" paid back so far · "+fz.freeGranted+" free ticket"+(fz.freeGranted===1?"":"s")+" granted")+
+    row("🪙 COINS", fs.coins+" coins — Marketplace looks only, never cash, never points or prizes")+
+    (ex&&ex.createdPool?row("🔒 PROFILE CREATED", "Pool #"+ex.createdPool+" — the moment this Shark's first ticket was written"):"")+
+  '</div>';
+}
+function profileChatHtml(person){
+  var ex=profileExtra(person);
+  var msgs=(ex?ex.chat:[]).map(function(m){
+    return '<div class="chat-msg"><span class="cm-from">'+esc(m.from)+(m.owner?'<span class="cm-owner">PROFILE OWNER</span>':"")+'</span><span class="cm-time">'+esc(m.time)+'</span><div class="cm-text">'+esc(m.text)+'</div></div>';
+  }).join("");
+  var me=myPersonName();
+  return '<div class="prof-chat">'+
+    (msgs||'<div class="chat-empty">No messages yet. Be the first Shark to say something to '+esc(person)+' — keep it about the pool: tickets, records, the jackpot, the water.</div>')+
+    '<div class="chat-form"><textarea id="chatText" maxlength="240" placeholder="'+(me?("Message "+esc(person)+" — posting as "+esc(me)):"Type your shark name on the picks screen first")+'" aria-label="Write a message to '+esc(person)+'">'+esc(CHAT_DRAFT[person]||"")+'</textarea><button type="button" class="btn" data-chat-post="'+esc(person)+'">Post 🦈</button></div>'+
+    (CHAT_NOTICE?'<div class="claim-msg" style="color:#ffb9c0">'+esc(CHAT_NOTICE)+'</div>':"")+
+    '<div class="chat-rules">📌 <b>Shark-to-Shark rules, posted:</b> no real-money claims, no guaranteed-win talk, <b>no pick sharing before lock</b> (picks stay blind until the slate locks), no harassment. Messages are local to this page in this test build and carry the time they were posted.</div>'+
+  '</div>';
+}
+function postProfileChat(person){
+  var ta=$("chatText");
+  var text=ta?ta.value.trim():"";
+  var from=myPersonName();
+  if(!from){ CHAT_NOTICE="Type your shark name on the picks screen first — chat posts carry a Shark name."; try{ buildProfile(currentProfileName||person,true); }catch(e){} return; }
+  if(!text){ CHAT_NOTICE="Write a message first."; try{ buildProfile(currentProfileName||person,true); }catch(e){} return; }
+  if(!locked){
+    var low=" "+text.toUpperCase()+" ";
+    var leaks=GAMES.some(function(g){ return low.indexOf(" "+g.away+" ")>=0||low.indexOf(" "+g.home+" ")>=0; });
+    if(leaks&&(text.toUpperCase().indexOf("PICK")>=0||text.indexOf("🔒")>=0)){ CHAT_NOTICE="Blocked by the posted rule: no pick sharing before lock — picks stay blind until the slate locks."; try{ buildProfile(currentProfileName||person,true); }catch(e){} return; }
+  }
+  var ex=profileExtra(person);
+  ex.chat.push({from:from, text:text, time:nowTimeET(), owner:isProfileOwner(person)&&normName(from)===normName(person)});
+  CHAT_DRAFT[person]=""; CHAT_NOTICE="";
+  feed("CHAT","info","💬 SHARK TO SHARK: "+from+" posted on "+person+"'s profile — “"+(text.length>90?text.slice(0,90)+"…":text)+"” ("+nowTimeET()+").");
+  try{ buildProfile(currentProfileName||person,true); }catch(e){}
+}
+function profileFundHtml(person){
+  var fz=fundStatusFor(person);
+  var mine=isProfileOwner(person);
+  function row(k,v){ return '<div class="tb-row"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>'; }
+  var tiers=FUND_TIERS.map(function(t){
+    return '<div class="fund-tier"><div class="ft-amt">'+money(t.amt)+' FUND</div><div class="ft-desc">'+t.desc+'</div>'+(mine?('<button type="button" class="btn" data-fund-tier="'+t.amt+'">🏦 Fund the Pool — '+money(t.amt)+'</button>'):'<div class="ft-desc" style="margin-top:8px">Only '+esc(person)+' can fund from their own profile.</div>')+'</div>';
+  }).join("");
+  var queueHtml=fz.queued.length?fz.queued.map(function(q){
+    return row("⏳ QUEUED #"+(FUND_QUEUE.indexOf(q)+1)+" OF "+FUND_QUEUE.length+" (FIFO)", esc(q.label)+" · funded "+esc(q.time));
+  }).join(""):row("⏳ QUEUED", "Nothing waiting — this Shark's installments are all paid or none were queued");
+  return '<div class="prof-tb">'+
+    row("💰 CONTRIBUTED — LOCKED", money(fz.contributed)+" in test credits")+
+    row("🎁 PROMISED BY THE POSTED TIERS", money(fz.promisedCash)+" back + "+fz.promisedTickets+" free ticket"+(fz.promisedTickets===1?"":"s")+" — staggered, never at once")+
+    row("✓ PAID BACK SO FAR", money(fz.paidBack)+" · "+fz.freeGranted+" free ticket"+(fz.freeGranted===1?"":"s")+" granted")+
+    row("◐ STILL TO COME", money(fz.remainingCash)+" cash back remaining, paid in installments at future settlements")+
+    queueHtml+
+  '</div>'+
+  '<div class="fund-tiers">'+tiers+'</div>'+
+  '<p class="fund-note">📌 <b>HOW THE STAGGERING WORKS — posted and enforced:</b> every Fund payback enters <b>one FIFO queue</b>, ordered by funding time. At each pool settlement, installments release <b>only</b> if that pool winners payout pool is at least <b>'+money(FUND_FLOOR)+'</b> after place prizes, the Perfect Jackpot, the seed and the host are covered — and total Fund cash released in that settlement is <b>capped at '+FUND_CAP_PCT+'% of the winners payout pool</b>. Each funder gets <b>at most one installment per settlement</b>, so many funders pay out at different times, over many pools — <b>never a single hit on the pool</b>. If the cap or floor is not met, the installment waits in queue — never forced, never borrowed from the vault. Queue order and waiting status show here and in the vault log. <b>All Fund amounts are TEST CREDITS ONLY</b> in this build, tracked in the Fund queue and the vault log — not deducted from the posted vault split. Real-money Fund payouts are gated on legal review, a payment rail, and identity/payout handling, and are <b>not promised</b>.</p>';
+}
+function profileIdentityHtml(person){
+  var reg=REGISTRY[normName(person)];
+  var ex=profileExtra(person);
+  function row(k,v){ return '<div class="tb-row"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>'; }
+  return '<div class="prof-tb">'+
+    row("🔒 NAME STATUS", reg?("LOCKED — “"+esc(reg.display)+"” can never be taken by anyone else"):"On the board — locks at first ticket")+
+    (reg?row("🪪 PLAYER ID", esc(reg.playerId)):"")+
+    (reg&&reg.lockedAt?row("⏱️ LOCKED AT", esc(reg.lockedAt)+(reg.pool?(" · Pool #"+reg.pool):"")):"")+
+    row("📱 DEVICE MEMORY", DEVICE.norm===normName(person)?"This device remembers this name and auto-fills it (convenience only — not proof)":"This device has not claimed this name")+
+    row("📧 HARD PROOF", "Email verification — a code to the email on file proves it's them. A password alone is never the sole proof: it can be forgotten, stolen or shared, and proves no control of an account.")+
+    row("🌐 HONEST LIMIT", "This static build enforces the lock in this browser/device registry and the board's local registry. A true global lock across all phones requires a server database — the next step before real launch; this registry migrates to it without changing the rules.")+
+  '</div>';
+}
+function wireProfileExtras(){
+  var pb=$("profileBody");
+  if(pb&&!pb._pxWired){
+    pb._pxWired=true;
+    pb.addEventListener("click",function(e){
+      var cp=e.target.closest("[data-chat-post]"); if(cp){ postProfileChat(cp.getAttribute("data-chat-post")); return; }
+      var ft=e.target.closest("[data-fund-tier]"); if(ft){ var pp=profilePlayer(currentProfileName); fundThePool(pp?(pp.personName||pp.name):currentProfileName, parseFloat(ft.getAttribute("data-fund-tier"))); return; }
+    });
+    pb.addEventListener("input",function(e){
+      if(e.target&&e.target.id==="chatText"&&currentProfileName){ var pp2=profilePlayer(currentProfileName); CHAT_DRAFT[pp2?(pp2.personName||pp2.name):currentProfileName]=e.target.value; }
+    });
+  }
+  var cs=$("claimSendBtn"); if(cs&&!cs._w){ cs._w=true; cs.addEventListener("click",claimSend); }
+  var cv=$("claimVerifyBtn"); if(cv&&!cv._w){ cv._w=true; cv.addEventListener("click",claimVerify); }
+  var pn=$("playerName");
+  if(pn&&!pn._pxW){ pn._pxW=true; pn.addEventListener("input",function(){ try{ renderNameLockNote(); }catch(e){} }); }
+  try{ renderNameLockNote(); }catch(e){}
+}
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",wireProfileExtras); else wireProfileExtras();
+
 /* ---------------- THE OCEAN — LEDGER MEMORY ----------------
    CAREER = each shark's tracked history before today's live board
    (test-mode simulation history). LEDGER is the live brain: it starts
@@ -3415,7 +3839,7 @@ function players(){
      its own picks, tiebreaker, ticket number, row, profile and standing. */
   var list=CPU.filter(function(p){return p.paid});
   var mine=myPaidTickets().map(function(tk){
-    return {name:tk.name, personName:personNameOf(tk), ticketNum:tk.num, picks:tk.picks, tb:tk.tb, mini:tk.mini||null, spread:tk.spread||null, donation:tk.donation||0, subsidy:tk.subsidy||0, referral:!!tk.referral, launchFree:!!tk.launchFree, bogoFree:!!tk.bogoFree, refNextFree:!!tk.refNextFree, referrer:tk.referrer||null, t:tk.time, you:true, owner:tk.owner||tk.name, soldFrom:tk.soldFrom||null, paid:true, confirm:tk.confirm, paidTime:tk.paidTime};
+    return {name:tk.name, personName:personNameOf(tk), ticketNum:tk.num, picks:tk.picks, tb:tk.tb, mini:tk.mini||null, spread:tk.spread||null, donation:tk.donation||0, subsidy:tk.subsidy||0, referral:!!tk.referral, launchFree:!!tk.launchFree, bogoFree:!!tk.bogoFree, refNextFree:!!tk.refNextFree, fundFree:!!tk.fundFree, referrer:tk.referrer||null, t:tk.time, you:true, owner:tk.owner||tk.name, soldFrom:tk.soldFrom||null, paid:true, confirm:tk.confirm, paidTime:tk.paidTime};
   });
   return mine.concat(list);
 }
@@ -3674,6 +4098,7 @@ function planTotalNote(){
   return "("+segs.join(" + ")+")";
 }
 function ticketPriceLabel(tk){
+  if(tk.fundFree) return " · 🎟️ FREE Fund-the-Pool ticket — $0 due from you · host's $6.00 subsidy posts in the vault · counts as a full $6";
   if(tk.bogoFree) return " · 🎟️ BOGO FREE second ticket — $0 due from you · host's $6.00 launch subsidy posts in the vault · counts as a full $6";
   if(tk.refNextFree) return " · 🎁 FREE referral-reward ticket — $0 due from you · host's $6.00 subsidy posts in the vault · counts as a full $6";
   if(tk.launchFree) return " · 🚀 FREE launch ticket — $0 due from you · host's $6.00 launch subsidy posts in the vault · counts as a full $6";
@@ -3822,14 +4247,14 @@ function renderGames(){
       '<button type="button" class="team" data-g="'+g.id+'" data-t="'+g.away+'">'+teamLogo(g.away,"lg")+'<br>'+g.away+'<small>'+g.awayName+' (away)</small>'+teamStatHtml(g.away)+'</button>'+
       '<button type="button" class="team" data-g="'+g.id+'" data-t="'+g.home+'">'+teamLogo(g.home,"lg")+'<br>'+g.home+'<small>'+g.homeName+' (home)</small>'+teamStatHtml(g.home)+'</button></div>'+spreadBoxHtml(g);
     if(g.id===MINI_NFL.gameId){
-      d.innerHTML+='<div class="mini-zone" id="miniNflZone"><div class="mini-kicker">⭐ BONUS MINI GAME 1 OF 2 — NFL · WORTH +1 POINT</div><div class="mini-title">QB Spotlight — Josh Allen</div><div class="mini-sub">The dominant arm in this game. Nail <b>both</b> calls and this mini game pays <b>+1 bonus point</b> on your ticket. Miss one, no bonus from this mini — the other mini can still pay.</div>'+
+      d.innerHTML+='<div class="mini-zone" id="miniNflZone"><div class="mini-kicker">⭐ REQUIRED MINI GAME 1 OF 2 — NFL · WORTH +1 POINT · MUST PLAY TO SUBMIT</div><div class="mini-title">QB Spotlight — Josh Allen</div><div class="mini-sub">The dominant arm in this game. Nail <b>both</b> calls and this mini game pays <b>+1 bonus point</b> on your ticket. Miss one, no bonus from this mini — the other mini can still pay.</div>'+
       '<div class="mini-player">'+teamLogo("BUF","lg")+'<div><div class="mp-name">Josh Allen — BUF Bills</div><div class="mp-role">Quarterback · Chiefs @ Bills · Ledger season (test data): '+ledgerPlayerLine("Josh Allen")+'</div></div></div>'+
       '<div class="mini-q"><div class="mq-lbl">ALLEN PASSING YARDS — LINE '+MINI_NFL.ydsLine+'</div><div class="ou-chips"><button type="button" data-mini="nflYds" data-mv="Over">OVER '+MINI_NFL.ydsLine+' yds</button><button type="button" data-mini="nflYds" data-mv="Under">UNDER '+MINI_NFL.ydsLine+' yds</button></div></div>'+
       '<div class="mini-q"><div class="mq-lbl">ALLEN PASSING TOUCHDOWNS — LINE '+MINI_NFL.tdLine+'</div><div class="ou-chips"><button type="button" data-mini="nflTd" data-mv="Over">OVER '+MINI_NFL.tdLine+' TDs</button><button type="button" data-mini="nflTd" data-mv="Under">UNDER '+MINI_NFL.tdLine+' TDs</button></div></div>'+
       '<div data-mini-live="nfl"></div></div>';
     }
     if(g.id===MINI_NBA.gameId){
-      d.innerHTML+='<div class="mini-zone" id="miniNbaZone"><div class="mini-kicker">⭐ BONUS MINI GAME 2 OF 2 — NBA · WORTH +1 POINT</div><div class="mini-title">Star vs Star — Giannis vs Mitchell</div><div class="mini-sub">The biggest star on each team. Nail <b>all three</b> calls and this mini game pays <b>+1 bonus point</b>. Max bonus per ticket: <b>+2</b>.</div>'+
+      d.innerHTML+='<div class="mini-zone" id="miniNbaZone"><div class="mini-kicker">⭐ REQUIRED MINI GAME 2 OF 2 — NBA · WORTH +1 POINT · MUST PLAY TO SUBMIT</div><div class="mini-title">Star vs Star — Giannis vs Mitchell</div><div class="mini-sub">The biggest star on each team. Nail <b>all three</b> calls and this mini game pays <b>+1 bonus point</b>. Max bonus per ticket: <b>+2</b>.</div>'+
       '<div class="mini-vs"><div class="mini-player">'+teamLogo("MIL","md")+'<div><div class="mp-name">Giannis</div><div class="mp-role">MIL Bucks</div></div></div><span class="vs-mid">VS</span><div class="mini-player">'+teamLogo("CLE","md")+'<div><div class="mp-name">Mitchell</div><div class="mp-role">CLE Cavaliers</div></div></div></div>'+
       '<div class="mini-q"><div class="mq-lbl">WHO SCORES MORE POINTS?</div><div class="star-chips"><button type="button" data-mini="nbaStar" data-mv="MIL">Giannis (MIL) scores more</button><button type="button" data-mini="nbaStar" data-mv="CLE">Mitchell (CLE) scores more</button></div></div>'+
       '<div class="mini-q"><div class="mq-lbl">THEIR COMBINED POINTS — LINE '+MINI_NBA.ptsLine+'</div><div class="ou-chips"><button type="button" data-mini="nbaPts" data-mv="Over">OVER '+MINI_NBA.ptsLine+' pts</button><button type="button" data-mini="nbaPts" data-mv="Under">UNDER '+MINI_NBA.ptsLine+' pts</button></div></div>'+
@@ -3869,7 +4294,15 @@ function miniPickCount(){
 function miniProgressUpdate(){
   var el=$("miniProgress"); if(!el) return;
   var n=miniPickCount();
-  el.innerHTML="⭐ Bonus mini games: <b>"+n+" / 5 picks</b>"+(n===5?" — both mini games fully armed. Each one you nail pays <b>+1 bonus point</b> (max +2).":n>0?" — finish a mini game to arm its <b>+1 bonus point</b> (NFL needs 2 picks, NBA needs 3).":" — two mini games ride under Game 1 (NFL) and Game 10 (NBA) above. Each mini game nailed = <b>+1 bonus point</b> in the standings (max +2). Optional — a ticket still counts without them, it just can't earn bonus.");
+  el.innerHTML="⭐ Mini games — REQUIRED: <b>"+n+" / 5 picks</b>"+(n===5?" — both mini games fully played ✓ the submit gate is clear. Each one you nail pays <b>+1 bonus point</b> (max +2).":n>0?" — finish BOTH mini games to unlock submit (NFL needs 2 picks, NBA needs 3). Submit stays blocked until both are played — there is no skip.":" — two mini games ride under Game 1 (NFL) and Game 10 (NBA) above. Both are REQUIRED: a ticket cannot be submitted until both are played — no skip, no opt-out. Each mini game nailed = <b>+1 bonus point</b> in the standings (max +2).");
+  try{
+    var nflN=(myMini.nflYds?1:0)+(myMini.nflTd?1:0), nbaN=(myMini.nbaStar?1:0)+(myMini.nbaPts?1:0)+(myMini.nbaThrees?1:0);
+    var gate=$("miniGateLine");
+    if(gate) gate.innerHTML="⭐ Mini games — REQUIRED to submit: NFL mini <b>"+nflN+" / 2</b>"+(nflN===2?" ✓":"")+" · NBA mini <b>"+nbaN+" / 3</b>"+(nbaN===3?" ✓":"")+(n===5?" — <b>both played ✓ submit is open.</b>":" — <b>submit stays blocked until BOTH mini games are played. There is no skip.</b>");
+    var z1=$("miniNflZone"), z2=$("miniNbaZone");
+    if(z1&&nflN===2) z1.classList.remove("req-miss");
+    if(z2&&nbaN===3) z2.classList.remove("req-miss");
+  }catch(e){}
 }
 function refreshMiniPickLive(){
   /* live progress inside the picking cards once games are moving */
@@ -3932,6 +4365,19 @@ $("submitBtn").addEventListener("click",function(){
   /* multi-ticket: a paid ticket never blocks a NEW ticket — each submission is a fresh, separate entry */
   if(typeof paying!=="undefined"&&paying) return fail("The Shark is verifying a payment right now — give him a second to finish.",$("submitBtn"));
   if(!name) return fail("Give your shark a name first.",$("playerName"));
+  /* MINI GAMES ARE MANDATORY — no skip, no opt-out, no "choose not to play":
+     BOTH mini games must be complete or the ticket cannot be submitted. */
+  var nflMiniN=(myMini.nflYds?1:0)+(myMini.nflTd?1:0), nbaMiniN=(myMini.nbaStar?1:0)+(myMini.nbaPts?1:0)+(myMini.nbaThrees?1:0);
+  if(nflMiniN<2||nbaMiniN<3){
+    var mzA=$("miniNflZone"), mzB=$("miniNbaZone");
+    if(mzA) mzA.classList.toggle("req-miss", nflMiniN<2);
+    if(mzB) mzB.classList.toggle("req-miss", nbaMiniN<3);
+    try{ miniProgressUpdate(); }catch(e){}
+    return fail("⭐ Mini games are MANDATORY — there is no skip. NFL mini "+nflMiniN+" / 2 picks · NBA mini "+nbaMiniN+" / 3 picks. Play BOTH mini games (under Game 1 and Game 10) and submit unlocks.", $(nflMiniN<2?"game-1":"game-10"));
+  }
+  /* USERNAME LOCK — the normalized registry decides whose name this is */
+  var gateRes=registryGate(name);
+  if(!gateRes.ok) return fail(gateRes.msg,$("playerName"));
   if(missing.length){ missing.forEach(function(g){$("game-"+g.id).classList.add("missing")}); return fail("You still have "+missing.length+" game"+(missing.length>1?"s":"")+" with no pick — they’re outlined in red.",$("game-"+missing[0].id)); }
   if(!myTB.ou||myTB.total===null||!myTB.team||!myTB.player){ tbSetOpen(true); return fail("Tiebreaker needs all four: Over/Under, a total-points guess, first TD team, and first TD player.",$("tbCard")); }
   var now=new Date();
@@ -3954,14 +4400,18 @@ $("submitBtn").addEventListener("click",function(){
      FREE; otherwise a first ticket carrying a valid friend invite code =
      $1 paid (host posts a $5 marketing subsidy). Free and $1 tickets all
      count as FULL $6 tickets — the host posts the subsidy in the vault. */
-  var tkLaunch=false, tkBogo=false, tkRefNext=false, tkReferral=false, tkReferrer=null, tkSubsidy=0, tkBaseDue=ENTRY_PRICE+feePerTicket;
+  var tkLaunch=false, tkBogo=false, tkRefNext=false, tkFundFree=false, tkReferral=false, tkReferrer=null, tkSubsidy=0, tkBaseDue=ENTRY_PRICE+feePerTicket;
   try{
-    if(typeof refNextAvailable!=="undefined" && refNextAvailable(name)>0){ tkRefNext=true; tkSubsidy=6; tkBaseDue=0; refNextConsume(name); }
+    if(typeof refNextAvailable!=="undefined" && refNextAvailable(name)>0){ tkRefNext=true; tkFundFree=(typeof refNextPeekSource==="function"&&refNextPeekSource(name)==="fund"); tkSubsidy=6; tkBaseDue=0; refNextConsume(name); }
     else if(poolNumber===1 && samePerson===1 && launchAccess() && !(typeof LAUNCH_BOGO_USED!=="undefined"&&LAUNCH_BOGO_USED[name])){ tkBogo=true; tkSubsidy=6; tkBaseDue=0; LAUNCH_BOGO_USED[name]=true; }
     else if(samePerson===0 && typeof pendingReferral!=="undefined" && pendingReferral && pendingReferral.forName===name && !(typeof REFERRAL_USED!=="undefined"&&REFERRAL_USED[name])){ tkReferral=true; tkReferrer=pendingReferral.referrer; tkSubsidy=5; tkBaseDue=1; }
   }catch(e){}
-  myTicket={name:displayName, personName:name, picks:picksCopy, tb:tbCopy, mini:miniCopy, spread:spreadCopy, donation:0, donorCredited:false, launchFree:tkLaunch, bogoFree:tkBogo, refNextFree:tkRefNext, referral:tkReferral, referrer:tkReferrer, subsidy:tkSubsidy, baseDue:tkBaseDue, num:"PS-"+(5100+seqN*613+Math.floor(Math.random()*500)), time:now.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"})+" ET", paid:false, confirm:null, paidTime:null};
+  myTicket={name:displayName, personName:name, picks:picksCopy, tb:tbCopy, mini:miniCopy, spread:spreadCopy, donation:0, donorCredited:false, launchFree:tkLaunch, bogoFree:tkBogo, refNextFree:tkRefNext, fundFree:tkFundFree, referral:tkReferral, referrer:tkReferrer, subsidy:tkSubsidy, baseDue:tkBaseDue, num:"PS-"+(5100+seqN*613+Math.floor(Math.random()*500)), time:now.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"})+" ET", paid:false, confirm:null, paidTime:null};
   myTickets.push(myTicket);
+  /* FIRST TICKET = PROFILE + NAME LOCK: the moment a Shark's first ticket
+     is written, their normalized name locks to them in the registry and
+     their profile is created (see the PROFILES module below). */
+  try{ lockNameOnFirstTicket(name); }catch(e){}
   /* a fresh ticket means a fresh verification — clear the previous
      ticket's ✔ marks so they never show as this ticket's checks */
   var vl=$("verifyList"); if(vl){ vl.className="verify-list"; vl.querySelectorAll("li").forEach(function(li){ li.className=""; li.textContent=li.textContent.replace(/^✔ /,"").replace(/^🦈 Checking… /,""); }); }
@@ -3980,6 +4430,7 @@ $("submitBtn").addEventListener("click",function(){
     "<p style='margin:10px 0 0;font-weight:700'>"+(tkBogo?"This ticket stays in the holding tank — off the board, out of the pot — until the Shark confirms it at the gate. You pay $0: this is your FREE BOGO second ticket — the host's $6.00 launch subsidy posts in the vault and the ticket counts in full. Then it goes live.":tkRefNext?"This ticket stays in the holding tank — off the board, out of the pot — until the Shark confirms it at the gate. You pay $0: this is your FREE referral-reward ticket — the host's $6.00 subsidy posts in the vault and the ticket counts in full. Then it goes live.":tkReferral?"This ticket stays in the holding tank — off the board, out of the pot — until you pay $1 at the gate (the host's $5.00 marketing subsidy posts in the vault, so it counts as a full $6) and the Shark confirms it. Then it goes live.":"This ticket stays in the holding tank — off the board, out of the pot — until you pay the $5 entry + Pool Growth Fee and the Shark confirms it. Then it goes live.")+"</p>";
   if(tkBogo) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🎟️ LAUNCH NIGHT BOGO: you bought one ticket at $6, so this second ticket is FREE — $0 due at the gate. It is a full ticket with its own picks, mini games and spreads. The host posts a $6.00 launch subsidy in the vault, so it counts in full and the jackpot still grows $1.15 on it. Test credits only — not a real-money offer.</p>";
   else if(tkRefNext) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🎁 REFERRAL REWARD: this is the FREE ticket you earned for this pool when a Shark you referred bought a ticket on Launch Night (Pool #1) before that pool started. $0 due at the gate — the host posts a $6.00 subsidy in the vault, so it counts in full and the jackpot still grows $1.15 on it. It never counted for Pool #1 — it is yours in this pool, with its own picks.</p>";
+  if(tkFundFree) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🏦 FUND THE POOL: this free ticket is a Fund the Pool installment paying out to you — not a referral reward. $0 due at the gate, the host's $6.00 subsidy posts in the vault, and it counts in full, jackpot +$1.15 included.</p>";
   else if(tkReferral) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🦈 REFER-A-SHARK: "+esc(tkReferrer||"your friend")+"'s code makes this first ticket $1 at the gate (not $6). The host posts a $5.00 marketing subsidy in the vault — shown, not hidden — so it counts as a full $6 ticket and the jackpot still grows $1.15. When it's confirmed, you both get 200 🪙 coins."+(poolNumber===1?" And because this is Launch Night: if this ticket is confirmed before Pool #1 starts (locks), "+esc(tkReferrer||"your friend")+" ALSO earns a second FREE ticket for the NEXT pool — on top of the coins.":"")+"</p>";
   feed("INFO","info",name+" submitted ticket #"+myTicket.num+". 🦈 The Shark is holding it OFF the board until its payment is confirmed.");
   tb.innerHTML+="<p style='margin:12px 0 0'><button type='button' class='btn blue' id='ticketToPay'>Take me to the Shark — pay &amp; confirm →</button></p>";
@@ -4512,6 +4963,13 @@ function renderVault(r){
   buyouts.forEach(function(b){
     log+='<div class="vl"><span class="amt in">IN +'+money(b.toPot)+'</span><span><b>Buyout cut</b> — '+esc(b.buyer)+' bought '+esc(b.ticket)+'’s ticket for '+money(b.price)+': 30% ('+money(b.toPot)+') into the vault · 70% ('+money(b.toSeller)+') paid to seller '+esc(b.seller)+' outside the vault</span></div>';
   });
+  /* 🏦 FUND THE POOL — contributions, held releases and the live FIFO queue */
+  FUND_LOG.forEach(function(fl){
+    log+='<div class="vl"><span class="amt '+(fl.amt<0?"out":fl.amt>0?"in":"zero")+'">'+fl.label+'</span><span>'+fl.html+'</span></div>';
+  });
+  if(FUND_QUEUE.length){
+    log+='<div class="vl"><span class="amt zero">QUEUE</span><span><b>🏦 Fund the Pool payout queue — FIFO, '+FUND_QUEUE.length+' installment'+(FUND_QUEUE.length===1?"":"s")+' waiting:</b> '+FUND_QUEUE.map(function(q,i){ return "#"+(i+1)+" "+esc(q.person)+" — "+esc(q.label); }).join(" · ")+'. Releases only at a settlement whose winners payout pool clears the '+money(FUND_FLOOR)+' safety floor, capped at '+FUND_CAP_PCT+'% of that pool per settlement, one installment per funder per pool — staggered over time, never a hit on the pool, never forced, never borrowed from the vault. TEST CREDITS ONLY.</span></div>';
+  }
   if(settlement){
     log+='<div class="vl"><span class="amt out">OUT −'+money(settlement.organizer)+'</span><span><b>Host fee — 1% of the entry pot '+money(settlement.entryGross)+'</b> — to the organizer for running Pool #'+poolNumber+'. Taken on entries only: $0 of the '+money(settlement.fees)+' in Pool Growth Fees went to the host.</span></div>';
     settlement.records.forEach(function(rec){
@@ -4699,8 +5157,12 @@ function renderMiniBoard(r){
   '</div><div style="padding:0 14px 14px;color:#eaf7ff;font-size:13.5px;line-height:1.6"><b>Your mini chase:</b> '+mineLine+'<br><b>Bonus earned so far:</b> '+(earners.length?earners.map(function(x){ return esc(x.p.name)+" ⭐+"+(x.bonus||miniBonusFor(x.p)).total; }).join(" · "):"nobody yet — bonus lands the second a mini game's parent game goes final.")+'</div></div>';
 }
 function renderQuickPanel(r,coldMap){
+  /* BOARD LOOKS — Quick View is a LOOK of the board itself now: renderBoard
+     restyles the rows inside #boardCols (slim rows — rank · Shark · W–L ·
+     Total). This panel stays permanently empty, so pressing Quick View
+     never adds a section above the board. (Body below is retired.) */
   var qp=$("quickPanel"); if(!qp) return;
-  if(boardView!=="quick"){ qp.className="quick-panel"; qp.innerHTML=""; return; }
+  qp.className="quick-panel"; qp.innerHTML=""; return;
   var liveTxt=liveGame?(function(){ var g=gameById(liveGame), ls=liveState[liveGame]; return "🔴 LIVE: "+g.away+" "+(ls?ls.a:0)+" @ "+g.home+" "+(ls?ls.h:0)+" — "+periodLabel(g,ls?ls.tick:0); })():(Object.keys(finished).length===GAMES.length?"✓ Day complete — all games final.":locked?"● Locked — next game tipping soon…":"○ Not locked yet — picks still blind.");
   var finCount=Object.keys(finished).length;
   var topHtml=r.slice(0,5).map(function(x,i){
@@ -4759,8 +5221,13 @@ function jumpToBoardRow(name){
   },40);
 }
 function renderMiniScoreboard(r){
+  /* BOARD LOOKS — Mini Scoreboard is a LOOK of the board itself now:
+     renderBoard restyles the rows inside #boardCols (rank · Shark · Wins ·
+     NFL mini · NBA mini · Mini bonus · Total · movement vs wins-only).
+     This panel stays permanently empty, so pressing Mini Scoreboard never
+     adds a section above the board. (Body below is retired.) */
   var panel=$("miniScorePanel"); if(!panel) return;
-  if(boardView!=="mini"){ panel.className="mini-score-panel"; panel.innerHTML=""; return; }
+  panel.className="mini-score-panel"; panel.innerHTML=""; return;
   if(!panel._wired){
     panel._wired=true;
     panel.addEventListener("click",function(e){
@@ -5029,6 +5496,57 @@ function renderBoard(){
       cells+
       '<div class="act">'+(buyable?'<button type="button" class="buy-mini" data-buy="'+esc(p.name)+'" aria-label="Buy '+esc(p.name)+'’s ticket" title="Buy this ticket">💰</button>':"")+'</div></div>';
   }
+  /* BOARD LOOKS — the same board, three looks, switched in place inside
+     #boardCols. Full Board = the detailed rows above. Quick View = slim
+     rows (rank · Shark/logo · W–L · Total only, no game cells). Mini
+     Scoreboard = mini rows (rank · Shark · Wins · NFL mini · NBA mini ·
+     Mini bonus · Total, with movement vs the wins-only rank). The look
+     buttons only restyle these rows — no panel is added anywhere. */
+  function fxClsBadge(p){
+    var fxCls="", fxBadge="";
+    if(resultFx.until>Date.now()&&resultFx.gid){
+      if(resultFx.win[p.name]){ fxCls=" fx-win"; fxBadge='<span class="fx-badge win">▲ WIN ✓</span>'; }
+      else if(resultFx.loss[p.name]){ fxCls=" fx-loss"; fxBadge='<span class="fx-badge loss">▼ LOSS ✗</span>'; }
+    }
+    return {cls:fxCls, badge:fxBadge};
+  }
+  function quickHeadHtml(){
+    return '<div class="board-head qhead"><div class="bh-lbl">RK</div><div class="bh-lbl" style="justify-content:flex-start">SHARK — W–L</div><div class="bh-lbl" style="justify-content:flex-end">TOTAL</div></div>';
+  }
+  function quickRowHtml(x,rank,isHot,st){
+    var p=x.p, s=x.s;
+    var bx=x.bonus||miniBonusFor(p), sbx=x.spreadBonus||spreadBonusFor(p);
+    var pts=(x.pts!=null)?x.pts:Math.round((s.w+bx.total+sbx.bonus)*100)/100;
+    var fx=fxClsBadge(p);
+    var cls="brow qrow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+fx.cls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight");
+    return '<div class="'+cls+'" data-profile="'+esc(p.name)+'" data-rowname="'+esc(p.name)+'" role="button" tabindex="0" title="Tap for '+esc(p.name)+'’s full profile"><div class="rk">'+rank+'</div>'+
+      '<div class="who"><div class="nm">'+esc(p.name)+avatarHtml(p.personName||p.name)+(p.you?'<span class="you-badge">★ YOUR TICKET</span>':"")+donorBadgePillHtml(p.personName||p.name)+'</div>'+
+      '<div class="wl"><b>'+s.w+'–'+s.l+'</b> W–L · '+s.left+' left'+(isHot?' · <span style="color:#ff9aa4">🔥 HOT SEAT</span>':"")+fx.badge+'</div></div>'+
+      '<div class="qtot">'+pts.toFixed(2)+'<small>PTS</small></div></div>';
+  }
+  function miniHeadHtml(){
+    return '<div class="board-head mhead"><div class="bh-lbl">RK</div><div class="bh-lbl" style="justify-content:flex-start">SHARK</div><div class="bh-lbl">WINS</div><div class="bh-lbl">NFL</div><div class="bh-lbl">NBA</div><div class="bh-lbl">MINI +</div><div class="bh-lbl">TOTAL</div></div>';
+  }
+  function miniRowHtml(x,rank,isHot,st,allR){
+    var p=x.p, s=x.s;
+    var b=x.bonus||miniBonusFor(p), sbx=x.spreadBonus||spreadBonusFor(p);
+    var pts=(x.pts!=null)?x.pts:Math.round((s.w+b.total+sbx.bonus)*100)/100;
+    var byWins=(allR||[]).slice().sort(function(a,b2){ return b2.s.w-a.s.w || a.s.l-b2.s.l || (a.p.name<b2.p.name?-1:1); });
+    var wRank=0; byWins.forEach(function(z,zi){ if(z.p.name===p.name) wRank=zi+1; });
+    var move=wRank-rank;
+    var moveHtml=move>0?('<span style="color:#8dffb0;font-weight:800">▲ '+move+' vs wins-only #'+wRank+'</span>'):move<0?('<span style="color:#ffb9c0;font-weight:800">▼ '+(-move)+' vs wins-only #'+wRank+'</span>'):'<span style="color:#8fa3b8">— same as wins-only</span>';
+    function mc(v){ return v===null?"🔴":v===1?"⭐+1":"0"; }
+    var fx=fxClsBadge(p);
+    var cls="brow mrow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+fx.cls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight");
+    return '<div class="'+cls+'" data-profile="'+esc(p.name)+'" data-rowname="'+esc(p.name)+'" role="button" tabindex="0" title="Tap for '+esc(p.name)+'’s full profile"><div class="rk">'+rank+'</div>'+
+      '<div class="who"><div class="nm">'+esc(p.name)+avatarHtml(p.personName||p.name)+(p.you?'<span class="you-badge">★ YOUR TICKET</span>':"")+donorBadgePillHtml(p.personName||p.name)+'</div>'+
+      '<div class="wl">'+s.w+'–'+s.l+' W–L · '+moveHtml+fx.badge+'</div></div>'+
+      '<div class="mcell">'+s.w+'</div>'+
+      '<div class="mcell">'+mc(b.nfl)+'</div>'+
+      '<div class="mcell">'+mc(b.nba)+'</div>'+
+      '<div class="mcell">+'+b.total+'</div>'+
+      '<div class="mcell tot">'+pts.toFixed(2)+'</div></div>';
+  }
   function headScoreText(g){
     if(finished[g.id]) return g.away+" "+g.score[0]+" · "+g.home+" "+g.score[1]+" — FINAL";
     var ls=liveState[g.id];
@@ -5050,27 +5568,29 @@ function renderBoard(){
   } else {
     var visibleR=r.filter(function(x){ return !status[x.p.name].out; });
     var showR=visibleR;
-    if(boardView==="quick"){
-      /* QUICK VIEW rows: top 5 + every one of YOUR tickets, wherever it sits */
-      var top5=visibleR.slice(0,5), seen={};
-      showR=[];
-      top5.forEach(function(x){ seen[x.p.name]=true; showR.push(x); });
-      visibleR.forEach(function(x){ if(x.p.you&&!seen[x.p.name]){ seen[x.p.name]=true; showR.push(x); } });
-    }
-    else if(boardFilter==="top") showR=visibleR.slice(0,10);
+    /* ROW FILTERS (Top / All / Hot Seat / Cold) filter rows INSIDE every
+       board look — they never change the look itself. The look (Full /
+       Quick / Mini) is chosen only by the look buttons and only restyles
+       the rows rendered below, in this same board. */
+    if(boardFilter==="top") showR=visibleR.slice(0,10);
     else if(boardFilter==="hot") showR=visibleR.filter(function(x){ return !!hotSet[x.p.name]; });
     else if(boardFilter==="cold") showR=visibleR.filter(function(x){ var a2=all.filter(function(y){return y.p.name===x.p.name})[0]; return a2&&coldStageFor(x.p,x.s,all)>=1; });
     var rowsHtml=showR.map(function(x){
       var rank=visibleR.indexOf(x)+1;
       var buyable = locked && ownerOf(x.p)!==buyerName();
+      if(boardView==="quick") return quickRowHtml(x,rank,!!hotSet[x.p.name],status[x.p.name]);
+      if(boardView==="mini") return miniRowHtml(x,rank,!!hotSet[x.p.name],status[x.p.name],r);
       return boardRowHtml(x,rank,!!hotSet[x.p.name],status[x.p.name],buyable);
     }).join("");
     if(!showR.length) rowsHtml='<div class="board-empty">'+(boardFilter==="hot" ? "No hot seat yet — when two tickets mirror each other on the same record, they show up here, enlarged." : boardFilter==="cold" ? "Nobody is cold yet — tickets go 🧊 CHILLY at 3 losses, ❄️ COLD at 4, and 🌊🧊 DROWNING at 5+. They show up here the moment the ice forms." : "No tickets on the board yet — paid, Shark-confirmed tickets land here.")+'</div>';
-    cols.innerHTML=headHtml+rowsHtml;
+    cols.innerHTML=(boardView==="quick"?quickHeadHtml():boardView==="mini"?miniHeadHtml():headHtml)+rowsHtml;
+    var lookLbl=$("boardLookLabel");
+    if(lookLbl) lookLbl.textContent="LOOK: "+(boardView==="quick"?"⚡ QUICK VIEW":boardView==="mini"?"⭐ MINI SCOREBOARD":"FULL BOARD");
     /* RANK SWAPS — if this render moved anyone up past someone else, the
        riser and the displaced ticket act the swap out (knock-down and
-       jump-over, alternating). Rank numbers already show the NEW ranks. */
-    applyRankSwaps(visibleR);
+       jump-over, alternating). Rank numbers already show the NEW ranks.
+       Full look only — the swap choreography is measured on full rows. */
+    if(boardView==="full") applyRankSwaps(visibleR);
   }
   /* ELIMINATION TRAY — a losing ticket shrinks stage by stage (full size in
      the rows → shrinking → sunk deep → eaten). The tray renders that exact
@@ -5341,6 +5861,10 @@ function buildProfile(name,keepScroll){
     '<div class="prof-sec">🛒 Marketplace — Owned Forever</div>'+(p.density?'<p class="prof-note">Simulated ticket — no Marketplace record.</p>':marketProfileSectionHtml(p.personName||name))+
     '<div class="prof-sec">⭐ Bonus Mini Games</div>'+(canSee?('<div class="prof-tb"><div class="tb-row"><span class="k">NFL MINI — ALLEN YARDS / TDS</span><span class="v">'+(p.mini?esc((p.mini.nflYds||"—")+" "+MINI_NFL.ydsLine+" · "+(p.mini.nflTd||"—")+" "+MINI_NFL.tdLine):"No picks")+(finished[MINI_NFL.gameId]?(miniBonusFor(p).nfl?' <span class="hit">✓ +1 BONUS</span>':' <span class="miss">✗ NO BONUS</span>'):"")+'</span></div><div class="tb-row"><span class="k">NBA MINI — STAR vs STAR</span><span class="v">'+(p.mini?esc(((p.mini.nbaStar==="MIL"?"Giannis":p.mini.nbaStar==="CLE"?"Mitchell":"—")+" · pts "+(p.mini.nbaPts||"—")+" "+MINI_NBA.ptsLine+" · 3s "+(p.mini.nbaThrees||"—")+" "+MINI_NBA.threesLine)):"No picks")+(finished[MINI_NBA.gameId]?(miniBonusFor(p).nba?' <span class="hit">✓ +1 BONUS</span>':' <span class="miss">✗ NO BONUS</span>'):"")+'</span></div><div class="tb-row"><span class="k">POINTS TOTAL — THE EQUATION</span><span class="v">'+(s.w+miniBonusFor(p).total+spreadBonusFor(p).bonus).toFixed(2)+' pts = Wins '+s.w+' + Mini Bonus +'+miniBonusFor(p).total+' + Spread Bonus +'+spreadBonusFor(p).bonus.toFixed(2)+' ('+spreadBonusFor(p).covers+' covers × 0.30) · max 15.00 — Total first, then Wins, then the tiebreaker order</span></div></div>'):'<p class="prof-note">🔒 Mini-game picks are blind until the slate locks — same rule for every shark.</p>')+
     '<div class="prof-sec">Tiebreaker — Lions @ Packers</div>'+tbHtml+
+    '<div class="prof-sec">🏆 Lifetime — Jackpot · Fund · Everything</div>'+(p.density?'<p class="prof-note">Simulated ticket — no lifetime record.</p>':profileLifetimeHtml(p.personName||name))+
+    '<div class="prof-sec">💬 Shark to Shark — Chat</div>'+(p.density?'<p class="prof-note">Simulated ticket — no chat thread.</p>':profileChatHtml(p.personName||name))+
+    '<div class="prof-sec">🏦 Fund the Pool</div>'+(p.density?'<p class="prof-note">Simulated ticket — no Fund record.</p>':profileFundHtml(p.personName||name))+
+    '<div class="prof-sec">🔒 Name Lock &amp; Verification</div>'+(p.density?'<p class="prof-note">Simulated ticket — density check only.</p>':profileIdentityHtml(p.personName||name))+
     '<p class="prof-note">This profile updates live as games move — scores, record, standings and percentages all follow the board.</p>';
   ov.hidden=false;
   ov.scrollTop=prevScroll;
@@ -5560,6 +6084,11 @@ function champion(){
     settlement.totalOut=settlement.net+settlement.organizer+settlement.perfectPaidTotal;
     try{ var celItem=equippedItem(topOwner,"effect"); if(celItem) setTimeout(function(){ showCelebrationFx(topOwner,celItem); },900); }catch(e){} /* 🛒 the pool winner's owned Marketplace celebration plays for their win */ /* winners net + host + perfect (if hit) leave; seed (6%) & unpaid jackpot do NOT */
     settlement.total=settlement.totalOut;
+    /* 🏆 JACKPOT WINS land on the winners' profiles the moment they happen */
+    try{ (settlement.perfectRecords||[]).forEach(function(rec){ var jx=profileExtra(rec.owner); if(jx){ jx.perfectWins+=1; jx.jackpotWins+=1; } }); }catch(e){}
+    /* 🏦 FUND THE POOL — the staggered FIFO queue releases against THIS
+       settlement, capped and floor-checked, never all at once */
+    try{ processFundQueue(); }catch(e){}
     /* THE OCEAN REMEMBERS: archive this pool and fold every shark's day into their career record. */
     r.forEach(function(x,idx){
       var lc=ledgerFor(x.p.name);
@@ -6223,19 +6752,83 @@ function renderMilestones(){
   crossed.forEach(function(m){ if(!MS_FIRED[m]&&msPrevJk<m) fireMilestone(m); else if(!MS_FIRED[m]) MS_FIRED[m]=true; });
   msPrevJk=jk;
 }
-/* ---- Idea 2: persistent mini-bar ---- */
+/* ---- Idea 2: smart mini-bar — front page only, only near the picks section ----
+   State lives on the function object so call order never matters. */
+function ymbS(){ if(!ymbS.o) ymbS.o={shown:false,descOpen:false,fullText:"",hideTimer:0}; return ymbS.o; }
+function syncYmbDesc(){
+  var S=ymbS(), pop=$("ymbDescPop");
+  var main=document.querySelector("#youMinibar .ymb-main");
+  if(main) main.setAttribute("aria-expanded", S.descOpen?"true":"false");
+  if(pop){
+    pop.hidden=!S.descOpen;
+    pop.classList.toggle("open", !!S.descOpen);
+    if(S.descOpen){ var t=$("ymbDescPopText"); if(t) t.textContent=S.fullText; }
+  }
+}
+function closeYmbDesc(){ var S=ymbS(); if(S.descOpen){ S.descOpen=false; syncYmbDesc(); } }
+function toggleYmbDesc(){ var S=ymbS(); S.descOpen=!S.descOpen; syncYmbDesc(); }
+function applyYmbVisibility(){
+  var bar=$("youMinibar"); if(!bar) return;
+  var S=ymbS();
+  var onFront=!!document.querySelector("#screen-picks.active");
+  var overlayOpen=!!document.querySelector(".profile-overlay:not([hidden])");
+  var near=false;
+  if(onFront&&!overlayOpen){
+    var sec=$("picks");
+    if(sec){
+      var r=sec.getBoundingClientRect(), vh=window.innerHeight||800;
+      /* hysteresis, per edge: while hidden, appear when the picks section
+         comes within 0.35 of a viewport of the screen; once shown, hide
+         promptly when scrolled past it — its bottom edge 90px above the
+         viewport top, or its top edge 60px below the viewport bottom —
+         so it always disappears in the page tail past the picks, and
+         never flickers at the boundary */
+      var topLead=S.shown?60:vh*0.35;
+      var botLead=S.shown?90:vh*0.35;
+      near=(r.top<=vh+topLead)&&(r.bottom>=-botLead);
+    }
+  }
+  var show=onFront&&!overlayOpen&&near;
+  if(show===S.shown){ if(show) syncYmbDesc(); return; }
+  S.shown=show;
+  if(show){
+    if(S.hideTimer){ clearTimeout(S.hideTimer); S.hideTimer=0; }
+    bar.hidden=false;
+    void bar.offsetWidth; /* let the hidden->shown change register so the fade runs */
+    bar.classList.add("ymb-visible");
+    bar.setAttribute("aria-hidden","false");
+    document.body.classList.add("has-minibar");
+    syncYmbDesc();
+  } else {
+    closeYmbDesc();
+    bar.classList.remove("ymb-visible");
+    bar.setAttribute("aria-hidden","true");
+    document.body.classList.remove("has-minibar");
+    if(S.hideTimer) clearTimeout(S.hideTimer);
+    S.hideTimer=setTimeout(function(){ if(!ymbS().shown) bar.hidden=true; },320);
+  }
+}
+var ymbScrollTick=false;
+function ymbOnScroll(){
+  if(ymbScrollTick) return; ymbScrollTick=true;
+  var done=function(){ ymbScrollTick=false; try{ applyYmbVisibility(); }catch(e){} };
+  if(window.requestAnimationFrame) requestAnimationFrame(done); else setTimeout(done,16);
+}
 function renderYouMinibar(){
   var bar=$("youMinibar"); if(!bar) return;
-  bar.hidden=false; document.body.classList.add("has-minibar");
   var mine=ranked().filter(function(x){ return x.p.you; });
   if(mine.length){
     var best=mine[0], r=ranked(), rank=r.indexOf(best)+1;
-    bar.innerHTML='<span class="ymb-rank">#'+rank+'</span><span class="ymb-main">⭐ <b>'+esc(best.p.name)+'</b> — '+best.s.w+'–'+best.s.l+' W–L · <b>Total '+best.pts.toFixed(2)+' pts</b> · '+mine.length+' of your tickets live</span><span class="ymb-go">Jump to my row ↓</span>';
+    bar.innerHTML='<span class="ymb-rank">#'+rank+'</span><button type="button" class="ymb-main" aria-expanded="false" aria-controls="ymbDescPop" aria-label="Your ticket description — tap to read it in full">⭐ <b>'+esc(best.p.name)+'</b> — '+best.s.w+'–'+best.s.l+' W–L · <b>Total '+best.pts.toFixed(2)+' pts</b> · '+mine.length+' of your tickets live</button><button type="button" class="ymb-go">Jump to my row ↓</button>';
   } else if(myHeldTickets().length){
-    bar.innerHTML='<span class="ymb-rank">HELD</span><span class="ymb-main">🦈 Your ticket is <b>held by the Shark</b> — pay it and your rank, W–L and Total Points live here.</span><span class="ymb-go">Go pay →</span>';
+    bar.innerHTML='<span class="ymb-rank">HELD</span><button type="button" class="ymb-main" aria-expanded="false" aria-controls="ymbDescPop" aria-label="Your ticket description — tap to read it in full">🦈 Your ticket is <b>held by the Shark</b> — pay it and your rank, W–L and Total Points live here.</button><button type="button" class="ymb-go">Go pay →</button>';
   } else {
-    bar.innerHTML='<span class="ymb-rank">—</span><span class="ymb-main">⭐ <b>Your ticket is here</b> the second you\'re paid &amp; live — rank · W–L · Total Points, always on screen.</span><span class="ymb-go">Make picks →</span>';
+    bar.innerHTML='<span class="ymb-rank">—</span><button type="button" class="ymb-main" aria-expanded="false" aria-controls="ymbDescPop" aria-label="Your ticket description — tap to read it in full">⭐ <b>Your ticket is here</b> the second you\'re paid &amp; live — rank · W–L · Total Points, always on screen.</button><button type="button" class="ymb-go">Make picks →</button>';
   }
+  var main=bar.querySelector(".ymb-main");
+  if(main) ymbS().fullText=main.textContent.replace(/\s+/g," ").trim();
+  syncYmbDesc();
+  applyYmbVisibility();
 }
 /* ---- Launch Night ---- */
 function renderLaunchStatus(){
@@ -6461,16 +7054,39 @@ function wireV35(){
   });
   var mb=$("youMinibar");
   if(mb){
-    mb.addEventListener("click",function(){
-      if(myHeldTickets().length&&!myPaidTickets().length){ goToScreen("pay"); return; }
-      if(myPaidTickets().length){
-        var boardEl=$("screen-board");
-        if(boardEl&&boardEl.classList.contains("active")) findMyTicket();
-        else { enterBoardFromTap(); setTimeout(function(){ findMyTicket(); },150); }
-      } else { goToScreen("picks"); setTimeout(function(){ var pk=$("picks"); if(pk) pk.scrollIntoView({behavior:"smooth"}); },80); }
+    /* TWO SEPARATE TAP ACTIONS — never merged:
+       · the gold action chip (.ymb-go) runs the picks flow, as before;
+       · the description text (.ymb-main) only opens/closes the full
+         description pop-up — it never triggers the picks flow, and the
+         chip never opens the pop-up. */
+    mb.addEventListener("click",function(e){
+      var t=e.target;
+      var go=(t&&t.closest)?t.closest(".ymb-go"):null;
+      if(go){
+        closeYmbDesc();
+        if(myHeldTickets().length&&!myPaidTickets().length){ goToScreen("pay"); return; }
+        if(myPaidTickets().length){
+          var boardEl=$("screen-board");
+          if(boardEl&&boardEl.classList.contains("active")) findMyTicket();
+          else { enterBoardFromTap(); setTimeout(function(){ findMyTicket(); },150); }
+        } else { goToScreen("picks"); setTimeout(function(){ var pk=$("picks"); if(pk) pk.scrollIntoView({behavior:"smooth"}); },80); }
+        return;
+      }
+      var main=(t&&t.closest)?t.closest(".ymb-main"):null;
+      if(main){ toggleYmbDesc(); return; }
     });
-    mb.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); mb.click(); } });
   }
+  var ymbPop=$("ymbDescPop");
+  if(ymbPop){ ymbPop.addEventListener("click",function(){ closeYmbDesc(); }); }
+  /* SMART SHOW/HIDE: re-decide the pill on every scroll / resize, and when
+     an overlay (Marketplace, profile, ledger) opens or closes over the page */
+  window.addEventListener("scroll",ymbOnScroll,{passive:true});
+  document.addEventListener("scroll",ymbOnScroll,{passive:true,capture:true});
+  window.addEventListener("resize",ymbOnScroll);
+  document.querySelectorAll(".profile-overlay").forEach(function(ov){
+    try{ new MutationObserver(function(){ try{ applyYmbVisibility(); }catch(e){} }).observe(ov,{attributes:true,attributeFilter:["hidden"]}); }catch(e){}
+  });
+  try{ applyYmbVisibility(); }catch(e){}
   setInterval(function(){
     var cd=$("tankCountdown"); if(cd&&tankLiveOpen) cd.textContent=tankCountdownText();
     try{ renderLaunchStatus(); }catch(e){}
@@ -6873,6 +7489,5 @@ body.gh-board.board-immersive #ghImmersiveBtn{display:none!important}
   ghSync(); setInterval(ghSync,30000);
 })();
 </script>
-
 </body>
 </html>
