@@ -1659,6 +1659,16 @@ body.board-immersive #screen-board .board-head{top:0}
 .pod.hl-rose{background:linear-gradient(180deg,rgba(255,77,109,.30),rgba(255,77,109,.05))}
 .pod.hl-gold{background:linear-gradient(180deg,rgba(255,199,44,.28),rgba(255,199,44,.05))}
 .pod.hl-tide{background:linear-gradient(180deg,rgba(55,224,200,.24),rgba(55,224,200,.05))}
+/* ---------- TOP TIER REWARDS ---------- */
+#screen-board .brow.fr-diamond{box-shadow:inset 0 0 0 2px #bfe9ff,inset 0 0 22px rgba(255,199,44,.35),0 0 16px rgba(191,233,255,.45);background:linear-gradient(90deg,rgba(255,199,44,.30),rgba(255,199,44,.05))}
+.pod.fr-diamond{box-shadow:inset 0 0 0 2px #bfe9ff,inset 0 0 22px rgba(255,199,44,.35),0 0 16px rgba(191,233,255,.5);background:linear-gradient(180deg,rgba(255,199,44,.30),rgba(255,199,44,.05))}
+.brow.glow-gold .nm,.bm-thead.glow-gold .nm{color:var(--gold)!important;text-shadow:0 0 10px rgba(255,199,44,.85),0 0 22px rgba(255,199,44,.45)}
+.pod.glow-gold .who{color:var(--gold);text-shadow:0 0 10px rgba(255,199,44,.7)}
+.top-badge-pill{display:inline-block;background:linear-gradient(90deg,#6e5514,#e8c766,#6e5514);color:#1d1400;font-weight:800;font-size:10.5px;letter-spacing:.07em;padding:4px 10px;border-radius:999px;margin-left:6px}
+.prof-vip-banner{margin:12px auto 2px;max-width:520px;background:linear-gradient(90deg,#3d2c04,#8a6100,#3d2c04);border:2px solid var(--gold);color:#ffe9a8;border-radius:14px;padding:12px 16px;font-weight:800;letter-spacing:.06em;text-align:center}
+.tank-vip-name{color:var(--gold);text-shadow:0 0 8px rgba(255,199,44,.8)}
+.mkt-toptier-note{background:rgba(0,0,0,.25);border:1.5px dashed rgba(255,199,44,.6);border-radius:12px;padding:11px 13px;font-weight:600;font-size:13.5px;line-height:1.6;margin-top:10px}
+.mkt-toptier-note b{color:var(--gold)}
 /* Marketplace overlay content */
 .mkt-bal{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:clamp(30px,7vw,44px);color:#ffc72c;line-height:1}
 .mkt-how{background:rgba(255,255,255,.05);border:1px solid rgba(255,199,44,.25);border-radius:14px;padding:12px 14px;font-weight:600;line-height:1.55;font-size:14.5px}
@@ -1847,6 +1857,55 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
 .comm-empty{margin-top:14px;background:var(--panel);border:1px dashed var(--line);border-radius:var(--radius);padding:18px;font-weight:700;color:var(--muted);line-height:1.55}
 .comm-rules{margin-top:14px;font-size:13px;line-height:1.6;color:var(--muted);font-weight:600}
 .comm-rules b{color:var(--ink)}
+/* ---------- SHARK vs SHARK — coin bets inside Community ---------- */
+.svs{margin-top:16px;background:var(--panel);border:3px solid var(--gold);border-radius:var(--radius);padding:16px}
+.svs-head{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.svs-head h3{margin:0;font-size:clamp(24px,5vw,32px);text-transform:uppercase}
+.svs-head h3 span{color:var(--gold)}
+.svs-tag{flex:none;background:#5c1016;border:2px solid #a12532;color:#ffd9dc;font-weight:800;font-size:11.5px;letter-spacing:.07em;padding:6px 12px;border-radius:999px}
+.svs-sub{color:var(--muted);font-size:14.5px;line-height:1.55;margin:8px 0 0;font-weight:600}
+.svs-sub b{color:var(--ink)}
+.svs-rules{margin-top:12px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13.5px;line-height:1.6;font-weight:600}
+.svs-rules b{color:var(--gold)}
+.svs-rules ul{margin:6px 0 0;padding-left:18px}
+.svs-eq{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.svs-eq span{flex:1;min-width:150px;background:#062b1c;border:1px solid #2fbf71;border-radius:12px;padding:10px 12px;font-weight:800;font-size:13.5px;color:#c9ffe0;text-align:center}
+@media (prefers-color-scheme: light){.svs-eq span{background:#e4ffef;color:#0a3d22}}
+.svs-eq span b{display:block;font-family:"Barlow Condensed";font-size:22px;color:var(--gold)}
+@media (prefers-color-scheme: light){.svs-eq span b{color:#8a6100}}
+.svs-bal{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px;background:rgba(0,0,0,.25);border:1.5px dashed rgba(255,199,44,.55);border-radius:12px;padding:10px 12px;font-weight:800;font-size:14.5px}
+.svs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:12px}
+.svs-grid label{font-weight:800;font-size:12px;letter-spacing:.08em;display:block;margin-bottom:6px;color:var(--muted)}
+.svs-grid select,.svs-grid input{width:100%;background:var(--panel2);border:2px solid var(--line);color:var(--ink);border-radius:10px;padding:11px;font-weight:700;font-size:15px;min-height:48px}
+.svs-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.svs-chips button{border:2px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:800;font-size:13.5px;min-height:44px}
+.svs-chips button.on{border-color:var(--gold);background:#4d3a05;color:#ffe9a8}
+.svs-msg{font-weight:800;font-size:14px;line-height:1.5;margin-top:8px}
+.svs h4{margin:18px 0 4px;font-size:20px;text-transform:uppercase}
+.svs h4 span{color:var(--foam)}
+.svs-card{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:10px;font-size:14.5px;line-height:1.55}
+.svs-card .svs-line{font-weight:800;font-size:16px}
+.svs-card .svs-meta{color:var(--muted);font-weight:600;font-size:13px;margin-top:2px}
+.svs-card .svs-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.svs-pill{display:inline-block;font-weight:800;font-size:11px;letter-spacing:.07em;padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
+.svs-pill.open{background:#4d3a05;color:#ffe9a8;border-color:var(--gold)}
+.svs-pill.locked{background:#5c1016;color:#ffd9dc;border-color:#a12532}
+.svs-pill.done{background:#0d3b22;color:#7bf0a4;border-color:#2fbf71}
+.svs-vault{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.svs-vault .vv{flex:1;min-width:130px;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-align:center}
+.svs-vault .vv .k{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--muted)}
+.svs-vault .vv .v{font-family:"Barlow Condensed";font-weight:800;font-size:28px;color:var(--gold)}
+.svs-ledger{font-size:13.5px;line-height:1.5;margin-top:8px}
+.svs-ledger .vl{display:flex;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.svs-ledger .vl:last-child{border-bottom:0}
+.svs-ledger .amt{flex:none;font-weight:800;min-width:86px}
+.svs-ledger .amt.in{color:#7bf0a4}.svs-ledger .amt.out{color:#ff9aa4}.svs-ledger .amt.zero{color:var(--pend)}
+.svs-ms{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px;flex-wrap:wrap}
+.svs-ms:last-child{border-bottom:0}
+.svs-ms .who{flex:1;min-width:180px;font-weight:700}
+.svs-ms .who small{display:block;font-weight:600;color:var(--muted);font-size:12px}
+.svs-ms .amt{font-weight:800;color:var(--gold);flex:none}
+.svs-empty{margin-top:10px;border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-weight:600;color:var(--muted);font-size:14px;line-height:1.5}
 </style>
 </head>
 <body class="intro-locked">
@@ -2345,7 +2404,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
     <span class="beb-btns">
       <button class="fs-btn" id="boardOceanBtn">🌊 The Ocean</button>
       <button class="fs-btn" id="boardCommBtn">💬 Community</button>
-      <a class="fs-btn" id="boardFullBtn" href="https://muse.ai/s/pool-shark-xyu6oxsxebmxvxz0/RUDv0X8u78Ubf6a6gi22BsrWAtQnKmVnLdXP9w0J3Mc" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">⛶ Full screen — GitHub board page</a>
+      <a class="fs-btn" id="boardFullBtn" href="https://moocho954-afk.github.io/pool-shark-board/" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">⛶ Full screen — GitHub board page</a>
       <span class="fs-status" id="fsStatus" role="status" aria-live="polite" hidden></span>       <button class="fs-btn" id="ghImmersiveBtn" type="button">⛶ Exit full screen — show podium &amp; jackpot</button>
       <button class="exit-btn" id="boardExitBtn">✕ Exit board — back to explore</button>
     </span>
@@ -2593,6 +2652,56 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
   </div>
   <p style="font-weight:700;color:var(--muted);font-size:13.5px;margin:10px 2px 0">Sharks you <b style="color:var(--gold)">Follow</b> float to the top of your feed first. Latest = newest first · Top = most liked &amp; replied.</p>
   <div id="backingBoardComm"></div>
+
+  <!-- ================= SHARK vs SHARK — coin bets, separate from board standings ================= -->
+  <div class="svs" id="svsPanel">
+    <div class="svs-head"><h3>🦈 Shark <span>vs</span> Shark</h3><span class="svs-tag">TEST CREDITS ONLY · COINS ONLY · LEGAL-REVIEW GATE</span></div>
+    <p class="svs-sub">One Shark posts a take. Another Shark takes the <b>exact opposite side for the exact same coins</b>. Winner takes <b>90% of the pot</b>, the <b>Shark vs Shark Vault takes 10%</b> and pays it back out as <b>first-time badge milestone rewards</b>. Coins only — <b>never cash, never points, never standings, never Perfect Jackpot money</b>. A win here buys Marketplace looks, avatars and frames — it does <b>not</b> move you up the leaderboard.</p>
+    <div class="svs-rules"><b>📜 RULES — POSTED BEFORE ANYONE CAN BET:</b>
+      <ul>
+        <li>Post must name <b>team, spread and amount in coins</b> clearly — e.g. “I like Miami to win minus 2.5 points, 100 coins” — or it does not post. Amount is your choice: 100, 1,000, 4,000, whatever you can cover.</li>
+        <li>A challenger must <b>match exactly — same amount, opposite side</b>. No partial match, no haggling down.</li>
+        <li>Once matched, the bet is <b>locked — no cancel, no edit</b>. Both amounts are <b>held at match time</b>, not at settlement. You cannot post more coins than you have; a challenger cannot match more than they have.</li>
+        <li><b>No bet after the game starts</b> and no bet after lock for that game.</li>
+        <li>Outcome is the <b>final score vs the posted spread</b>. <b>Push</b> (spread lands exactly): both get their amount back, vault gets 0. <b>Void</b> (game cancelled / does not play): both get their amount back, vault gets 0.</li>
+        <li><b>Collusion guard:</b> milestone rewards are first-time only and capped, and coin bets create no coins out of thin air — the winner gets 90% of a pot that already existed, so a pair trading wins back and forth still loses 10% to the vault on every bet.</li>
+        <li>Coins are in-game only, never cashable, never real money. <b>TEST CREDITS ONLY</b> — this stays test-only until legal review says otherwise.</li>
+      </ul>
+    </div>
+    <div class="svs-eq">
+      <span>THE POT<b>2 × amount</b>poster + challenger</span>
+      <span>WINNER GETS 90%<b>1.8 × amount</b>100 → 180 · 1,000 → 1,800 · 4,000 → 7,200</span>
+      <span>VAULT GETS 10%<b>0.2 × amount</b>100 → 20 · 1,000 → 200 · 4,000 → 800</span>
+    </div>
+    <div class="svs-bal" id="svsBalance">Your coins: —</div>
+    <h4>📝 Post a <span>bet</span></h4>
+    <div class="svs-grid">
+      <div><label for="svsGame">GAME</label><select id="svsGame" aria-label="Shark vs Shark game"></select></div>
+      <div><label for="svsTeam">TEAM YOU LIKE</label><select id="svsTeam" aria-label="Shark vs Shark team"></select></div>
+      <div><label for="svsSpread">SPREAD FOR YOUR TEAM (e.g. −2.5)</label><input id="svsSpread" type="number" step="0.5" value="-2.5" aria-label="Shark vs Shark spread" /></div>
+      <div><label for="svsAmount">AMOUNT — COINS ONLY</label><input id="svsAmount" type="number" step="1" min="1" value="100" aria-label="Shark vs Shark amount in coins" /></div>
+    </div>
+    <div class="svs-chips" role="group" aria-label="Quick coin amounts">
+      <button type="button" data-svs-amt="100">100 coins</button>
+      <button type="button" data-svs-amt="1000">1,000 coins</button>
+      <button type="button" data-svs-amt="4000">4,000 coins</button>
+    </div>
+    <div class="comm-row">
+      <button type="button" class="btn" id="svsPostBtn" style="min-height:48px">Post my bet 🦈</button>
+      <span style="font-weight:700;color:var(--muted);font-size:13px">Posting reserves your coins — they are held only when a challenger matches.</span>
+    </div>
+    <div class="svs-msg" id="svsMsg" aria-live="polite"></div>
+    <h4>🟢 Open bets — <span>waiting for a challenger</span></h4>
+    <div id="svsOpen"></div>
+    <h4>🔒 Matched bets — <span>locked, coins held</span></h4>
+    <div id="svsMatched"></div>
+    <h4>🏦 Result / Vault ledger — <span>Shark vs Shark Vault, tracked separately</span></h4>
+    <p class="svs-sub" style="margin-top:2px">This vault is <b>separate from the Pot Vault, the Perfect Jackpot and the Fund queue</b> — it never mixes with them and never touches the main vault BALANCED check. It pays out <b>only</b> for first-time badge milestones, only if it has enough, <b>never borrowed, never negative, never from the main pool</b>. If it cannot cover a milestone, that milestone <b>waits in a FIFO queue</b> until the next 10% cuts refill it.</p>
+    <div id="svsVault"></div>
+    <h4>🏅 Milestone rewards — <span>first-time only, from this vault only</span></h4>
+    <div id="svsMilestones"></div>
+  </div>
+
   <div id="commFeed"></div>
   <p class="comm-rules">📌 <b>Community rules, posted plainly:</b> posts are <b>test-only</b> — <b>no real-money claims</b>, no guaranteed-win talk. <b>Blind until lock still rules:</b> before lock a post can say “locked in” but can <b>never reveal picks</b> — the page blocks pick lists before lock, and a ticket attach shows picks to <b>nobody</b> until the slate locks (after lock, the board is public anyway). Your own posts carry a <b>Hide</b> button — hide one and it leaves the feed. Likes, replies and reposts are about the pool: tickets, W–L, rank, results, the jackpot.</p>
 </div>
@@ -3302,11 +3411,20 @@ function creditDonation(person,amount){
 }
 /* The person's permanent badge pill — rides EVERY ticket they hold,
    donated or not, this pool or any future pool. */
+/* 👑 TOP SHARK BADGE (Top Tier Marketplace, 4,000 coins) — permanent,
+   follows the PERSON not the ticket, distinct from donor badges. It rides
+   inside donorBadgePillHtml so it shows everywhere that pill already
+   shows: board rows, podium, Quick View, Community and profiles. */
+function topBadgePillHtml(person){
+  if(!person||!(typeof OWNED!=="undefined"&&OWNED[person]&&OWNED[person]["tt-badge"])) return "";
+  return '<span class="top-badge-pill" title="Top Shark Badge — Top Tier Marketplace reward, permanent, follows the person not the ticket. Honor only — never points.">🏅 TOP SHARK</span>';
+}
 function donorBadgePillHtml(person){
   var pre=(typeof FOUNDING!=="undefined"&&person&&FOUNDING[person])?'<span class="founding-pill" title="Founding Shark — played the launch pool (Pool #1). This badge never goes away.">🌟 FOUNDING SHARK</span>':"";
-  var d=donorRecordFor(person); if(!d) return pre;
-  var t=donorTierFor(d.total); if(!t) return pre;
-  return pre+'<span class="donor-pill badge-only" title="Permanent donor badge — earned once, kept forever, in every pool">'+t.icon+' '+esc(t.name).toUpperCase()+' DONOR · '+money(d.total)+' LIFETIME · '+d.tickets+' DONATED TICKET'+(d.tickets===1?"":"S")+'</span>';
+  var top=topBadgePillHtml(person);
+  var d=donorRecordFor(person); if(!d) return pre+top;
+  var t=donorTierFor(d.total); if(!t) return pre+top;
+  return pre+top+'<span class="donor-pill badge-only" title="Permanent donor badge — earned once, kept forever, in every pool">'+t.icon+' '+esc(t.name).toUpperCase()+' DONOR · '+money(d.total)+' LIFETIME · '+d.tickets+' DONATED TICKET'+(d.tickets===1?"":"S")+'</span>';
 }
 /* Compact badge chip (Mini Scoreboard). */
 function donorBadgeChipHtml(p){
@@ -3415,7 +3533,19 @@ var MARKET_ITEMS=[
  {id:"fx-confetti", kind:"effect",    icon:"🎉", name:"Confetti Stamp",           price:800,  cls:"",        desc:"Win a pool and a confetti stamp celebration plays over the board — your win, your show."},
  {id:"fx-gold",     kind:"effect",    icon:"💛", name:"Gold Splash",              price:1100, cls:"",        desc:"Win a pool and a gold splash celebration plays — champion's colors."},
  {id:"fx-sharkrush",kind:"effect",    icon:"🦈", name:"Shark Rush Celebration",   price:1600, cls:"",        desc:"Win a pool and a shark rushes the screen in celebration."},
- {id:"fx-stampede", kind:"effect",    icon:"🏆", name:"Champion Stampede",        price:2200, cls:"",        desc:"Win a pool and the full stampede celebration plays — confetti, gold and sharks."}
+ {id:"fx-stampede", kind:"effect",    icon:"🏆", name:"Champion Stampede",        price:2200, cls:"",        desc:"Win a pool and the full stampede celebration plays — confetti, gold and sharks."},
+ /* 👑 TOP TIER — priced in the open, coins only. Permanent, owned forever,
+    free switching. Looks / access only — never points, never wins, never a
+    standings boost. The one exception is the Free Ticket (NOT in this list —
+    it is a consumable credit, see MARKET_FREE_CREDITS below): redeemed, it
+    is simply a normal ticket in the next pool. */
+ {id:"tt-vip-seat", kind:"vip",       icon:"🪑", name:"Shark Tank Live VIP Seat", price:1000, cls:"",        top:true, desc:"TOP TIER — permanent access: your name is highlighted in gold in Shark Tank Live, forever. Looks / access only — never extra picks or points."},
+ {id:"tt-celebration",kind:"effect",  icon:"🎇", name:"Custom Win Celebration — Golden Coronation", price:1500, cls:"", top:true, desc:"TOP TIER — your custom celebration animation plays when you win a pool. Looks only, never points."},
+ {id:"tt-vip-banner",kind:"banner",   icon:"🎖️", name:"VIP Profile Banner",       price:2000, cls:"",        top:true, desc:"TOP TIER — a permanent VIP banner across your profile header. Looks only."},
+ {id:"tt-glow",     kind:"glow",      icon:"🌟", name:"Gold Name Glow on Board",  price:2000, cls:"glow-gold", top:true, desc:"TOP TIER — your name glows gold on board rows and podium cards, permanently. Looks only."},
+ {id:"tt-diamond",  kind:"frame",     icon:"💎", name:"Diamond Board Frame / Gold Highlight", price:2500, cls:"fr-diamond", top:true, desc:"TOP TIER — a diamond board frame with a gold highlight on your board rows and podium cards, permanently. Looks only."},
+ {id:"tt-golden",   kind:"avatar",    icon:"👑", name:"Golden Shark Avatar",      price:3000, cls:"",        top:true, desc:"TOP TIER — the Golden Shark as your profile icon, on your board row, podium, Quick View and profile. Owned forever."},
+ {id:"tt-badge",    kind:"badge",     icon:"🏅", name:"Top Shark Badge",          price:4000, cls:"",        top:true, desc:"TOP TIER — a permanent badge that follows YOU, not a ticket: board, podium and profile, in every pool. Distinct from donor badges. Honor only — never points."}
 ];
 var MARKET_KIND_LABELS={avatar:"🦈 AVATAR ICONS — your profile icon", frame:"🖼️ PROFILE FRAMES — board rows & podium", highlight:"🌟 BOARD HIGHLIGHTS — your rows glow", effect:"🎆 WIN CELEBRATIONS — play when you win a pool"};
 function marketItem(id){ for(var i=0;i<MARKET_ITEMS.length;i++){ if(MARKET_ITEMS[i].id===id) return MARKET_ITEMS[i]; } return null; }
@@ -3459,6 +3589,61 @@ function buyMarketItem(itemId){
   try{ renderMarketplace(); }catch(e){}
   try{ renderBoard(); }catch(e){}
 }
+/* ================= 👑 TOP TIER — FREE TICKET TO THE NEXT POOL =================
+   5,000 coins, bought in the Marketplace, TEST CREDITS ONLY. The credit is
+   an inventory item, NOT a permanent look: it is consumed on redemption.
+   Rules, posted: redeemable for ONE ticket in the NEXT pool only — never
+   the pool it was bought in, never a pool already locked (the normal hard
+   submit gate still applies: full picks, mini games mandatory, spreads
+   mandatory 10/10, tiebreaker). Limit 1 coin Free Ticket per Shark per
+   pool, and it cannot stack with a Launch BOGO free ticket in the same
+   pool — one free ticket per pool, choose one. On redemption the vault
+   posts a MARKETPLACE REWARD SUBSIDY of $6.00 in the same form as the
+   Launch BOGO host subsidy — Host $0.05 + Seed $0.30 + Perfect Jackpot
+   $1.15 + Winners $4.50 = $6.00 — so the ticket counts as a full $6
+   ticket, the jackpot grows $1.15, and the vault stays BALANCED. Coins
+   spent are gone — no refund after redemption. An unredeemed credit sits
+   in the profile inventory until the next pool opens; if it is not
+   redeemed there it stays for the following pool — it never expires in
+   test mode. MARKET_FREE_CREDITS is never reset, like COINS / OWNED. */
+var MARKET_FREE_PRICE=5000;
+var MARKET_FREE_CREDITS=[]; /* {person, boughtPool, used, usedPool} */
+function marketFreeCreditOf(person){ if(!person) return null; for(var i=0;i<MARKET_FREE_CREDITS.length;i++){ if(MARKET_FREE_CREDITS[i].person===person&&!MARKET_FREE_CREDITS[i].used) return MARKET_FREE_CREDITS[i]; } return null; }
+function marketFreeStacked(person){
+  /* one free ticket per pool: a BOGO / referral-reward / market free
+     ticket already written by this person in THIS pool blocks another */
+  return myTickets.some(function(tk){ return personNameOf(tk)===person&&(tk.bogoFree||tk.refNextFree||tk.marketFree); });
+}
+function marketFreeAvailable(person){
+  var c=marketFreeCreditOf(person); if(!c) return 0;
+  if(c.boughtPool>=poolNumber) return 0; /* next pool only — never the pool it was bought in */
+  if(marketFreeStacked(person)) return 0; /* cannot stack with a BOGO / reward free ticket this pool */
+  return 1;
+}
+function marketFreeConsume(person){
+  var c=marketFreeCreditOf(person); if(!c) return false;
+  c.used=true; c.usedPool=poolNumber; return true;
+}
+function buyMarketFreeTicket(){
+  var person=marketPerson();
+  if(!person){ try{ banner("big","🛒 MARKETPLACE","Enter your shark name (or submit a ticket) first — a Free Ticket credit belongs to a person, in their one profile."); }catch(e){} return; }
+  if(marketFreeCreditOf(person)){
+    feed("MARKET","info","🎟️ "+person+" already holds an UNREDEEMED Free Ticket credit — limit: you cannot buy another until that one is redeemed in a later pool. It never expires in test mode.");
+    try{ banner("big","🎟️ ALREADY IN YOUR INVENTORY","You already hold an unredeemed Free Ticket — one per Shark until it is redeemed in the next pool."); }catch(e){}
+    try{ renderMarketplace(); }catch(e){} return;
+  }
+  var rec=coinRecord(person);
+  if(rec.bal<MARKET_FREE_PRICE){
+    feed("MARKET","info","🛒 "+person+" tried the Top Tier Free Ticket ("+MARKET_FREE_PRICE+" coins) with "+rec.bal+" coins — not enough. The balance check is hard: you cannot buy with more coins than you have.");
+    try{ banner("big","🪙 NOT ENOUGH COINS","The Free Ticket costs "+MARKET_FREE_PRICE+" coins — you have "+rec.bal+"."); }catch(e){}
+    return;
+  }
+  rec.bal-=MARKET_FREE_PRICE; /* exactly 5,000 — coins spent are gone */
+  MARKET_FREE_CREDITS.push({person:person, boughtPool:poolNumber, used:false, usedPool:null});
+  feed("MARKET","mom","🎟️ TOP TIER: "+person+" BOUGHT a FREE TICKET TO THE NEXT POOL for "+MARKET_FREE_PRICE+" coins (balance now "+rec.bal+"). It sits in their profile inventory — redeemable in Pool #"+(poolNumber+1)+" or later, never in Pool #"+poolNumber+", one per pool, no stacking with a Launch BOGO free ticket. On redemption the vault posts the $6.00 Marketplace Reward Subsidy and the jackpot grows $1.15. Coins only — TEST CREDITS ONLY.");
+  try{ banner("score","🎟️ FREE TICKET — YOURS","In your profile inventory now. Redeem it in the NEXT pool — it becomes a normal full ticket there."); }catch(e){}
+  try{ renderMarketplace(); }catch(e){}
+}
 function renderMarketplace(){
   var body=$("marketBody"); if(!body) return;
   var person=marketPerson();
@@ -3478,9 +3663,28 @@ function renderMarketplace(){
     '<tr><td>over 6 points (hardest)</td><td><b>10</b></td><td>favorite −6.5 · underdog +1.5</td></tr></table>'+
     'Coins from donations and covers land in <b>one balance per person</b>. <b>Coins are not cash</b> — they cannot be cashed out, and they <b>never buy points, wins, standings or place prizes</b>. They buy looks: avatars, frames, highlights and win celebrations. Every item costs <b>400 coins or more — nothing is free</b>. Bought items are <b>owned forever</b> and switching between owned items is free.</div>';
   if(!person) html+='<p style="font-weight:700;margin-top:10px">Enter your shark name on the picks screen (or submit a ticket) and your balance, items and avatar live under that name — forever.</p>';
+  /* 👑 TOP TIER REWARDS — a separate tier above the regular items */
+  (function(){
+    var credit=person?marketFreeCreditOf(person):null;
+    var freeBtn=!person?'<button type="button" class="btn mi-btn" data-mkt-buyfree>BUY — '+MARKET_FREE_PRICE+' 🪙</button>'
+      : credit?'<button type="button" class="btn mi-btn" disabled>🎟️ IN YOUR INVENTORY — REDEEMS IN POOL #'+(credit.boughtPool+1)+' OR LATER</button>'
+      : '<button type="button" class="btn mi-btn" data-mkt-buyfree>BUY — '+MARKET_FREE_PRICE+' 🪙</button>';
+    html+='<div class="prof-sec">👑 TOP TIER REWARDS — THE BEST OF THE MARKETPLACE</div>'+
+    '<div class="mkt-how"><b>Top Tier, posted plainly:</b> every Top Tier look is <b>permanent — owned forever, free switching</b> once owned. Coins are <b>looks / access currency only — never cash, never cashable — TEST CREDITS ONLY, legal-review gate stated</b>. Top Tier looks <b>never buy points, wins, or a standings boost</b>. The <b>one exception is the Free Ticket</b>, exactly as specified below. Balance check is hard: <b>you cannot buy with more coins than you have</b>.</div>'+
+    '<div class="mkt-grid">'+
+    '<div class="mkt-item"><div class="mi-ic">🎟️</div><div class="mi-nm">Free Ticket to the Next Pool</div><div class="mi-ds">TOP TIER · Redeem for ONE ticket in the NEXT pool only — not the current pool, not a locked pool. The redeemed ticket is a normal full ticket: full picks, mini games mandatory, spreads mandatory 10/10, tiebreaker, hard submit gate, counts for standings and place prizes like any ticket. On redemption the vault posts a <b>Marketplace Reward Subsidy of $6.00</b> (Host $0.05 + Seed $0.30 + Perfect Jackpot $1.15 + Winners $4.50 = $6.00) — BALANCED, jackpot +$1.15. Limit 1 per Shark per pool; cannot stack with a Launch BOGO free ticket in the same pool — one free ticket per pool. Coins spent are gone, no refund after redemption. Unredeemed, it stays in your profile inventory until the next pool opens — redeem it there or it stays for the following pool; never expires in test mode.</div><div class="mi-pr">'+MARKET_FREE_PRICE+' 🪙'+(credit?' · IN YOUR INVENTORY (bought in Pool #'+credit.boughtPool+')':'')+'</div>'+freeBtn+'</div>'+
+    MARKET_ITEMS.filter(function(it){ return it.top; }).map(function(it){
+      var owned=!!ownedIds[it.id], isEq=eq[it.kind]===it.id;
+      var btn=owned
+        ? (isEq?'<button type="button" class="btn mi-btn" disabled>✓ EQUIPPED</button>':'<button type="button" class="btn blue mi-btn" data-mkt-equip="'+it.id+'">EQUIP — FREE</button>')
+        : '<button type="button" class="btn mi-btn" data-mkt-buy="'+it.id+'">BUY — '+it.price+' 🪙</button>';
+      return '<div class="mkt-item"><div class="mi-ic">'+it.icon+'</div><div class="mi-nm">'+esc(it.name)+'</div><div class="mi-ds">'+esc(it.desc)+'</div><div class="mi-pr">'+it.price+' 🪙'+(owned?' · OWNED FOREVER':'')+'</div>'+btn+'</div>';
+    }).join("")+
+    '</div>';
+  })();
   ["avatar","frame","highlight","effect"].forEach(function(kind){
     html+='<div class="prof-sec">'+MARKET_KIND_LABELS[kind]+'</div><div class="mkt-grid">';
-    MARKET_ITEMS.filter(function(it){ return it.kind===kind; }).forEach(function(it){
+    MARKET_ITEMS.filter(function(it){ return it.kind===kind&&!it.top; }).forEach(function(it){
       var owned=!!ownedIds[it.id], isEq=eq[kind]===it.id;
       var btn=owned
         ? (isEq?'<button type="button" class="btn mi-btn" disabled>✓ EQUIPPED</button>':'<button type="button" class="btn blue mi-btn" data-mkt-equip="'+it.id+'">EQUIP — FREE</button>')
@@ -3507,9 +3711,11 @@ function closeMarketplace(){
 }
 function marketProfileSectionHtml(person){
   var rec=coinRecord(person);
+  var freeCredit=(typeof marketFreeCreditOf==="function")?marketFreeCreditOf(person):null;
+  var freeHtml=freeCredit?'<div class="mkt-how" style="margin-bottom:10px">🎟️ <b>FREE TICKET IN YOUR INVENTORY</b> — Top Tier Marketplace reward, bought with 5,000 coins in Pool #'+freeCredit.boughtPool+'. Redeem it as your next ticket in <b>Pool #'+(freeCredit.boughtPool+1)+' or later</b> (next pool only — never the pool it was bought in, never a locked pool). One free ticket per pool, no stacking with a Launch BOGO free ticket. On redemption the vault posts the $6.00 Marketplace Reward Subsidy, the jackpot grows $1.15, and the ticket appears under <b>All my tickets</b> in this one profile. Unredeemed it never expires in test mode.</div>':"";
   var owned=OWNED[person]||{};
   var ids=Object.keys(owned);
-  var html='<div class="mkt-how">🪙 <b>'+rec.bal+' coins</b> (earned '+rec.fromDonations+' from donations · '+rec.fromSpreads+' from spread covers — never resets). Coins are not cash and never buy points or prizes.<br>';
+  var html=freeHtml+'<div class="mkt-how">🪙 <b>'+rec.bal+' coins</b> (earned '+rec.fromDonations+' from donations · '+rec.fromSpreads+' from spread covers — never resets). Coins are not cash and never buy points or prizes — except the Top Tier Free Ticket, which redeems as a normal ticket in the next pool only.<br>';
   if(ids.length){
     html+='<div style="margin-top:8px">'+ids.map(function(id){ var it=marketItem(id); if(!it) return ""; var isEq=EQUIPPED[person]&&EQUIPPED[person][it.kind]===id; return '<span class="mkt-owned-chip">'+it.icon+' '+esc(it.name)+(isEq?' · EQUIPPED':'')+(isEq?'':'<button type="button" class="btn" data-equip-item="'+id+'" style="padding:3px 9px;font-size:11.5px">EQUIP</button>')+'</span>'; }).join("")+'</div>';
   } else {
@@ -3544,6 +3750,7 @@ function wireMarketplace(){
   var back=$("marketBackBtn"); if(back&&!back._mktWired){ back._mktWired=true; back.addEventListener("click",function(){ closeMarketplace(); }); }
   var mb=$("marketBody"); if(mb&&!mb._mktWired){ mb._mktWired=true; mb.addEventListener("click",function(e){
     var buy=e.target.closest("[data-mkt-buy]"); if(buy){ buyMarketItem(buy.getAttribute("data-mkt-buy")); return; }
+    var bf=e.target.closest("[data-mkt-buyfree]"); if(bf){ buyMarketFreeTicket(); return; }
     var eqp=e.target.closest("[data-mkt-equip]"); if(eqp){ equipMarketItem(eqp.getAttribute("data-mkt-equip")); return; }
   }); }
   var pb=$("profileBody"); if(pb&&!pb._mktWired){ pb._mktWired=true; pb.addEventListener("click",function(e){
@@ -4040,7 +4247,7 @@ function players(){
      its own picks, tiebreaker, ticket number, row, profile and standing. */
   var list=CPU.filter(function(p){return p.paid});
   var mine=myPaidTickets().map(function(tk){
-    return {name:tk.name, personName:personNameOf(tk), ticketNum:tk.num, picks:tk.picks, tb:tk.tb, mini:tk.mini||null, spread:tk.spread||null, donation:tk.donation||0, subsidy:tk.subsidy||0, referral:!!tk.referral, launchFree:!!tk.launchFree, bogoFree:!!tk.bogoFree, refNextFree:!!tk.refNextFree, fundFree:!!tk.fundFree, referrer:tk.referrer||null, t:tk.time, you:true, owner:tk.owner||tk.name, soldFrom:tk.soldFrom||null, paid:true, confirm:tk.confirm, paidTime:tk.paidTime};
+    return {name:tk.name, personName:personNameOf(tk), ticketNum:tk.num, picks:tk.picks, tb:tk.tb, mini:tk.mini||null, spread:tk.spread||null, donation:tk.donation||0, subsidy:tk.subsidy||0, referral:!!tk.referral, launchFree:!!tk.launchFree, bogoFree:!!tk.bogoFree, refNextFree:!!tk.refNextFree, marketFree:!!tk.marketFree, fundFree:!!tk.fundFree, referrer:tk.referrer||null, t:tk.time, you:true, owner:tk.owner||tk.name, soldFrom:tk.soldFrom||null, paid:true, confirm:tk.confirm, paidTime:tk.paidTime};
   });
   return mine.concat(list);
 }
@@ -4253,11 +4460,12 @@ function ticketCostEach(){ return ENTRY_PRICE+feePerTicket+donationPerTicket; }
    so a free BOGO or reward ticket shows $0 everywhere BEFORE submit
    too, not just at the pay gate. */
 function nextTicketPricing(){
-  var std={due:ENTRY_PRICE+feePerTicket, launchFree:false, bogoFree:false, refNextFree:false, referral:false, referrer:null, subsidy:0};
+  var std={due:ENTRY_PRICE+feePerTicket, launchFree:false, bogoFree:false, refNextFree:false, marketFree:false, referral:false, referrer:null, subsidy:0};
   try{
     var inp=$("playerName"); var name=inp?inp.value.trim():"";
     var samePerson = name ? myTickets.filter(function(tk){ return personNameOf(tk)===name; }).length : myTickets.length;
-    if(name && typeof refNextAvailable==="function" && refNextAvailable(name)>0) return {due:0, launchFree:false, bogoFree:false, refNextFree:true, referral:false, referrer:null, subsidy:6};
+    if(name && typeof refNextAvailable==="function" && refNextAvailable(name)>0) return {due:0, launchFree:false, bogoFree:false, refNextFree:true, marketFree:false, referral:false, referrer:null, subsidy:6};
+    if(name && typeof marketFreeAvailable==="function" && marketFreeAvailable(name)>0) return {due:0, launchFree:false, bogoFree:false, refNextFree:false, marketFree:true, referral:false, referrer:null, subsidy:6};
     if(poolNumber===1 && launchAccess() && samePerson===1 && !(name && typeof LAUNCH_BOGO_USED!=="undefined" && LAUNCH_BOGO_USED[name])) return {due:0, launchFree:false, bogoFree:true, refNextFree:false, referral:false, referrer:null, subsidy:6};
     if(samePerson>0) return std;
     if(name && typeof pendingReferral!=="undefined" && pendingReferral && pendingReferral.forName===name && !(typeof REFERRAL_USED!=="undefined" && REFERRAL_USED && REFERRAL_USED[name])) return {due:1, launchFree:false, bogoFree:false, refNextFree:false, referral:true, referrer:pendingReferral.referrer, subsidy:5};
@@ -4265,10 +4473,10 @@ function nextTicketPricing(){
   return std;
 }
 function planSlotKind(i){
-  if(i<myTickets.length){ var tk=myTickets[i]; if(tk.bogoFree) return "bogo"; if(tk.refNextFree) return "refnext"; if(tk.launchFree) return "launch"; if(tk.referral) return "referral"; return null; }
+  if(i<myTickets.length){ var tk=myTickets[i]; if(tk.bogoFree) return "bogo"; if(tk.refNextFree) return "refnext"; if(tk.marketFree) return "marketfree"; if(tk.launchFree) return "launch"; if(tk.referral) return "referral"; return null; }
   var unfilledIdx=i-myTickets.length;
   var inp=$("playerName"); var name=inp?inp.value.trim():"";
-  if(unfilledIdx===0){ var pr=nextTicketPricing(); return pr.bogoFree?"bogo":pr.refNextFree?"refnext":pr.referral?"referral":null; }
+  if(unfilledIdx===0){ var pr=nextTicketPricing(); return pr.bogoFree?"bogo":pr.refNextFree?"refnext":pr.marketFree?"marketfree":pr.referral?"referral":null; }
   /* a planned-but-unfilled second ticket on Launch Night is the free BOGO one */
   if(poolNumber===1 && launchAccess() && i===1 && !(name && typeof LAUNCH_BOGO_USED!=="undefined" && LAUNCH_BOGO_USED[name])) return "bogo";
   return null;
@@ -4276,7 +4484,7 @@ function planSlotKind(i){
 function planDueAt(i){
   if(i<myTickets.length){ var tk=myTickets[i]; return tk.baseDue!=null?tk.baseDue:(ENTRY_PRICE+feePerTicket); }
   var k=planSlotKind(i);
-  if(k==="bogo"||k==="refnext"||k==="launch") return 0;
+  if(k==="bogo"||k==="refnext"||k==="marketfree"||k==="launch") return 0;
   if(k==="referral") return 1;
   return ENTRY_PRICE+feePerTicket;
 }
@@ -4295,12 +4503,13 @@ function planTotalNote(){
     if(d>=std){ run++; return; }
     flush();
     var k=planSlotKind(i);
-    segs.push(d===0 ? ("Ticket #"+(i+1)+" FREE — $0 · "+(k==="bogo"?"🎟️ Launch Night BOGO second ticket":k==="refnext"?"🎁 referral-reward ticket":"free ticket")+" · host's $6.00 subsidy applied") : ("Ticket #"+(i+1)+" $1 · host's $5.00 marketing subsidy applied"));
+    segs.push(d===0 ? ("Ticket #"+(i+1)+" FREE — $0 · "+(k==="bogo"?"🎟️ Launch Night BOGO second ticket":k==="refnext"?"🎁 referral-reward ticket":k==="marketfree"?"🛒 Marketplace Reward ticket (5,000 coins)":"free ticket")+" · host's $6.00 subsidy applied") : ("Ticket #"+(i+1)+" $1 · host's $5.00 marketing subsidy applied"));
   });
   flush();
   return "("+segs.join(" + ")+")";
 }
 function ticketPriceLabel(tk){
+  if(tk.marketFree) return " · 🎟️ FREE Marketplace Reward ticket — bought with 5,000 coins · $0 due from you · Marketplace Reward Subsidy $6.00 posts in the vault · counts as a full $6";
   if(tk.fundFree) return " · 🎟️ FREE Fund-the-Pool ticket — $0 due from you · host's $6.00 subsidy posts in the vault · counts as a full $6";
   if(tk.bogoFree) return " · 🎟️ BOGO FREE second ticket — $0 due from you · host's $6.00 launch subsidy posts in the vault · counts as a full $6";
   if(tk.refNextFree) return " · 🎁 FREE referral-reward ticket — $0 due from you · host's $6.00 subsidy posts in the vault · counts as a full $6";
@@ -4308,7 +4517,7 @@ function ticketPriceLabel(tk){
   if(tk.referral) return " · 🦈 $1 referred first ticket · host's $5.00 marketing subsidy posts in the vault · counts as a full $6";
   return " · $6";
 }
-function nextFreeNote(){ var pr=nextTicketPricing(); if(pr.due!==0) return null; return pr.bogoFree?"Launch Night BOGO — your FREE second ticket":pr.refNextFree?"your FREE referral-reward ticket":"your FREE ticket"; }
+function nextFreeNote(){ var pr=nextTicketPricing(); if(pr.due!==0) return null; return pr.bogoFree?"Launch Night BOGO — your FREE second ticket":pr.refNextFree?"your FREE referral-reward ticket":pr.marketFree?"your FREE Marketplace Reward ticket (bought with 5,000 coins)":"your FREE ticket"; }
 function fillingNumber(){ return myTickets.length+1; }
 /* ---------------- SEQUENTIAL TICKET PLAN ----------------
    The chosen count DRIVES the flow, in order: fill Ticket 1 of N → submit →
@@ -4359,11 +4568,11 @@ function updateTicketPlan(){
   var totalPlanned=Math.round((plannedBaseTotal()+donationPerTicket*dispCount)*100)/100;
   var paidCount=myPaidTickets().length, heldCount=myHeldTickets().length;
   var pr=nextTicketPricing();
-  var qd=$("qtyDisplay"); if(qd) qd.innerHTML=plannedTickets+" ticket"+(plannedTickets===1?"":"s")+"<small>"+(pr.refNextFree?("🎁 Your next ticket is FREE — your referral reward · host's $6.00 subsidy · more tickets $6"):pr.bogoFree?("🎟️ Launch Night BOGO: this ticket is your FREE second ticket — $0 · host's $6.00 launch subsidy · more tickets $6"):pr.referral?("🦈 Your first ticket is $1 with a friend's code — host's $5.00 subsidy · more tickets $6"):(poolNumber===1&&typeof launchAccess==="function"&&launchAccess())?("🚀 Launch Night BOGO: Ticket #1 is $5 + $1 fee = $6 — Ticket #2 is FREE"):("$5 + $1 fee = $6 per ticket"))+"</small>";
+  var qd=$("qtyDisplay"); if(qd) qd.innerHTML=plannedTickets+" ticket"+(plannedTickets===1?"":"s")+"<small>"+(pr.marketFree?("🎟️ Your next ticket is FREE — your Top Tier Marketplace Reward ticket (5,000 coins) · Marketplace Reward Subsidy $6.00 · more tickets $6"):pr.refNextFree?("🎁 Your next ticket is FREE — your referral reward · host's $6.00 subsidy · more tickets $6"):pr.bogoFree?("🎟️ Launch Night BOGO: this ticket is your FREE second ticket — $0 · host's $6.00 launch subsidy · more tickets $6"):pr.referral?("🦈 Your first ticket is $1 with a friend's code — host's $5.00 subsidy · more tickets $6"):(poolNumber===1&&typeof launchAccess==="function"&&launchAccess())?("🚀 Launch Night BOGO: Ticket #1 is $5 + $1 fee = $6 — Ticket #2 is FREE"):("$5 + $1 fee = $6 per ticket"))+"</small>";
   var tt=$("tpTotal"); if(tt) tt.textContent="$"+(totalPlanned%1?totalPlanned.toFixed(2):totalPlanned)+" total for "+dispCount;
   var pst=$("payStepTitle"), pss=$("payStepSub");
-  if(pst) pst.textContent = pr.refNextFree ? "Pay $0 — FREE referral ticket" : pr.bogoFree ? "Pay $0 — FREE BOGO ticket" : pr.referral ? "Pay $1 — referred first ticket" : "Pay $6";
-  if(pss) pss.textContent = (pr.refNextFree||pr.bogoFree) ? "The host's $6.00 subsidy posts in the vault — the Shark confirms, then your ticket is live." : "The Shark confirms your payment — then your ticket is live.";
+  if(pst) pst.textContent = pr.marketFree ? "Pay $0 — FREE Marketplace Reward ticket" : pr.refNextFree ? "Pay $0 — FREE referral ticket" : pr.bogoFree ? "Pay $0 — FREE BOGO ticket" : pr.referral ? "Pay $1 — referred first ticket" : "Pay $6";
+  if(pss) pss.textContent = (pr.refNextFree||pr.bogoFree||pr.marketFree) ? "The $6.00 subsidy posts in the vault — the Shark confirms, then your ticket is live." : "The Shark confirms your payment — then your ticket is live.";
   document.querySelectorAll("[data-qty]").forEach(function(b){ b.classList.toggle("on", +b.dataset.qty===plannedTickets); });
   var st=$("ticketStatusLine");
   if(st){
@@ -4380,6 +4589,7 @@ function updateTicketPlan(){
   }
   var addBtn=$("addAnotherFromPicks"); if(addBtn) addBtn.hidden = myTickets.length===0;
   var sb=$("submitBtn"); if(sb) sb.textContent = pr.bogoFree ? ("Submit Ticket #"+fillingNumber()+" 🎟️ — FREE · $0 (Launch Night BOGO · host's $6.00 launch subsidy)")
+    : pr.marketFree ? ("Submit Ticket #"+fillingNumber()+" 🎟️ — FREE · $0 (Marketplace Reward · 5,000 coins · $6.00 Marketplace Reward Subsidy)")
     : pr.refNextFree ? ("Submit Ticket #"+fillingNumber()+" 🎟️ — FREE · $0 (referral reward · host's $6.00 subsidy)")
     : pr.referral ? ("Submit Ticket #"+fillingNumber()+" 🎟️ — $1 (Refer-a-Shark · host covers the $5)")
     : ("Submit Ticket #"+fillingNumber()+" 🎟️ — $6");
@@ -4646,13 +4856,14 @@ $("submitBtn").addEventListener("click",function(){
      FREE; otherwise a first ticket carrying a valid friend invite code =
      $1 paid (host posts a $5 marketing subsidy). Free and $1 tickets all
      count as FULL $6 tickets — the host posts the subsidy in the vault. */
-  var tkLaunch=false, tkBogo=false, tkRefNext=false, tkFundFree=false, tkReferral=false, tkReferrer=null, tkSubsidy=0, tkBaseDue=ENTRY_PRICE+feePerTicket;
+  var tkLaunch=false, tkBogo=false, tkRefNext=false, tkMarketFree=false, tkFundFree=false, tkReferral=false, tkReferrer=null, tkSubsidy=0, tkBaseDue=ENTRY_PRICE+feePerTicket;
   try{
     if(typeof refNextAvailable!=="undefined" && refNextAvailable(name)>0){ tkRefNext=true; tkFundFree=(typeof refNextPeekSource==="function"&&refNextPeekSource(name)==="fund"); tkSubsidy=6; tkBaseDue=0; refNextConsume(name); }
+    else if(typeof marketFreeAvailable!=="undefined" && marketFreeAvailable(name)>0){ tkMarketFree=true; tkSubsidy=6; tkBaseDue=0; marketFreeConsume(name); }
     else if(poolNumber===1 && samePerson===1 && launchAccess() && !(typeof LAUNCH_BOGO_USED!=="undefined"&&LAUNCH_BOGO_USED[name])){ tkBogo=true; tkSubsidy=6; tkBaseDue=0; LAUNCH_BOGO_USED[name]=true; }
     else if(samePerson===0 && typeof pendingReferral!=="undefined" && pendingReferral && pendingReferral.forName===name && !(typeof REFERRAL_USED!=="undefined"&&REFERRAL_USED[name])){ tkReferral=true; tkReferrer=pendingReferral.referrer; tkSubsidy=5; tkBaseDue=1; }
   }catch(e){}
-  myTicket={name:displayName, personName:name, picks:picksCopy, tb:tbCopy, mini:miniCopy, spread:spreadCopy, donation:0, donorCredited:false, launchFree:tkLaunch, bogoFree:tkBogo, refNextFree:tkRefNext, fundFree:tkFundFree, referral:tkReferral, referrer:tkReferrer, subsidy:tkSubsidy, baseDue:tkBaseDue, num:"PS-"+(5100+seqN*613+Math.floor(Math.random()*500)), time:now.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"})+" ET", paid:false, confirm:null, paidTime:null};
+  myTicket={name:displayName, personName:name, picks:picksCopy, tb:tbCopy, mini:miniCopy, spread:spreadCopy, donation:0, donorCredited:false, launchFree:tkLaunch, bogoFree:tkBogo, refNextFree:tkRefNext, marketFree:tkMarketFree, fundFree:tkFundFree, referral:tkReferral, referrer:tkReferrer, subsidy:tkSubsidy, baseDue:tkBaseDue, num:"PS-"+(5100+seqN*613+Math.floor(Math.random()*500)), time:now.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"})+" ET", paid:false, confirm:null, paidTime:null};
   myTickets.push(myTicket);
   /* FIRST TICKET = PROFILE + NAME LOCK: the moment a Shark's first ticket
      is written, their normalized name locks to them in the registry and
@@ -4676,6 +4887,7 @@ $("submitBtn").addEventListener("click",function(){
     "<p style='margin:10px 0 0;font-weight:700'>"+(tkBogo?"This ticket stays in the holding tank — off the board, out of the pot — until the Shark confirms it at the gate. You pay $0: this is your FREE BOGO second ticket — the host's $6.00 launch subsidy posts in the vault and the ticket counts in full. Then it goes live.":tkRefNext?"This ticket stays in the holding tank — off the board, out of the pot — until the Shark confirms it at the gate. You pay $0: this is your FREE referral-reward ticket — the host's $6.00 subsidy posts in the vault and the ticket counts in full. Then it goes live.":tkReferral?"This ticket stays in the holding tank — off the board, out of the pot — until you pay $1 at the gate (the host's $5.00 marketing subsidy posts in the vault, so it counts as a full $6) and the Shark confirms it. Then it goes live.":"This ticket stays in the holding tank — off the board, out of the pot — until you pay the $5 entry + Pool Growth Fee and the Shark confirms it. Then it goes live.")+"</p>";
   if(tkBogo) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🎟️ LAUNCH NIGHT BOGO: you bought one ticket at $6, so this second ticket is FREE — $0 due at the gate. It is a full ticket with its own picks, mini games and spreads. The host posts a $6.00 launch subsidy in the vault, so it counts in full and the jackpot still grows $1.15 on it. Test credits only — not a real-money offer.</p>";
   else if(tkRefNext) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🎁 REFERRAL REWARD: this is the FREE ticket you earned for this pool when a Shark you referred bought a ticket on Launch Night (Pool #1) before that pool started. $0 due at the gate — the host posts a $6.00 subsidy in the vault, so it counts in full and the jackpot still grows $1.15 on it. It never counted for Pool #1 — it is yours in this pool, with its own picks.</p>";
+  if(tkMarketFree) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🎟️ TOP TIER MARKETPLACE REWARD: this ticket is your Free Ticket bought with 5,000 coins, redeemed in this pool (the next pool after the one you bought it in). $0 due at the gate — the vault posts a $6.00 Marketplace Reward Subsidy, so it counts in full and the jackpot grows $1.15 on it. Full picks, mini games mandatory, spreads mandatory 10/10, tiebreaker — a normal ticket in every way. Coins spent are gone: no refund after redemption.</p>";
   if(tkFundFree) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🏦 FUND THE POOL: this free ticket is a Fund the Pool installment paying out to you — not a referral reward. $0 due at the gate, the host's $6.00 subsidy posts in the vault, and it counts in full, jackpot +$1.15 included.</p>";
   else if(tkReferral) tb.innerHTML+="<p style='margin:10px 0 0;font-weight:800'>🦈 REFER-A-SHARK: "+esc(tkReferrer||"your friend")+"'s code makes this first ticket $1 at the gate (not $6). The host posts a $5.00 marketing subsidy in the vault — shown, not hidden — so it counts as a full $6 ticket and the jackpot still grows $1.15. When it's confirmed, you both get 200 🪙 coins."+(poolNumber===1?" And because this is Launch Night: if this ticket is confirmed before Pool #1 starts (locks), "+esc(tkReferrer||"your friend")+" ALSO earns a second FREE ticket for the NEXT pool — on top of the coins.":"")+"</p>";
   feed("INFO","info",name+" submitted ticket #"+myTicket.num+". 🦈 The Shark is holding it OFF the board until its payment is confirmed.");
@@ -4701,10 +4913,10 @@ function renderFeeUI(){
   set("donateAmtLbl", donationPerTicket>0 ? fmt2(donationPerTicket)+" — voluntary, 100% to the pools" : "$0.00 — none added");
   set("feeSeedLbl", "$0.30 / ticket");
   set("feeNetLbl", fmt2(fs.toJackpot)+" / ticket");
-  set("feeTotalLbl", fmt2(totalDue)+" test dollars"+(held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree)?" — FREE ticket: $0 due, the host's $6.00 subsidy posts in the vault, this ticket counts as a full $6":held0&&held0.referral?" — $1 referred first ticket: the host's $5.00 marketing subsidy posts in the vault, this ticket counts as a full $6":""));
-  set("priceLineLbl", held0&&held0.bogoFree ? "🎟️ FREE BOGO second ticket — the host's $6.00 launch subsidy covers the $5 entry + $1 fee =" : held0&&held0.refNextFree ? "🎁 FREE referral-reward ticket — the host's $6.00 subsidy covers the $5 entry + $1 fee =" : held0&&held0.launchFree ? "🚀 FREE launch ticket — the host's $6.00 launch subsidy covers the $5 entry + $1 fee =" : held0&&held0.referral ? "🦈 $1 referred first ticket — the host's $5.00 subsidy covers the rest of the $5 entry + $1 fee =" : "$5 entry + $1 fee =");
-  set("priceLineNote", held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree) ? "Test dollars · $0 due from you on this ticket — the subsidy posts in the vault and the ticket counts as a full $6" : held0&&held0.referral ? "Test dollars · $1 due from you on this ticket — the host's $5.00 subsidy posts in the vault" : "Test dollars · the $1 fee is mandatory on every ticket");
-  set("donateNoneLbl", held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree) ? "Just the FREE ticket — $0" : held0&&held0.referral ? "Just the $1" : "Just the $6");
+  set("feeTotalLbl", fmt2(totalDue)+" test dollars"+(held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree||held0.marketFree)?" — FREE ticket: $0 due, the host's $6.00 subsidy posts in the vault, this ticket counts as a full $6":held0&&held0.referral?" — $1 referred first ticket: the host's $5.00 marketing subsidy posts in the vault, this ticket counts as a full $6":""));
+  set("priceLineLbl", held0&&held0.marketFree ? "🎟️ FREE Marketplace Reward ticket — the $6.00 Marketplace Reward Subsidy covers the $5 entry + $1 fee =" : held0&&held0.bogoFree ? "🎟️ FREE BOGO second ticket — the host's $6.00 launch subsidy covers the $5 entry + $1 fee =" : held0&&held0.refNextFree ? "🎁 FREE referral-reward ticket — the host's $6.00 subsidy covers the $5 entry + $1 fee =" : held0&&held0.launchFree ? "🚀 FREE launch ticket — the host's $6.00 launch subsidy covers the $5 entry + $1 fee =" : held0&&held0.referral ? "🦈 $1 referred first ticket — the host's $5.00 subsidy covers the rest of the $5 entry + $1 fee =" : "$5 entry + $1 fee =");
+  set("priceLineNote", held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree||held0.marketFree) ? "Test dollars · $0 due from you on this ticket — the subsidy posts in the vault and the ticket counts as a full $6" : held0&&held0.referral ? "Test dollars · $1 due from you on this ticket — the host's $5.00 subsidy posts in the vault" : "Test dollars · the $1 fee is mandatory on every ticket");
+  set("donateNoneLbl", held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree||held0.marketFree) ? "Just the FREE ticket — $0" : held0&&held0.referral ? "Just the $1" : "Just the $6");
   set("priceLineTotal", "$"+(totalDue%1?totalDue.toFixed(2):totalDue)+" total");
   var bar=$("feeBarText");
   if(bar) bar.innerHTML="Every paid ticket is <b>$5 + the mandatory "+fmt2(feePerTicket)+" fee = $6.00</b> — there is no cheaper option. The fee never touches the host: <b>100% of it ("+fmt2(fs.toJackpot)+" a ticket) drops straight into the 🏆 Perfect Jackpot</b> — and with the $0.15 entry slice (3% of the $5 entry), <b>the jackpot grows $1.15 per paid ticket</b>. The 🌱 seed grows $0.30 per ticket (6% of the entry), total collected grows $6.00 per ticket, and the whole $6.00 always sums up: <b>Host $0.05 · Seed $0.30 · Perfect Jackpot $1.15 · Winners $4.50 = $6.00</b>."+(donationPerTicket>0?(" On top of that, the ticket at the gate is adding a <b>voluntary donation of "+fmt2(donationPerTicket)+"</b> — chosen per ticket, routed <b>100% into the pools ($0 to the host)</b>, and it posts that donor on the ❤️ Donor Board permanently, with a badge that grows with their lifetime total. Donations so far this pool: <b>"+money(donationTotalLive())+"</b> · all-time, all donors: <b>"+money(donorLifetimeTotal())+"</b>."):(" Players can also add a <b>voluntary donation on top</b> — extra only, never less — and <b>100% of it goes into the pools</b>. Donors are posted permanently on the ❤️ Donor Board."));
@@ -4715,7 +4927,7 @@ function renderFeeUI(){
   });
   if(!paying){
     var li=document.querySelector('#verifyList li[data-check="1"]');
-    if(li&&li.className!=="pass") li.textContent = (held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree))
+    if(li&&li.className!=="pass") li.textContent = (held0&&(held0.bogoFree||held0.refNextFree||held0.launchFree||held0.marketFree))
       ? ("Payment received — "+fmt2(totalDue)+" total (FREE ticket — the host's $6.00 subsidy posted in the vault"+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" voluntary donation"):"")+")")
       : (held0&&held0.referral)
       ? ("Payment received — "+fmt2(totalDue)+" total ($1 referred first ticket + the host's $5.00 marketing subsidy posted in the vault"+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" voluntary donation"):"")+")")
@@ -4751,8 +4963,8 @@ function renderSecurity(){
     } else {
       var nextHeld=myHeldTickets()[0];
       sum.innerHTML="<p><b>You have "+myTickets.length+" ticket"+(myTickets.length===1?"":"s")+"</b> — "+myPaidTickets().length+" paid &amp; live · "+myHeldTickets().length+" held · Total paid so far: <b>"+fmt2(myPaidTickets().reduce(function(a,tk2){return a+(tk2.baseDue!=null?tk2.baseDue:ENTRY_PRICE+feePerTicket)+(tk2.donation||0);},0))+"</b> · Total for "+Math.max(plannedTickets,myTickets.length)+" chosen: <b>"+fmt2(plannedBaseTotal()+donationPerTicket*Math.max(plannedTickets,myTickets.length))+"</b> "+planTotalNote()+"</p>"+
-        myTickets.map(function(tk,i){ return "<p style='margin-top:6px'><b>Ticket "+(i+1)+" · #"+esc(tk.num)+"</b> · "+esc(tk.name)+"<br>Submitted "+esc(tk.time)+(tk.bogoFree?"<br>🎟️ FREE BOGO second ticket — $0 due from you · host's $6.00 launch subsidy posts in the vault · counts as a full $6":tk.refNextFree?"<br>🎁 FREE referral-reward ticket — $0 due from you · host's $6.00 subsidy posts in the vault · counts as a full $6":tk.launchFree?"<br>🚀 FREE Launch Night ticket — $0 due from you · host's $6.00 launch subsidy posts in the vault · counts as a full $6":tk.referral?"<br>🦈 $1 referred first ticket · host's $5.00 marketing subsidy posts in the vault · counts as a full $6":"")+(tk.paid?(" · Paid "+esc(tk.paidTime||"")+((tk.donation||0)>0?(" · ❤️ donated +"+fmt2(tk.donation)+" on this ticket — Donor Board, permanently"):"")+"<br>Status: <b style='color:#7bf0a4'>✓ LIVE ON THE BOARD</b> (blind until slate lock)"):("<br>Status: <b style='color:#ff9aa4'>🫧 HELD — NOT ON THE BOARD, NOT IN THE POT</b>"))+"</p>"; }).join("")+
-        (nextHeld?("<p style='margin-top:8px'><b>Next to pay:</b> Ticket #"+esc(nextHeld.num)+" — "+fmt2((nextHeld.baseDue!=null?nextHeld.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket)+(nextHeld.bogoFree?" · 🎟️ FREE BOGO second ticket — host posts the $6.00 launch subsidy in the vault, ticket counts in full":nextHeld.refNextFree?" · 🎁 FREE referral-reward ticket — host posts the $6.00 subsidy in the vault, ticket counts in full":nextHeld.launchFree?" · 🚀 FREE Launch Night ticket — host posts the $6.00 launch subsidy in the vault, ticket counts in full":nextHeld.referral?" · 🦈 $1 referred first ticket — host posts the $5.00 marketing subsidy in the vault, ticket counts as a full $6":"")+"</p>"):"");
+        myTickets.map(function(tk,i){ return "<p style='margin-top:6px'><b>Ticket "+(i+1)+" · #"+esc(tk.num)+"</b> · "+esc(tk.name)+"<br>Submitted "+esc(tk.time)+(tk.bogoFree?"<br>🎟️ FREE BOGO second ticket — $0 due from you · host's $6.00 launch subsidy posts in the vault · counts as a full $6":tk.refNextFree?"<br>🎁 FREE referral-reward ticket — $0 due from you · host's $6.00 subsidy posts in the vault · counts as a full $6":tk.marketFree?"<br>🎟️ FREE Marketplace Reward ticket — bought with 5,000 coins · $0 due from you · $6.00 Marketplace Reward Subsidy posts in the vault · counts as a full $6":tk.launchFree?"<br>🚀 FREE Launch Night ticket — $0 due from you · host's $6.00 launch subsidy posts in the vault · counts as a full $6":tk.referral?"<br>🦈 $1 referred first ticket · host's $5.00 marketing subsidy posts in the vault · counts as a full $6":"")+(tk.paid?(" · Paid "+esc(tk.paidTime||"")+((tk.donation||0)>0?(" · ❤️ donated +"+fmt2(tk.donation)+" on this ticket — Donor Board, permanently"):"")+"<br>Status: <b style='color:#7bf0a4'>✓ LIVE ON THE BOARD</b> (blind until slate lock)"):("<br>Status: <b style='color:#ff9aa4'>🫧 HELD — NOT ON THE BOARD, NOT IN THE POT</b>"))+"</p>"; }).join("")+
+        (nextHeld?("<p style='margin-top:8px'><b>Next to pay:</b> Ticket #"+esc(nextHeld.num)+" — "+fmt2((nextHeld.baseDue!=null?nextHeld.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket)+(nextHeld.bogoFree?" · 🎟️ FREE BOGO second ticket — host posts the $6.00 launch subsidy in the vault, ticket counts in full":nextHeld.refNextFree?" · 🎁 FREE referral-reward ticket — host posts the $6.00 subsidy in the vault, ticket counts in full":nextHeld.marketFree?" · 🎟️ FREE Marketplace Reward ticket — the $6.00 Marketplace Reward Subsidy posts in the vault, ticket counts in full":nextHeld.launchFree?" · 🚀 FREE Launch Night ticket — host posts the $6.00 launch subsidy in the vault, ticket counts in full":nextHeld.referral?" · 🦈 $1 referred first ticket — host posts the $5.00 marketing subsidy in the vault, ticket counts as a full $6":"")+"</p>"):"");
     }
     var stamp=$("payStamp");
     var lastPaid=myPaidTickets()[myPaidTickets().length-1];
@@ -4764,7 +4976,8 @@ function renderSecurity(){
       if(!myTickets.length){ pb.disabled=true; pb.textContent="Submit a ticket first"; }
       else if(!nh){ pb.disabled=true; pb.textContent="✓ All "+myTickets.length+" of your tickets paid & confirmed — you're live"; }
       else { pb.disabled=false; var nhDue=(nh.baseDue!=null?nh.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket;
-        pb.textContent = nh.bogoFree ? ("🦈 Confirm FREE BOGO Ticket #"+nh.num+" — $0 due (host's $6.00 launch subsidy posts in the vault)")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" donation"):"")
+        pb.textContent = nh.marketFree ? ("🦈 Confirm FREE Marketplace Reward Ticket #"+nh.num+" — $0 due (the $6.00 Marketplace Reward Subsidy posts in the vault)")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" donation"):"")
+          : nh.bogoFree ? ("🦈 Confirm FREE BOGO Ticket #"+nh.num+" — $0 due (host's $6.00 launch subsidy posts in the vault)")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" donation"):"")
           : nh.refNextFree ? ("🦈 Confirm FREE Referral-Reward Ticket #"+nh.num+" — $0 due (host's $6.00 subsidy posts in the vault)")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" donation"):"")
           : nh.launchFree ? ("🦈 Confirm FREE Launch Ticket #"+nh.num+" — $0 due (host's $6.00 launch subsidy posts in the vault)")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" donation"):"")
           : nh.referral ? ("🦈 Pay "+fmt2(nhDue)+" for Ticket #"+nh.num+" — $1 referred first ticket (host covers the $5 subsidy)")+(donationPerTicket>0?(" incl. "+fmt2(donationPerTicket)+" donation"):"")
@@ -4774,7 +4987,7 @@ function renderSecurity(){
     if(nh0&&(nh0.launchFree||nh0.bogoFree||nh0.refNextFree||nh0.referral)){
       var due0=(nh0.baseDue!=null?nh0.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket;
       var plt=$("priceLineTotal"); if(plt) plt.textContent="$"+(due0%1?due0.toFixed(2):due0)+" total";
-      var ftl=$("feeTotalLbl"); if(ftl) ftl.textContent=fmt2(due0)+" test dollars"+((nh0.launchFree||nh0.bogoFree||nh0.refNextFree)?" — FREE ticket: the host's $6.00 subsidy posts in the vault, this ticket counts as a full $6":" — $1 referred first ticket: the host's $5.00 marketing subsidy posts in the vault, this ticket counts as a full $6");
+      var ftl=$("feeTotalLbl"); if(ftl) ftl.textContent=fmt2(due0)+" test dollars"+((nh0.launchFree||nh0.bogoFree||nh0.refNextFree||nh0.marketFree)?" — FREE ticket: the host's $6.00 subsidy posts in the vault, this ticket counts as a full $6":" — $1 referred first ticket: the host's $5.00 marketing subsidy posts in the vault, this ticket counts as a full $6");
     }
     if($("payDoneBtns")) $("payDoneBtns").style.display=(myPaidTickets().length>0)?"block":"none";
     var pnb=$("payNextBtns"); if(pnb) pnb.style.display=(myPaidTickets().length>0&&myHeldTickets().length>0)?"block":"none";
@@ -4843,9 +5056,9 @@ function wirePay(){
     /* A render hiccup here must never freeze the payment mid-verification
        with the button disabled — the check chain below runs regardless. */
     try{ renderSecurity(); }catch(e){}
-    feed("INFO","info","🦈 "+(payingTicket?payingTicket.name:myTicket.name)+" sent "+fmt2((target.baseDue!=null?target.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket)+" for ticket #"+myTicket.num+(target.bogoFree?" — 🎟️ FREE BOGO second ticket: $0 from the player, the host's $6.00 launch subsidy posts in the vault so the ticket counts in full":target.refNextFree?" — 🎁 FREE referral-reward ticket: $0 from the player, the host's $6.00 subsidy posts in the vault so the ticket counts in full":target.launchFree?" — 🚀 FREE Launch Night ticket: $0 from the player, the host's $6.00 launch subsidy posts in the vault so the ticket counts in full":target.referral?" — 🦈 $1 referred first ticket: the host's $5.00 marketing subsidy posts in the vault so the ticket counts as a full $6":" — $5 entry + $1.00 mandatory Pool Growth Fee")+" (the whole $1.00 fee goes to the Perfect Jackpot — with the $0.15 entry slice, the jackpot grows $1.15 on this ticket)"+(donationPerTicket>0?(" + a voluntary "+fmt2(donationPerTicket)+" donation, 100% to the pools"):"")+". The Shark is verifying — the ticket stays in the tank until he confirms.");
+    feed("INFO","info","🦈 "+(payingTicket?payingTicket.name:myTicket.name)+" sent "+fmt2((target.baseDue!=null?target.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket)+" for ticket #"+myTicket.num+(target.marketFree?" — 🎟️ FREE Marketplace Reward ticket: $0 from the player, the $6.00 Marketplace Reward Subsidy posts in the vault so the ticket counts in full":target.bogoFree?" — 🎟️ FREE BOGO second ticket: $0 from the player, the host's $6.00 launch subsidy posts in the vault so the ticket counts in full":target.refNextFree?" — 🎁 FREE referral-reward ticket: $0 from the player, the host's $6.00 subsidy posts in the vault so the ticket counts in full":target.launchFree?" — 🚀 FREE Launch Night ticket: $0 from the player, the host's $6.00 launch subsidy posts in the vault so the ticket counts in full":target.referral?" — 🦈 $1 referred first ticket: the host's $5.00 marketing subsidy posts in the vault so the ticket counts as a full $6":" — $5 entry + $1.00 mandatory Pool Growth Fee")+" (the whole $1.00 fee goes to the Perfect Jackpot — with the $0.15 entry slice, the jackpot grows $1.15 on this ticket)"+(donationPerTicket>0?(" + a voluntary "+fmt2(donationPerTicket)+" donation, 100% to the pools"):"")+". The Shark is verifying — the ticket stays in the tank until he confirms.");
     var vli=document.querySelector('#verifyList li[data-check="1"]');
-    if(vli) vli.textContent="Payment received — "+fmt2((target.baseDue!=null?target.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket)+" total"+((target.bogoFree||target.refNextFree||target.launchFree)?" (FREE ticket — $6.00 host subsidy posted in the vault)":target.referral?" ($1 referred first ticket + $5.00 host marketing subsidy posted in the vault)":" ($5 entry + $1.00 Pool Growth Fee)")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" voluntary donation"):"");
+    if(vli) vli.textContent="Payment received — "+fmt2((target.baseDue!=null?target.baseDue:ENTRY_PRICE+feePerTicket)+donationPerTicket)+" total"+((target.bogoFree||target.refNextFree||target.launchFree||target.marketFree)?" (FREE ticket — $6.00 host subsidy posted in the vault)":target.referral?" ($1 referred first ticket + $5.00 host marketing subsidy posted in the vault)":" ($5 entry + $1.00 Pool Growth Fee)")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" voluntary donation"):"");
     var list=$("verifyList"); list.className="verify-list show";
     var items=list.querySelectorAll("li");
     items.forEach(function(li){ li.className=""; li.textContent=li.textContent.replace(/^✔ /,""); });
@@ -4917,7 +5130,7 @@ function confirmMyPayment(){
     if(++navTries>8){ clearInterval(navTimer); return; }
     goToScreen("board");
   },1200);
-  secLog("<b>"+esc(myTicket.name)+"</b> — payment confirmed ✓ · code "+myTicket.confirm+" · ticket #"+esc(myTicket.num)+" LIVE on the board · "+fmt2((tk.baseDue!=null?tk.baseDue:ENTRY_PRICE+feePerTicket)+(tk.donation||0))+" in "+(tk.bogoFree?"(🎟️ FREE BOGO second ticket — host posted a $6.00 LAUNCH SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":tk.refNextFree?"(🎁 FREE referral-reward ticket — host posted a $6.00 SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":tk.launchFree?"(🚀 FREE Launch Night ticket — host posted a $6.00 LAUNCH SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":tk.referral?"(🦈 $1 referred first ticket + host posted a $5.00 MARKETING SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":"($5 entry + $1.00 mandatory Pool Growth Fee")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" voluntary donation, 100% to the pools"):"")+")");
+  secLog("<b>"+esc(myTicket.name)+"</b> — payment confirmed ✓ · code "+myTicket.confirm+" · ticket #"+esc(myTicket.num)+" LIVE on the board · "+fmt2((tk.baseDue!=null?tk.baseDue:ENTRY_PRICE+feePerTicket)+(tk.donation||0))+" in "+(tk.marketFree?"(🎟️ FREE Marketplace Reward ticket — the $6.00 MARKETPLACE REWARD SUBSIDY posted in the vault; ticket counts as a full $6, jackpot +$1.15)":tk.bogoFree?"(🎟️ FREE BOGO second ticket — host posted a $6.00 LAUNCH SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":tk.refNextFree?"(🎁 FREE referral-reward ticket — host posted a $6.00 SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":tk.launchFree?"(🚀 FREE Launch Night ticket — host posted a $6.00 LAUNCH SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":tk.referral?"(🦈 $1 referred first ticket + host posted a $5.00 MARKETING SUBSIDY in the vault; ticket counts as a full $6, jackpot +$1.15)":"($5 entry + $1.00 mandatory Pool Growth Fee")+(donationPerTicket>0?(" + "+fmt2(donationPerTicket)+" voluntary donation, 100% to the pools"):"")+")");
   feed("INFO","info","🦈✓ PAID CONFIRMED: "+myTicket.name+" (ticket #"+myTicket.num+", "+myTicket.confirm+"). The ticket is now LIVE on the board and the pot is "+money(potTotal())+".");
   if(donorNews){ feed("DONOR","mom","❤️ DONOR BOARD — PERMANENT: "+personNameOf(tk)+" is listed on the Donor Board forever for the "+fmt2(tk.donation)+" donated on ticket #"+tk.num+". That ticket is highlighted as a DONOR TICKET. Lifetime donations: "+money(donorNews.record.total)+" across "+donorNews.record.tickets+" donated ticket"+(donorNews.record.tickets===1?"":"s")+" — badge: "+donorNews.tier.icon+" "+donorNews.tier.name+(donorNews.upgraded?" — 🎉 BADGE EARNED / UPGRADED!":"")+" The badge follows them into every pool they enter, even on a $0-donation ticket. Recognition is an honor only — no points, no standings change. 🪙 +"+(tk.donation*100)+" COINS earned on this donation ($1 = 100 coins) — balance "+coinBalance(personNameOf(tk))+" coins, spendable in the Marketplace; coins are not cash and never buy points or prizes."); }
   /* LAUNCH NIGHT BOGO + REFER-A-SHARK — credited at this same paid-confirmation moment */
@@ -4929,6 +5142,8 @@ function confirmMyPayment(){
     if(poolNumber===1 && typeof launchAccess==="function" && launchAccess() && !tk.foundingCredited){ tk.foundingCredited=true; if(typeof LAUNCH_FOUNDERS!=="undefined") LAUNCH_FOUNDERS[tkPerson]=true; }
     if(tk.bogoFree&&!tk.bogoCredited){ tk.bogoCredited=true;
       feed("LAUNCH","mom","🎟️ LAUNCH NIGHT BOGO — SECOND TICKET FREE: "+tkPerson+" arrived through the launch link inside the release-night window and bought one ticket at $6, so this second ticket was FREE (test credit — no cash, not a real-money offer). The host posted a $6.00 launch subsidy in the vault, so it counts in full — standings, pot, and the jackpot grew $1.15 on it. "+tkPerson+" now holds TWO tickets in Pool #1, and the paid ticket's $6 is real cash flow into the pool. 🌟 Founding Shark badge + 400 🪙 coins land when Pool #2 opens."); }
+    if(tk.marketFree&&!tk.marketFreeCredited){ tk.marketFreeCredited=true;
+      feed("MARKET","mom","🎟️ MARKETPLACE REWARD REDEEMED: "+tkPerson+"'s Top Tier FREE TICKET (bought with 5,000 coins) is live in Pool #"+poolNumber+" — the next pool after the one it was bought in, exactly as posted. $0 from the player; the vault posted a $6.00 MARKETPLACE REWARD SUBSIDY (Host $0.05 · Seed $0.30 · Perfect Jackpot $1.15 · Winners $4.50 = $6.00), so it counts in full — standings, pot, and the jackpot grew $1.15 on it — and the vault stays BALANCED. It is in All my tickets under "+tkPerson+"'s one profile. Coins spent are gone — no refund after redemption."); }
     if(tk.refNextFree&&!tk.refNextCredited){ tk.refNextCredited=true;
       feed("REFER","mom","🎁 REFERRAL REWARD REDEEMED: "+tkPerson+"'s FREE ticket for this pool is live — earned on Launch Night when a Shark they referred bought a ticket before Pool #1 started. $0 from the player; the host posted a $6.00 subsidy in the vault, so it counts in full — standings, pot, and the jackpot grew $1.15 on it. It never counted for Pool #1; it is a full ticket here, with its own picks."); }
     if(tk.referral&&!tk.referralCredited){ tk.referralCredited=true; if(typeof REFERRAL_USED!=="undefined") REFERRAL_USED[tkPerson]=true;
@@ -5254,7 +5469,7 @@ function renderVault(r){
   else log+='<div class="vl"><span class="amt zero">$0</span><span><b>❤️ Voluntary donations</b> — none added this pool. The mandatory $1.00 Pool Growth Fee still applies to every ticket; donations are extra only, never a way to pay less.</span></div>';
   if(f.fees>0) log+='<div class="vl"><span class="amt in">IN +'+money(f.fees)+'</span><span><b>Pool Growth Fees</b> — '+fmt2(feePerTicket)+' × '+players().length+' paid tickets. By the posted fee rule, <b>100% of it ('+money(f.fees)+') goes straight into the 🏆 Perfect Jackpot</b> · $0 of the fee to the seed · $0 of the fee to the winners · $0 to the host.</span></div>';
   var subT=Math.round(players().reduce(function(a,p){return a+(p.subsidy||0);},0)*100)/100;
-  if(subT>0){ var subWho=players().filter(function(p){return (p.subsidy||0)>0;}).map(function(p){ return esc(p.name)+' +'+money(p.subsidy)+(p.bogoFree?" (BOGO — free second Launch Night ticket)":p.refNextFree?" (referral reward — free next-pool ticket)":p.launchFree?" (launch — free ticket)":" (referred $1 first ticket)"); }).join(" · ");
+  if(subT>0){ var subWho=players().filter(function(p){return (p.subsidy||0)>0;}).map(function(p){ return esc(p.name)+' +'+money(p.subsidy)+(p.bogoFree?" (BOGO — free second Launch Night ticket)":p.refNextFree?" (referral reward — free next-pool ticket)":p.marketFree?" (Marketplace Reward — free next-pool ticket bought with 5,000 coins)":p.launchFree?" (launch — free ticket)":" (referred $1 first ticket)"); }).join(" · ");
     log+='<div class="vl"><span class="amt in">IN +'+money(subT)+'</span><span><b>🏷️ HOST SUBSIDY — POSTED, NOT HIDDEN</b> — '+subWho+'. Posted rule: a referred first ticket is paid at $1 by the new Shark; a Launch Night BOGO second ticket and a referral-reward ticket are free; the host covers the difference so <b>each counts as a full $6 ticket</b> — the allocation Host $0.05 · Seed $0.30 · Perfect Jackpot $1.15 · Winners $4.50 = $6.00 still holds on it and the <b>jackpot still grew $1.15</b> on it. The subsidy is host money posted in the open; it is already counted inside the entries + fees lines above (that is what keeps this vault BALANCED), never added twice.</span></div>'; }
   myHeldTickets().forEach(function(tk){ log+='<div class="vl"><span class="amt zero">$0</span><span><b>'+esc(tk.name)+' (you) · #'+esc(tk.num)+'</b> — ticket HELD by the Shark: no entry and no Pool Growth Fee taken until payment is confirmed</span></div>'; });
   HELD_TICKETS.forEach(function(h){
@@ -5715,7 +5930,7 @@ function renderBoard(){
     var own = ownerOf(x.p)!==x.p.name ? '<div class="rec">Ticket owned by <b>'+esc(ownerOf(x.p))+'</b></div>' : "";
     var bx=x.bonus||miniBonusFor(x.p);
     var fxBadgePod=(resultFx.until>Date.now()&&resultFx.win[x.p.name])?'<span class="fx-badge win">▲ WIN ✓</span>':(resultFx.until>Date.now()&&resultFx.loss[x.p.name])?'<span class="fx-badge loss">▼ LOSS ✗</span>':"";
-    return '<div class="pod'+(i===0?" first":"")+(i===3?" fourth":"")+(x.p.you?" you-pod":"")+((x.p.donation||0)>0?" donor":"")+equippedCls(x.p.personName||x.p.name,"frame")+equippedCls(x.p.personName||x.p.name,"highlight")+((resultFx.until>Date.now()&&resultFx.win[x.p.name])?" fx-win":(resultFx.until>Date.now()&&resultFx.loss[x.p.name])?" fx-loss":"")+'" data-profile="'+esc(x.p.name)+'" role="button" tabindex="0" title="Tap for '+esc(x.p.name)+'’s full profile"><div class="pod-rank">'+(isPerfect?"🏆":(i+1))+'</div><div class="medal">'+(isPerfect?"🏆":medals[i])+'</div><div class="rec" style="letter-spacing:.12em">'+places[i]+(isPerfect?" · PERFECT "+GAMES.length+"/"+GAMES.length:"")+'</div><div class="who">'+esc(x.p.name)+avatarHtml(x.p.personName||x.p.name)+(x.p.you?'<span class="you-badge">★ YOUR TICKET</span>':"")+donorBadgePillHtml(x.p.personName||x.p.name)+fxBadgePod+'</div>'+own+'<div class="pod-wl">'+x.s.w+'–'+x.s.l+' <small>W–L</small></div><div class="rec">'+x.s.left+' to play · <b>'+x.pts.toFixed(2)+' PTS</b></div><div class="rec">Wins '+x.s.w+' · Mini +'+bx.total+' · Spread +'+(x.spreadBonus?x.spreadBonus.bonus:spreadBonusFor(x.p).bonus).toFixed(2)+' · <b>Total '+x.pts.toFixed(2)+'</b></div>'+donorTicketLineHtml(x.p)+'<div class="prize">'+prize+'</div><div class="bar"><i style="width:'+(GAMES.length?x.s.w/GAMES.length*100:0)+'%"></i></div></div>';
+    return '<div class="pod'+(i===0?" first":"")+(i===3?" fourth":"")+(x.p.you?" you-pod":"")+((x.p.donation||0)>0?" donor":"")+equippedCls(x.p.personName||x.p.name,"frame")+equippedCls(x.p.personName||x.p.name,"highlight")+equippedCls(x.p.personName||x.p.name,"glow")+((resultFx.until>Date.now()&&resultFx.win[x.p.name])?" fx-win":(resultFx.until>Date.now()&&resultFx.loss[x.p.name])?" fx-loss":"")+'" data-profile="'+esc(x.p.name)+'" role="button" tabindex="0" title="Tap for '+esc(x.p.name)+'’s full profile"><div class="pod-rank">'+(isPerfect?"🏆":(i+1))+'</div><div class="medal">'+(isPerfect?"🏆":medals[i])+'</div><div class="rec" style="letter-spacing:.12em">'+places[i]+(isPerfect?" · PERFECT "+GAMES.length+"/"+GAMES.length:"")+'</div><div class="who">'+esc(x.p.name)+avatarHtml(x.p.personName||x.p.name)+(x.p.you?'<span class="you-badge">★ YOUR TICKET</span>':"")+donorBadgePillHtml(x.p.personName||x.p.name)+fxBadgePod+'</div>'+own+'<div class="pod-wl">'+x.s.w+'–'+x.s.l+' <small>W–L</small></div><div class="rec">'+x.s.left+' to play · <b>'+x.pts.toFixed(2)+' PTS</b></div><div class="rec">Wins '+x.s.w+' · Mini +'+bx.total+' · Spread +'+(x.spreadBonus?x.spreadBonus.bonus:spreadBonusFor(x.p).bonus).toFixed(2)+' · <b>Total '+x.pts.toFixed(2)+'</b></div>'+donorTicketLineHtml(x.p)+'<div class="prize">'+prize+'</div><div class="bar"><i style="width:'+(GAMES.length?x.s.w/GAMES.length*100:0)+'%"></i></div></div>';
   }).join("");
 
   /* THE BOARD — ROW LEADERBOARD ------------------------------------------------
@@ -5759,7 +5974,7 @@ function renderBoard(){
       if(resultFx.win[p.name]){ fxCls=" fx-win"; fxBadge='<span class="fx-badge win">▲ WIN ✓</span>'; }
       else if(resultFx.loss[p.name]){ fxCls=" fx-loss"; fxBadge='<span class="fx-badge loss">▼ LOSS ✗</span>'; }
     }
-    var cls="brow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+(cs===1?" cold1":"")+(cs===2?" cold2":"")+(cs===3?" cold3":"")+fxCls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight"); /* 🛒 Marketplace frame + highlight the person owns, applied live */
+    var cls="brow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+(cs===1?" cold1":"")+(cs===2?" cold2":"")+(cs===3?" cold3":"")+fxCls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight")+equippedCls(p.personName||p.name,"glow"); /* 🛒 Marketplace frame + highlight + Top Tier name glow the person owns, applied live */
     var tags="";
     if(isHot) tags+=' · <span style="color:#ff9aa4">🔥 HOT SEAT</span>';
     if(cs>=1) tags+=' <span class="cold-badge'+(cs===3?" drown":"")+'">'+coldLabel(cs)+'</span>';
@@ -5819,7 +6034,7 @@ function renderBoard(){
     var bx=x.bonus||miniBonusFor(p), sbx=x.spreadBonus||spreadBonusFor(p);
     var pts=(x.pts!=null)?x.pts:Math.round((s.w+bx.total+sbx.bonus)*100)/100;
     var fx=fxClsBadge(p);
-    var cls="brow qrow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+fx.cls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight");
+    var cls="brow qrow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+fx.cls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight")+equippedCls(p.personName||p.name,"glow");
     return '<div class="'+cls+'" data-profile="'+esc(p.name)+'" data-rowname="'+esc(p.name)+'" role="button" tabindex="0" title="Tap for '+esc(p.name)+'’s full profile"><div class="rk">'+rank+'</div>'+
       '<div class="who"><div class="nm">'+esc(p.name)+avatarHtml(p.personName||p.name)+(p.you?'<span class="you-badge">★ YOUR TICKET</span>':"")+donorBadgePillHtml(p.personName||p.name)+'</div>'+
       '<div class="wl"><b>'+s.w+'–'+s.l+'</b> W–L · '+s.left+' left'+(isHot?' · <span style="color:#ff9aa4">🔥 HOT SEAT</span>':"")+fx.badge+'</div></div>'+
@@ -5838,7 +6053,7 @@ function renderBoard(){
     var moveHtml=move>0?('<span style="color:#8dffb0;font-weight:800">▲ '+move+' vs wins-only #'+wRank+'</span>'):move<0?('<span style="color:#ffb9c0;font-weight:800">▼ '+(-move)+' vs wins-only #'+wRank+'</span>'):'<span style="color:#8fa3b8">— same as wins-only</span>';
     function mc(v){ return v===null?"🔴":v===1?"⭐+1":"0"; }
     var fx=fxClsBadge(p);
-    var cls="brow mrow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+fx.cls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight");
+    var cls="brow mrow"+(rank<=3?" top":"")+(isHot?" hot":"")+(p.you?" you":"")+((p.donation||0)>0?" donor":"")+(st&&st.stage===1?" sink1":"")+(st&&st.stage===2?" sink2":"")+fx.cls+equippedCls(p.personName||p.name,"frame")+equippedCls(p.personName||p.name,"highlight")+equippedCls(p.personName||p.name,"glow");
     return '<div class="'+cls+'" data-profile="'+esc(p.name)+'" data-rowname="'+esc(p.name)+'" role="button" tabindex="0" title="Tap for '+esc(p.name)+'’s full profile"><div class="rk">'+rank+'</div>'+
       '<div class="who"><div class="nm">'+esc(p.name)+avatarHtml(p.personName||p.name)+(p.you?'<span class="you-badge">★ YOUR TICKET</span>':"")+donorBadgePillHtml(p.personName||p.name)+'</div>'+
       '<div class="wl">'+s.w+'–'+s.l+' W–L · '+moveHtml+fx.badge+'</div></div>'+
@@ -6205,7 +6420,7 @@ function buildProfile(name,keepScroll){
   body.innerHTML=
     '<div class="prof-head"><span class="prof-rank">'+(rank?("RANK #"+rank+" — POOL #"+poolNumber):"ON THE BOARD")+'</span>'+
     '<h3>'+avatarHtml(person)+esc(person)+(p.you?" (you)":"")+'</h3>'+
-    '<div class="prof-sub">'+ticketLine+'</div>'+donorTicketLineHtml(p)+
+    '<div class="prof-sub">'+ticketLine+'</div>'+(OWNED[person]&&OWNED[person]["tt-vip-banner"]?'<div class="prof-vip-banner">🎖️ VIP SHARK — TOP TIER PROFILE BANNER · PERMANENT</div>':"")+donorTicketLineHtml(p)+
     '<div class="prof-tags">'+tags+'</div></div>'+
     '<div class="prof-wl-big"><div class="k">RECORD — THIS POOL</div><div class="v">'+s.w+'<b>–</b>'+s.l+'</div><div class="s">'+pctOf(s.w,s.l)+' win rate · '+s.left+' games still to play</div><div class="s" style="margin-top:6px">Wins '+s.w+' · Mini Bonus +'+miniBonusFor(p).total+' · Spread Bonus +'+spreadBonusFor(p).bonus.toFixed(2)+' · <b style="color:#e8c766">Total '+(s.w+miniBonusFor(p).total+spreadBonusFor(p).bonus).toFixed(2)+' PTS</b></div></div>'+
     ticketsHtml+
@@ -7398,7 +7613,7 @@ function launchAccess(){ return !!LAUNCH_ACCESS; }
 /* ---- Launch Night referral reward: free ticket for the NEXT pool ---- */
 function refNextAvailable(person){ if(!person) return 0; return REFNEXT_CREDITS.filter(function(c){ return c.person===person && !c.used && c.pool<poolNumber; }).length; }
 function refNextConsume(person){ for(var i=0;i<REFNEXT_CREDITS.length;i++){ var c=REFNEXT_CREDITS[i]; if(c.person===person && !c.used && c.pool<poolNumber){ c.used=true; return true; } } return false; }
-function freeKindOf(tk){ if(!tk) return null; if(tk.bogoFree) return "bogo"; if(tk.refNextFree) return "refnext"; if(tk.launchFree) return "launch"; return null; }
+function freeKindOf(tk){ if(!tk) return null; if(tk.bogoFree) return "bogo"; if(tk.refNextFree) return "refnext"; if(tk.marketFree) return "marketfree"; if(tk.launchFree) return "launch"; return null; }
 function launchWindowText(){
   var f=function(ms){ return new Date(ms).toLocaleString("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZone:"America/New_York"})+" ET"; };
   return "Release-night window: "+LAUNCH_WINDOW_HOURS+" hours from go-live — opens "+f(LAUNCH_GO_LIVE_MS)+", closes "+f(LAUNCH_GO_LIVE_MS+LAUNCH_WINDOW_HOURS*3600*1000)+".";
@@ -7408,7 +7623,7 @@ function creditBonusCoins(person,n){ if(!person||!(n>0)) return; var r=coinRecor
 function subsidyTotalLive(){ return Math.round(players().reduce(function(a,p){ return a+(p.subsidy||0); },0)*100)/100; }
 function bonusAccountingHtml(){
   var sub=subsidyTotalLive(); if(!(sub>0)) return "";
-  var lines=players().filter(function(p){ return (p.subsidy||0)>0; }).map(function(p){ return esc(p.name)+' — '+(p.bogoFree?("🎟️ BOGO FREE second ticket, player paid $0, host launch subsidy "):p.refNextFree?("🎁 FREE referral-reward ticket, player paid $0, host subsidy "):p.launchFree?("🚀 FREE launch ticket, player paid $0, host launch subsidy "):("🦈 referred first ticket, player paid $1, host marketing subsidy "))+money(p.subsidy); }).join(" · ");
+  var lines=players().filter(function(p){ return (p.subsidy||0)>0; }).map(function(p){ return esc(p.name)+' — '+(p.bogoFree?("🎟️ BOGO FREE second ticket, player paid $0, host launch subsidy "):p.refNextFree?("🎁 FREE referral-reward ticket, player paid $0, host subsidy "):p.marketFree?("🎟️ FREE Marketplace Reward ticket, player paid $0 in cash — bought with 5,000 coins, Marketplace Reward Subsidy "):p.launchFree?("🚀 FREE launch ticket, player paid $0, host launch subsidy "):("🦈 referred first ticket, player paid $1, host marketing subsidy "))+money(p.subsidy); }).join(" · ");
   return '<div class="acct-note"><b>🏷️ Host subsidies — POSTED, NOT HIDDEN:</b> '+lines+'. <b>Total subsidy '+money(sub)+'</b>. Posted rule: those tickets count as <b>full $6 tickets</b> — the subsidy is already inside the entries + fees totals above (never added twice), so the allocation <b>Host $0.05 · Seed $0.30 · Perfect Jackpot $1.15 · Winners $4.50 = $6.00</b> holds on each one and the jackpot grew $1.15 on each. That is what keeps this accounting BALANCED.</div>';
 }
 /* ---- Refer-a-Shark: invite codes ---- */
@@ -7636,7 +7851,7 @@ function renderTankLive(){
   '<div class="tank-stat"><div class="k">❤️ DONOR BOARD</div><div class="v" style="font-size:19px;line-height:1.35">'+(donors.length?donors.map(function(d){ return esc(d.name)+" "+money(d.total); }).join("<br>"):"No donors yet")+'</div><div style="font-size:12px;font-weight:700;opacity:.85">permanent — never taken down</div></div>'+
   '</div>'+
   '<div class="tank-wire"><b style="color:#ffd76a">📡 LIVE WIRE</b><br>'+wire+'</div>'+
-  '<div class="tank-wire" id="tankChatLog"><b style="color:#ffd76a">💬 TANK WIRE — ONE CALL ONLY: “LET\'S GET THIS MONEY”</b>'+tankChat.map(function(c){ return '<div><b>'+esc(c.name)+':</b> '+esc(c.text)+'</div>'; }).join("")+'</div>'+
+  '<div class="tank-wire" id="tankChatLog"><b style="color:#ffd76a">💬 TANK WIRE — ONE CALL ONLY: “LET\'S GET THIS MONEY”</b>'+tankChat.map(function(c){ var vip=(typeof OWNED!=="undefined"&&OWNED[c.name]&&OWNED[c.name]["tt-vip-seat"]); return '<div><b'+(vip?' class="tank-vip-name" title="Shark Tank Live VIP Seat — Top Tier Marketplace reward, permanent"':"")+'>'+esc(c.name)+(vip?" 🪑 VIP":"")+':</b> '+esc(c.text)+'</div>'; }).join("")+'</div>'+
   '<div class="tank-chat"><input id="tankChatInput" type="text" maxlength="60" placeholder="Post to the Tank Wire…" aria-label="Post to the Tank Wire" /><button type="button" class="btn" data-tank-post style="min-height:48px">Post</button><button type="button" class="btn blue" data-tank-second style="min-height:48px">🎟️ Buy a second ticket while you wait — $6</button></div>'+
   '<div style="font-size:12.5px;font-weight:700;opacity:.85;margin-top:8px" id="tankChatMsg">The Tank Wire carries one call only — “let\'s get this money”. Anything else gets traded for the call. Picks are never posted here.</div>'+
   '</div>';
@@ -7706,6 +7921,7 @@ function commAvatarHtml(name){
 function renderCommunity(){
   commSeed();
   try{ renderBackingBoard(); }catch(e){}
+  try{ renderSvs(); }catch(e){}
   var feedEl=$("commFeed"); if(!feedEl) return;
   var me=communityName();
   var list=COMMUNITY_POSTS.filter(function(p){ return !p.hidden; });
@@ -7781,6 +7997,244 @@ function wireCommunity(){
   }
   renderCommunity();
 }
+/* ================= SHARK vs SHARK — COIN BETS =================
+   Coins only, TEST CREDITS ONLY. A poster names team + signed spread +
+   amount; a challenger takes the opposite side for the EXACT same amount.
+   At match time both amounts are deducted (held) — never at posting,
+   never at settlement. Settlement vs the final score and the posted
+   spread: winner gets 90% of the pot (pot = 2 × amount), the separate
+   Shark vs Shark Vault gets 10%. Push / void refund both in full, vault 0.
+   The SvS vault is its own ledger (SVS_VAULT) — it never touches the Pot
+   Vault, Perfect Jackpot, Fund queue, board points or standings: nothing
+   here calls ranked(), spreadBonusFor() or any points code. Milestones
+   are first-time only, fixed and capped, paid ONLY from this vault, and
+   queue FIFO when the vault cannot cover them — never borrowed. */
+var SVS_BETS=[], SVS_SEQ=0, SVS_WINS={}, SVS_CLAIMED={}, SVS_QUEUE=[];
+var SVS_VAULT={bal:0, totalIn:0, totalPaid:0, ledger:[]};
+var SVS_MILESTONES=[
+ {key:"donor1", icon:"❤️", name:"First Donor", req:"Donate on a ticket for the first time ($1+ lifetime)", amt:25, test:function(p){ var d=donorRecordFor(p); return !!(d&&d.total>=1); }, prog:function(p){ var d=donorRecordFor(p); return d?("$"+(Math.round(d.total*100)/100)+" donated lifetime"):"no donation yet"; }},
+ {key:"donor5", icon:"⭐", name:"Supporter", req:"Reach $5+ lifetime donations", amt:50, test:function(p){ var d=donorRecordFor(p); return !!(d&&d.total>=5); }, prog:function(p){ var d=donorRecordFor(p); return d?("$"+(Math.round(d.total*100)/100)+" / $5 donated"):"no donation yet"; }},
+ {key:"donor15", icon:"🏗️", name:"Builder", req:"Reach $15+ lifetime donations", amt:100, test:function(p){ var d=donorRecordFor(p); return !!(d&&d.total>=15); }, prog:function(p){ var d=donorRecordFor(p); return d?("$"+(Math.round(d.total*100)/100)+" / $15 donated"):"no donation yet"; }},
+ {key:"donor30", icon:"👑", name:"Platform Patron", req:"Reach $30+ lifetime donations", amt:200, test:function(p){ var d=donorRecordFor(p); return !!(d&&d.total>=30); }, prog:function(p){ var d=donorRecordFor(p); return d?("$"+(Math.round(d.total*100)/100)+" / $30 donated"):"no donation yet"; }},
+ {key:"win1", icon:"🦈", name:"First Shark vs Shark Win", req:"Win your first matched Shark vs Shark bet", amt:50, test:function(p){ return (SVS_WINS[p]||0)>=1; }, prog:function(p){ return (SVS_WINS[p]||0)+" SvS win(s)"; }},
+ {key:"win5", icon:"🔥", name:"5 Shark vs Shark Wins", req:"Win 5 matched Shark vs Shark bets", amt:100, test:function(p){ return (SVS_WINS[p]||0)>=5; }, prog:function(p){ return (SVS_WINS[p]||0)+" / 5 SvS wins"; }},
+ {key:"win10", icon:"🏆", name:"10 Shark vs Shark Wins", req:"Win 10 matched Shark vs Shark bets", amt:250, test:function(p){ return (SVS_WINS[p]||0)>=10; }, prog:function(p){ return (SVS_WINS[p]||0)+" / 10 SvS wins"; }}
+];
+function svsMilestone(key){ for(var i=0;i<SVS_MILESTONES.length;i++){ if(SVS_MILESTONES[i].key===key) return SVS_MILESTONES[i]; } return null; }
+function svsSeed(){
+  /* Demo Sharks carry TEST-credit balances so their seeded open bets can
+     really be matched and held — test credits only, never cash. */
+  var seeds={"Mako Mike":10000,"Reef Runner":8000,"Chum Bucket":6000,"Apex Annie":9000,"Old Bruce":5000};
+  Object.keys(seeds).forEach(function(n){ if(!COINS[n]){ COINS[n]={bal:seeds[n],fromDonations:0,fromSpreads:0,fromTest:seeds[n]}; } });
+  if(SVS_BETS.length) return;
+  var g8=gameById(8), g1=gameById(1);
+  SVS_BETS.push({id:++SVS_SEQ, poster:"Mako Mike", gameId:8, team:"MIA", spread:-2.5, amount:100, status:"open", challenger:null, result:null});
+  SVS_BETS.push({id:++SVS_SEQ, poster:"Reef Runner", gameId:1, team:"KC", spread:2.5, amount:250, status:"open", challenger:null, result:null});
+  if(g8&&g1){ /* seeded posts are reservations only — no coins move until matched */ }
+}
+function svsReserved(person){
+  var r=0;
+  SVS_BETS.forEach(function(b){ if(b.status==="open"&&b.poster===person) r+=b.amount; });
+  return r;
+}
+function svsAvailable(person){ return coinBalance(person)-svsReserved(person); }
+function svsGameClosed(gid){ return !!locked || !!finished[gid]; }
+function svsLineText(b){
+  var g=gameById(b.gameId); if(!g) return "";
+  var opp=b.team===g.away?g.home:g.away;
+  return {g:g, opp:opp, posterSide:esc(b.team)+" "+(b.spread>0?"+":"−")+Math.abs(b.spread), chalSide:esc(opp)+" "+(b.spread>0?"−":"+")+Math.abs(b.spread)};
+}
+function svsMsg(t,c){ var m=$("svsMsg"); if(m){ m.textContent=t; m.style.color=c||"#8dffb0"; } }
+function svsLedger(cls,amt,text){ SVS_VAULT.ledger.unshift({cls:cls, amt:amt, text:text}); }
+function svsProcessQueue(){
+  while(SVS_QUEUE.length){
+    var q=SVS_QUEUE[0], ms=svsMilestone(q.key); if(!ms){ SVS_QUEUE.shift(); continue; }
+    if(SVS_VAULT.bal<ms.amt) break; /* FIFO: the head of the queue waits, nobody jumps it */
+    SVS_QUEUE.shift();
+    SVS_VAULT.bal-=ms.amt; SVS_VAULT.totalPaid+=ms.amt;
+    if(!SVS_CLAIMED[q.person]) SVS_CLAIMED[q.person]={};
+    SVS_CLAIMED[q.person][q.key]=true;
+    var rec=coinRecord(q.person); rec.bal+=ms.amt; rec.fromSvsMilestones=(rec.fromSvsMilestones||0)+ms.amt;
+    svsLedger("out","−"+ms.amt+" 🪙","Milestone paid from the Shark vs Shark Vault — "+ms.icon+" <b>"+esc(ms.name)+"</b> to <b>"+esc(q.person)+"</b> (first-time only). Vault balance now "+SVS_VAULT.bal+" coins.");
+    feed("SHARK VS SHARK","mom","🏅 "+q.person+" earned the "+ms.name+" milestone — "+ms.amt+" coins paid from the Shark vs Shark Vault (first-time only, vault-funded, never borrowed).");
+  }
+}
+function svsCheckMilestones(person){
+  if(!person) return;
+  SVS_MILESTONES.forEach(function(ms){
+    if(SVS_CLAIMED[person]&&SVS_CLAIMED[person][ms.key]) return;
+    if(SVS_QUEUE.some(function(q){ return q.person===person&&q.key===ms.key; })) return;
+    if(ms.test(person)){ SVS_QUEUE.push({person:person, key:ms.key}); }
+  });
+  svsProcessQueue();
+}
+function svsPost(){
+  svsSeed();
+  var me=communityName();
+  if(!me) return svsMsg("Type your shark name on the picks screen first — a bet belongs to a Shark, with their coin balance.","#ffb9c0");
+  var gid=+$("svsGame").value, g=gameById(gid);
+  var team=$("svsTeam").value;
+  var spread=parseFloat($("svsSpread").value);
+  var amount=Math.floor(+$("svsAmount").value);
+  if(!g||!team||(team!==g.away&&team!==g.home)) return svsMsg("✋ A bet post must name a team clearly — pick a game and one of its two teams, or it does not post.","#ffb9c0");
+  if(isNaN(spread)) return svsMsg("✋ A bet post must name the spread clearly — e.g. −2.5 — or it does not post.","#ffb9c0");
+  if(!(amount>0)||amount!==+$("svsAmount").value) return svsMsg("✋ Amount must be a whole number of coins, 1 or more — coins only, no partial coins.","#ffb9c0");
+  if(svsGameClosed(gid)) return svsMsg("✋ No bet after the game starts and no bet after lock for that game — "+g.away+" @ "+g.home+" is closed to new Shark vs Shark bets.","#ffb9c0");
+  if(amount>svsAvailable(me)) return svsMsg("✋ You cannot post more coins than you have — you have "+svsAvailable(me)+" available coins ("+coinBalance(me)+" balance − "+svsReserved(me)+" already reserved on your open posts). This bet does not post.","#ffb9c0");
+  SVS_BETS.unshift({id:++SVS_SEQ, poster:me, gameId:gid, team:team, spread:spread, amount:amount, status:"open", challenger:null, result:null});
+  svsMsg("✓ Posted — "+me+" likes "+team+" "+(spread>0?"+":"−")+Math.abs(spread)+" for "+amount+" coins. It sits OPEN until a challenger matches exactly; your "+amount+" coins are reserved, and held only at match time.");
+  feed("SHARK VS SHARK","info","🦈 "+me+" posted a Shark vs Shark bet: "+team+" "+(spread>0?"+":"−")+Math.abs(spread)+" vs "+(team===g.away?g.home:g.away)+", "+amount+" coins. Open — a challenger must match exactly, opposite side.");
+  renderSvs();
+}
+function svsMatch(id, challenger){
+  svsSeed();
+  var b=SVS_BETS.filter(function(x){ return x.id===id; })[0]; if(!b||b.status!=="open") return;
+  if(!challenger) return svsMsg("Type your shark name on the picks screen first — a challenger is a Shark with a coin balance.","#ffb9c0");
+  if(challenger===b.poster) return svsMsg("✋ You cannot match your own bet — a Shark vs Shark bet takes two Sharks. Another Shark must take the opposite side.","#ffb9c0");
+  if(svsGameClosed(b.gameId)) return svsMsg("✋ That game has started / locked — no matching after game start.","#ffb9c0");
+  if(b.amount>svsAvailable(challenger)) return svsMsg("✋ "+challenger+" cannot match more coins than they have — match needs exactly "+b.amount+" coins, "+challenger+" has "+svsAvailable(challenger)+" available. No partial match, no haggling down.","#ffb9c0");
+  /* HOLD AT MATCH TIME: both stakes leave both balances right now. */
+  coinRecord(b.poster).bal-=b.amount;
+  coinRecord(challenger).bal-=b.amount;
+  b.challenger=challenger; b.status="matched";
+  var lt=svsLineText(b);
+  svsMsg("🔒 MATCHED & LOCKED — "+b.poster+" ("+lt.posterSide+") vs "+challenger+" ("+lt.chalSide+"), "+b.amount+" coins each HELD now. Pot "+(2*b.amount)+" coins. No cancel, no edit. Winner will get "+Math.round(2*b.amount*0.9)+" coins, the Shark vs Shark Vault "+(2*b.amount-Math.round(2*b.amount*0.9))+" coins.");
+  feed("SHARK VS SHARK","mom","🔒 Shark vs Shark LOCKED: "+b.poster+" "+lt.posterSide+" vs "+challenger+" "+lt.chalSide+" — "+b.amount+" coins each held at match time, pot "+(2*b.amount)+". No cancel, no edit.");
+  renderSvs();
+}
+function svsSettle(id, forced){
+  var b=SVS_BETS.filter(function(x){ return x.id===id; })[0]; if(!b||b.status!=="matched") return;
+  var g=gameById(b.gameId); if(!g) return;
+  var outcome=forced||null, how="";
+  if(!outcome){
+    if(!finished[b.gameId]) return svsMsg("That game is not final yet — settlement waits for the final score (or use a TEST settle button on the bet).","#ffb9c0");
+    var teamScore=b.team===g.away?g.score[0]:g.score[1];
+    var oppScore=b.team===g.away?g.score[1]:g.score[0];
+    var adj=(teamScore-oppScore)+b.spread;
+    outcome=adj>0?"poster":adj<0?"challenger":"push";
+    how="Final score "+g.away+" "+g.score[0]+" @ "+g.home+" "+g.score[1]+" vs the posted spread ("+b.team+" "+(b.spread>0?"+":"−")+Math.abs(b.spread)+")";
+  } else {
+    how="TEST settle — forced "+outcome.toUpperCase()+" (test credits only demo control)";
+  }
+  var pot=2*b.amount;
+  b.status="settled";
+  if(outcome==="push"||outcome==="void"){
+    coinRecord(b.poster).bal+=b.amount;
+    coinRecord(b.challenger).bal+=b.amount;
+    b.result={kind:outcome, winner:null, winnerAmt:0, vaultAmt:0, how:how};
+    svsLedger("zero","0 🪙","Bet #"+b.id+" "+outcome.toUpperCase()+" — "+esc(b.poster)+" and "+esc(b.challenger)+" each refunded "+b.amount+" coins in full. Vault gets 0. "+esc(how)+".");
+    feed("SHARK VS SHARK","info","↩️ Shark vs Shark bet #"+b.id+" is a "+outcome.toUpperCase()+" — both Sharks refunded "+b.amount+" coins, vault gets 0, no winner, no loser.");
+  } else {
+    var winner=outcome==="poster"?b.poster:b.challenger;
+    var winnerAmt=Math.round(pot*0.9), vaultAmt=pot-winnerAmt;
+    coinRecord(winner).bal+=winnerAmt;
+    SVS_VAULT.bal+=vaultAmt; SVS_VAULT.totalIn+=vaultAmt;
+    SVS_WINS[winner]=(SVS_WINS[winner]||0)+1;
+    b.result={kind:"win", winner:winner, winnerAmt:winnerAmt, vaultAmt:vaultAmt, how:how};
+    svsLedger("in","+"+vaultAmt+" 🪙","Bet #"+b.id+" settled — <b>"+esc(winner)+"</b> wins the pot of "+pot+": winner gets "+winnerAmt+" coins (90%), the Shark vs Shark Vault gets "+vaultAmt+" coins (10%). "+esc(how)+". Coins only — board points and standings unchanged.");
+    feed("SHARK VS SHARK","mom","🏆 Shark vs Shark bet #"+b.id+": "+winner+" wins "+winnerAmt+" coins (90% of "+pot+"), Shark vs Shark Vault +"+vaultAmt+" (10%). Coins only — no board points, no standings move, no jackpot money.");
+    svsCheckMilestones(b.poster); svsCheckMilestones(b.challenger);
+    svsProcessQueue();
+  }
+  renderSvs();
+}
+function renderSvs(){
+  var panel=$("svsPanel"); if(!panel) return;
+  svsSeed();
+  var me=communityName();
+  if(me) svsCheckMilestones(me);
+  var balEl=$("svsBalance");
+  if(balEl){
+    balEl.innerHTML="🪙 Posting as <b>"+(me?esc(me):"— set your shark name on the picks screen")+"</b> · Your coins: <b>"+(me?coinBalance(me):0)+"</b>"+(me&&svsReserved(me)?(" · reserved on your open posts: "+svsReserved(me)+" · available: "+svsAvailable(me)):"")+" · Your Shark vs Shark wins: <b>"+(me?(SVS_WINS[me]||0):0)+"</b>"+
+    ' <button type="button" class="back-btn" id="svsFaucet" style="min-height:44px">🧪 Get 5,000 TEST coins</button>';
+    var f=$("svsFaucet");
+    if(f) f.addEventListener("click",function(){
+      var who=communityName(); if(!who) return svsMsg("Type your shark name on the picks screen first — test coins belong to a Shark.","#ffb9c0");
+      var rec=coinRecord(who); rec.bal+=5000; rec.fromTest=(rec.fromTest||0)+5000;
+      svsMsg("🧪 +5,000 TEST coins for "+who+" — test credits only, never cash. Balance: "+rec.bal+" coins.");
+      renderSvs();
+    });
+  }
+  function card(b, mine){
+    var lt=svsLineText(b), g=lt.g;
+    var head='<div class="svs-line">'+esc(b.poster)+' likes '+lt.posterSide+' <span style="color:var(--muted);font-weight:600">vs</span> '+lt.chalSide+'</div>';
+    var meta='<div class="svs-meta">Bet #'+b.id+' · Game '+g.id+' · '+g.lg+' · '+esc(g.awayName)+' @ '+esc(g.homeName)+' · '+esc(g.time)+' · Amount <b style="color:var(--gold)">'+b.amount+' coins</b> · Pot '+(2*b.amount)+' · Winner '+Math.round(2*b.amount*0.9)+' · Vault '+(2*b.amount-Math.round(2*b.amount*0.9))+'</div>';
+    var actions="";
+    if(b.status==="open"){
+      actions='<div class="svs-actions"><span class="svs-pill open">OPEN</span>'+
+      (mine?'<button type="button" class="back-btn" data-svs-rival="'+b.id+'">🤖 A rival Shark matches (test)</button><button type="button" class="comm-act" data-svs-cancel="'+b.id+'">Withdraw post</button>'
+           :'<button type="button" class="back-btn" data-svs-match="'+b.id+'">Take the opposite side — match exactly '+b.amount+' coins</button>')+'</div>';
+    } else if(b.status==="matched"){
+      actions='<div class="svs-actions"><span class="svs-pill locked">🔒 LOCKED — NO CANCEL · NO EDIT</span><span class="svs-pill">'+b.amount+' coins held from each Shark</span></div>'+
+      '<div class="svs-meta" style="margin-top:6px">Challenger: <b style="color:var(--ink)">'+esc(b.challenger)+'</b> ('+lt.chalSide+') · Settles on the final score vs the posted spread.</div>'+
+      '<div class="svs-actions">'+(finished[b.gameId]?'<button type="button" class="back-btn" data-svs-settle="'+b.id+'">Settle vs final score</button>':"")+
+      '<button type="button" class="comm-act" data-svs-force-poster="'+b.id+'">TEST settle: poster wins</button><button type="button" class="comm-act" data-svs-force-challenger="'+b.id+'">TEST settle: challenger wins</button><button type="button" class="comm-act" data-svs-force-push="'+b.id+'">TEST settle: push</button><button type="button" class="comm-act" data-svs-force-void="'+b.id+'">TEST settle: void</button></div>';
+    } else {
+      var r=b.result||{};
+      actions='<div class="svs-actions"><span class="svs-pill done">SETTLED</span></div><div class="svs-meta" style="margin-top:6px">'+
+      (r.kind==="win"?("🏆 <b style='color:var(--ink)'>"+esc(r.winner)+"</b> won "+r.winnerAmt+" coins · Vault +"+r.vaultAmt+" coins · "+esc(r.how||""))
+                     :("↩️ "+(r.kind||"").toUpperCase()+" — both refunded "+b.amount+" coins · Vault 0 · "+esc(r.how||"")))+
+      ' · Coins only — board points &amp; standings unchanged.</div>';
+    }
+    return '<div class="svs-card">'+head+meta+actions+'</div>';
+  }
+  var open=SVS_BETS.filter(function(b){ return b.status==="open"; });
+  var matched=SVS_BETS.filter(function(b){ return b.status!=="open"; });
+  var openEl=$("svsOpen"); if(openEl) openEl.innerHTML=open.length?open.map(function(b){ return card(b, !!me&&b.poster===me); }).join(""):'<div class="svs-empty">No open bets right now — post one above: team, spread, amount in coins.</div>';
+  var matEl=$("svsMatched"); if(matEl) matEl.innerHTML=matched.length?matched.map(function(b){ return card(b, false); }).join(""):'<div class="svs-empty">No matched bets yet — when a challenger matches an open bet exactly, it locks here with both amounts held.</div>';
+  var vEl=$("svsVault");
+  if(vEl){
+    var led=SVS_VAULT.ledger.length?SVS_VAULT.ledger.map(function(e){ return '<div class="vl"><span class="amt '+e.cls+'">'+e.amt+'</span><span>'+e.text+'</span></div>'; }).join(""):'<div class="svs-empty">No settlements yet — the vault fills only from the 10% cut of settled Shark vs Shark bets.</div>';
+    vEl.innerHTML='<div class="svs-vault"><div class="vv"><div class="k">SVS VAULT BALANCE</div><div class="v">'+SVS_VAULT.bal+' 🪙</div></div><div class="vv"><div class="k">TOTAL 10% CUTS IN</div><div class="v">'+SVS_VAULT.totalIn+' 🪙</div></div><div class="vv"><div class="k">MILESTONES PAID</div><div class="v">'+SVS_VAULT.totalPaid+' 🪙</div></div><div class="vv"><div class="k">MILESTONES QUEUED (FIFO)</div><div class="v">'+SVS_QUEUE.length+'</div></div></div><div class="svs-ledger">'+led+'</div>';
+  }
+  var msEl=$("svsMilestones");
+  if(msEl){
+    msEl.innerHTML=SVS_MILESTONES.map(function(ms){
+      var claimed=!!(me&&SVS_CLAIMED[me]&&SVS_CLAIMED[me][ms.key]);
+      var queued=!!me&&SVS_QUEUE.some(function(q){ return q.person===me&&q.key===ms.key; });
+      var status=!me?"Set your shark name to track yours":claimed?"✅ PAID — first-time reward claimed":queued?"⏳ QUEUED — waiting for the vault to refill (FIFO)":(ms.test(me)?"Earned — being checked against the vault":"Not yet — "+ms.prog(me));
+      return '<div class="svs-ms"><span class="who">'+ms.icon+' <b>'+esc(ms.name)+'</b><small>'+esc(ms.req)+' · first-time only · paid from the Shark vs Shark Vault only · '+status+'</small></span><span class="amt">'+ms.amt+' coins</span></div>';
+    }).join("")+
+    (SVS_QUEUE.length?('<div class="svs-empty" style="margin-top:10px">⏳ <b>FIFO milestone queue:</b> '+SVS_QUEUE.map(function(q){ var m2=svsMilestone(q.key); return esc(q.person)+" — "+(m2?esc(m2.name):q.key)+" ("+(m2?m2.amt:0)+" coins)"; }).join(" · ")+'. Paid in order as the vault refills from the next 10% cuts — never borrowed, never negative.</div>'):"");
+  }
+}
+function wireSvs(){
+  var panel=$("svsPanel"); if(!panel||panel._wired) return; panel._wired=true;
+  svsSeed();
+  var gSel=$("svsGame"), tSel=$("svsTeam");
+  if(gSel){
+    gSel.innerHTML=GAMES.map(function(g){ return '<option value="'+g.id+'">G'+g.id+' · '+g.lg+' · '+g.away+' @ '+g.home+' · '+esc(g.time)+'</option>'; }).join("");
+    gSel.value="8"; /* Miami game — the posted example: Miami −2.5, 100 coins */
+    function fillTeams(){
+      var g=gameById(+gSel.value); if(!g||!tSel) return;
+      var cur=tSel.value;
+      tSel.innerHTML='<option value="'+g.away+'">'+g.away+' — '+esc(g.awayName)+'</option><option value="'+g.home+'">'+g.home+' — '+esc(g.homeName)+'</option>';
+      tSel.value=(cur===g.away||cur===g.home)?cur:(g.id===8?"MIA":g.home);
+    }
+    gSel.addEventListener("change",fillTeams); fillTeams();
+    if(tSel) tSel.value="MIA";
+  }
+  var pb=$("svsPostBtn"); if(pb) pb.addEventListener("click",svsPost);
+  panel.querySelectorAll("[data-svs-amt]").forEach(function(b){ b.addEventListener("click",function(){ var a=$("svsAmount"); if(a) a.value=b.getAttribute("data-svs-amt"); }); });
+  panel.addEventListener("click",function(e){
+    var m=e.target.closest("[data-svs-match]"), rv=e.target.closest("[data-svs-rival]"), cx=e.target.closest("[data-svs-cancel]"), st=e.target.closest("[data-svs-settle]");
+    var fp=e.target.closest("[data-svs-force-poster]"), fc=e.target.closest("[data-svs-force-challenger]"), fh=e.target.closest("[data-svs-force-push]"), fv=e.target.closest("[data-svs-force-void]");
+    if(m){ svsMatch(+m.getAttribute("data-svs-match"), communityName()); return; }
+    if(rv){
+      var id=+rv.getAttribute("data-svs-rival"), b=SVS_BETS.filter(function(x){ return x.id===id; })[0];
+      if(b){ var rival=CPU.map(function(p){ return p.name; }).filter(function(n){ return n!==b.poster&&svsAvailable(n)>=b.amount; })[0];
+        if(rival) svsMatch(id, rival); else svsMsg("✋ No rival Shark has "+b.amount+" available coins to match that bet exactly right now.","#ffb9c0"); }
+      return;
+    }
+    if(cx){ var id2=+cx.getAttribute("data-svs-cancel"); SVS_BETS=SVS_BETS.filter(function(x){ return !(x.id===id2&&x.status==="open"); }); svsMsg("Post withdrawn — no coins were held on an unmatched post, so nothing to refund."); renderSvs(); return; }
+    if(st){ svsSettle(+st.getAttribute("data-svs-settle"), null); return; }
+    if(fp){ svsSettle(+fp.getAttribute("data-svs-force-poster"), "poster"); return; }
+    if(fc){ svsSettle(+fc.getAttribute("data-svs-force-challenger"), "challenger"); return; }
+    if(fh){ svsSettle(+fh.getAttribute("data-svs-force-push"), "push"); return; }
+    if(fv){ svsSettle(+fv.getAttribute("data-svs-force-void"), "void"); return; }
+  });
+  renderSvs();
+}
 /* ---- wiring for the liked ideas ---- */
 function wireV35(){
   /* first paint prices itself by the launch gate: a launch-link arrival
@@ -7849,7 +8303,7 @@ function wireV35(){
   try{ renderYouMinibar(); }catch(e){}
   renderLaunchStatus();
 }
-wireV35(); wireCommunity();
+wireV35(); wireCommunity(); wireSvs();
 
 /* ---------------- INIT ---------------- */
 /* ---------------- BACK LEDGER VIEW ---------------- */
