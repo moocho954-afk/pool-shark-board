@@ -1857,6 +1857,33 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
 .comm-empty{margin-top:14px;background:var(--panel);border:1px dashed var(--line);border-radius:var(--radius);padding:18px;font-weight:700;color:var(--muted);line-height:1.55}
 .comm-rules{margin-top:14px;font-size:13px;line-height:1.6;color:var(--muted);font-weight:600}
 .comm-rules b{color:var(--ink)}
+/* ---------- COMMUNITY COIN ECONOMY — post / like / comment costs ---------- */
+.comm-econ{margin-top:16px;background:var(--panel);border:3px solid var(--gold);border-radius:var(--radius);padding:16px}
+.comm-econ h3{margin:0;font-size:clamp(22px,5vw,30px);text-transform:uppercase}
+.comm-econ h3 span{color:var(--gold)}
+.comm-econ .ce-sub{color:var(--muted);font-size:14.5px;line-height:1.55;margin:8px 0 0;font-weight:600}
+.comm-econ .ce-sub b{color:var(--ink)}
+.ce-eq{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.ce-eq span{flex:1;min-width:150px;background:#062b1c;border:1px solid #2fbf71;border-radius:12px;padding:10px 12px;font-weight:800;font-size:13.5px;color:#c9ffe0;text-align:center}
+@media (prefers-color-scheme: light){.ce-eq span{background:#e4ffef;color:#0a3d22}}
+.ce-eq span b{display:block;font-family:"Barlow Condensed";font-size:22px;color:var(--gold)}
+@media (prefers-color-scheme: light){.ce-eq span b{color:#8a6100}}
+.ce-worked{margin-top:12px;background:rgba(0,0,0,.25);border:1.5px dashed rgba(255,199,44,.55);border-radius:12px;padding:10px 12px;font-weight:700;font-size:14px;line-height:1.6}
+.ce-worked b{color:var(--gold)}
+.ce-bal{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px;font-weight:800;font-size:14.5px}
+.ce-test{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.ce-test button{border:2px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:800;font-size:13px;min-height:44px}
+.comm-earn{margin-top:9px;background:#062b1c;border:1px solid #2fbf71;border-radius:12px;padding:9px 12px;font-weight:700;font-size:13.5px;line-height:1.55;color:#c9ffe0}
+@media (prefers-color-scheme: light){.comm-earn{background:#e4ffef;color:#0a3d22}}
+.comm-earn b{color:var(--gold)}
+@media (prefers-color-scheme: light){.comm-earn b{color:#8a6100}}
+.comm-flag{margin-top:9px;background:#5c1016;border:2px solid #a12532;border-radius:12px;padding:9px 12px;font-weight:800;font-size:13.5px;line-height:1.5;color:#ffd9dc}
+.comm-hist{margin-top:9px;font-size:13.5px}
+.comm-hist summary{cursor:pointer;font-weight:800;color:var(--foam);padding:6px 0;min-height:32px}
+.comm-hist .hh{display:flex;gap:8px;padding:5px 0;border-bottom:1px dashed var(--line);font-weight:600;line-height:1.45}
+.comm-hist .hh:last-child{border-bottom:0}
+.comm-hist .hh .amt{flex:none;font-weight:800;color:#7bf0a4;min-width:118px}
+.comm-hist .hh .amt.none{color:var(--muted)}
 /* ---------- SHARK vs SHARK — coin bets inside Community ---------- */
 .svs{margin-top:16px;background:var(--panel);border:3px solid var(--gold);border-radius:var(--radius);padding:16px}
 .svs-head{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
@@ -2628,6 +2655,41 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
     <div class="screen-steps"><span class="on">ONE FEED</span><i>·</i><span>POST · LIKE · REPLY · REPOST</span><i>·</i><span>🔒 PICKS BLIND UNTIL LOCK</span></div>
   </div>
 <div class="wrap">
+  <!-- ================= COMMUNITY COIN ECONOMY — RULES POSTED BEFORE ANYONE POSTS, LIKES OR COMMENTS ================= -->
+  <div class="comm-econ" id="commEconPanel">
+    <div class="svs-head"><h3>🪙 Community <span>Coin Economy</span></h3><span class="svs-tag">TEST CREDITS ONLY · COINS ONLY · LEGAL-REVIEW GATE</span></div>
+    <p class="ce-sub">This board runs on <b>coins</b> — posting, liking and commenting all cost coins, and the like &amp; comment coins go <b>100% to the owner of the post</b>, so an amazing post can actually <b>generate coins</b> for the Shark who wrote it. Coins only — <b>never cash, never cashable, never points, never wins, never standings, never jackpot money</b>. Earning coins here does <b>not</b> move you on the board.</p>
+    <div class="svs-rules"><b>📜 THE COIN RULES — POSTED BEFORE ANYONE POSTS, LIKES OR COMMENTS:</b>
+      <ul>
+        <li><b>POST COST = 10 coins</b>, deducted from the poster's balance the moment the post lands (reposting creates a new post, so it costs 10 too). <b>You cannot post with fewer than 10 coins.</b> The 10 coins are a <b>spam sink</b> — they do <b>not</b> go to the poster; they go to the <b>Community Growth Vault</b> below, tracked separately — <b>never</b> to the Pot Vault, the Perfect Jackpot, the Fund queue or the Shark vs Shark Vault — and they are <b>never refunded</b>, even if the post is deleted or hidden by moderation.</li>
+        <li><b>LIKE COST = 0.25 coins</b>, deducted from the <b>liker's</b> balance at like time and paid <b>in full to the post owner</b> — no vault cut on likes. <b>One like per Shark per post</b> — no double-like. The owner <b>cannot like their own post</b> for payout. Unliking does <b>not</b> refund the 0.25.</li>
+        <li><b>COMMENT COST = 1 coin per comment</b>, deducted from the <b>commenter's</b> balance at comment time and paid <b>in full to the post owner</b> — no vault cut on comments. Every comment costs 1. The owner <b>cannot comment on their own post</b> for payout.</li>
+        <li><b>Anti-farming guards:</b> one like per Shark per post · self-like and self-comment are <b>blocked for payout</b> · like and comment coins are <b>held at action time</b> and the <b>owner's balance updates immediately</b> on every like and comment · every post carries a <b>like / comment history</b> showing who liked and commented and exactly how many coins the owner earned from that post · moderation hiding a post does <b>not</b> refund like / comment costs already paid and does <b>not</b> take back coins the owner already earned — <b>unless moderation finds fraud</b>, in which case the post is <b>flagged</b> and future likes and comments on it are <b>blocked</b>.</li>
+        <li><b>Fractional coins:</b> balances support fractions to <b>2 decimal places</b> (likes pay 0.25) and display to 2 decimals — e.g. <b>100.25 coins</b>. Every other coin system works with fractional balances; Marketplace prices are whole coins, and fractional coins only buy a whole-coin item when your <b>total balance covers it</b>.</li>
+        <li><b>Community Growth Vault:</b> post costs accumulate there, visible in the vault ledger below. It is used <b>only for community growth rewards as posted in the future</b> — never for place prizes, never for jackpot, never borrowed, never negative.</li>
+        <li>Coins are in-game only, never cash, never cashable. <b>TEST CREDITS ONLY</b> — this stays test-only until legal review says otherwise.</li>
+      </ul>
+    </div>
+    <div class="ce-eq">
+      <span>POST<b>10 🪙</b>→ Community Growth Vault</span>
+      <span>LIKE<b>0.25 🪙</b>liker → post owner, 100%</span>
+      <span>COMMENT<b>1 🪙</b>commenter → post owner, 100%</span>
+    </div>
+    <div class="ce-worked">🧮 <b>WORKED EXAMPLES — POSTED IN THE OPEN:</b><br>
+      A post with <b>100 likes</b> and <b>20 comments</b> earns its owner 100 × 0.25 + 20 × 1 = 25 + 20 = <b>45 coins</b> — minus the 10-coin post cost, <b>net +35 coins</b>.<br>
+      A post with <b>1,000 likes</b> and <b>200 comments</b> earns 250 + 200 = <b>450 coins</b> — <b>net +440</b> after the post cost.
+    </div>
+    <div class="ce-bal" id="commMyBal">🪙 Your coins: — set your shark name on the picks screen first</div>
+    <div class="ce-test">
+      <button type="button" id="commTest9">🧪 TEST: set my coins to 9.00</button>
+      <button type="button" id="commTest100">🧪 TEST: set my coins to 100.00</button>
+      <span style="font-weight:700;color:var(--muted);font-size:13px;align-self:center">Test-credit controls for trying the rules — test coins are never cash.</span>
+    </div>
+    <h4 style="margin:18px 0 4px;font-size:20px;text-transform:uppercase">🌱 Community Growth Vault — <span style="color:var(--foam)">post costs only, tracked separately</span></h4>
+    <p class="ce-sub" style="margin-top:2px">Every 10-coin post cost lands here — <b>never</b> in the Pot Vault, Perfect Jackpot, Fund queue or Shark vs Shark Vault. Used <b>only</b> for community growth rewards as posted in the future. Never for place prizes, never for jackpot, never borrowed, never negative.</p>
+    <div id="commGrowthVault"></div>
+  </div>
+
   <div class="comm-compose">
     <div style="font-weight:800;font-size:14px" id="commPostingAs">Posting as — type your shark name on the picks screen first</div>
     <textarea id="commText" maxlength="180" placeholder="Say it short, Shark — 180 characters. Talk your ticket, the jackpot, the water…" aria-label="Write a community post"></textarea>
@@ -2640,9 +2702,10 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
         <option value="result">🏁 Attach latest game result</option>
         <option value="jackpot">🏆 Attach the live jackpot</option>
       </select>
-      <button type="button" class="btn" id="commPostBtn" style="min-height:48px">Post it 🦈</button>
+      <button type="button" class="btn" id="commPostBtn" style="min-height:48px">Post it 🦈 — costs 10 🪙</button>
       <span style="font-weight:700;color:var(--muted);font-size:13px" id="commCharCount">0 / 180</span>
     </div>
+    <div style="font-weight:700;color:var(--muted);font-size:13px;margin-top:6px">🪙 Posting costs <b style="color:var(--gold)">10 coins</b>, deducted when your post lands — it goes to the <b>Community Growth Vault</b>, never to you, and is never refunded. Likes on your post pay <b style="color:var(--gold)">you</b> 0.25 each · comments pay you 1 each.</div>
     <div class="comm-msg" id="commMsg" aria-live="polite"></div>
   </div>
   <div class="comm-controls" role="group" aria-label="Feed controls">
@@ -2703,7 +2766,7 @@ body.board-calm #winFxOverlay,body.board-calm #celFxOverlay,body.board-calm #eve
   </div>
 
   <div id="commFeed"></div>
-  <p class="comm-rules">📌 <b>Community rules, posted plainly:</b> posts are <b>test-only</b> — <b>no real-money claims</b>, no guaranteed-win talk. <b>Blind until lock still rules:</b> before lock a post can say “locked in” but can <b>never reveal picks</b> — the page blocks pick lists before lock, and a ticket attach shows picks to <b>nobody</b> until the slate locks (after lock, the board is public anyway). Your own posts carry a <b>Hide</b> button — hide one and it leaves the feed. Likes, replies and reposts are about the pool: tickets, W–L, rank, results, the jackpot.</p>
+  <p class="comm-rules">📌 <b>Community rules, posted plainly:</b> posts are <b>test-only</b> — <b>no real-money claims</b>, no guaranteed-win talk. <b>Coin economy, as posted at the top:</b> a post costs <b>10 coins</b> (to the Community Growth Vault, never refunded), a like costs the liker <b>0.25 coins</b> paid in full to the post owner, a comment costs the commenter <b>1 coin</b> paid in full to the post owner — coins only, never cash, never points, never standings, never jackpot money. <b>Blind until lock still rules:</b> before lock a post can say “locked in” but can <b>never reveal picks</b> — the page blocks pick lists before lock, and a ticket attach shows picks to <b>nobody</b> until the slate locks (after lock, the board is public anyway). Your own posts carry a <b>Hide</b> button — hide one and it leaves the feed, and hiding never refunds the post cost. Likes, comments and reposts are about the pool: tickets, W–L, rank, results, the jackpot.</p>
 </div>
 </div><!-- /screen-community -->
 
@@ -3461,7 +3524,7 @@ function renderDonorBoard(){
   var rows=list.map(function(d,i){
     var tkName=(players().filter(function(pp){return (pp.personName||pp.name)===d.name;})[0]||{}).name;
     var attrs=tkName?(' data-profile="'+esc(tkName)+'" role="button" tabindex="0" title="Tap for '+esc(d.name)+'’s full profile"'):"";
-    return '<div class="donor-row"'+attrs+'><span class="donor-rk">#'+(i+1)+'</span><span class="donor-who"><b>'+esc(d.name)+'</b><span class="donor-sub">Donor since Pool #'+d.firstPool+(d.lastPool!==d.firstPool?(' · last gave in Pool #'+d.lastPool):"")+' · still listed — never removed</span></span><span class="donor-badge">'+d.tier.icon+' '+esc(d.tier.name)+'</span><span class="donor-amt">'+money(d.total)+'<small>LIFETIME · '+d.tickets+' DONATED TICKET'+(d.tickets===1?"":"S")+' · 🪙 '+coinBalance(d.name)+' COINS</small></span></div>';
+    return '<div class="donor-row"'+attrs+'><span class="donor-rk">#'+(i+1)+'</span><span class="donor-who"><b>'+esc(d.name)+'</b><span class="donor-sub">Donor since Pool #'+d.firstPool+(d.lastPool!==d.firstPool?(' · last gave in Pool #'+d.lastPool):"")+' · still listed — never removed</span></span><span class="donor-badge">'+d.tier.icon+' '+esc(d.tier.name)+'</span><span class="donor-amt">'+money(d.total)+'<small>LIFETIME · '+d.tickets+' DONATED TICKET'+(d.tickets===1?"":"S")+' · 🪙 '+fmtCoins(coinBalance(d.name))+' COINS</small></span></div>';
   }).join("");
   el.innerHTML='<div class="donor-board">'+head+'<div class="donor-board-total">❤️ <b>'+money(donorLifetimeTotal())+'</b> donated all-time by <b>'+list.length+' donor'+(list.length===1?"":"s")+'</b> — every dollar went 100% into winners payout pools, $0 to the host.</div>'+rows+'<div class="donor-tiers">'+tiersHtml+'</div>'+note+'</div>';
   if(!el._wired){ el._wired=true;
@@ -3485,7 +3548,15 @@ function renderDonorBoard(){
 var COINS={}, OWNED={}, EQUIPPED={};
 function coinRecord(person){ if(!person) return {bal:0,fromDonations:0,fromSpreads:0}; if(!COINS[person]) COINS[person]={bal:0,fromDonations:0,fromSpreads:0}; return COINS[person]; }
 function coinBalance(person){ return (person&&COINS[person])?COINS[person].bal:0; }
-function creditCoins(person,n,src){ if(!person||!(n>0)) return; var r=coinRecord(person); r.bal+=n; if(src==="donation") r.fromDonations+=n; else if(src==="spread") r.fromSpreads+=n; else if(src==="back"){ r.fromBacks=(r.fromBacks||0)+n; } }
+/* FRACTIONAL COINS — balances support fractions to 2 decimal places
+   (Community Board likes cost / pay 0.25). Every balance move rounds to
+   2dp so 0.25 steps never leave float dust, and balances DISPLAY to 2
+   decimals everywhere (e.g. 100.25 coins). Marketplace prices stay whole
+   coins — a fractional balance only buys a whole-coin item when the
+   total balance covers the whole price. */
+function cRound(n){ return Math.round(n*100)/100; }
+function fmtCoins(n){ return cRound(n||0).toFixed(2); }
+function creditCoins(person,n,src){ if(!person||!(n>0)) return; var r=coinRecord(person); r.bal=cRound(r.bal+n); if(src==="donation") r.fromDonations+=n; else if(src==="spread") r.fromSpreads+=n; else if(src==="back"){ r.fromBacks=(r.fromBacks||0)+n; } else if(src==="community"){ r.fromCommunity=cRound((r.fromCommunity||0)+n); } }
 /* COVER DIFFICULTY — "the points your pick had to cover by": picking the
    favorite, you must win by MORE than the spread (bigger spread = harder
    cover). Picking the underdog, you cover by winning or losing by LESS
@@ -3651,7 +3722,7 @@ function renderMarketplace(){
   var ownedIds=person?(OWNED[person]||{}):{};
   var eq=person?(EQUIPPED[person]||{}):{};
   var html='<div style="text-align:center;padding:10px 0 2px"><div style="font-weight:800;letter-spacing:.14em;font-size:13px">🪙 YOUR COIN BALANCE'+(person?(" — "+esc(person).toUpperCase()):"")+'</div>'+
-    '<div class="mkt-bal">'+rec.bal+' COINS</div>'+
+    '<div class="mkt-bal">'+fmtCoins(rec.bal)+' COINS</div>'+
     '<div style="font-weight:700;opacity:.9">earned '+rec.fromDonations+' from donations · '+rec.fromSpreads+' from spread covers'+(rec.fromReferrals?(' · '+rec.fromReferrals+' from referral &amp; launch bonuses'):'')+' · <b>never resets — not at settlement, not in a new pool</b></div></div>'+
     '<div class="mkt-how"><b>How coins work — posted in the open:</b> donating <b>$1 = 100 coins</b> ($4 donated = 400 coins = the cheapest item, $5 = 500), credited only on <b>paid-confirmed</b> donations. Every <b>spread cover</b> also pays coins by difficulty — the points your pick had to cover by: favorite picks must win by more than the spread; underdog picks must win or lose by less than it.'+
     '<table class="mkt-tier-table"><tr><th>Cover difficulty</th><th>Coins</th><th>On this slate</th></tr>'+
@@ -3715,7 +3786,7 @@ function marketProfileSectionHtml(person){
   var freeHtml=freeCredit?'<div class="mkt-how" style="margin-bottom:10px">🎟️ <b>FREE TICKET IN YOUR INVENTORY</b> — Top Tier Marketplace reward, bought with 5,000 coins in Pool #'+freeCredit.boughtPool+'. Redeem it as your next ticket in <b>Pool #'+(freeCredit.boughtPool+1)+' or later</b> (next pool only — never the pool it was bought in, never a locked pool). One free ticket per pool, no stacking with a Launch BOGO free ticket. On redemption the vault posts the $6.00 Marketplace Reward Subsidy, the jackpot grows $1.15, and the ticket appears under <b>All my tickets</b> in this one profile. Unredeemed it never expires in test mode.</div>':"";
   var owned=OWNED[person]||{};
   var ids=Object.keys(owned);
-  var html=freeHtml+'<div class="mkt-how">🪙 <b>'+rec.bal+' coins</b> (earned '+rec.fromDonations+' from donations · '+rec.fromSpreads+' from spread covers — never resets). Coins are not cash and never buy points or prizes — except the Top Tier Free Ticket, which redeems as a normal ticket in the next pool only.<br>';
+  var html=freeHtml+'<div class="mkt-how">🪙 <b>'+fmtCoins(rec.bal)+' coins</b> (earned '+rec.fromDonations+' from donations · '+rec.fromSpreads+' from spread covers · '+fmtCoins(rec.fromCommunity||0)+' from Community Board likes &amp; comments — never resets). Coins are not cash and never buy points or prizes — except the Top Tier Free Ticket, which redeems as a normal ticket in the next pool only.<br>';
   if(ids.length){
     html+='<div style="margin-top:8px">'+ids.map(function(id){ var it=marketItem(id); if(!it) return ""; var isEq=EQUIPPED[person]&&EQUIPPED[person][it.kind]===id; return '<span class="mkt-owned-chip">'+it.icon+' '+esc(it.name)+(isEq?' · EQUIPPED':'')+(isEq?'':'<button type="button" class="btn" data-equip-item="'+id+'" style="padding:3px 9px;font-size:11.5px">EQUIP</button>')+'</span>'; }).join("")+'</div>';
   } else {
@@ -6364,7 +6435,7 @@ function buildProfile(name,keepScroll){
     statTile("❤️ LIFETIME DONATIONS", donorRec?money(donorRec.total):"$0", donorRec?("across "+donorRec.tickets+" donated ticket"+(donorRec.tickets===1?"":"s")+" · donor since Pool #"+donorRec.firstPool+" · never resets, never removed"):"no donations yet — add +$1 / +$2 / +$5 at the pay gate", !!donorRec)+
     statTile("🏅 DONOR BADGE", donorTier?(donorTier.icon+" "+donorTier.name):"—", donorRec?(donorNextTier(donorRec.total)?("next tier: "+donorNextTier(donorRec.total).icon+" "+donorNextTier(donorRec.total).name+" at "+money(donorNextTier(donorRec.total).min)+" lifetime · badge kept forever, in every pool"):("top tier — kept forever, in every pool, even on a $0 ticket")):"first donation earns ❤️ First Donor at $1+", !!donorRec)+
     statTile("❤️ THIS TICKET'S DONATION", (p.donation||0)>0?("+"+money(p.donation)):"$0", (p.donation||0)>0?"this ticket is highlighted as a DONOR TICKET on the board, podium and Quick View":(donorRec?"returning donor — the badge still shows on this ticket even though it donated $0":"no donation on this ticket"), false)+
-    statTile("🪙 COIN BALANCE", coinBalance(p.personName||name)+" COINS", "earned "+coinRecord(p.personName||name).fromDonations+" from donations ($1 = 100) · "+coinRecord(p.personName||name).fromSpreads+" from spread covers · never resets · Marketplace looks only — never points or prizes", coinBalance(p.personName||name)>0)+
+    statTile("🪙 COIN BALANCE", fmtCoins(coinBalance(p.personName||name))+" COINS", "earned "+coinRecord(p.personName||name).fromDonations+" from donations ($1 = 100) · "+coinRecord(p.personName||name).fromSpreads+" from spread covers · "+fmtCoins(coinRecord(p.personName||name).fromCommunity||0)+" from Community Board likes & comments · never resets · Marketplace looks only — never points or prizes", coinBalance(p.personName||name)>0)+
     statTile("PERFECT WATCH",s.l===0?("ALIVE — "+s.w+"/"+GAMES.length):"OUT",s.l===0?"no losses yet — jackpot still reachable":"a loss ends the perfect run");
   var picksHtml=GAMES.map(function(g){
     var pick=p.picks[g.id];
@@ -7877,10 +7948,79 @@ var COMMUNITY_POSTS=[];
 function commSeed(){
   if(COMMUNITY_POSTS.length) return;
   COMMUNITY_POSTS=[
-   {id:++commSeq, name:"Chum Bucket", text:"That jackpot just keeps climbing — $1.15 at a time, every ticket. let's get this money 🏆", attachHtml:'🏆 <b>Perfect Jackpot</b> — live on the board · grows $1.15 per paid ticket', likes:5, liked:false, replies:[{name:"Apex Annie",text:"It's going to pop one of these Sundays 💥"}], reposts:2, hidden:false, mine:false},
-   {id:++commSeq, name:"Mako Mike", text:"Locked in for Sunday. Slate doesn't scare me. 🦈", attachHtml:"🎟️ <b>Mako Mike's ticket</b> — 🔒 LOCKED IN · picks hidden until lock · nobody can see them, not even here", likes:3, liked:false, replies:[{name:"Reef Runner",text:"We'll see about that 😤"}], reposts:1, hidden:false, mine:false},
-   {id:++commSeq, name:"Apex Annie", text:"Donated on my ticket — winners eat bigger tonight and the Donor Board is forever ❤️", attachHtml:"📊 <b>Apex Annie</b> — swimming in Pool #"+poolNumber+" · record lands when games go final", likes:2, liked:false, replies:[], reposts:0, hidden:false, mine:false}
+   {id:++commSeq, name:"Chum Bucket", text:"That jackpot just keeps climbing — $1.15 at a time, every ticket. let's get this money 🏆", attachHtml:'🏆 <b>Perfect Jackpot</b> — live on the board · grows $1.15 per paid ticket', likes:5, replies:[{name:"Apex Annie",text:"It's going to pop one of these Sundays 💥"}], reposts:2, hidden:false, mine:false, likers:[], earnedLikes:0, earnedComments:0, paidComments:0, costPaid:0, flagged:false},
+   {id:++commSeq, name:"Mako Mike", text:"Locked in for Sunday. Slate doesn't scare me. 🦈", attachHtml:"🎟️ <b>Mako Mike's ticket</b> — 🔒 LOCKED IN · picks hidden until lock · nobody can see them, not even here", likes:3, replies:[{name:"Reef Runner",text:"We'll see about that 😤"}], reposts:1, hidden:false, mine:false, likers:[], earnedLikes:0, earnedComments:0, paidComments:0, costPaid:0, flagged:false},
+   {id:++commSeq, name:"Apex Annie", text:"Donated on my ticket — winners eat bigger tonight and the Donor Board is forever ❤️", attachHtml:"📊 <b>Apex Annie</b> — swimming in Pool #"+poolNumber+" · record lands when games go final", likes:2, replies:[], reposts:0, hidden:false, mine:false, likers:[], earnedLikes:0, earnedComments:0, paidComments:0, costPaid:0, flagged:false}
   ];
+}
+/* ================= COMMUNITY COIN ECONOMY =================
+   POST COST 10 coins → Community Growth Vault (spam sink, never to the
+   poster, never refunded, tracked separately — never the Pot Vault,
+   Perfect Jackpot, Fund queue or Shark vs Shark Vault). LIKE COST 0.25
+   and COMMENT COST 1 are deducted from the actor at action time and paid
+   100% to the post OWNER — no vault cut. One like per Shark per post;
+   self-like / self-comment blocked for payout; unlike never refunds.
+   Coins only — nothing here touches points, wins, standings or jackpot
+   money: no ranked() / points code is ever called from this section. */
+var COMM_POST_COST=10, COMM_LIKE_COST=0.25, COMM_COMMENT_COST=1;
+var COMM_GROWTH={bal:0, totalIn:0, ledger:[]};
+function commMsgSay(t,c){ var m=$("commMsg"); if(m){ m.textContent=t; m.style.color=c||"#8dffb0"; } }
+function commGrowthIn(who){
+  COMM_GROWTH.bal=cRound(COMM_GROWTH.bal+COMM_POST_COST); COMM_GROWTH.totalIn+=COMM_POST_COST;
+  COMM_GROWTH.ledger.unshift("<b>"+esc(who)+"</b> posted — 10-coin post cost to the Community Growth Vault (spam sink · never refunded). Vault balance: "+fmtCoins(COMM_GROWTH.bal)+" coins.");
+}
+function commChargePost(who){
+  /* Returns true only when the 10-coin post cost was really deducted. */
+  if(coinBalance(who)<COMM_POST_COST) return false;
+  var rec=coinRecord(who); rec.bal=cRound(rec.bal-COMM_POST_COST);
+  commGrowthIn(who);
+  return true;
+}
+function commLikeCore(p, liker){
+  if(!liker) return {ok:false, msg:"Type your shark name on the picks screen first — a like belongs to a Shark with a coin balance."};
+  if(p.flagged) return {ok:false, msg:"🚩 This post is FLAGGED by moderation (fraud review) — future likes and comments on it are blocked. Coins already paid stay paid."};
+  if(p.name===liker) return {ok:false, msg:"✋ You cannot like your own post for payout — self-likes are blocked. Your coins stay yours ("+fmtCoins(coinBalance(liker))+")."};
+  if((p.likers||[]).indexOf(liker)>=0) return {ok:false, msg:"✋ One like per Shark per post — you already liked this one. No double-like, and unliking does not refund the 0.25."};
+  if(coinBalance(liker)<COMM_LIKE_COST) return {ok:false, msg:"✋ A like costs 0.25 coins — you have "+fmtCoins(coinBalance(liker))+". Not enough to like."};
+  var rec=coinRecord(liker); rec.bal=cRound(rec.bal-COMM_LIKE_COST);
+  creditCoins(p.name, COMM_LIKE_COST, "community");
+  p.likers.push(liker); p.likes++; p.earnedLikes=cRound((p.earnedLikes||0)+COMM_LIKE_COST);
+  return {ok:true};
+}
+function commCommentCore(p, commenter, txt){
+  if(!commenter) return {ok:false, msg:"Type your shark name on the picks screen first — a comment belongs to a Shark with a coin balance."};
+  if(p.flagged) return {ok:false, msg:"🚩 This post is FLAGGED by moderation (fraud review) — future likes and comments on it are blocked. Coins already paid stay paid."};
+  if(p.name===commenter) return {ok:false, msg:"✋ You cannot comment on your own post for payout — self-comments are blocked. Your coins stay yours ("+fmtCoins(coinBalance(commenter))+")."};
+  if(coinBalance(commenter)<COMM_COMMENT_COST) return {ok:false, msg:"✋ A comment costs 1 coin — you have "+fmtCoins(coinBalance(commenter))+". Not enough to comment."};
+  var rec=coinRecord(commenter); rec.bal=cRound(rec.bal-COMM_COMMENT_COST);
+  creditCoins(p.name, COMM_COMMENT_COST, "community");
+  p.replies.push({name:commenter, text:txt, paid:true});
+  p.paidComments=(p.paidComments||0)+1; p.earnedComments=cRound((p.earnedComments||0)+COMM_COMMENT_COST);
+  return {ok:true};
+}
+function commSimTopUp(name, need){
+  var rec=coinRecord(name);
+  if(rec.bal<need){ var add=cRound(need-rec.bal); rec.bal=cRound(rec.bal+add); rec.fromTest=(rec.fromTest||0)+add; }
+}
+function commSimulate(p){
+  /* TEST engagement: 100 distinct Sim Sharks like + 20 comment, each
+     paying the real posted cost from their own TEST-credit balance, so
+     the owner earns exactly 100 × 0.25 + 20 × 1 = 45.00 coins. */
+  var texts=["Great post, Shark 🔥","This is the take. 🦈","Facts — the water agrees.","Let's get this money 🏆","Certified banger of a post."];
+  var liked=0, commented=0;
+  for(var i=1;i<=100;i++){ var ln="Sim Shark "+i; commSimTopUp(ln, COMM_LIKE_COST); if(commLikeCore(p, ln).ok) liked++; }
+  for(var j=1;j<=20;j++){ var cn="Sim Shark "+(100+j); commSimTopUp(cn, COMM_COMMENT_COST); if(commCommentCore(p, cn, texts[(j-1)%texts.length]).ok) commented++; }
+  commMsgSay("🧪 TEST engagement on "+p.name+"'s post: "+liked+" likes × 0.25 + "+commented+" comments × 1 = "+fmtCoins(liked*COMM_LIKE_COST+commented*COMM_COMMENT_COST)+" coins paid to "+p.name+" in full. Owner earned from this post so far: "+fmtCoins(cRound((p.earnedLikes||0)+(p.earnedComments||0)))+" coins."+(p.costPaid?(" Net after the 10-coin post cost: +"+fmtCoins(cRound((p.earnedLikes||0)+(p.earnedComments||0)-p.costPaid))+" coins."):""));
+  feed("COMMUNITY","mom","🧪 TEST ENGAGEMENT: "+liked+" likes + "+commented+" comments on "+p.name+"'s Community post paid the owner "+fmtCoins(liked*COMM_LIKE_COST+commented*COMM_COMMENT_COST)+" coins (0.25 per like · 1 per comment · 100% to the owner, no vault cut). Coins only — no points, no standings move, no jackpot money.");
+  renderCommunity();
+}
+function renderCommGrowth(){
+  var myBal=$("commMyBal");
+  var me=communityName();
+  if(myBal) myBal.innerHTML="🪙 Your coins: <b>"+(me?fmtCoins(coinBalance(me)):"— set your shark name on the picks screen first")+"</b>"+(me?(" · earned "+fmtCoins(coinRecord(me).fromCommunity||0)+" from Community likes & comments"):"");
+  var gv=$("commGrowthVault"); if(!gv) return;
+  var lines=COMM_GROWTH.ledger.length?COMM_GROWTH.ledger.slice(0,8).map(function(x){ return '<div class="vl"><span class="amt in">+10.00 🪙</span><span>'+x+'</span></div>'; }).join(""):'<div class="vl"><span class="amt zero">0 🪙</span><span>No post costs yet — the first 10-coin post cost lands here.</span></div>';
+  gv.innerHTML='<div class="svs-vault"><div class="vv"><div class="k">VAULT BALANCE</div><div class="v">'+fmtCoins(COMM_GROWTH.bal)+' 🪙</div></div><div class="vv"><div class="k">POST COSTS IN (ALL TIME)</div><div class="v">'+fmtCoins(COMM_GROWTH.totalIn)+' 🪙</div></div><div class="vv"><div class="k">SPENT ON GROWTH REWARDS</div><div class="v">0.00 🪙</div></div></div><div class="svs-ledger">'+lines+'</div>';
 }
 function communityName(){ var mp=marketPerson(); if(mp) return mp; var inp=$("playerName"); var v=inp?inp.value.trim():""; return v||null; }
 function commPostScore(p){ return p.likes + p.replies.length*2 + p.reposts*3; }
@@ -7922,6 +8062,7 @@ function renderCommunity(){
   commSeed();
   try{ renderBackingBoard(); }catch(e){}
   try{ renderSvs(); }catch(e){}
+  try{ renderCommGrowth(); }catch(e){}
   var feedEl=$("commFeed"); if(!feedEl) return;
   var me=communityName();
   var list=COMMUNITY_POSTS.filter(function(p){ return !p.hidden; });
@@ -7936,15 +8077,24 @@ function renderCommunity(){
   feedEl.innerHTML=list.map(function(p){
     var isMine=p.mine||(me&&p.name===me);
     var fol=!!FOLLOWS[p.name];
-    var replies=p.replies.map(function(r){ return '<div class="comm-reply"><b>'+esc(r.name)+'</b> — '+esc(r.text)+'</div>'; }).join("");
-    var replyBox=commReplyOpen[p.id]?'<div class="comm-reply-row"><input type="text" maxlength="140" placeholder="Reply short, Shark…" data-reply-input="'+p.id+'" aria-label="Reply to '+esc(p.name)+'" /><button type="button" class="comm-act" data-reply-send="'+p.id+'">Reply</button></div>':"";
+    var iLiked=!!me&&(p.likers||[]).indexOf(me)>=0;
+    var earned=cRound((p.earnedLikes||0)+(p.earnedComments||0));
+    var replies=p.replies.map(function(r){ return '<div class="comm-reply"><b>'+esc(r.name)+'</b> — '+esc(r.text)+(r.paid?' <span style="color:#7bf0a4;font-weight:800">· paid 1 🪙 to '+esc(p.name)+'</span>':"")+'</div>'; }).join("");
+    var replyBox=commReplyOpen[p.id]?'<div class="comm-reply-row"><input type="text" maxlength="140" placeholder="Comment short, Shark — costs 1 🪙, paid to '+esc(p.name)+'…" data-reply-input="'+p.id+'" aria-label="Comment on '+esc(p.name)+'\'s post" /><button type="button" class="comm-act" data-reply-send="'+p.id+'">Comment — 1 🪙</button></div><div class="comm-p-meta" style="margin-top:4px">🪙 Commenting costs <b>1 coin</b>, deducted from your balance and paid in full to '+esc(p.name)+'.</div>':"";
+    var histLikes=(p.likers||[]).map(function(n){ return '<div class="hh"><span class="amt">+0.25 🪙</span><span>❤️ <b>'+esc(n)+'</b> liked — 0.25 paid to '+esc(p.name)+'</span></div>'; });
+    if(histLikes.length>30){ var extraL=histLikes.length-30; histLikes=histLikes.slice(0,30); histLikes.push('<div class="hh"><span class="amt">+'+fmtCoins(extraL*COMM_LIKE_COST)+' 🪙</span><span>❤️ …and '+extraL+' more Sharks liked — 0.25 each to '+esc(p.name)+'</span></div>'); }
+    var histComments=p.replies.filter(function(r){ return r.paid; }).map(function(r){ return '<div class="hh"><span class="amt">+1.00 🪙</span><span>💬 <b>'+esc(r.name)+'</b> commented — 1 coin to '+esc(p.name)+'</span></div>'; });
+    var hist=(histLikes.length||histComments.length)?'<details class="comm-hist"><summary>🧾 Like / comment history — who paid what on this post ('+((p.likers||[]).length+(p.paidComments||0))+' paid actions)</summary>'+histLikes.join("")+histComments.join("")+'</details>':'<details class="comm-hist"><summary>🧾 Like / comment history — no paid likes or comments yet</summary><div class="hh"><span class="amt none">0 🪙</span><span>Be the first — a like pays '+esc(p.name)+' 0.25, a comment pays 1.</span></div></details>';
     return '<article class="comm-post'+(fol?" following":"")+'">'+
     '<div class="comm-p-head"><span class="comm-ava">'+commAvatarHtml(p.name)+'</span><span class="comm-p-who"><span class="comm-p-name">'+esc(p.name)+(isMine?' <span class="you-badge">YOU</span>':"")+'</span>'+donorBadgePillHtml(p.name)+'<div class="comm-p-meta">🦈 SHARK · Pool #'+poolNumber+' · post #'+p.id+(fol?' · <span style="color:var(--gold)">FOLLOWING</span>':"")+'</div></span>'+
     (isMine?"":'<button type="button" class="comm-follow'+(fol?" on":"")+'" data-follow="'+esc(p.name)+'">'+(fol?"✓ Following":"Follow")+'</button>')+'</div>'+
     '<div class="comm-p-text">'+esc(p.text)+'</div>'+
     (p.repostOf?'<div class="comm-p-meta" style="margin-top:6px">🔁 reposted from '+esc(p.repostOf)+'</div>':"")+
     (p.attachHtml?'<div class="comm-attach">'+p.attachHtml+'</div>':"")+
-    '<div class="comm-actions"><button type="button" class="comm-act'+(p.liked?" liked":"")+'" data-like="'+p.id+'">'+(p.liked?"❤️":"🤍")+' Like · '+p.likes+'</button><button type="button" class="comm-act" data-reply="'+p.id+'">💬 Reply · '+p.replies.length+'</button><button type="button" class="comm-act" data-repost="'+p.id+'">🔁 Repost · '+p.reposts+'</button>'+(isMine?'<button type="button" class="comm-act" data-hidepost="'+p.id+'">🙈 Hide post</button>':"")+'</div>'+
+    (p.flagged?'<div class="comm-flag">🚩 FLAGGED BY MODERATION — fraud review. Future likes &amp; comments on this post are <b>blocked</b>. Like / comment coins already paid are <b>not</b> refunded and coins the owner already earned are <b>not</b> taken back.</div>':"")+
+    '<div class="comm-earn">🪙 <b>'+esc(p.name)+'</b> earned from this post: <b>'+fmtCoins(earned)+' coins</b> — likes '+fmtCoins(p.earnedLikes||0)+' ('+(p.likers||[]).length+' paid likes × 0.25) · comments '+fmtCoins(p.earnedComments||0)+' ('+(p.paidComments||0)+' paid comments × 1)'+(p.costPaid?(' · minus the '+p.costPaid+'-coin post cost = <b>net '+(earned-p.costPaid>=0?"+":"")+fmtCoins(earned-p.costPaid)+' coins</b>'):"")+' · 100% to the owner, no vault cut · coins only — no points, no standings</div>'+
+    '<div class="comm-actions"><button type="button" class="comm-act'+(iLiked?" liked":"")+'" data-like="'+p.id+'">'+(iLiked?"❤️ Liked · ":"🤍 Like · ")+p.likes+' · costs 0.25 🪙</button><button type="button" class="comm-act" data-reply="'+p.id+'">💬 Comment · '+p.replies.length+' · costs 1 🪙</button><button type="button" class="comm-act" data-repost="'+p.id+'">🔁 Repost · '+p.reposts+' · costs 10 🪙</button>'+(isMine?'<button type="button" class="comm-act" data-hidepost="'+p.id+'">🙈 Hide post</button>':"")+'<button type="button" class="comm-act" data-simengage="'+p.id+'">🧪 TEST: 100 likes + 20 comments</button>'+(p.flagged?"":'<button type="button" class="comm-act" data-modflag="'+p.id+'">🚩 Mod: flag fraud</button>')+'</div>'+
+    hist+
     (p.replies.length||replyBox?'<div class="comm-replies">'+replies+replyBox+'</div>':"")+
     '</article>';
   }).join("");
@@ -7960,11 +8110,13 @@ function commPost(){
   var kind=$("commAttach")?$("commAttach").value:"none";
   var att=commAttachFor(kind, me);
   if(!att.ok) return say(att.msg,"#ffb9c0");
-  COMMUNITY_POSTS.push({id:++commSeq, name:me, text:text, attachHtml:att.html, likes:0, liked:false, replies:[], reposts:0, hidden:false, mine:true});
+  if(coinBalance(me)<COMM_POST_COST) return say("✋ Posting costs 10 coins — you have "+fmtCoins(coinBalance(me))+". You cannot post with fewer than 10 coins. Earn coins: donate ($1 = 100), cover spreads, win Shark vs Shark bets, or earn likes & comments here.","#ffb9c0");
+  commChargePost(me);
+  COMMUNITY_POSTS.push({id:++commSeq, name:me, text:text, attachHtml:att.html, likes:0, replies:[], reposts:0, hidden:false, mine:true, likers:[], earnedLikes:0, earnedComments:0, paidComments:0, costPaid:COMM_POST_COST, flagged:false});
   ta.value=""; var cc=$("commCharCount"); if(cc) cc.textContent="0 / 180";
-  say("✓ Posted to the Community Board — it's live in the feed below with your avatar and badges.");
+  say("✓ Posted — 10 coins deducted (your balance: "+fmtCoins(coinBalance(me))+"). The 10 went to the Community Growth Vault — a spam sink, never refunded. Likes on this post pay YOU 0.25 each, comments pay you 1 each.");
   renderCommunity();
-  feed("COMMUNITY","info","💬 "+me+" posted to the Community Board — the Sharks' feed, one tap from the board.");
+  feed("COMMUNITY","info","💬 "+me+" posted to the Community Board — 10-coin post cost paid to the Community Growth Vault (balance "+fmtCoins(COMM_GROWTH.bal)+" coins). Likes pay the owner 0.25, comments pay 1 — coins only.");
 }
 function wireCommunity(){
   var vc=$("viewCommBtn"); if(vc) vc.addEventListener("click",function(){ goToScreen("community"); renderCommunity(); });
@@ -7972,6 +8124,15 @@ function wireCommunity(){
   var cb=$("commBoardBtn"); if(cb) cb.addEventListener("click",function(){ enterBoardFromTap(); });
   ["commBackBtn","commBackBtn2"].forEach(function(id){ var b=$(id); if(b) b.addEventListener("click",function(){ goToScreen("picks"); }); });
   var pb=$("commPostBtn"); if(pb) pb.addEventListener("click",commPost);
+  [["commTest9",9],["commTest100",100]].forEach(function(pair){
+    var tb=$(pair[0]);
+    if(tb) tb.addEventListener("click",function(){
+      var who=communityName(); if(!who) return commMsgSay("Type your shark name on the picks screen first — test coins belong to a Shark.","#ffb9c0");
+      var rec=coinRecord(who); rec.bal=pair[1]; rec.fromTest=(rec.fromTest||0)+pair[1];
+      commMsgSay("🧪 TEST balance set — "+who+" now has exactly "+fmtCoins(rec.bal)+" coins (test credits only, never cash). Try the rules: posting needs 10, a like costs 0.25, a comment costs 1.");
+      renderCommunity();
+    });
+  });
   var ta=$("commText"); if(ta) ta.addEventListener("input",function(){ var cc=$("commCharCount"); if(cc) cc.textContent=ta.value.length+" / 180"; });
   document.querySelectorAll("[data-comm-mode]").forEach(function(b){
     if(commMode===b.dataset.commMode){ b.style.borderColor="var(--gold)"; } else { b.style.borderColor=""; }
@@ -7980,18 +8141,31 @@ function wireCommunity(){
   var srch=$("commSearch"); if(srch) srch.addEventListener("input",function(){ commQuery=srch.value.trim(); renderCommunity(); });
   var feedEl=$("commFeed"); if(feedEl&&!feedEl._wired){ feedEl._wired=true;
     feedEl.addEventListener("click",function(e){
-      var like=e.target.closest("[data-like]"), rep=e.target.closest("[data-reply]"), send=e.target.closest("[data-reply-send]"), rp=e.target.closest("[data-repost]"), hd=e.target.closest("[data-hidepost]"), fl=e.target.closest("[data-follow]");
+      var like=e.target.closest("[data-like]"), rep=e.target.closest("[data-reply]"), send=e.target.closest("[data-reply-send]"), rp=e.target.closest("[data-repost]"), hd=e.target.closest("[data-hidepost]"), fl=e.target.closest("[data-follow]"), sim=e.target.closest("[data-simengage]"), mf=e.target.closest("[data-modflag]");
       function find(id){ return COMMUNITY_POSTS.filter(function(p){ return p.id===+id; })[0]; }
       if(fl){ var n=fl.getAttribute("data-follow"); FOLLOWS[n]=!FOLLOWS[n]; feed("COMMUNITY","info", FOLLOWS[n]?("⭐ You now FOLLOW "+n+" — their posts float to the top of your Community feed first."):("You unfollowed "+n+" — the feed is plain chronological/top again for them.")); renderCommunity(); return; }
-      if(like){ var p1=find(like.getAttribute("data-like")); if(p1){ p1.liked=!p1.liked; p1.likes+=p1.liked?1:-1; if(p1.likes<0)p1.likes=0; renderCommunity(); } return; }
+      if(like){ var p1=find(like.getAttribute("data-like")); if(p1){ var meL=communityName(); var rL=commLikeCore(p1, meL);
+          if(!rL.ok) commMsgSay(rL.msg,"#ffb9c0");
+          else { commMsgSay("❤️ Liked — 0.25 coins deducted from you ("+fmtCoins(coinBalance(meL))+" left) and paid in full to "+p1.name+", whose balance updated immediately. No vault cut. Unlike does not refund."); feed("COMMUNITY","info","❤️ "+meL+" liked "+p1.name+"'s post — 0.25 coins from "+meL+" to "+p1.name+" (100% to the owner). Coins only — no points, no standings move."); }
+          renderCommunity(); } return; }
       if(rep){ var id2=rep.getAttribute("data-reply"); commReplyOpen[id2]=!commReplyOpen[id2]; renderCommunity(); if(commReplyOpen[id2]){ var inp=feedEl.querySelector('[data-reply-input="'+id2+'"]'); if(inp) inp.focus(); } return; }
       if(send){ var id3=send.getAttribute("data-reply-send"), inp3=feedEl.querySelector('[data-reply-input="'+id3+'"]'), p3=find(id3); var txt=inp3?(inp3.value||"").trim():"";
-        if(p3&&txt){ var bad3=commModerate(txt); if(bad3){ var m3=$("commMsg"); if(m3){ m3.textContent=bad3; m3.style.color="#ffb9c0"; } return; } p3.replies.push({name:communityName()||"You", text:txt}); renderCommunity(); } return; }
+        if(p3&&txt){ var bad3=commModerate(txt); if(bad3){ commMsgSay(bad3,"#ffb9c0"); return; } var meC=communityName(); var rC=commCommentCore(p3, meC, txt);
+          if(!rC.ok){ commMsgSay(rC.msg,"#ffb9c0"); return; }
+          commMsgSay("💬 Comment posted — 1 coin deducted from you ("+fmtCoins(coinBalance(meC))+" left) and paid in full to "+p3.name+". No vault cut.");
+          feed("COMMUNITY","info","💬 "+meC+" commented on "+p3.name+"'s post — 1 coin from "+meC+" to "+p3.name+" (100% to the owner). Coins only — no points, no standings move.");
+          renderCommunity(); } return; }
+      if(sim){ var pS=find(sim.getAttribute("data-simengage")); if(pS) commSimulate(pS); return; }
+      if(mf){ var pF=find(mf.getAttribute("data-modflag")); if(pF){ pF.flagged=true; commMsgSay("🚩 Moderation flagged "+pF.name+"'s post for fraud — future likes and comments on it are blocked. Coins already paid are NOT refunded and coins already earned are NOT taken back.","#ffb9c0"); feed("COMMUNITY","info","🚩 MODERATION: a Community post by "+pF.name+" was flagged for fraud — future likes/comments on it are blocked; coins already paid stay paid."); renderCommunity(); } return; }
       if(rp){ var p4=find(rp.getAttribute("data-repost")); var me4=communityName();
-        if(p4){ if(!me4){ var m4=$("commMsg"); if(m4){ m4.textContent="Type your shark name on the picks screen first — a repost rides under your name, avatar and badges."; m4.style.color="#ffb9c0"; } return; }
-          p4.reposts++; COMMUNITY_POSTS.push({id:++commSeq, name:me4, text:p4.text, attachHtml:p4.attachHtml, repostOf:p4.name, likes:0, liked:false, replies:[], reposts:0, hidden:false, mine:true});
-          feed("COMMUNITY","info","🔁 "+me4+" reposted "+p4.name+"'s post to the Community Board."); renderCommunity(); } return; }
-      if(hd){ var p5=find(hd.getAttribute("data-hidepost")); if(p5){ p5.hidden=true; feed("COMMUNITY","info","🙈 A post was hidden by its poster and left the Community feed."); renderCommunity(); } return; }
+        if(p4){ if(!me4){ commMsgSay("Type your shark name on the picks screen first — a repost rides under your name, avatar and badges.","#ffb9c0"); return; }
+          if(p4.name===me4){ commMsgSay("✋ That is already your post — a repost spreads another Shark's post.","#ffb9c0"); return; }
+          if(coinBalance(me4)<COMM_POST_COST){ commMsgSay("✋ A repost creates a new post, so it costs 10 coins like any post — you have "+fmtCoins(coinBalance(me4))+". You cannot post with fewer than 10 coins.","#ffb9c0"); return; }
+          commChargePost(me4);
+          p4.reposts++; COMMUNITY_POSTS.push({id:++commSeq, name:me4, text:p4.text, attachHtml:p4.attachHtml, repostOf:p4.name, likes:0, replies:[], reposts:0, hidden:false, mine:true, likers:[], earnedLikes:0, earnedComments:0, paidComments:0, costPaid:COMM_POST_COST, flagged:false});
+          commMsgSay("🔁 Reposted — 10 coins deducted (your balance: "+fmtCoins(coinBalance(me4))+"), paid to the Community Growth Vault like any post cost.");
+          feed("COMMUNITY","info","🔁 "+me4+" reposted "+p4.name+"'s post — 10-coin post cost paid to the Community Growth Vault."); renderCommunity(); } return; }
+      if(hd){ var p5=find(hd.getAttribute("data-hidepost")); if(p5){ p5.hidden=true; feed("COMMUNITY","info","🙈 A post was hidden and left the Community feed. Hiding never refunds the 10-coin post cost, and like / comment coins already paid stay paid."); renderCommunity(); } return; }
     });
     feedEl.addEventListener("keydown",function(e){ if(e.key==="Enter"&&e.target.matches("[data-reply-input]")){ e.preventDefault(); var id=e.target.getAttribute("data-reply-input"); var b=feedEl.querySelector('[data-reply-send="'+id+'"]'); if(b) b.click(); } });
   }
@@ -8145,7 +8319,7 @@ function renderSvs(){
   if(me) svsCheckMilestones(me);
   var balEl=$("svsBalance");
   if(balEl){
-    balEl.innerHTML="🪙 Posting as <b>"+(me?esc(me):"— set your shark name on the picks screen")+"</b> · Your coins: <b>"+(me?coinBalance(me):0)+"</b>"+(me&&svsReserved(me)?(" · reserved on your open posts: "+svsReserved(me)+" · available: "+svsAvailable(me)):"")+" · Your Shark vs Shark wins: <b>"+(me?(SVS_WINS[me]||0):0)+"</b>"+
+    balEl.innerHTML="🪙 Posting as <b>"+(me?esc(me):"— set your shark name on the picks screen")+"</b> · Your coins: <b>"+(me?fmtCoins(coinBalance(me)):"0.00")+"</b>"+(me&&svsReserved(me)?(" · reserved on your open posts: "+svsReserved(me)+" · available: "+svsAvailable(me)):"")+" · Your Shark vs Shark wins: <b>"+(me?(SVS_WINS[me]||0):0)+"</b>"+
     ' <button type="button" class="back-btn" id="svsFaucet" style="min-height:44px">🧪 Get 5,000 TEST coins</button>';
     var f=$("svsFaucet");
     if(f) f.addEventListener("click",function(){
